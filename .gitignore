@@ -6,3 +6,6 @@ storage/
 *.log
 playwright-report/
 test-results/
+
+# Interrupted atomic progress writes are not backups.
+/data/progress.json.*.tmp

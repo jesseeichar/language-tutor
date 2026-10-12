@@ -29,6 +29,7 @@ export {
   CreateSessionRequestSchema,
   SubmitAnswerRequestSchema,
   type ApiError,
+  type BackupProgressResponse,
   type CategoryCount,
   type CreateSessionRequest,
   type CreateSessionResponse,

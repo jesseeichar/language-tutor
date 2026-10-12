@@ -3,6 +3,17 @@ import { mockApi } from "../../tests/support/mock-api";
 import { api, ApiRequestError } from "./api";
 
 describe("api", () => {
+  test("backup sends the required header and no client-controlled Git arguments", async () => {
+    let captured: RequestInit | undefined;
+    globalThis.fetch = (async (_: unknown, init?: RequestInit) => {
+      captured = init;
+      return Response.json({ remote: "origin", branch: "main", commit: "abc", createdCommit: true });
+    }) as unknown as typeof fetch;
+    expect((await api.backupProgress()).commit).toBe("abc");
+    expect(captured?.method).toBe("POST");
+    expect(new Headers(captured?.headers).get("X-Language-Tutor-Backup")).toBe("1");
+    expect(captured?.body).toBeUndefined();
+  });
   test("posts JSON and returns the parsed body", async () => {
     const calls = mockApi({ "POST /api/sessions/s1/answers": () => ({ body: { grade: null, pointsAwarded: 0, pointsPossible: 0 } }) });
     const res = await api.submitAnswer("s1", "q1", { revealed: true });

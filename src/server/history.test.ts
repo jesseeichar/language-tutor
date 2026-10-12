@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { FIXTURE_DATA_DIR } from "../../tests/support/fixtures";
 import { loadContent } from "./content";
-import type { StoredSession } from "./db";
+import type { StoredSession } from "./progress";
 import { logEntry, summarize, toSessionInfo } from "./history";
 
 const content = await loadContent(FIXTURE_DATA_DIR);

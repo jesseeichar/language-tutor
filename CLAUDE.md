@@ -1,7 +1,7 @@
 # Language Tutor
 
 A local web app for practising German: ungraded study tools (flashcards) and, later, graded quizzes.
-It runs only in dev mode on one machine. Questions live in JSON files; progress lives in SQLite.
+It runs only in dev mode on one machine. Questions live in JSON files; progress lives in Git-trackable JSON.
 
 Read [docs/architecture.md](docs/architecture.md) before changing structure. It explains the modules, their
 interfaces and the rules the architecture tests enforce.
@@ -47,7 +47,7 @@ These are mandatory. CI enforces most of them.
    `*.test.ts` or `*.test.tsx`. The architecture tests fail when one is missing; the short exempt list
    (entry points, re-export indexes, pure type files) lives in `tests/architecture/architecture.test.ts`.
    React components are tested with Testing Library on happy-dom; mock the API with
-   `tests/support/mock-api.ts`. Server tests use `tests/fixtures/data` and an in-memory database.
+   `tests/support/mock-api.ts`. Server tests use `tests/fixtures/data` and isolated in-memory or temporary JSON progress.
 3. **Playwright test every major feature.** A major feature is anything the learner does from the UI:
    a new mode, a new screen, a change to session flow. Specs go in `tests/e2e/*.e2e.ts` and use the
    dedicated data in `tests/e2e/data`, never the real `data/`.
@@ -117,10 +117,20 @@ Rules from the learner for quizzes:
 
 ## Progress data
 
-`storage/progress.sqlite` (gitignored) holds the session log, every answer, and strength scores.
-Deleting it resets all progress and the log. Back it up by copying the file while the server is stopped.
+`data/progress.json` holds the session log, every answer, and strength scores. The server saves each
+change atomically. Use **History → Back up progress** or commit and push manually to preserve progress outside this machine; a fresh clone
+loads it automatically. `LT_PROGRESS_PATH` overrides the path. Stop the app before Git operations that
+change progress, manual edits, or deletion (which resets progress). Use one active checkout/server at
+a time. Invalid files and external edits fail without overwriting data. See README for the workflow.
+Existing SQLite data is not imported and database files are left untouched.
+
+The backup button commits only the progress file and pushes the current branch to its upstream
+(or the same branch on `origin`). Other staged files stay staged. Earlier unpushed commits on the branch
+are pushed too. The app never pulls or force-pushes. Git backup tests use temporary local remotes;
+never test the backup by pushing the development checkout.
 
 The History page lists every session. Repeat replays one exactly: same questions, order and directions.
 Because repeats depend on question ids, never reuse a deleted question's id for a different question.
 
-Schema changes go in a new migration in `src/server/migrations.ts`; never edit one that is committed.
+The JSON format is versioned and validated in `src/server/progress-schema.ts`. Unsupported versions
+are rejected; future format changes must explicitly handle compatibility. SQLite is no longer used.

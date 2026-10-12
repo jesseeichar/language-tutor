@@ -1,5 +1,8 @@
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import type { Server } from "bun";
+import { copyFileSync, mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import type { CreateSessionResponse, ModeSummary, SessionLogEntry, SessionSummary, SubmitAnswerResponse } from "../shared";
 import { copyFixtureData, FIXTURE_DATA_DIR, writeJson } from "../../tests/support/fixtures";
 import { startServer } from "./app";
@@ -8,10 +11,45 @@ let server: Server<undefined>;
 let base: string;
 
 beforeAll(() => {
-  server = startServer({ dataDir: FIXTURE_DATA_DIR, dbPath: ":memory:", port: 0 });
+  server = startServer({ dataDir: FIXTURE_DATA_DIR, progressPath: null, port: 0 });
   base = `http://localhost:${server.port}`;
 });
 afterAll(() => server.stop(true));
+
+test("a restored progress file serves the same history and repeats after restart", async () => {
+  const dir = mkdtempSync(join(tmpdir(), "lt-api-recovery-"));
+  const originalPath = join(dir, "progress.json");
+  const restoredPath = join(dir, "restored.json");
+  let local = startServer({ dataDir: FIXTURE_DATA_DIR, progressPath: originalPath, port: 0 });
+  const request = async (path: string, body?: unknown) => {
+    const response = await fetch(`http://localhost:${local.port}${path}`, body === undefined ? undefined : {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+    });
+    expect(response.status).toBe(200);
+    return response.json();
+  };
+  try {
+    const original = await request("/api/sessions", {
+      modeId: "flashcards", categoryIds: ["vocab-work"], direction: "en-de",
+    }) as CreateSessionResponse;
+    await request(`/api/sessions/${original.session.id}/answers`, {
+      questionId: "fc-lohn", response: { revealed: true },
+    });
+    await request(`/api/sessions/${original.session.id}/finish`, {});
+    const history = await request("/api/sessions");
+    local.stop(true);
+    copyFileSync(originalPath, restoredPath);
+    local = startServer({ dataDir: FIXTURE_DATA_DIR, progressPath: restoredPath, port: 0 });
+    expect(await request("/api/sessions")).toEqual(history);
+    const repeat = await request(`/api/sessions/${original.session.id}/repeat`, {}) as CreateSessionResponse;
+    expect(repeat.session.repeatOf).toBe(original.session.id);
+    expect(repeat.questions).toEqual(original.questions);
+    expect(repeat.directions).toEqual(original.directions);
+  } finally {
+    local.stop(true);
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
 
 async function call<T>(path: string, body?: unknown): Promise<{ status: number; body: T }> {
   const res = await fetch(base + path, body === undefined ? undefined : {
@@ -40,6 +78,23 @@ describe("GET /api/modes", () => {
     const fc = (await call<ModeSummary[]>("/api/modes")).body.find((m) => m.id === "flashcards")!;
     expect(fc.questionTypes.map((t) => [t.id, t.count])).toEqual([["translation", 3], ["fill-in-the-blank", 1]]);
     expect(fc.directional).toBe(true);
+  });
+});
+
+describe("progress backup API", () => {
+  test("rejects requests without the app header before invoking Git", async () => {
+    const res = await fetch(`${base}/api/progress/backup`, {
+      method: "POST", headers: { Origin: "https://untrusted.example" },
+    });
+    expect(res.status).toBe(403);
+  });
+
+  test("reports missing saved progress without running Git", async () => {
+    const res = await fetch(`${base}/api/progress/backup`, {
+      method: "POST", headers: { "X-Language-Tutor-Backup": "1" },
+    });
+    expect(res.status).toBe(409);
+    expect(await res.json()).toEqual({ error: "No saved progress to back up yet. Start a study session first." });
   });
 });
 
@@ -168,7 +223,7 @@ describe("session log and repeat", () => {
 describe("repeat after questions were deleted", () => {
   test("skips deleted questions, and refuses when none are left", async () => {
     const copy = copyFixtureData();
-    const local = startServer({ dataDir: copy.dir, dbPath: ":memory:", port: 0 });
+    const local = startServer({ dataDir: copy.dir, progressPath: null, port: 0 });
     const post = async (path: string, body: unknown) =>
       fetch(`http://localhost:${local.port}${path}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
     try {
@@ -192,7 +247,7 @@ describe("broken data", () => {
   test("returns 500 with the list of problems", async () => {
     const copy = copyFixtureData();
     writeJson(copy.dir, "vocabulary.json", "{ broken");
-    const broken = startServer({ dataDir: copy.dir, dbPath: ":memory:", port: 0 });
+    const broken = startServer({ dataDir: copy.dir, progressPath: null, port: 0 });
     try {
       const res = await fetch(`http://localhost:${broken.port}/api/modes`);
       const body = (await res.json()) as { error: string; details: string[] };

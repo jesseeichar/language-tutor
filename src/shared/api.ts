@@ -96,3 +96,10 @@ export interface ApiError {
   error: string;
   details?: string[];
 }
+
+export interface BackupProgressResponse {
+  commit: string;
+  remote: string;
+  branch: string;
+  createdCommit: boolean;
+}

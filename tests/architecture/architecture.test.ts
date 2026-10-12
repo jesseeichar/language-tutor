@@ -20,7 +20,7 @@ const ALLOWED_DEPENDENCIES: Record<string, string[]> = {
 /** Third-party and runtime imports allowed in production code, per module. */
 const ALLOWED_EXTERNALS: Record<string, string[]> = {
   "src/shared": ["zod"], // must run in both browser and Bun
-  "src/server": ["zod", "bun", "bun:sqlite", "node:*"],
+  "src/server": ["zod", "bun", "node:*"],
   "src/client": ["react", "react-dom"],
   scripts: ["bun", "node:*"],
 };

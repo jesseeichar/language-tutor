@@ -2,13 +2,13 @@ import { defineConfig, devices } from "@playwright/test";
 
 /**
  * End-to-end tests run the real API and Vite dev server against tests/e2e/data
- * and a throwaway database, on ports that do not clash with `bun run dev`.
+ * and throwaway progress, on ports that do not clash with `bun run dev`.
  */
 const API_PORT = 3101;
 const WEB_PORT = 5199;
 const env = {
   LT_DATA_DIR: "tests/e2e/data",
-  LT_DB_PATH: "storage/e2e.sqlite",
+  LT_PROGRESS_PATH: "storage/e2e-progress.json",
   LT_API_PORT: String(API_PORT),
   LT_WEB_PORT: String(WEB_PORT),
 };
@@ -28,8 +28,8 @@ export default defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: [
     {
-      // Fresh database on every run.
-      command: "rm -f storage/e2e.sqlite storage/e2e.sqlite-wal storage/e2e.sqlite-shm && bun src/server/main.ts",
+      // Fresh progress on every run.
+      command: "rm -f storage/e2e-progress.json && bun src/server/main.ts",
       url: `http://localhost:${API_PORT}/api/health`,
       env,
       reuseExistingServer: false,
