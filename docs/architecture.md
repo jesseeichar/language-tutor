@@ -65,7 +65,7 @@ Interface budgets:
 A mode is defined in two halves with the same `id`:
 
 - **Shared half** (`src/shared/modes/<id>.ts`): question schema, response schema, whether it is graded,
-  default points and the `grade` function. Grading is pure and runs on the server.
+  default points and the `grade` function. Grading runs on the server and can be asynchronous. Shared code delegates network grading through injected services.
 - **Client half** (`src/client/modes/<id>/`): a `QuestionView` component. It receives the question,
   a `submit(response)` function and a `next()` function. It knows nothing about sessions or HTTP.
 
@@ -74,7 +74,7 @@ question is worth 0 points and strength scores do not change.
 
 The `quiz` mode supports multiple-choice, fill-in-the-blank, and translation questions through a
 discriminated `type` schema. Its client sub-module has the same one-name interface budget as
-flashcards; no existing architecture limits are relaxed. Typed answers use literal string equality.
+flashcards; no existing architecture limits are relaxed. Fill-in-the-blank answers use literal string equality; translations use the injected Jev grading service.
 See [quizzes.md](quizzes.md) for the data format and authoring workflow.
 
 ## Data
@@ -102,8 +102,8 @@ and reported together, by the API and by `bun run validate`.
    for each directional question, stores the session and returns the questions with their directions.
 3. `POST /api/sessions/:id/answers` records one answer per question. The server validates the response,
    grades it, records the attempt and updates strengths. An identical retry returns the recorded
-   result without another update; a changed answer is rejected. `answers.ts` rechecks completion and
-   prior attempts after asynchronous content loading, immediately before the atomic store update.
+   result without another update; a changed answer is rejected. `answers.ts` shares pending identical requests per store/session/question and rejects conflicting ones.
+   It rechecks completion and prior attempts after asynchronous grading, immediately before the atomic store update.
 4. `POST /api/sessions/:id/finish` closes the session and returns a summary.
 
 Two more endpoints make up the session log:
@@ -131,7 +131,7 @@ The server resolves the choice when the session starts, one direction per direct
 `src/server/session-plan.ts`. Directions are stored with the session and with every answer, so a
 session can be replayed exactly and future quizzes can track strength per direction. Views receive
 the direction as a prop and never decide it themselves. Graders receive that same stored direction
-as their third argument: `grade(question, response, direction)`. Answer requests cannot choose it.
+as their third argument: `grade(question, response, direction, services)`. Answer requests cannot choose it.
 
 ## Selection
 
@@ -150,6 +150,22 @@ other pool, applies the existing freshness/weakness algorithm to each, and shuff
 Quiz defaults to multiple-choice and fill-in-the-blank with one sixth reserved for questions that
 reference grammar topics. With the supplied bank this produces 25 vocabulary choices and 5 grammar
 blanks for a full default session. Translation can be selected alone or alongside the other types.
+
+## AI translation grading
+
+`src/server/jev.ts` calls TypeSafe's official `/v1/systemone` endpoint using Bun fetch, with a
+server-only `TYPESAFE_API_KEY`, optional `TYPESAFE_MODEL` (default `jev-latest`), and a 15-second timeout.
+The shared grading contract accepts injected services and may return a Promise; only the quiz mode
+knows which question type delegates to translation grading. The server supplies that service, while
+the session framework continues to treat modes generically. Public module budgets remain unchanged.
+
+One request asks independent Noul questions about meaning and grammar. Both probabilities must exceed
+0.5 for full points; ties fail. The adapter validates responses and creates fixed feedback plus the
+reference translation. Provider failures return safe retryable errors without recording attempts or
+strength changes. No automatic network retry or exact-match fallback is used. Credentials and raw
+provider errors never enter browser responses, logs, or progress. Learner text is sent as evaluation
+data, separately from grading instructions. Tests inject fake services or transports; browser tests
+never call the live provider, even when a real key is configured locally.
 
 ## Scoring
 

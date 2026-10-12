@@ -79,7 +79,8 @@ specific modes.
 
 1. `src/shared/modes/<id>.ts`: question schema (extend `QuestionBaseSchema`), response schema, and the
    mode definition. Provide `questionPreview` for a readable summary in the editor. Set `graded: false` for a study tool. For a quiz set `graded: true`,
-   `defaultPoints`, and a pure `grade(question, response, direction)` function. Grade against the
+   `defaultPoints`, and a `grade(question, response, direction, services)` function returning a grade or Promise.
+   Inject server services for network grading; keep provider code and credentials out of shared/client code. Grade against the
    server-stored direction, never a direction supplied with the answer.
 2. Register it in `src/shared/modes/registry.ts` and export its question and response types from
    `src/shared/index.ts`.
@@ -97,8 +98,8 @@ exercises. Strength scores aggregate over `refs`, so set them carefully. Run `bu
 editing.
 
 **Spelling.** English is American everywhere: questions, explanations, UI text and docs (recognized,
-favor, canceled, labeled, program). German uses Swiss Standard spelling: `ss`, never `ß`. Typed answers
-match exactly, so a mixed convention would mark correct answers wrong.
+favor, canceled, labeled, program). German uses Swiss Standard spelling: `ss`, never `ß`. Fill-in-the-blank answers
+match exactly; translation grading accepts valid standard regional spelling variants.
 
 **Coverage.** Every vocabulary word has a translation flashcard (`fc-<wordId>`) and one quiz question of
 each type (`quiz-mc-<wordId>`, `quiz-translate-<wordId>`, `quiz-blank-<wordId>`). Every grammar topic has
@@ -129,8 +130,12 @@ learner is weak at while keeping older vocabulary and rules in memory.
 
 The implemented quiz types and JSON examples are in [docs/quizzes.md](docs/quizzes.md). Quiz questions
 live in `data/questions/quiz.json`; `type` selects multiple choice, fill in the blank, or translation.
-Version 1 typed answers must match literally, including case, punctuation, accents, and all spaces.
-Do not add normalization, synonyms, or AI grading without an explicit change to this requirement.
+Fill-in-the-blank answers must match literally, including case, punctuation, accents, and all spaces.
+Translation answers are graded by Jev through TypeSafe's official API for meaning and grammar, accepting
+natural alternatives and harmless formatting differences. Both checks must exceed 0.5 probability;
+use full or zero points and the existing strength rules. Keep TYPESAFE_API_KEY in server .env only.
+Provider failures leave answers ungraded for retry; never silently fall back to exact matching.
+Use injected fake providers in tests, never live keys or paid network calls.
 
 - A default quiz is 25 multiple-choice vocabulary questions and 5 grammar questions, unless the learner
   asks for something else.
@@ -217,8 +222,8 @@ quiz questions and 2 translation quiz questions that exercise the rule. Ids are 
 that leaves one defensible answer and an `explanation` naming the rule. Read the learner's notes and
 "Eigene Notizen" for the topic first; topics marked as a weak spot get more items than the minimum.
 
-Follow the spelling, exact-match and near-synonym rules above. For typed translations choose sentences
-with one obvious rendering in each direction: no "you", no contractions, Präteritum ↔ simple past.
+Follow the spelling and near-synonym guidance above. Keep fill-in answers unambiguous for exact matching.
+For translations, author clear reference sentences in both directions; equivalent valid wording is accepted.
 
 ### 4. Check and save
 

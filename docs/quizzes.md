@@ -6,7 +6,7 @@ Open **Quiz**, select categories, and choose one or more **Question types**:
 | --- | --- | --- |
 | Multiple choice | Select one of four full-sentence translations, then **Check answer**. | The option must be at `correctIndex`. |
 | Fill in the blank | Type only the missing word or phrase in a sentence containing `___`. | Input must equal `answer` exactly. |
-| Translation | Type the complete translation of a sentence. | Input must equal the target-language sentence exactly. |
+| Translation | Type the complete translation of a sentence. | Jev checks meaning and grammar; natural alternative wording is accepted. |
 
 Multiple choice and Translation support **German → English**, **English → German**, and **Random**.
 Random fixes a direction for each question when the session starts. Fill-in-the-blank prompts stay
@@ -22,16 +22,36 @@ or repeat a question. The existing fresh/weak-question selection runs within eac
 category, and direction choices are remembered for the next session. If a question bank contains
 none of the preferred default types (for example, only Translation), all available types are used.
 
-## Version 1 exact matching
+## Translation grading with Jev
 
-Typed answers are compared literally. Capitalization, punctuation, accents, and every space count,
-including leading and trailing spaces. There is no trimming, case folding, spelling correction,
-Unicode normalization, synonym matching, or AI grading. If the expected answer is
-`First, we read the report.`, then `first, we read the report.`, `First, we read the report`, and
-`First, we read the report. ` are incorrect. A valid alternative translation is still marked incorrect
-unless it is the single stored answer. Keep expected translations concise and unambiguous.
+Set `TYPESAFE_API_KEY` in the server's ignored `.env` file and restart the app. Get the key from
+[TypeSafe's official console](https://console.typesafe.ai/), not an independent playground.
+`TYPESAFE_MODEL` optionally overrides the default `jev-latest` model. No key is needed for other types.
 
-After **Check answer**, the app displays Correct or Incorrect, the expected answer, an optional
+Each translation sends the source, reference, learner answer, and target language to the
+[official API](https://docs.typesafe.ai/api). Jev evaluates meaning and grammar independently in one
+request. A probability above 0.5 passes each check; ties fail. Both must pass to earn full points.
+Natural synonyms and phrasing are accepted, as are harmless spacing, punctuation, and capitalization
+differences. Missing or changed meaning and substantive grammar or spelling errors fail. Standard
+regional spellings are accepted; authored questions still follow the bank's spelling conventions.
+
+The app shows fixed feedback for the failed checks, plus **Reference translation** and any authored
+explanation. Jev does not generate custom corrections or explanations. Its judgment can be wrong;
+probabilities are used for a binary decision, not partial credit. Saved results are not regraded if
+the configured model changes; repeats use the current model.
+
+A missing key, provider error, invalid response, or 15-second timeout leaves the answer ungraded.
+The input is preserved for manual retry. There is no automatic retry or exact-match fallback. Existing
+historical exact-match results are retained. Concurrent identical submissions share one grading call;
+retries of already saved answers return the stored result.
+
+## Fill-in-the-blank exact matching
+
+Fill-in-the-blank input must equal the stored `answer` literally. Capitalization, punctuation,
+accents, and every space count, including leading and trailing spaces. No normalization or AI grading
+is applied to this type.
+
+After **Check answer**, the app displays Correct or Incorrect, the reference or expected answer, an optional
 explanation, and awarded points. The answer then locks; **Next** or **Finish** continues. A failed
 save keeps the input available for retry. If the save succeeded but its response was lost, retrying
 the same answer returns the original grade without scoring twice. A different answer cannot replace
@@ -151,8 +171,7 @@ Include a hint such as the uninflected adjective when it makes the intended answ
 Here `de` and `en` are single-line strings; line breaks are rejected because the answer input is
 single-line. Write English in American spelling and German in Swiss Standard spelling (`ss`, never
 `ß`), as everywhere else in the bank. German → English shows `de` and grades against `en`;
-English → German shows `en` and grades against `de`. Write exactly the punctuation, capitalization,
-and spelling you expect the learner to type. Put explanations in `explanation`, not inside answers.
+English → German shows `en` and grades against `de`. These are reference translations; Jev may accept different wording that preserves meaning and correct grammar. Put explanations in `explanation`, not inside answers.
 
 ## Validate, try, and save
 

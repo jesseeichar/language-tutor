@@ -6,6 +6,8 @@ export interface ServerConfig {
   dataDir: string;
   progressPath: string;
   port: number;
+  typesafeApiKey?: string;
+  typesafeModel?: string;
 }
 
 /** Reads settings from the environment. Bun loads .env automatically. */
@@ -16,6 +18,8 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   return {
     dataDir: resolve(projectRoot, env.LT_DATA_DIR ?? "data"),
     progressPath: resolve(projectRoot, env.LT_PROGRESS_PATH ?? "data/progress.json"),
+    typesafeApiKey: env.TYPESAFE_API_KEY?.trim() || undefined,
+    typesafeModel: env.TYPESAFE_MODEL?.trim() || "jev-latest",
     port: Number(env.LT_API_PORT ?? 3001),
   };
 }

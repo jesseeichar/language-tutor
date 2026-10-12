@@ -24,6 +24,11 @@ export interface GradeResult {
   feedback?: string;
 }
 
+/** Supplied by the server; shared modes never read credentials or perform network I/O. */
+export interface GradingServices {
+  translation(input: { source: string; reference: string; answer: string; targetLanguage: "German" | "English" }): Promise<GradeResult>;
+}
+
 interface ModeCommon<Q extends QuestionBase, R> {
   /** Matches the question file name: data/questions/<id>.json. */
   id: string;
@@ -58,7 +63,7 @@ export interface GradedMode<Q extends QuestionBase = QuestionBase, R = unknown> 
   graded: true;
   /** Points for a question that does not set its own `points`. */
   defaultPoints: number;
-  grade(question: Q, response: R, direction: Direction | null): GradeResult;
+  grade(question: Q, response: R, direction: Direction | null, services?: GradingServices): GradeResult | Promise<GradeResult>;
 }
 
 export type ModeDefinition<Q extends QuestionBase = QuestionBase, R = unknown> =

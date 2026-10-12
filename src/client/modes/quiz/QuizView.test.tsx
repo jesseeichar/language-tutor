@@ -22,6 +22,8 @@ test("translation follows direction, sends literal text, and reveals feedback on
   const { submit, next } = show(translation, "en-de");
   expect(screen.getByRole("heading").textContent).toBe("The door is open.");
   expect(screen.queryByText("Die Tür ist offen.")).toBeNull();
+  expect(screen.getByText(/Jev checks meaning and grammar/)).toBeTruthy();
+  expect(screen.queryByText(/Match the expected answer exactly/)).toBeNull();
   expect(screen.getByRole("button", { name: "Check answer" }).hasAttribute("disabled")).toBe(true);
   fireEvent.change(screen.getByLabelText("Your answer"), { target: { value: " Die Tür ist offen. " } });
   await userEvent.click(screen.getByRole("button", { name: "Check answer" }));
@@ -47,6 +49,7 @@ test("a blank checks missing text and shows incorrect feedback before Finish", a
   const submit = mock(() => Promise.resolve({ grade: { correct: false, score: 0, feedback: "Expected answer: die" }, pointsAwarded: 0, pointsPossible: 1 }));
   show(blank, null, submit, true);
   expect(screen.getByRole("heading").textContent).toBe("Das ist ___ Tür.");
+  expect(screen.getByText(/Match the expected answer exactly/)).toBeTruthy();
   await userEvent.type(screen.getByLabelText("Your answer"), "der{Enter}");
   expect(submit).toHaveBeenCalledWith({ type: "fill-in-the-blank", answer: "der" });
   expect(screen.getByRole("status").textContent).toContain("Incorrect");

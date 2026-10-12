@@ -43,7 +43,7 @@ export function QuizView({ question, direction, submit, next, isLast }: Question
         </fieldset>
       ) : (
         <>
-          <p id="answer-hint" className="muted small">{question.type === "translation" ? "Translate the whole sentence." : "Type only the missing word or phrase."} Match the expected answer exactly, including capitalization, punctuation, accents, and spaces.</p>
+          <p id="answer-hint" className="muted small">{question.type === "translation" ? "Translate the whole sentence. Jev checks meaning and grammar; natural alternative wording is accepted." : "Type only the missing word or phrase. Match the expected answer exactly, including capitalization, punctuation, accents, and spaces."}</p>
           <label className="quiz-answer">Your answer
             <input autoFocus value={answer} onChange={(e) => setAnswer(e.target.value)} disabled={busy || result !== null}
               aria-describedby="answer-hint" autoComplete="off" autoCapitalize="off" spellCheck={false} />
@@ -58,7 +58,7 @@ export function QuizView({ question, direction, submit, next, isLast }: Question
       </div>}
       <div className="actions">
         {result ? <button type="button" className="primary" onClick={next} autoFocus>{isLast ? "Finish" : "Next"}</button>
-          : <button type="submit" className="primary" disabled={!ready || busy}>{busy ? "Checking…" : "Check answer"}</button>}
+          : <button type="submit" className="primary" disabled={!ready || busy}>{busy ? (question.type === "translation" ? "Checking with Jev…" : "Checking…") : "Check answer"}</button>}
       </div>
     </form>
   );
