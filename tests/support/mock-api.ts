@@ -57,7 +57,10 @@ const cards: FlashcardQuestion[] = [
 ];
 
 export const sessionResponse: CreateSessionResponse = {
-  session: { id: "s1", modeId: "flashcards", graded: false, categoryIds: ["vocab-time"], startedAt: "2026-10-12T00:00:00Z" },
+  session: {
+    id: "s1", modeId: "flashcards", graded: false, categoryIds: ["vocab-time"],
+    questionTypes: null, direction: "random", repeatOf: null, startedAt: "2026-10-12T00:00:00Z",
+  },
   questions: cards,
   directions: { c1: "en-de" },
 };

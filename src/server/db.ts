@@ -7,53 +7,10 @@
 import { Database } from "bun:sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
-import type { Direction, SessionInfo } from "../shared";
+import type { Direction, DirectionChoice, SessionInfo } from "../shared";
 import type { QuestionHistory } from "./selection";
+import { migrate } from "./migrations";
 import { nextStrength } from "./scoring";
-
-/** Each entry upgrades the schema by one version. Append only; never edit a shipped migration. */
-export const MIGRATIONS: string[] = [
-  `
-  CREATE TABLE sessions (
-    id            TEXT PRIMARY KEY,
-    mode_id       TEXT NOT NULL,
-    graded        INTEGER NOT NULL,
-    category_ids  TEXT NOT NULL,          -- JSON array of selected category ids
-    question_ids  TEXT NOT NULL,          -- JSON array, in the order presented
-    started_at    TEXT NOT NULL,
-    finished_at   TEXT
-  );
-
-  CREATE TABLE attempts (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    session_id      TEXT NOT NULL REFERENCES sessions(id),
-    mode_id         TEXT NOT NULL,
-    question_id     TEXT NOT NULL,
-    response        TEXT NOT NULL,        -- JSON, shape defined by the mode
-    correct         INTEGER,              -- NULL in ungraded modes
-    points_awarded  REAL NOT NULL,
-    points_possible REAL NOT NULL,
-    answered_at     TEXT NOT NULL,
-    UNIQUE (session_id, question_id)
-  );
-  CREATE INDEX attempts_by_question ON attempts (mode_id, question_id);
-
-  CREATE TABLE strengths (
-    item_type   TEXT NOT NULL CHECK (item_type IN ('word', 'topic')),
-    item_id     TEXT NOT NULL,
-    score       INTEGER NOT NULL,         -- -10 (very poor) .. 10 (very strong)
-    attempts    INTEGER NOT NULL,
-    correct     INTEGER NOT NULL,
-    updated_at  TEXT NOT NULL,
-    PRIMARY KEY (item_type, item_id)
-  );
-  `,
-  `
-  -- Which way round each directional question was asked: "de-en" or "en-de".
-  ALTER TABLE sessions ADD COLUMN directions TEXT NOT NULL DEFAULT '{}';  -- JSON object, question id -> direction
-  ALTER TABLE attempts ADD COLUMN direction TEXT;                         -- NULL for non-directional questions
-  `,
-];
 
 export function openDatabase(path: string): Database {
   if (path !== ":memory:") mkdirSync(dirname(path), { recursive: true });
@@ -64,15 +21,6 @@ export function openDatabase(path: string): Database {
   return db;
 }
 
-function migrate(db: Database): void {
-  const { user_version: current } = db.query<{ user_version: number }, []>("PRAGMA user_version").get()!;
-  for (let v = current; v < MIGRATIONS.length; v++) {
-    db.transaction(() => {
-      db.run(MIGRATIONS[v]!);
-      db.run(`PRAGMA user_version = ${v + 1}`);
-    })();
-  }
-}
 
 type ItemType = "word" | "topic";
 
@@ -85,6 +33,25 @@ interface SessionRow {
   started_at: string;
   finished_at: string | null;
   directions: string;
+  question_types: string | null;
+  direction_choice: string | null;
+  repeat_of: string | null;
+}
+
+function toStoredSession(row: SessionRow): StoredSession {
+  return {
+    id: row.id,
+    modeId: row.mode_id,
+    graded: row.graded === 1,
+    categoryIds: JSON.parse(row.category_ids),
+    questionIds: JSON.parse(row.question_ids),
+    directions: JSON.parse(row.directions),
+    questionTypes: row.question_types ? JSON.parse(row.question_types) : null,
+    direction: row.direction_choice as DirectionChoice | null,
+    repeatOf: row.repeat_of,
+    startedAt: row.started_at,
+    finishedAt: row.finished_at,
+  };
 }
 
 export interface StoredSession extends SessionInfo {
@@ -111,27 +78,13 @@ export interface AttemptInput {
 export class ProgressStore {
   constructor(private readonly db: Database) {}
 
-  createSession(s: {
-    modeId: string;
-    graded: boolean;
-    categoryIds: string[];
-    questionIds: string[];
-    directions: Record<string, Direction>;
-  }): StoredSession {
-    const session: StoredSession = {
-      id: crypto.randomUUID(),
-      modeId: s.modeId,
-      graded: s.graded,
-      categoryIds: s.categoryIds,
-      questionIds: s.questionIds,
-      directions: s.directions,
-      startedAt: new Date().toISOString(),
-      finishedAt: null,
-    };
+  createSession(s: Omit<StoredSession, "id" | "startedAt" | "finishedAt">): StoredSession {
+    const session: StoredSession = { ...s, id: crypto.randomUUID(), startedAt: new Date().toISOString(), finishedAt: null };
     this.db
       .query(
-        `INSERT INTO sessions (id, mode_id, graded, category_ids, question_ids, directions, started_at)
-         VALUES ($id, $mode, $graded, $cats, $qs, $directions, $started)`,
+        `INSERT INTO sessions (id, mode_id, graded, category_ids, question_ids, directions,
+                               question_types, direction_choice, repeat_of, started_at)
+         VALUES ($id, $mode, $graded, $cats, $qs, $directions, $types, $choice, $repeatOf, $started)`,
       )
       .run({
         id: session.id,
@@ -140,6 +93,9 @@ export class ProgressStore {
         cats: JSON.stringify(session.categoryIds),
         qs: JSON.stringify(session.questionIds),
         directions: JSON.stringify(session.directions),
+        types: session.questionTypes ? JSON.stringify(session.questionTypes) : null,
+        choice: session.direction,
+        repeatOf: session.repeatOf,
         started: session.startedAt,
       });
     return session;
@@ -147,17 +103,15 @@ export class ProgressStore {
 
   getSession(id: string): StoredSession | null {
     const row = this.db.query<SessionRow, { id: string }>("SELECT * FROM sessions WHERE id = $id").get({ id });
-    if (!row) return null;
-    return {
-      id: row.id,
-      modeId: row.mode_id,
-      graded: row.graded === 1,
-      categoryIds: JSON.parse(row.category_ids),
-      questionIds: JSON.parse(row.question_ids),
-      directions: JSON.parse(row.directions),
-      startedAt: row.started_at,
-      finishedAt: row.finished_at,
-    };
+    return row ? toStoredSession(row) : null;
+  }
+
+  /** Every session, newest first. */
+  listSessions(): StoredSession[] {
+    return this.db
+      .query<SessionRow, []>("SELECT * FROM sessions ORDER BY started_at DESC, rowid DESC")
+      .all()
+      .map(toStoredSession);
   }
 
   finishSession(id: string): void {

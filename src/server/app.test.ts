@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import type { Server } from "bun";
-import type { CreateSessionResponse, ModeSummary, SessionSummary, SubmitAnswerResponse } from "../shared";
+import type { CreateSessionResponse, ModeSummary, SessionLogEntry, SessionSummary, SubmitAnswerResponse } from "../shared";
 import { copyFixtureData, FIXTURE_DATA_DIR, writeJson } from "../../tests/support/fixtures";
 import { startServer } from "./app";
 
@@ -116,6 +116,75 @@ describe("sessions", () => {
     const { status, body } = await call<{ error: string }>("/api/nothing-here");
     expect(status).toBe(404);
     expect(body.error).toBe("Not found");
+  });
+});
+
+describe("session log and repeat", () => {
+  const all = ["vocab-connectors", "vocab-work", "grammar-cases"];
+
+  test("the log lists sessions newest first with the learner's choices", async () => {
+    await startFlashcards(["vocab-work"]);
+    const { body: latest } = await startFlashcards(all, undefined, { questionTypes: ["translation"], direction: "en-de" });
+    const { body: log } = await call<SessionLogEntry[]>("/api/sessions");
+    expect(log[0]!.session.id).toBe(latest.session.id);
+    expect(log[0]).toMatchObject({
+      modeTitle: "Flashcards",
+      categoryLabels: ["Connectors", "Work", "Cases"],
+      questionTypeLabels: ["Translation"],
+      finishedAt: null,
+      session: { direction: "en-de", repeatOf: null },
+    });
+  });
+
+  test("a mode-wide session records no type filter, and no direction when nothing is directional", async () => {
+    const { body } = await startFlashcards(["grammar-cases"]);
+    expect(body.session).toMatchObject({ questionTypes: null, direction: null });
+  });
+
+  test("repeat replays the same questions, order and directions as a new linked session", async () => {
+    const { body: original } = await startFlashcards(all);
+    const { status, body: repeat } = await call<CreateSessionResponse>(`/api/sessions/${original.session.id}/repeat`, {});
+    expect(status).toBe(200);
+    expect(repeat.session.id).not.toBe(original.session.id);
+    expect(repeat.session.repeatOf).toBe(original.session.id);
+    expect(repeat.questions.map((q) => q.id)).toEqual(original.questions.map((q) => q.id));
+    expect(repeat.directions).toEqual(original.directions);
+    expect(repeat.session.categoryIds).toEqual(original.session.categoryIds);
+  });
+
+  test("a finished session can be repeated, and the repeat is answerable", async () => {
+    const { body: original } = await startFlashcards(["vocab-work"]);
+    await call(`/api/sessions/${original.session.id}/finish`, {});
+    const { body: repeat } = await call<CreateSessionResponse>(`/api/sessions/${original.session.id}/repeat`, {});
+    const answer = await call(`/api/sessions/${repeat.session.id}/answers`, { questionId: "fc-lohn", response: { revealed: true } });
+    expect(answer.status).toBe(200);
+  });
+
+  test("repeating an unknown session is a 404", async () => {
+    expect((await call("/api/sessions/nope/repeat", {})).status).toBe(404);
+  });
+});
+
+describe("repeat after questions were deleted", () => {
+  test("skips deleted questions, and refuses when none are left", async () => {
+    const copy = copyFixtureData();
+    const local = startServer({ dataDir: copy.dir, dbPath: ":memory:", port: 0 });
+    const post = async (path: string, body: unknown) =>
+      fetch(`http://localhost:${local.port}${path}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    try {
+      const original = (await (await post("/api/sessions", { modeId: "flashcards", categoryIds: ["vocab-time", "vocab-work"] })).json()) as CreateSessionResponse;
+      const file = (await Bun.file(`${copy.dir}/questions/flashcards.json`).json()) as { questions: { id: string }[] };
+      writeJson(copy.dir, "questions/flashcards.json", { ...file, questions: file.questions.filter((q) => q.id !== "fc-lohn") });
+      const repeat = (await (await post(`/api/sessions/${original.session.id}/repeat`, {})).json()) as CreateSessionResponse;
+      expect(repeat.questions.map((q) => q.id)).toEqual(["fc-zuerst"]);
+      expect(Object.keys(repeat.directions)).toEqual(["fc-zuerst"]);
+
+      writeJson(copy.dir, "questions/flashcards.json", { ...file, questions: file.questions.filter((q) => !["fc-lohn", "fc-zuerst"].includes(q.id)) });
+      expect((await post(`/api/sessions/${original.session.id}/repeat`, {})).status).toBe(409);
+    } finally {
+      local.stop(true);
+      copy.cleanup();
+    }
   });
 });
 

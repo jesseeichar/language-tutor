@@ -13,11 +13,14 @@ import {
   type ApiError,
   type CreateSessionResponse,
   type ModeSummary,
+  type QuestionBase,
+  type SessionLogEntry,
   type SessionSummary,
   type SubmitAnswerResponse,
 } from "../shared";
 import { ContentError, loadContent } from "./content";
 import { openDatabase, ProgressStore, type StoredSession } from "./db";
+import { logEntry, summarize, toSessionInfo } from "./history";
 import { selectQuestions } from "./selection";
 import { assignDirections, countByCategory, filterPool } from "./session-plan";
 
@@ -64,10 +67,6 @@ async function readBody(req: Request): Promise<unknown> {
   }
 }
 
-function sessionInfo(s: StoredSession) {
-  return { id: s.id, modeId: s.modeId, graded: s.graded, categoryIds: s.categoryIds, startedAt: s.startedAt };
-}
-
 export function startServer(options: AppOptions): Server<undefined> {
   const store = new ProgressStore(openDatabase(options.dbPath));
   const content = () => loadContent(options.dataDir);
@@ -76,6 +75,12 @@ export function startServer(options: AppOptions): Server<undefined> {
     const session = store.getSession(id);
     if (!session) throw new HttpError(404, `No session ${id}`);
     return session;
+  }
+
+  /** Stores a new session and returns what the client needs to run it. */
+  function begin(plan: Omit<StoredSession, "id" | "startedAt" | "finishedAt">, questions: QuestionBase[]): CreateSessionResponse {
+    const session = store.createSession(plan);
+    return { session: toSessionInfo(session), questions, directions: session.directions };
   }
 
   return Bun.serve({
@@ -112,6 +117,10 @@ export function startServer(options: AppOptions): Server<undefined> {
       },
 
       "/api/sessions": {
+        GET: handle(async (): Promise<SessionLogEntry[]> => {
+          const c = await content();
+          return store.listSessions().map((s) => logEntry(s, store.sessionTotals(s.id), c));
+        }),
         POST: handle(async (req): Promise<CreateSessionResponse> => {
           const parsed = CreateSessionRequestSchema.safeParse(await readBody(req));
           if (!parsed.success) throw new HttpError(400, "Invalid request", parsed.error.issues.map((i) => i.message));
@@ -130,14 +139,19 @@ export function startServer(options: AppOptions): Server<undefined> {
             strengths: store.allStrengths(),
           });
           const directions = assignDirections(questions, (q) => isDirectionalQuestion(mode, q), direction);
-          const session = store.createSession({
-            modeId: mode.id,
-            graded: mode.graded,
-            categoryIds,
-            questionIds: questions.map((q) => q.id),
-            directions,
-          });
-          return { session: sessionInfo(session), questions, directions };
+          return begin(
+            {
+              modeId: mode.id,
+              graded: mode.graded,
+              categoryIds,
+              questionTypes: questionTypes ?? null,
+              direction: Object.keys(directions).length > 0 ? direction : null,
+              repeatOf: null,
+              questionIds: questions.map((q) => q.id),
+              directions,
+            },
+            questions,
+          );
         }),
       },
 
@@ -183,23 +197,23 @@ export function startServer(options: AppOptions): Server<undefined> {
         POST: handle(async (req): Promise<SessionSummary> => {
           const session = requireSession(req.params.id!);
           store.finishSession(session.id);
-          const mode = getMode(session.modeId);
-          const questions = (await content()).questions.get(session.modeId) ?? [];
-          const pointsPossible = mode
-            ? session.questionIds.reduce((sum, id) => {
-                const q = questions.find((x) => x.id === id);
-                return sum + (q ? pointsFor(mode, q) : 0);
-              }, 0)
-            : 0;
-          const totals = store.sessionTotals(session.id);
-          return {
-            session: sessionInfo(session),
-            totalQuestions: session.questionIds.length,
-            answered: totals.answered,
-            correct: session.graded ? totals.correct : null,
-            pointsAwarded: totals.pointsAwarded,
-            pointsPossible,
-          };
+          return summarize(store.getSession(session.id)!, store.sessionTotals(session.id), await content());
+        }),
+      },
+
+      "/api/sessions/:id/repeat": {
+        POST: handle(async (req): Promise<CreateSessionResponse> => {
+          const original = requireSession(req.params.id!);
+          const mode = getMode(original.modeId);
+          if (!mode) throw new HttpError(409, `Mode ${original.modeId} is no longer registered`);
+          // Same questions in the same order, asked the same way round. Questions deleted since are skipped.
+          const byId = new Map(((await content()).questions.get(mode.id) ?? []).map((q) => [q.id, q]));
+          const questions = original.questionIds.flatMap((id) => byId.get(id) ?? []);
+          if (questions.length === 0) throw new HttpError(409, "None of this session's questions exist any more");
+          const directions = Object.fromEntries(
+            questions.flatMap((q) => (original.directions[q.id] ? [[q.id, original.directions[q.id]!]] : [])),
+          );
+          return begin({ ...original, questionIds: questions.map((q) => q.id), directions, repeatOf: original.id }, questions);
         }),
       },
 

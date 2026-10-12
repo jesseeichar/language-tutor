@@ -117,5 +117,10 @@ Rules from the learner for quizzes:
 
 ## Progress data
 
-`storage/progress.sqlite` (gitignored) holds sessions, every answer, and strength scores. Deleting it
-resets all progress. Back it up by copying the file while the server is stopped.
+`storage/progress.sqlite` (gitignored) holds the session log, every answer, and strength scores.
+Deleting it resets all progress and the log. Back it up by copying the file while the server is stopped.
+
+The History page lists every session. Repeat replays one exactly: same questions, order and directions.
+Because repeats depend on question ids, never reuse a deleted question's id for a different question.
+
+Schema changes go in a new migration in `src/server/migrations.ts`; never edit one that is committed.

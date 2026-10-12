@@ -97,6 +97,17 @@ and reported together, by the API and by `bun run validate`.
    schema, grades it if the mode is graded, records the attempt and updates strengths.
 4. `POST /api/sessions/:id/finish` closes the session and returns a summary.
 
+Two more endpoints make up the session log:
+
+- `GET /api/sessions` lists every session ever started, newest first, finished or not. Each entry has
+  the learner's choices (categories, question types, direction), the result, and the session it
+  repeats, if any. Labels come from the current data; anything deleted since shows as its id.
+- `POST /api/sessions/:id/repeat` starts a new session with exactly the same questions, in the same
+  order, asked the same way round. The new session records `repeatOf`, so the log shows it as a
+  repeat. Questions deleted from the data since are skipped; if none are left, the server answers 409.
+
+Summaries and log entries are built in `src/server/history.ts`.
+
 Questions are sent to the browser with their answers. This is a single-user local app, so hiding
 answers is not worth the complexity. Grading still happens on the server so that scores come from one
 place.
@@ -129,9 +140,16 @@ one subtracts 2, so a lucky guess counts for less than a real miss. Every word a
 
 ## Storage
 
-`bun:sqlite` at `storage/progress.sqlite`. Tables: `sessions` (including the direction of each
-directional question), `attempts` (one row per answered question, with its direction), `strengths`. Schema changes are append-only migrations in `src/server/db.ts`, tracked with
-`PRAGMA user_version`.
+`bun:sqlite` at `storage/progress.sqlite`. Tables:
+
+- `sessions`: the questions in order, the direction of each directional question, the learner's choices
+  (categories, question types, direction) and `repeat_of`. This is the session log.
+- `attempts`: one row per answered question, with its response and direction.
+- `strengths`: the current score of each word and topic.
+
+Schema changes are append-only migrations in `src/server/migrations.ts`, tracked with
+`PRAGMA user_version`. Every migration needs an upgrade test from each earlier version in
+`src/server/migrations.test.ts`.
 
 ## Testing layers
 
