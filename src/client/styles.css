@@ -69,8 +69,10 @@ kbd { font-size: 0.75rem; opacity: 0.7; margin-left: 6px; }
 .category-group > p { margin: 6px 0 2px; }
 .category { display: flex; gap: 8px; align-items: center; padding: 3px 0; }
 .category .count { margin-left: auto; color: var(--muted); font-size: 0.85rem; }
-.count-input { display: flex; gap: 12px; align-items: center; margin-top: 16px; }
-.count-input input { width: 80px; padding: 4px 8px; }
+.count-input, .count-input label { display: flex; gap: 12px; align-items: center; }
+.count-input { margin-top: 16px; flex-wrap: wrap; column-gap: 24px; }
+.count-input input, .count-input select { padding: 4px 8px; }
+.count-input input { width: 80px; }
 
 .runner-head { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
 .runner-head .link { margin-left: auto; }

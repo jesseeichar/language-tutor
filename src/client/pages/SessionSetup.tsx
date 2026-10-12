@@ -1,10 +1,12 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CategoryCount, CreateSessionResponse, DirectionChoice, ModeSummary } from "../../shared";
 import { api } from "../api";
 import { CheckboxGroup, useCheckedSet, type CheckboxItem } from "./CheckboxGroup";
 import { DirectionPicker } from "./DirectionPicker";
 import { ErrorBox } from "./ErrorBox";
 import { loadSetup, saveSetup } from "./savedSetup";
+import { SessionSizePicker } from "./SessionSizePicker";
+import { resolveSessionSize, type SessionSize } from "./sessionSize";
 
 /** Groups categories by `group`, with children listed directly after their parent. */
 function grouped(categories: CategoryCount[]): [string, CheckboxItem[]][] {
@@ -18,11 +20,6 @@ function grouped(categories: CategoryCount[]): [string, CheckboxItem[]][] {
   };
   for (const root of categories.filter((c) => !c.parent || !ids.has(c.parent))) visit(root, 0);
   return [...byGroup.entries()];
-}
-
-function clampCount(value: number, max: number): number {
-  if (!Number.isFinite(value)) return 1;
-  return Math.max(1, Math.min(Math.floor(value), Math.max(max, 1)));
 }
 
 interface Props {
@@ -47,28 +44,44 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
     ? saved.questionTypes ?? mode.defaultQuestionTypes ?? mode.questionTypes.map((t) => t.id)
     : mode.questionTypes.map((t) => t.id)));
   const [direction, setDirection] = useState<DirectionChoice>(saved.direction);
-  // Kept as text so the field can be cleared while typing; clamped when the session starts.
-  const [countText, setCountText] = useState(String(Math.min(mode.defaultSessionSize, mode.questionCount)));
+  const [size, setSize] = useState<SessionSize>({ kind: "preset", count: mode.defaultSessionSize });
+  const [poolSize, setPoolSize] = useState<number | null>(null);
   const [error, setError] = useState<unknown>(null);
   const [starting, setStarting] = useState(false);
   const groups = useMemo(() => grouped(mode.categories), [mode]);
   const typeItems = mode.questionTypes.map((t) => ({ id: t.id, label: t.label, count: t.count }));
 
   const missing = categories.size === 0 ? "Select at least one category." : showTypes && types.size === 0 ? "Select at least one question type." : null;
+  // The type filter as the session request sends it, so "all questions" counts exactly what would start.
+  const selectedTypes = () => (mode.questionTypes.length ? [...types] : undefined);
+
+  // How many questions the current filters match. Unknown (null) until the server answers, or if it cannot.
+  useEffect(() => {
+    if (missing) {
+      setPoolSize(null);
+      return;
+    }
+    let current = true;
+    api.poolSize(mode.id, [...categories], mode.questionTypes.length ? [...types] : undefined).then(
+      (r) => current && setPoolSize(r.count),
+      () => current && setPoolSize(null),
+    );
+    return () => {
+      current = false;
+    };
+  }, [mode, categories, types, missing]);
 
   const start = async () => {
     setStarting(true);
     setError(null);
     try {
       saveSetup(mode.id, { categoryIds: [...categories], questionTypes: mode.questionTypes.length ? [...types] : null, direction });
-      const count = clampCount(Number(countText), mode.questionCount);
-      setCountText(String(count));
       onStarted(
         await api.createSession({
           modeId: mode.id,
           categoryIds: [...categories],
-          count,
-          questionTypes: mode.questionTypes.length ? [...types] : undefined,
+          count: resolveSessionSize(size, poolSize, mode.questionCount),
+          questionTypes: selectedTypes(),
           direction: mode.directional ? direction : undefined,
         }),
       );
@@ -96,16 +109,7 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
       {showTypes && <CheckboxGroup legend="Question types" items={typeItems} checked={types} onChange={setTypes} />}
       {mode.directional && <DirectionPicker value={direction} onChange={setDirection} />}
 
-      <label className="count-input">
-        Questions in this session
-        <input
-          type="number"
-          min={1}
-          max={mode.questionCount}
-          value={countText}
-          onChange={(e) => setCountText(e.target.value)}
-        />
-      </label>
+      <SessionSizePicker value={size} onChange={setSize} defaultSize={mode.defaultSessionSize} poolSize={poolSize} />
 
       <ErrorBox error={error} />
 

@@ -53,6 +53,17 @@ test("keyboard: Space flips, arrow moves on", async ({ page }) => {
   await expect(page.getByText("Studied 1 of 1 cards")).toBeVisible();
 });
 
+test("the size dropdown offers every question that matches the chosen categories", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Time").check();
+  await page.getByLabel("Freshness check").check();
+  const size = page.getByLabel("Questions in this session");
+  await expect(size.locator("option", { hasText: "All questions (3)" })).toHaveCount(1);
+  await size.selectOption("all");
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.locator(".runner-head")).toContainText("1 / 3");
+});
+
 test("ending a session early shows how far you got", async ({ page }) => {
   await openFlashcards(page);
   await page.getByLabel("Connectors").check();
@@ -76,8 +87,8 @@ test("progress is stored: a card already studied gives way to a fresh one", asyn
   const studyOneFreshCard = async () => {
     await openFlashcards(page);
     await page.getByLabel("Freshness check").check();
-    const count = page.getByLabel(/Questions in this session/);
-    await count.fill("1");
+    await page.getByLabel("Questions in this session").selectOption("custom");
+    await page.getByLabel("Number of questions").fill("1");
     await page.getByRole("button", { name: "Start" }).click();
     const front = (await page.locator(".flashcard-front").textContent()) ?? "";
     await page.getByRole("button", { name: /Flip/ }).click();

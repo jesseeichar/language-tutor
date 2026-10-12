@@ -32,7 +32,7 @@ export interface ModeSummary {
 export const CreateSessionRequestSchema = z.object({
   modeId: z.string().min(1),
   categoryIds: z.array(z.string().min(1)).min(1, "select at least one category"),
-  count: z.number().int().min(1).max(500).optional(),
+  count: z.number().int().min(1).max(10000).optional(),
   /** Restrict to these question types. Omit for all types. */
   questionTypes: z.array(z.string().min(1)).min(1, "select at least one question type").optional(),
   /** Applies to directional questions only. Defaults to random. */

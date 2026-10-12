@@ -148,6 +148,20 @@ export function startServer(options: AppOptions): Server<undefined> {
         }),
       },
 
+      // How many questions the setup screen's current filters match, so it can offer "all questions".
+      "/api/modes/:id/pool": {
+        GET: handle(async (req): Promise<{ count: number }> => {
+          const mode = getMode(req.params.id!);
+          if (!mode) throw new HttpError(404, `Unknown mode ${req.params.id}`);
+          const params = new URL(req.url).searchParams;
+          const list = (name: string) => params.get(name)?.split(",").filter(Boolean);
+          const c = await content();
+          const questions = c.questions.get(mode.id) ?? [];
+          const questionTypes = list("types") ?? defaultTypes(mode.defaultQuestionTypes, questions);
+          return { count: filterPool(questions, c.categories, { categoryIds: list("categories") ?? [], questionTypes }).length };
+        }),
+      },
+
       "/api/sessions": {
         GET: handle(async (): Promise<SessionLogEntry[]> => {
           const c = await content();

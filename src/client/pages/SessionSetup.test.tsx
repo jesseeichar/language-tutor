@@ -5,6 +5,16 @@ import { flashcardMode, mockApi, sessionResponse } from "../../../tests/support/
 import { SessionSetup } from "./SessionSetup";
 
 const setup = (onStarted = mock()) => render(<SessionSetup mode={flashcardMode} onBack={() => {}} onStarted={onStarted} />);
+/** The body of the session request; the setup page also asks for the pool size first. */
+const startRequest = (calls: { method: string; body: unknown }[]) => calls.find((c) => c.method === "POST")!.body;
+const pool = (count: number) => ({ "GET /api/modes/flashcards/pool": () => ({ body: { count } }) });
+
+async function typeCount(count: string) {
+  await userEvent.selectOptions(screen.getByLabelText("Questions in this session"), "custom");
+  const input = screen.getByLabelText("Number of questions");
+  await userEvent.clear(input);
+  await userEvent.type(input, count);
+}
 
 describe("SessionSetup", () => {
   test("Start is disabled until a category is selected", async () => {
@@ -16,16 +26,14 @@ describe("SessionSetup", () => {
   });
 
   test("starts a session with all selected categories and the count", async () => {
-    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }), ...pool(3) });
     const onStarted = mock();
     setup(onStarted);
     await userEvent.click(screen.getByLabelText(/Label vocab-time/));
     await userEvent.click(screen.getByLabelText(/Label grammar-cases/));
-    const count = screen.getByLabelText(/Questions in this session/);
-    await userEvent.clear(count);
-    await userEvent.type(count, "2");
+    await typeCount("2");
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect(calls[0]!.body).toEqual({
+    expect(startRequest(calls)).toEqual({
       modeId: "flashcards",
       categoryIds: ["vocab-time", "grammar-cases"],
       count: 2,
@@ -35,15 +43,37 @@ describe("SessionSetup", () => {
     expect(onStarted).toHaveBeenCalledWith(sessionResponse);
   });
 
-  test("an out-of-range count is clamped to the available questions", async () => {
-    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+  test("an out-of-range count is clamped to the matching questions", async () => {
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }), ...pool(2) });
     setup();
     await userEvent.click(screen.getByLabelText(/Label vocab-time/));
-    const count = screen.getByLabelText(/Questions in this session/);
-    await userEvent.clear(count);
-    await userEvent.type(count, "99");
+    await screen.findByRole("option", { name: "All questions (2)" });
+    await typeCount("99");
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect((calls[0]!.body as { count: number }).count).toBe(3);
+    expect((startRequest(calls) as { count: number }).count).toBe(2);
+  });
+
+  test("asks the server how many questions the filters match and can start with all of them", async () => {
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }), ...pool(2) });
+    setup();
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    await userEvent.click(screen.getByLabelText(/^Translation/));
+    await screen.findByRole("option", { name: "All questions (2)" });
+    const asked = calls.filter((c) => c.path === "/api/modes/flashcards/pool");
+    expect(asked.length).toBeGreaterThanOrEqual(1);
+    await userEvent.selectOptions(screen.getByLabelText("Questions in this session"), "all");
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((startRequest(calls) as { count: number }).count).toBe(2);
+  });
+
+  test("the mode's default size is preselected and sent as is", async () => {
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }), ...pool(50) });
+    setup();
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    await screen.findByRole("option", { name: "All questions (50)" });
+    expect((screen.getByLabelText("Questions in this session") as HTMLSelectElement).value).toBe("20");
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((startRequest(calls) as { count: number }).count).toBe(20);
   });
 
   test("'all' and 'none' toggle a whole group", async () => {
@@ -78,7 +108,7 @@ describe("SessionSetup", () => {
     expect(screen.getByRole("button", { name: "Start" }).hasAttribute("disabled")).toBe(true);
     await userEvent.click(screen.getByLabelText(/^Fill in the blank/));
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect((calls[0]!.body as { questionTypes: string[] }).questionTypes).toEqual(["fill-in-the-blank"]);
+    expect((startRequest(calls) as { questionTypes: string[] }).questionTypes).toEqual(["fill-in-the-blank"]);
   });
 
   test("sends the chosen direction and remembers it", async () => {
@@ -87,7 +117,7 @@ describe("SessionSetup", () => {
     await userEvent.click(screen.getByLabelText(/Label vocab-time/));
     await userEvent.click(screen.getByLabelText("English → German"));
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect((calls[0]!.body as { direction: string }).direction).toBe("en-de");
+    expect((startRequest(calls) as { direction: string }).direction).toBe("en-de");
     first.unmount();
     setup();
     expect((screen.getByLabelText("English → German") as HTMLInputElement).checked).toBe(true);
@@ -130,6 +160,6 @@ describe("SessionSetup", () => {
     expect(screen.queryByText("Question types")).toBeNull();
     await userEvent.click(screen.getByLabelText(/Label vocab-time/));
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect((calls[0]!.body as { questionTypes: string[] }).questionTypes).toEqual(["translation"]);
+    expect((startRequest(calls) as { questionTypes: string[] }).questionTypes).toEqual(["translation"]);
   });
 });

@@ -95,7 +95,8 @@ and reported together, by the API and by `bun run validate`.
 
 ## Session lifecycle
 
-1. `GET /api/modes` lists modes, with question counts per category.
+1. `GET /api/modes` lists modes, with question counts per category. `GET /api/modes/:id/pool?categories=a,b&types=x`
+   returns how many questions the setup screen's current filters match, so it can offer "all questions".
 2. `POST /api/sessions` with a mode, one or more categories, a count, and optionally question types and
    a direction. The server filters questions by category and type, picks a selection, fixes a direction
    for each directional question, stores the session and returns the questions with their directions.
