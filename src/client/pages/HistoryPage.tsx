@@ -4,6 +4,7 @@ import { api } from "../api";
 import { DIRECTION_LABELS } from "../directions";
 import { formatDateTime, resultText } from "../sessionText";
 import { ErrorBox } from "./ErrorBox";
+import { ProgressBackup } from "./ProgressBackup";
 
 interface Props {
   /** Starts a repeat of the given session. Rejects if it cannot. */
@@ -36,6 +37,7 @@ export function HistoryPage({ onRepeat }: Props) {
   return (
     <div className="history">
       <h2>History</h2>
+      <ProgressBackup />
       <ErrorBox error={error} />
       {log.length === 0 && <p className="muted">No sessions yet.</p>}
       <ol className="log">

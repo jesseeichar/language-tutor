@@ -4,7 +4,7 @@
  */
 import { getMode, pointsFor, type SessionInfo, type SessionLogEntry, type SessionSummary } from "../shared";
 import type { Content } from "./content";
-import type { StoredSession } from "./db";
+import type { StoredSession } from "./progress";
 
 export interface SessionTotals {
   answered: number;

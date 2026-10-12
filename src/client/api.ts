@@ -1,5 +1,6 @@
 import type {
   ApiError,
+  BackupProgressResponse,
   CreateSessionRequest,
   CreateSessionResponse,
   ModeSummary,
@@ -31,6 +32,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
+  backupProgress: () => request<BackupProgressResponse>("/api/progress/backup", {
+    method: "POST", headers: { "X-Language-Tutor-Backup": "1" },
+  }),
   modes: () => request<ModeSummary[]>("/api/modes"),
   createSession: (body: CreateSessionRequest) =>
     request<CreateSessionResponse>("/api/sessions", { method: "POST", body: JSON.stringify(body) }),

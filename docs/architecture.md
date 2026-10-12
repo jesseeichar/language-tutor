@@ -36,7 +36,7 @@ should be restructured, not the rule loosened.
 
 | Rule | Why |
 | --- | --- |
-| Modules import only the modules the dependency table allows. | Keeps the layering above. The UI cannot reach into the database, and shared code cannot depend on either side. |
+| Modules import only the modules the dependency table allows. | Keeps the layering above. The UI cannot reach into progress storage, and shared code cannot depend on either side. |
 | Production code never imports test code. | Test helpers must not leak into the app. |
 | Each module may use only its allowed external packages. `shared` may use only `zod`. | `shared` must run in both the browser and Bun. The client must not pull in server runtimes. |
 | A folder with an `index.ts` is a module. Code outside it imports only that index. | Each module has one well-defined interface. Its internals can change freely. |
@@ -76,6 +76,7 @@ question is worth 0 points and strength scores do not change.
 
 `data/` is checked into git:
 
+- `progress.json`: live session history, answers, and strength scores (created on first study).
 - `categories.json`: selectable categories. `group` controls UI grouping. `parent` nests categories;
   selecting a parent includes all its descendants.
 - `vocabulary.json`, `grammar-topics.json`: canonical words and topics with stable ids. Generated from
@@ -83,8 +84,8 @@ question is worth 0 points and strength scores do not change.
 - `questions/<modeId>.json`: one file per mode, `{ "types": [...], "questions": [...] }`. `types` is
   optional. When present, each question names one of them in `type`, and sessions can be filtered by type.
 
-The server re-reads `data/` on every request that needs it, so edits apply immediately. Every load is
-validated: schemas, unique ids, and references to categories, words and topics. Errors are collected
+The server re-reads content files on every request that needs them, so question edits apply immediately.
+Every content load is validated: schemas, unique ids, and references to categories, words and topics. Errors are collected
 and reported together, by the API and by `bun run validate`.
 
 ## Session lifecycle
@@ -140,16 +141,36 @@ one subtracts 2, so a lucky guess counts for less than a real miss. Every word a
 
 ## Storage
 
-`bun:sqlite` at `storage/progress.sqlite`. Tables:
+`data/progress.json` is the live progress store, loaded at startup and saved after each mutation.
+`LT_PROGRESS_PATH` overrides this path; it is independent of the content directory setting.
 
-- `sessions`: the questions in order, the direction of each directional question, the learner's choices
-  (categories, question types, direction) and `repeat_of`. This is the session log.
-- `attempts`: one row per answered question, with its response and direction.
-- `strengths`: the current score of each word and topic.
+- `version`: format version, currently 1. Unsupported versions are rejected.
+- `sessions`: in creation order, preserving questions, directions, learner choices and repeat links.
+- `attempts`: in recording order, with responses, grades, points, directions and timestamps.
+- `strengths`: current scores, attempt/correct counters and last-update timestamps for words and topics.
 
-Schema changes are append-only migrations in `src/server/migrations.ts`, tracked with
-`PRAGMA user_version`. Every migration needs an upgrade test from each earlier version in
-`src/server/migrations.test.ts`.
+The schema validates shapes, unique identifiers, references within the log, and counters. Historical
+content identifiers do not need to exist in today's question files. Stable serialization produces
+readable Git diffs. The server module no longer permits SQLite imports.
+
+Each write validates a candidate state, writes and flushes a temporary file alongside the destination,
+then renames it into place before publishing the state in memory. This makes each answer and its
+strength changes a single update. A failed save leaves the previous state in place. Missing files
+start empty; invalid files fail at startup without being overwritten. External changes detected
+before a save block writes until restart. Simultaneous writers are unsupported.
+
+The History page's **Back up progress** button calls `POST /api/progress/backup`. The server validates
+the saved file and Git state, commits only that file, then pushes an explicit branch refspec to the
+configured upstream (or the same branch on `origin`). Unrelated staged and unstaged changes are preserved;
+earlier unpushed commits on the branch are included in the push. Concurrent backups are rejected.
+Git commands have a timeout and cannot prompt in the terminal. Failed pushes retain the local commit
+for retry; the app never pulls or force-pushes. A custom request header prevents cross-origin forms
+from triggering backups, and raw Git output is withheld because it may contain credentials.
+
+Manual commits and pushes also work. Recovery loads the last pushed file from a fresh clone. Stop the
+app before pulling, switching branches, or restoring progress, and restart afterward. Use one active
+checkout/server at a time. SQLite storage and migrations have been removed; existing database files
+are left untouched and are not imported.
 
 ## Testing layers
 
@@ -158,7 +179,7 @@ Schema changes are append-only migrations in `src/server/migrations.ts`, tracked
 | Unit: shared, server, scripts | co-located `*.test.ts` | `bun run test:unit` |
 | Unit: React components | co-located `*.test.tsx` | `bun run test:ui` (happy-dom preload) |
 | Architecture | `tests/architecture` | `bun run test:arch` |
-| End to end | `tests/e2e/*.e2e.ts` | `bun run test:e2e` (Playwright, own data and database) |
+| End to end | `tests/e2e/*.e2e.ts` | `bun run test:e2e` (Playwright, own data and JSON progress) |
 
 Client and server unit tests run in separate processes because happy-dom replaces `fetch` and
 `Response`, which the server tests need.

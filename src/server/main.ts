@@ -15,4 +15,4 @@ try {
 const server = startServer(config);
 console.log(`API listening on http://localhost:${server.port}`);
 console.log(`  data:     ${config.dataDir}`);
-console.log(`  progress: ${config.dbPath}`);
+console.log(`  progress: ${config.progressPath}`);

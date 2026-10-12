@@ -19,14 +19,16 @@ import {
   type SubmitAnswerResponse,
 } from "../shared";
 import { ContentError, loadContent } from "./content";
-import { openDatabase, ProgressStore, type StoredSession } from "./db";
+import { ProgressStore, type StoredSession } from "./progress";
 import { logEntry, summarize, toSessionInfo } from "./history";
 import { selectQuestions } from "./selection";
 import { assignDirections, countByCategory, filterPool } from "./session-plan";
+import { projectRoot } from "./config";
+import { ProgressBackup, ProgressBackupError } from "./progress-backup";
 
 export interface AppOptions {
   dataDir: string;
-  dbPath: string;
+  progressPath: string | null;
   port: number;
 }
 
@@ -50,6 +52,7 @@ function handle(fn: (req: Request & { params: Record<string, string> }) => Promi
       return json(await fn(req));
     } catch (e) {
       if (e instanceof HttpError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
+      if (e instanceof ProgressBackupError) return json({ error: e.message } satisfies ApiError, e.status);
       if (e instanceof ContentError) {
         return json({ error: "The question data is invalid. Run `bun run validate`.", details: e.problems } satisfies ApiError, 500);
       }
@@ -68,7 +71,8 @@ async function readBody(req: Request): Promise<unknown> {
 }
 
 export function startServer(options: AppOptions): Server<undefined> {
-  const store = new ProgressStore(openDatabase(options.dbPath));
+  const store = new ProgressStore(options.progressPath);
+  const backup = new ProgressBackup(projectRoot, options.progressPath);
   const content = () => loadContent(options.dataDir);
 
   function requireSession(id: string): StoredSession {
@@ -85,8 +89,17 @@ export function startServer(options: AppOptions): Server<undefined> {
 
   return Bun.serve({
     port: options.port,
+    idleTimeout: 60,
     routes: {
       "/api/health": { GET: () => json({ ok: true }) },
+
+      "/api/progress/backup": {
+        POST: handle(async (req) => {
+          // Cross-origin forms cannot send this header; cross-origin fetch requires a CORS preflight.
+          if (req.headers.get("X-Language-Tutor-Backup") !== "1") throw new HttpError(403, "Use the app's Back up progress button.");
+          return backup.backup();
+        }),
+      },
 
       "/api/modes": {
         GET: handle(async (): Promise<ModeSummary[]> => {
