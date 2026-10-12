@@ -1678,7 +1678,7 @@
         "topics": []
       },
       "de": "Als Nächstes schreibt sie den Bericht.",
-      "en": "Next, she writes the report."
+      "en": "As the next step, she writes the report."
     },
     {
       "id": "quiz-blank-als-naechstes",
@@ -1742,7 +1742,7 @@
         "topics": []
       },
       "de": "Er kommt nachher vorbei.",
-      "en": "He is coming by later.",
+      "en": "He is coming by later on.",
       "explanation": "vorbeikommen is separable: Er kommt nachher vorbei."
     },
     {
@@ -1882,8 +1882,8 @@
         ],
         "topics": []
       },
-      "de": "Am Ende war das Projekt ein Erfolg.",
-      "en": "In the end, the project was a success."
+      "de": "Am Ende des Jahres war das Projekt ein Erfolg.",
+      "en": "At the end of the year, the project was a success."
     },
     {
       "id": "quiz-blank-am-ende",
@@ -2509,8 +2509,8 @@
         ],
         "topics": []
       },
-      "de": "Das Hotel ist schön, aber es ist teuer.",
-      "en": "The hotel is nice, but it is expensive."
+      "de": "Das Hotel ist gut, aber es ist teuer.",
+      "en": "The hotel is good, but it is expensive."
     },
     {
       "id": "quiz-blank-aber",
@@ -2635,8 +2635,8 @@
         ],
         "topics": []
       },
-      "de": "Der Zug ist günstig, allerdings dauert die Fahrt länger.",
-      "en": "The train is cheap, though the journey takes longer.",
+      "de": "Der Zug ist schnell, allerdings ist er teuer.",
+      "en": "The train is fast, though it is expensive.",
       "explanation": "allerdings is the concessive \"though\" in these exercises; jedoch is \"however\"."
     },
     {
@@ -2886,8 +2886,8 @@
         ],
         "topics": []
       },
-      "de": "Im Gegensatz dazu arbeitet das neue Team sehr schnell.",
-      "en": "In contrast to that, the new team works very fast."
+      "de": "Im Gegensatz dazu ist das neue Team sehr schnell.",
+      "en": "In contrast to that, the new team is very fast."
     },
     {
       "id": "quiz-blank-im-gegensatz-dazu",
@@ -2983,14 +2983,14 @@
       "de": {
         "prompt": "Die Daten fehlen, daher verschieben wir das Meeting.",
         "options": [
-          "The data is missing, nevertheless we are postponing the meeting.",
-          "The data is missing, instead we are postponing the meeting.",
-          "The data is missing, besides, we are postponing the meeting.",
-          "The data is missing, therefore we are postponing the meeting."
+          "The data is missing; nevertheless, we are postponing the meeting.",
+          "The data is missing; instead, we are postponing the meeting.",
+          "The data is missing; besides, we are postponing the meeting.",
+          "The data is missing; therefore, we are postponing the meeting."
         ]
       },
       "en": {
-        "prompt": "The data is missing, therefore we are postponing the meeting.",
+        "prompt": "The data is missing; therefore, we are postponing the meeting.",
         "options": [
           "Die Daten fehlen, trotzdem verschieben wir das Meeting.",
           "Die Daten fehlen, stattdessen verschieben wir das Meeting.",
@@ -3046,14 +3046,14 @@
       "de": {
         "prompt": "Mein Laptop war kaputt, deswegen habe ich zu Hause gearbeitet.",
         "options": [
-          "My laptop was broken, that is why I worked from home.",
-          "My laptop was broken, nevertheless I worked from home.",
-          "My laptop was broken, besides, I worked from home.",
-          "My laptop was broken, after that I worked from home."
+          "My laptop was broken; that is why I worked from home.",
+          "My laptop was broken; nevertheless, I worked from home.",
+          "My laptop was broken; besides, I worked from home.",
+          "My laptop was broken; after that, I worked from home."
         ]
       },
       "en": {
-        "prompt": "My laptop was broken, that is why I worked from home.",
+        "prompt": "My laptop was broken; that is why I worked from home.",
         "options": [
           "Mein Laptop war kaputt, deswegen habe ich zu Hause gearbeitet.",
           "Mein Laptop war kaputt, trotzdem habe ich zu Hause gearbeitet.",
@@ -3109,14 +3109,14 @@
       "de": {
         "prompt": "Alle haben zugestimmt, somit ist der Plan beschlossen.",
         "options": [
-          "Everyone agreed, nevertheless the plan is decided.",
-          "Everyone agreed, thus the plan is decided.",
-          "Everyone agreed, moreover the plan is decided.",
-          "Everyone agreed, however the plan is decided."
+          "Everyone agreed; nevertheless, the plan is decided.",
+          "Everyone agreed; thus, the plan is decided.",
+          "Everyone agreed; moreover, the plan is decided.",
+          "Everyone agreed; however, the plan is decided."
         ]
       },
       "en": {
-        "prompt": "Everyone agreed, thus the plan is decided.",
+        "prompt": "Everyone agreed; thus, the plan is decided.",
         "options": [
           "Alle haben zugestimmt, trotzdem ist der Plan beschlossen.",
           "Alle haben zugestimmt, somit ist der Plan beschlossen.",
@@ -3172,14 +3172,14 @@
       "de": {
         "prompt": "Die Kosten steigen, folglich erhöhen wir die Preise.",
         "options": [
-          "Costs are rising, nevertheless we are raising the prices.",
-          "Costs are rising, in addition we are raising the prices.",
-          "Costs are rising, consequently we are raising the prices.",
-          "Costs are rising, instead we are raising the prices."
+          "Costs are rising; nevertheless, we are raising the prices.",
+          "Costs are rising; in addition, we are raising the prices.",
+          "Costs are rising; consequently, we are raising the prices.",
+          "Costs are rising; instead, we are raising the prices."
         ]
       },
       "en": {
-        "prompt": "Costs are rising, consequently we are raising the prices.",
+        "prompt": "Costs are rising; consequently, we are raising the prices.",
         "options": [
           "Die Kosten steigen, trotzdem erhöhen wir die Preise.",
           "Die Kosten steigen, zudem erhöhen wir die Preise.",
@@ -3235,14 +3235,14 @@
       "de": {
         "prompt": "Wir nutzen ein neues Tool, dadurch sparen wir Zeit.",
         "options": [
-          "We use a new tool, nevertheless we save time.",
-          "We use a new tool, besides, we save time.",
-          "We use a new tool, later we save time.",
-          "We use a new tool, as a result we save time."
+          "We use a new tool; nevertheless, we save time.",
+          "We use a new tool; besides, we save time.",
+          "We use a new tool; later, we save time.",
+          "We use a new tool; as a result, we save time."
         ]
       },
       "en": {
-        "prompt": "We use a new tool, as a result we save time.",
+        "prompt": "We use a new tool; as a result, we save time.",
         "options": [
           "Wir nutzen ein neues Tool, trotzdem sparen wir Zeit.",
           "Wir nutzen ein neues Tool, ausserdem sparen wir Zeit.",
@@ -3645,9 +3645,9 @@
         ],
         "topics": []
       },
-      "de": "Das Team antwortet innerhalb eines Tages.",
-      "en": "The team answers within a day.",
-      "explanation": "innerhalb + genitive: eines Tages."
+      "de": "Wir bezahlen innerhalb eines Monats.",
+      "en": "We pay within a month.",
+      "explanation": "innerhalb + genitive: eines Monats."
     },
     {
       "id": "quiz-blank-innerhalb",
@@ -3771,8 +3771,8 @@
         ],
         "topics": []
       },
-      "de": "Wir informieren gegebenenfalls das Team.",
-      "en": "We inform the team if necessary."
+      "de": "Gegebenenfalls informieren wir das Team.",
+      "en": "If necessary, we inform the team."
     },
     {
       "id": "quiz-blank-gegebenenfalls-ggf",
@@ -3848,7 +3848,7 @@
         ],
         "topics": []
       },
-      "prompt": "Der Zug hat ___ Verspätung. (presumably)",
+      "prompt": "Der Zug hat ___ Verspätung. (presumably; v...)",
       "answer": "vermutlich"
     },
     {
@@ -3960,9 +3960,9 @@
         ],
         "topics": []
       },
-      "de": "Gemäss der Regel ist das verboten.",
-      "en": "According to the rule, that is forbidden.",
-      "explanation": "gemäss + dative: der Regel."
+      "de": "Gemäss dem Vertrag liefern wir im Mai.",
+      "en": "According to the contract, we deliver in May.",
+      "explanation": "gemäss + dative: dem Vertrag."
     },
     {
       "id": "quiz-blank-gemaess",
@@ -3976,7 +3976,7 @@
         ],
         "topics": []
       },
-      "prompt": "Wir handeln ___ den Vorschriften. (in accordance with; formal)",
+      "prompt": "Wir handeln ___ den Vorschriften. (in accordance with; formal, g...)",
       "answer": "gemäss",
       "explanation": "gemäss + dative: den Vorschriften."
     },
@@ -5374,8 +5374,8 @@
         ],
         "topics": []
       },
-      "de": "Ihr Auftritt war ein Erfolg.",
-      "en": "Her performance was a success."
+      "de": "Sein Auftritt im Fernsehen war ein Erfolg.",
+      "en": "His appearance on television was a success."
     },
     {
       "id": "quiz-blank-der-auftritt-die-auftritte",
@@ -5870,8 +5870,8 @@
         ],
         "topics": []
       },
-      "de": "Ihr Betreuer war sehr geduldig.",
-      "en": "Her supervisor was very patient."
+      "de": "Mein Betreuer war sehr geduldig.",
+      "en": "My supervisor was very patient."
     },
     {
       "id": "quiz-blank-der-betreuer-die-betreuerin",
@@ -6182,8 +6182,8 @@
         ],
         "topics": []
       },
-      "de": "Die Beauftragung erfolgte im März.",
-      "en": "The commissioning took place in March."
+      "de": "Die Beauftragung war im März.",
+      "en": "The commissioning was in March."
     },
     {
       "id": "quiz-blank-die-beauftragung",
@@ -6308,8 +6308,8 @@
         ],
         "topics": []
       },
-      "de": "Ihre Abwesenheit dauerte zwei Wochen.",
-      "en": "Her absence lasted two weeks."
+      "de": "Seine Abwesenheit dauerte zwei Wochen.",
+      "en": "His absence lasted two weeks."
     },
     {
       "id": "quiz-blank-die-abwesenheit-en",
@@ -6371,7 +6371,7 @@
         "topics": []
       },
       "de": "Der Verweis auf Seite drei ist falsch.",
-      "en": "The reference on page three is wrong."
+      "en": "The reference to page three is wrong."
     },
     {
       "id": "quiz-blank-der-verweis-die-verweise",
@@ -6433,8 +6433,8 @@
         ],
         "topics": []
       },
-      "de": "Seine Haltung ist sehr professionell.",
-      "en": "His attitude is very professional."
+      "de": "Seine Haltung zu diesem Thema ist klar.",
+      "en": "His stance on this topic is clear."
     },
     {
       "id": "quiz-blank-die-haltung",
@@ -6495,8 +6495,8 @@
         ],
         "topics": []
       },
-      "de": "Der Zugang ist im Erdgeschoss.",
-      "en": "The entrance is on the ground floor."
+      "de": "Der Zugang zum System ist wichtig.",
+      "en": "Access to the system is important."
     },
     {
       "id": "quiz-blank-der-zugang-die-zugaenge",
@@ -6698,7 +6698,7 @@
         ],
         "topics": []
       },
-      "prompt": "Die Tablette zeigt nach einer Stunde ihre ___. (effect)",
+      "prompt": "Die Tablette zeigt nach einer Stunde ihre ___. (effect; from wirken)",
       "answer": "Wirkung"
     },
     {
@@ -6842,14 +6842,14 @@
       "de": {
         "prompt": "Wir besprechen die Pendents am Montag.",
         "options": [
-          "We discuss the agenda items on Monday.",
-          "We discuss the sales figures on Monday.",
-          "We discuss the evaluations on Monday.",
-          "We discuss the open items on Monday."
+          "We are discussing the agenda items on Monday.",
+          "We are discussing the sales figures on Monday.",
+          "We are discussing the evaluations on Monday.",
+          "We are discussing the open items on Monday."
         ]
       },
       "en": {
-        "prompt": "We discuss the open items on Monday.",
+        "prompt": "We are discussing the open items on Monday.",
         "options": [
           "Wir besprechen die Traktanden am Montag.",
           "Wir besprechen die Umsätze am Montag.",
@@ -6904,14 +6904,14 @@
       "de": {
         "prompt": "Der Bewerber wartet am Empfang.",
         "options": [
-          "The applicant is waiting at reception.",
-          "The supplier is waiting at reception.",
-          "The customer is waiting at reception.",
-          "The technician is waiting at reception."
+          "The applicant is waiting at the front desk.",
+          "The supplier is waiting at the front desk.",
+          "The customer is waiting at the front desk.",
+          "The technician is waiting at the front desk."
         ]
       },
       "en": {
-        "prompt": "The applicant is waiting at reception.",
+        "prompt": "The applicant is waiting at the front desk.",
         "options": [
           "Der Bewerber wartet am Empfang.",
           "Der Lieferant wartet am Empfang.",
@@ -6948,7 +6948,7 @@
         ],
         "topics": []
       },
-      "prompt": "Wir haben heute mit drei ___ gesprochen. (applicants)",
+      "prompt": "Wir haben heute mit drei ___ gesprochen. (applicants; from der Bewerber)",
       "answer": "Bewerbern",
       "explanation": "mit + dative; the dative plural adds -n: mit drei Bewerbern."
     },
@@ -7558,8 +7558,8 @@
         ],
         "topics": []
       },
-      "de": "Alle Beteiligten sind einverstanden.",
-      "en": "All those involved agree."
+      "de": "Alle Beteiligten wurden informiert.",
+      "en": "All those involved were informed."
     },
     {
       "id": "quiz-blank-die-beteiligten-pl",
@@ -7747,8 +7747,8 @@
         ],
         "topics": []
       },
-      "de": "Das Team steht zur Verfügung.",
-      "en": "The team is available."
+      "de": "Das Team steht uns zur Verfügung.",
+      "en": "The team is at our disposal."
     },
     {
       "id": "quiz-blank-die-verfuegung-en",
@@ -7782,7 +7782,7 @@
         "prompt": "Wir haben eine Abweichung im Budget gefunden.",
         "options": [
           "We found a reserve in the budget.",
-          "We found a saving in the budget.",
+          "We found savings in the budget.",
           "We found a discrepancy in the budget.",
           "We found a solution for the budget."
         ]
@@ -7791,7 +7791,7 @@
         "prompt": "We found a discrepancy in the budget.",
         "options": [
           "Wir haben eine Reserve im Budget gefunden.",
-          "Wir haben eine Einsparung im Budget gefunden.",
+          "Wir haben Einsparungen im Budget gefunden.",
           "Wir haben eine Abweichung im Budget gefunden.",
           "Wir haben eine Lösung für das Budget gefunden."
         ]
@@ -7873,8 +7873,8 @@
         ],
         "topics": []
       },
-      "de": "Die Pauschale beträgt 50 Franken pro Tag.",
-      "en": "The flat rate is 50 francs per day."
+      "de": "Wir zahlen eine Pauschale von 50 Franken pro Tag.",
+      "en": "We pay a flat rate of 50 francs per day."
     },
     {
       "id": "quiz-blank-die-pauschale-die-pauschalen",
@@ -8216,8 +8216,8 @@
         ],
         "topics": []
       },
-      "de": "Das Projekt schafft neue Arbeitsplätze.",
-      "en": "The project creates new jobs."
+      "de": "Das neue Gesetz schafft Klarheit.",
+      "en": "The new law creates clarity."
     },
     {
       "id": "quiz-blank-schaffen",
@@ -8342,8 +8342,8 @@
         ],
         "topics": []
       },
-      "de": "Sie baute die Firma allein auf.",
-      "en": "She built up the company alone."
+      "de": "Sie baute die Firma in zehn Jahren auf.",
+      "en": "She built up the company in ten years."
     },
     {
       "id": "quiz-blank-aufbauen",
@@ -8689,7 +8689,7 @@
         "topics": []
       },
       "de": "Die App ermöglicht mobiles Arbeiten.",
-      "en": "The app enables mobile working."
+      "en": "The app enables mobile work."
     },
     {
       "id": "quiz-blank-ermoeglichen",
@@ -8940,8 +8940,8 @@
         ],
         "topics": []
       },
-      "de": "Die Teamleiterin stellt sicher, dass alle informiert sind.",
-      "en": "The team leader ensures that everyone is informed.",
+      "de": "Das Team stellt sicher, dass alle informiert sind.",
+      "en": "The team ensures that everyone is informed.",
       "explanation": "Separable: stellt ... sicher in a main clause."
     },
     {
@@ -9083,8 +9083,8 @@
         ],
         "topics": []
       },
-      "de": "Die Direktorin ordnete eine Untersuchung an.",
-      "en": "The director ordered an investigation."
+      "de": "Das Gericht ordnete eine Untersuchung an.",
+      "en": "The court ordered an investigation."
     },
     {
       "id": "quiz-blank-anordnen",
@@ -9278,7 +9278,7 @@
         "topics": []
       },
       "de": "Sie sprach alles mit ihrem Chef ab.",
-      "en": "She coordinated everything with her boss.",
+      "en": "She agreed on everything with her boss.",
       "explanation": "etwas mit jemandem absprechen; Präteritum sprach ... ab."
     },
     {
@@ -9342,7 +9342,7 @@
         ],
         "topics": []
       },
-      "de": "Das Team führte die Arbeiten sorgfältig aus.",
+      "de": "Das Team führte die Arbeit sorgfältig aus.",
       "en": "The team carried out the work carefully."
     },
     {
@@ -9599,7 +9599,7 @@
         ],
         "topics": []
       },
-      "de": "Die Anwältin beriet die Firma.",
+      "de": "Der Anwalt beriet die Firma.",
       "en": "The lawyer advised the company.",
       "explanation": "Präteritum of beraten: beriet."
     },
@@ -9727,8 +9727,8 @@
         ],
         "topics": []
       },
-      "de": "Die Firma beförderte sie im Mai.",
-      "en": "The company promoted her in May."
+      "de": "Die Firma beförderte ihn im Mai.",
+      "en": "The company promoted him in May."
     },
     {
       "id": "quiz-blank-befoerdern",
@@ -9903,8 +9903,8 @@
         ],
         "topics": []
       },
-      "de": "Der Kunde sagt das Meeting ab.",
-      "en": "The customer cancels the meeting.",
+      "de": "Der Kunde sagt den Termin ab.",
+      "en": "The customer cancels the appointment.",
       "explanation": "absagen is used for meetings and appointments; separable: sagt ... ab."
     },
     {
@@ -10000,8 +10000,8 @@
         ],
         "topics": []
       },
-      "de": "Wir trafen uns um zehn Uhr.",
-      "en": "We met at ten o'clock.",
+      "de": "Wir trafen uns im Büro.",
+      "en": "We met in the office.",
       "explanation": "sich treffen = to meet; Präteritum traf."
     },
     {
@@ -10131,7 +10131,7 @@
         "topics": []
       },
       "de": "Sie glich die Rechnung mit der Bestellung ab.",
-      "en": "She compared the invoice with the order.",
+      "en": "She reconciled the invoice with the order.",
       "explanation": "etwas mit etwas (Dat.) abgleichen; Präteritum glich ... ab."
     },
     {
@@ -10516,7 +10516,7 @@
         "topics": []
       },
       "de": "Die Firma setzt KI im Kundendienst ein.",
-      "en": "The company uses AI in customer service.",
+      "en": "The company deploys AI in customer service.",
       "explanation": "Separable: setzt ... ein."
     },
     {
@@ -10865,8 +10865,8 @@
         ],
         "topics": []
       },
-      "de": "Wir verwenden hier den bestimmten Artikel.",
-      "en": "We use the definite article here."
+      "de": "Das ist der bestimmte Artikel.",
+      "en": "That is the definite article."
     },
     {
       "id": "quiz-blank-bestimmt",
@@ -10880,7 +10880,7 @@
         ],
         "topics": []
       },
-      "prompt": "Wir treffen uns an einem ___ Tag pro Woche. (specific, fixed)",
+      "prompt": "Wir treffen uns an einem ___ Tag pro Woche. (specific, certain)",
       "answer": "bestimmten",
       "explanation": "an einem bestimmten Tag: dative masculine after einem, so -en."
     },
@@ -10929,8 +10929,8 @@
         ],
         "topics": []
       },
-      "de": "Die Dauer des Projekts ist noch unbestimmt.",
-      "en": "The duration of the project is still uncertain."
+      "de": "Der Kurs wurde auf unbestimmte Zeit verschoben.",
+      "en": "The course was postponed indefinitely."
     },
     {
       "id": "quiz-blank-unbestimmt",
@@ -10961,7 +10961,7 @@
         "topics": []
       },
       "de": "Der Film ist sehr spannend.",
-      "en": "The film is very exciting."
+      "en": "The movie is very exciting."
     },
     {
       "id": "quiz-blank-spannend",
@@ -11023,8 +11023,8 @@
         ],
         "topics": []
       },
-      "de": "Die beiden Berichte sind sehr ähnlich.",
-      "en": "The two reports are very similar."
+      "de": "Beide Berichte sind sehr ähnlich.",
+      "en": "Both reports are very similar."
     },
     {
       "id": "quiz-blank-aehnlich",
@@ -11321,7 +11321,7 @@
         ],
         "topics": []
       },
-      "prompt": "Wir brauchen eine ___ Antwort. (detailed)",
+      "prompt": "Wir brauchen eine ___ Antwort. (detailed; not detailliert)",
       "answer": "ausführliche",
       "explanation": "eine ausführliche Antwort: accusative feminine after eine, -e."
     },
@@ -11467,7 +11467,7 @@
         "prompt": "Wir schicken die Unterlagen vorab.",
         "options": [
           "We send the documents later.",
-          "We send the documents afterwards.",
+          "We send the documents afterward.",
           "We send the documents in advance.",
           "We send the documents immediately."
         ]
@@ -11510,7 +11510,7 @@
         ],
         "topics": []
       },
-      "prompt": "Bitte lesen Sie den Bericht ___. (beforehand; one word)",
+      "prompt": "Bitte lesen Sie den Bericht ___. (in advance; one word, synonym of im Voraus)",
       "answer": "vorab",
       "explanation": "vorab = beforehand; the two-word alternative is im Voraus."
     },
@@ -11656,14 +11656,14 @@
       "de": {
         "prompt": "Bitte füllen Sie das entsprechende Formular aus.",
         "options": [
-          "Please fill in the similar form.",
-          "Please fill in the corresponding form.",
-          "Please fill in the detailed form.",
-          "Please fill in the strange form."
+          "Please fill out the similar form.",
+          "Please fill out the corresponding form.",
+          "Please fill out the detailed form.",
+          "Please fill out the strange form."
         ]
       },
       "en": {
-        "prompt": "Please fill in the corresponding form.",
+        "prompt": "Please fill out the corresponding form.",
         "options": [
           "Bitte füllen Sie das ähnliche Formular aus.",
           "Bitte füllen Sie das entsprechende Formular aus.",
@@ -11700,7 +11700,7 @@
         ],
         "topics": []
       },
-      "prompt": "Bitte schicken Sie uns die ___ Unterlagen. (corresponding, relevant)",
+      "prompt": "Bitte schicken Sie uns die ___ Unterlagen. (corresponding, appropriate)",
       "answer": "entsprechenden",
       "explanation": "die Unterlagen is plural; after die the adjective ends in -en."
     },
@@ -11748,8 +11748,8 @@
         ],
         "topics": []
       },
-      "de": "Die Firma produziert nachhaltig.",
-      "en": "The company produces sustainably."
+      "de": "Wir produzieren nachhaltig.",
+      "en": "We produce sustainably."
     },
     {
       "id": "quiz-blank-nachhaltig",
@@ -11763,7 +11763,7 @@
         ],
         "topics": []
       },
-      "prompt": "Die Massnahme hatte eine ___ Wirkung. (lasting, long-term)",
+      "prompt": "Die Massnahme hatte eine ___ Wirkung. (lasting, sustainable)",
       "answer": "nachhaltige",
       "explanation": "eine nachhaltige Wirkung: feminine after eine, -e."
     },
@@ -11826,7 +11826,7 @@
         ],
         "topics": []
       },
-      "prompt": "Die Firma trifft alle ___ Massnahmen. (necessary; formal, not nötig)",
+      "prompt": "Die Firma trifft alle ___ Massnahmen. (necessary; more formal than nötig, not erforderlich)",
       "answer": "notwendigen",
       "explanation": "After alle, the adjective takes -en: alle notwendigen Massnahmen."
     },
@@ -11874,8 +11874,8 @@
         ],
         "topics": []
       },
-      "de": "Die Kosten sind steuerbar.",
-      "en": "The costs are controllable."
+      "de": "Der Prozess ist steuerbar.",
+      "en": "The process is controllable."
     },
     {
       "id": "quiz-blank-steuerbar",
@@ -11983,7 +11983,7 @@
           "Das ist eine ähnliche Situation.",
           "Das ist eine spannende Situation.",
           "Das ist eine seltsame Situation.",
-          "Das ist eine unbestimmte Situation."
+          "Das ist eine ungewisse Situation."
         ]
       },
       "correctIndex": 2
@@ -12140,7 +12140,7 @@
         ],
         "topics": []
       },
-      "prompt": "Für die Einreise ist ein gültiger Pass ___. (required; formal)",
+      "prompt": "Für die Einreise ist ein gültiger Pass ___. (required; formal, not notwendig)",
       "answer": "erforderlich",
       "explanation": "Predicative adjective after sein: no ending."
     },
@@ -12250,8 +12250,8 @@
         ],
         "topics": []
       },
-      "de": "Das Problem ist hier besonders ausgeprägt.",
-      "en": "The problem is particularly pronounced here."
+      "de": "Das Problem ist hier sehr ausgeprägt.",
+      "en": "The problem is very pronounced here."
     },
     {
       "id": "quiz-blank-ausgepraegt",
@@ -12344,8 +12344,8 @@
         ],
         "topics": []
       },
-      "de": "Die Kosten sind gering.",
-      "en": "The costs are low."
+      "de": "Das Risiko ist gering.",
+      "en": "The risk is low."
     },
     {
       "id": "quiz-blank-gering",
@@ -12359,7 +12359,7 @@
         ],
         "topics": []
       },
-      "prompt": "Es gibt nur einen ___ Unterschied. (slight, small)",
+      "prompt": "Es gibt nur einen ___ Unterschied. (slight, minor; not klein)",
       "answer": "geringen",
       "explanation": "es gibt + Akkusativ: einen geringen Unterschied (masculine, -en)."
     },
@@ -12966,8 +12966,8 @@
         ]
       },
       "de": "Wir bestellen Pizza, weil die Kantine geschlossen ist.",
-      "en": "We order pizza because the canteen is closed.",
-      "explanation": "The closed canteen is the reason → weil."
+      "en": "We order pizza because the cafeteria is closed.",
+      "explanation": "The closed cafeteria is the reason → weil."
     },
     {
       "id": "quiz-blank-g-satz-faehrt",
@@ -13173,9 +13173,9 @@
           "wortbildung"
         ]
       },
-      "prompt": "Die Erklärung war gut ___. (verstehen + -lich)",
+      "prompt": "Die Erklärung war gut ___. (der Verstand + -lich)",
       "answer": "verständlich",
-      "explanation": "-lich turns the verb into an adjective; the vowel takes an umlaut: verständlich."
+      "explanation": "-lich turns the noun into an adjective, with umlaut: der Verstand → verständlich (understandable)."
     },
     {
       "id": "quiz-blank-g-wort-sitzungszimmer",
@@ -13397,8 +13397,8 @@
           "es-als-korrelat-infinitivsatz-mit-es"
         ]
       },
-      "de": "Sie findet es spannend, Neues zu lernen.",
-      "en": "She finds it exciting to learn new things.",
+      "de": "Sie findet es spannend, Deutsch zu lernen.",
+      "en": "She finds it exciting to learn German.",
       "explanation": "finden + es + adjective, then the zu-Infinitiv clause."
     },
     {
@@ -13637,8 +13637,8 @@
           "werden-vollverb-futur-passiv-konjunktiv-ii"
         ]
       },
-      "de": "Wir würden das nicht machen.",
-      "en": "We would not do that.",
+      "de": "Wir würden den Termin nicht absagen.",
+      "en": "We would not cancel the appointment.",
       "explanation": "Konjunktiv II: würde + Infinitiv."
     },
     {
@@ -13765,7 +13765,7 @@
           "kasus-nominativ-akkusativ-dativ-genitiv"
         ]
       },
-      "prompt": "Nach der Arbeit gehen wir ___ Kino. (in + das)",
+      "prompt": "Nach der Arbeit gehen wir ___ Kino. (in + das, one word)",
       "answer": "ins",
       "explanation": "Wohin? → Akkusativ: in das → ins."
     },
@@ -13893,8 +13893,8 @@
           "kasus-nominativ-akkusativ-dativ-genitiv"
         ]
       },
-      "de": "Die Kinder spielen im Garten.",
-      "en": "The children play in the garden.",
+      "de": "Die Kinder spielen im Park.",
+      "en": "The children play in the park.",
       "explanation": "Wo? → Dativ: in dem → im."
     },
     {
@@ -13957,7 +13957,7 @@
           "praeteritum-simple-past-of-key-verbs"
         ]
       },
-      "prompt": "Sie ___ den Bericht bis Freitag abgeben. (müssen, Präteritum)",
+      "prompt": "Die Kollegin ___ den Bericht bis Freitag abgeben. (müssen, Präteritum)",
       "answer": "musste",
       "explanation": "müssen → musste: the umlaut drops (not müsste, which is Konjunktiv II)."
     },
@@ -14357,8 +14357,8 @@
           "adjektivdeklination-adjective-endings"
         ]
       },
-      "de": "Sie kommt trotz des schlechten Wetters ins Büro.",
-      "en": "She comes to the office despite the bad weather.",
+      "de": "Trotz des schlechten Wetters kommt sie ins Büro.",
+      "en": "Despite the bad weather, she comes to the office.",
       "explanation": "trotz → Genitiv: des schlechten Wetters."
     },
     {
