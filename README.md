@@ -44,15 +44,29 @@ Do not run another app instance against the same progress file.
 - [AGENTS.md](AGENTS.md): shared Codex/Claude commands, coding rules, and guidance for modes and questions.
 - [CLAUDE.md](CLAUDE.md): Claude entry point pointing to the shared instructions.
 - [docs/architecture.md](docs/architecture.md): modules, interfaces and the rules the architecture tests enforce.
-- [docs/quizzes.md](docs/quizzes.md): quiz types, exact matching, scoring, and how to add questions with JSON examples.
+- [docs/quizzes.md](docs/quizzes.md): quiz types, Jev grading, scoring, and how to add questions with JSON examples.
 
 ## Quizzes
 
 Open **Quiz** to practise **Multiple choice**, **Fill in the blank**, or **Translation**, individually
-or together. Bilingual questions support both language directions. Typed answers use exact matching
-in version 1, including case, accents, punctuation, and spaces. Each answer shows feedback and updates
+or together. Bilingual questions support both language directions. Translation answers are evaluated by Jev for meaning and grammar, accepting natural alternative wording.
+Fill-in-the-blank answers still match exactly, including case, accents, punctuation, and spaces. Each answer shows feedback and updates
 progress and strength scores. The default bank supports 25 vocabulary multiple-choice questions and
 5 grammar blanks per session; select Translation to include typed translations.
+
+To enable translation grading, get an API key from [TypeSafe AI](https://console.typesafe.ai/) and add it
+to the server's ignored `.env` file:
+
+```dotenv
+TYPESAFE_API_KEY=your-key
+TYPESAFE_MODEL=jev-latest
+```
+
+Restart `bun run dev` after changing these values. The model setting is optional. Translation grading
+sends the source sentence, reference translation, and your answer to TypeSafe's official API; the key
+stays on the server. Jev returns meaning/grammar judgments; the app shows fixed feedback and a reference
+translation. API failures leave answers ungraded and available to retry, without a strength penalty or
+an exact-match fallback. Other question types work without an API key.
 
 Add questions in `data/questions/quiz.json`, following the [question authoring guide](docs/quizzes.md),
 then run `bun run validate` and try them in the app.

@@ -18,3 +18,9 @@ describe("loadConfig", () => {
     expect(() => loadConfig({ LT_DB_PATH: "old.sqlite" })).toThrow("LT_DB_PATH is no longer supported");
   });
 });
+
+test("TypeSafe settings stay optional and use the official model alias by default", () => {
+  expect(loadConfig({})).toMatchObject({ typesafeApiKey: undefined, typesafeModel: "jev-latest" });
+  expect(loadConfig({ TYPESAFE_API_KEY: " test-key ", TYPESAFE_MODEL: " jev-test " })).toMatchObject({ typesafeApiKey: "test-key", typesafeModel: "jev-test" });
+  expect(loadConfig({ TYPESAFE_API_KEY: " ", TYPESAFE_MODEL: " " })).toMatchObject({ typesafeApiKey: undefined, typesafeModel: "jev-latest" });
+});

@@ -13,7 +13,14 @@ export function copyTestData(source: string) {
 if (import.meta.main) {
   const config = loadConfig();
   const copy = copyTestData(config.dataDir);
-  const server = startServer({ ...config, dataDir: copy.dir });
+  // Deterministic fake grading for browser tests; never spend a real API key loaded from .env.
+  const server = startServer({ ...config, dataDir: copy.dir, gradingServices: {
+    async translation(input) {
+      const correct = input.answer !== "This sentence has the opposite meaning.";
+      return { correct, score: correct ? 1 : 0,
+        feedback: `${correct ? "Meaning and grammar accepted." : "The meaning does not match the source sentence."}\nReference translation: ${input.reference}` };
+    },
+  } });
   const stop = () => { server.stop(true); copy.cleanup(); process.exit(0); };
   process.on("SIGINT", stop);
   process.on("SIGTERM", stop);
