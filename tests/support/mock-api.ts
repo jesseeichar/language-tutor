@@ -44,16 +44,22 @@ export const flashcardMode: ModeSummary = {
     category("vocab-time", "Vokabular", 1, "vocab-connectors"),
     category("grammar-cases", "Grammatik", 1),
   ],
+  questionTypes: [
+    { id: "translation", label: "Translation", count: 2 },
+    { id: "fill-in-the-blank", label: "Fill in the blank", count: 1 },
+  ],
+  directional: true,
 };
 
 const cards: FlashcardQuestion[] = [
-  { id: "c1", categories: ["vocab-time"], refs: { words: [], topics: [] }, front: "zuerst", back: "first" },
-  { id: "c2", categories: ["vocab-time"], refs: { words: [], topics: [] }, front: "danach", back: "afterwards", notes: "Wir essen, danach…" },
+  { id: "c1", type: "translation", categories: ["vocab-time"], refs: { words: [], topics: [] }, de: "zuerst", en: "first" },
+  { id: "c2", type: "fill-in-the-blank", categories: ["vocab-time"], refs: { words: [], topics: [] }, front: "Wir essen, ___ gehen wir.", back: "danach", notes: "after that" },
 ];
 
 export const sessionResponse: CreateSessionResponse = {
   session: { id: "s1", modeId: "flashcards", graded: false, categoryIds: ["vocab-time"], startedAt: "2026-10-12T00:00:00Z" },
   questions: cards,
+  directions: { c1: "en-de" },
 };
 
 export const summary = (answered: number): SessionSummary => ({

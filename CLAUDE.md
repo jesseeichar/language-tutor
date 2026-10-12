@@ -89,12 +89,26 @@ keyed on it), one or more `categories`, and `refs` naming the vocabulary words a
 exercises. Strength scores aggregate over `refs`, so set them carefully. Run `bun run validate` after
 editing.
 
+**Question types.** A question file may declare `types` at the top, e.g. translation or fill in the
+blank. When it does, every question must set `type` to one of them, and the learner can filter by type
+on the setup screen. The flashcard file declares `translation`, `fill-in-the-blank`, `usage` and
+`word-forms`. Add a type by adding an entry to `types`; no code change is needed.
+
+**Flashcard shapes.** A flashcard has either `de` + `en` or `front` + `back`, never both.
+
+- `de` + `en` is a translation card. It is directional: the learner chooses German first, English
+  first, or random per card.
+- `front` + `back` is a fixed card for anything else: fill in the blank, usage, word forms. It is
+  always shown front first, whatever direction was chosen.
+
 Rules from the learner for quizzes:
 
 - A default quiz is 25 multiple-choice vocabulary questions and 5 grammar questions.
 - Vocabulary questions mix German to English and English to German. Each shows a full sentence using
   the word; the options are full translated sentences.
 - The correct option's position must be evenly spread over the positions across a question file.
+- Vocabulary quizzes should be directional (implement `isDirectional` on the mode), so the learner's
+  direction choice applies to them as it does to flashcards.
 - Grammar questions may use any format, not only multiple choice.
 - Most questions in a session are fresh. Weak words and topics come back more often. The server's
   selection handles this.

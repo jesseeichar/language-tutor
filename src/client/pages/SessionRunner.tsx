@@ -17,6 +17,7 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
   const [error, setError] = useState<unknown>(null);
   const clientMode = getClientMode(session.modeId);
   const question = questions[index];
+  const typeLabel = mode.questionTypes.find((t) => t.id === question?.type)?.label;
 
   const finish = useCallback(async () => {
     try {
@@ -53,7 +54,15 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
       </div>
       <progress value={index} max={questions.length} />
       <ErrorBox error={error} />
-      <View key={question.id} question={question} submit={submit} next={next} isLast={index + 1 === questions.length} />
+      {typeLabel && <div className="question-type">{typeLabel}</div>}
+      <View
+        key={question.id}
+        question={question}
+        direction={data.directions[question.id] ?? null}
+        submit={submit}
+        next={next}
+        isLast={index + 1 === questions.length}
+      />
     </div>
   );
 }

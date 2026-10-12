@@ -1,29 +1,51 @@
 import { describe, expect, mock, test } from "bun:test";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import type { FlashcardQuestion } from "../../../shared";
+import type { Direction, FlashcardQuestion } from "../../../shared";
 import { FlashcardView } from "./FlashcardView";
 
-const card: FlashcardQuestion = {
-  id: "c1", categories: ["x"], refs: { words: [], topics: [] }, front: "zuerst", back: "first", notes: "Zuerst lesen wir.",
-};
+const base = { categories: ["x"], refs: { words: [], topics: [] } };
+const translation: FlashcardQuestion = { ...base, id: "t", de: "zuerst", en: "first", notes: "Zuerst lesen wir." };
+const fixed: FlashcardQuestion = { ...base, id: "f", front: "Wir essen, ___ gehen wir.", back: "danach" };
 const resolved = () => mock(() => Promise.resolve({ grade: null, pointsAwarded: 0, pointsPossible: 0 }));
 
+function show(card: FlashcardQuestion, direction: Direction | null, overrides: Partial<{ next: () => void; isLast: boolean; submit: ReturnType<typeof resolved> }> = {}) {
+  const submit = overrides.submit ?? resolved();
+  render(<FlashcardView question={card} direction={direction} submit={submit} next={overrides.next ?? (() => {})} isLast={overrides.isLast ?? false} />);
+  return submit;
+}
+
 describe("FlashcardView", () => {
-  test("shows only the front until flipped", async () => {
-    const submit = resolved();
-    render(<FlashcardView question={card} submit={submit} next={() => {}} isLast={false} />);
+  test("German first: shows German, then English after flipping", async () => {
+    const submit = show(translation, "de-en");
     expect(screen.getByText("zuerst")).toBeTruthy();
     expect(screen.queryByText("first")).toBeNull();
+    expect(screen.getByText(/German → English/)).toBeTruthy();
     await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
     expect(screen.getByText("first")).toBeTruthy();
     expect(screen.getByText("Zuerst lesen wir.")).toBeTruthy();
     expect(submit).toHaveBeenCalledWith({ revealed: true });
   });
 
+  test("English first: shows English, then German after flipping", async () => {
+    show(translation, "en-de");
+    expect(screen.getByText("first")).toBeTruthy();
+    expect(screen.queryByText("zuerst")).toBeNull();
+    expect(screen.getByText(/English → German/)).toBeTruthy();
+    await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+    expect(screen.getByText("zuerst")).toBeTruthy();
+  });
+
+  test("fixed cards ignore direction and show no language hint", async () => {
+    show(fixed, null);
+    expect(screen.getByText("Wir essen, ___ gehen wir.")).toBeTruthy();
+    expect(screen.queryByText(/→/)).toBeNull();
+    await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+    expect(screen.getByText("danach")).toBeTruthy();
+  });
+
   test("records the reveal only once", async () => {
-    const submit = resolved();
-    render(<FlashcardView question={card} submit={submit} next={() => {}} isLast={false} />);
+    const submit = show(translation, "de-en");
     await userEvent.click(screen.getByRole("button", { name: "Show answer" }));
     await userEvent.click(screen.getByRole("button", { name: "Card answer" }));
     expect(submit).toHaveBeenCalledTimes(1);
@@ -31,7 +53,7 @@ describe("FlashcardView", () => {
 
   test("keyboard: Space flips, then Enter or → moves on", () => {
     const next = mock();
-    render(<FlashcardView question={card} submit={resolved()} next={next} isLast={false} />);
+    show(translation, "de-en", { next });
     fireEvent.keyDown(window, { key: " " });
     expect(screen.getByText("first")).toBeTruthy();
     fireEvent.keyDown(window, { key: "ArrowRight" });
@@ -40,14 +62,13 @@ describe("FlashcardView", () => {
   });
 
   test("the last card says Finish", async () => {
-    render(<FlashcardView question={card} submit={resolved()} next={() => {}} isLast />);
+    show(translation, "de-en", { isLast: true });
     await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
     expect(screen.getByRole("button", { name: /Finish/ })).toBeTruthy();
   });
 
   test("shows an error if the reveal cannot be recorded", async () => {
-    const submit = mock(() => Promise.reject(new Error("offline")));
-    render(<FlashcardView question={card} submit={submit} next={() => {}} isLast={false} />);
+    show(translation, "de-en", { submit: mock(() => Promise.reject(new Error("offline"))) as never });
     await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
     expect(await screen.findByText(/Could not record this card: offline/)).toBeTruthy();
   });

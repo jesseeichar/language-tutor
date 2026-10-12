@@ -15,6 +15,7 @@ import {
   type Category,
   type GrammarTopic,
   type QuestionBase,
+  type QuestionType,
   type VocabWord,
   modes,
 } from "../shared";
@@ -25,6 +26,8 @@ export interface Content {
   topics: GrammarTopic[];
   /** Keyed by mode id. Every registered mode has an entry, possibly empty. */
   questions: Map<string, QuestionBase[]>;
+  /** Question types declared per mode, keyed by mode id. Empty when a mode declares none. */
+  questionTypes: Map<string, QuestionType[]>;
 }
 
 export class ContentError extends Error {
@@ -95,6 +98,7 @@ export async function loadContent(dataDir: string): Promise<Content> {
   for (const t of topics) checkCategories("grammar-topics.json", t.id, t.categories);
 
   const questions = new Map<string, QuestionBase[]>();
+  const questionTypes = new Map<string, QuestionType[]>();
   const questionsDir = join(dataDir, "questions");
   const knownModeIds = new Set(modes.map((m) => m.id));
 
@@ -102,15 +106,18 @@ export async function loadContent(dataDir: string): Promise<Content> {
     for (const entry of readdirSync(questionsDir)) {
       if (!entry.endsWith(".json")) continue;
       const modeId = basename(entry, ".json");
-      if (!knownModeIds.has(modeId)) problems.push(`questions/${entry}: no mode with id "${modeId}" is registered in src/shared/modes/index.ts`);
+      if (!knownModeIds.has(modeId)) problems.push(`questions/${entry}: no mode with id "${modeId}" is registered in src/shared/modes/registry.ts`);
     }
   }
 
   for (const mode of modes) {
     const file = `questions/${mode.id}.json`;
-    const { questions: rawQuestions } = existsSync(join(dataDir, file))
-      ? await load(file, QuestionFileSchema, { questions: [] })
-      : { questions: [] };
+    const empty = { types: [], questions: [] };
+    const { types, questions: rawQuestions } = existsSync(join(dataDir, file))
+      ? await load(file, QuestionFileSchema, empty)
+      : empty;
+    for (const d of findDuplicates(types.map((t) => t.id))) problems.push(`${file}: duplicate question type "${d}"`);
+    const typeIds = new Set(types.map((t) => t.id));
     const valid: QuestionBase[] = [];
     rawQuestions.forEach((raw, index) => {
       const parsed = mode.questionSchema.safeParse(raw);
@@ -123,6 +130,8 @@ export async function loadContent(dataDir: string): Promise<Content> {
       checkCategories(file, q.id, q.categories);
       for (const w of q.refs.words) if (!wordIds.has(w)) problems.push(`${file}: "${q.id}" refers to unknown word "${w}"`);
       for (const t of q.refs.topics) if (!topicIds.has(t)) problems.push(`${file}: "${q.id}" refers to unknown topic "${t}"`);
+      if (types.length > 0 && q.type === undefined) problems.push(`${file}: "${q.id}" needs a type (one of: ${[...typeIds].join(", ")})`);
+      if (q.type !== undefined && !typeIds.has(q.type)) problems.push(`${file}: "${q.id}" has unknown type "${q.type}"`);
       if (!mode.graded && q.points !== undefined && q.points !== 0) {
         problems.push(`${file}: "${q.id}" sets points=${q.points}, but ${mode.id} is ungraded so every question is worth 0`);
       }
@@ -130,8 +139,9 @@ export async function loadContent(dataDir: string): Promise<Content> {
     });
     for (const d of findDuplicates(valid.map((q) => q.id))) problems.push(`${file}: duplicate question id "${d}"`);
     questions.set(mode.id, valid);
+    questionTypes.set(mode.id, types);
   }
 
   if (problems.length > 0) throw new ContentError(problems);
-  return { categories, words, topics, questions };
+  return { categories, words, topics, questions, questionTypes };
 }

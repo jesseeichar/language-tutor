@@ -7,12 +7,12 @@
 import { Database } from "bun:sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
-import type { SessionInfo } from "../shared";
+import type { Direction, SessionInfo } from "../shared";
 import type { QuestionHistory } from "./selection";
 import { nextStrength } from "./scoring";
 
 /** Each entry upgrades the schema by one version. Append only; never edit a shipped migration. */
-const MIGRATIONS: string[] = [
+export const MIGRATIONS: string[] = [
   `
   CREATE TABLE sessions (
     id            TEXT PRIMARY KEY,
@@ -48,6 +48,11 @@ const MIGRATIONS: string[] = [
     PRIMARY KEY (item_type, item_id)
   );
   `,
+  `
+  -- Which way round each directional question was asked: "de-en" or "en-de".
+  ALTER TABLE sessions ADD COLUMN directions TEXT NOT NULL DEFAULT '{}';  -- JSON object, question id -> direction
+  ALTER TABLE attempts ADD COLUMN direction TEXT;                         -- NULL for non-directional questions
+  `,
 ];
 
 export function openDatabase(path: string): Database {
@@ -79,10 +84,13 @@ interface SessionRow {
   question_ids: string;
   started_at: string;
   finished_at: string | null;
+  directions: string;
 }
 
 export interface StoredSession extends SessionInfo {
   questionIds: string[];
+  /** Direction per directional question id. */
+  directions: Record<string, Direction>;
   finishedAt: string | null;
 }
 
@@ -94,6 +102,8 @@ export interface AttemptInput {
   correct: boolean | null;
   pointsAwarded: number;
   pointsPossible: number;
+  /** The direction the question was asked in, or null if it is not directional. */
+  direction: Direction | null;
   /** Strength items to update. Only used when correct is not null. */
   refs: { words: string[]; topics: string[] };
 }
@@ -101,20 +111,27 @@ export interface AttemptInput {
 export class ProgressStore {
   constructor(private readonly db: Database) {}
 
-  createSession(s: { modeId: string; graded: boolean; categoryIds: string[]; questionIds: string[] }): StoredSession {
+  createSession(s: {
+    modeId: string;
+    graded: boolean;
+    categoryIds: string[];
+    questionIds: string[];
+    directions: Record<string, Direction>;
+  }): StoredSession {
     const session: StoredSession = {
       id: crypto.randomUUID(),
       modeId: s.modeId,
       graded: s.graded,
       categoryIds: s.categoryIds,
       questionIds: s.questionIds,
+      directions: s.directions,
       startedAt: new Date().toISOString(),
       finishedAt: null,
     };
     this.db
       .query(
-        `INSERT INTO sessions (id, mode_id, graded, category_ids, question_ids, started_at)
-         VALUES ($id, $mode, $graded, $cats, $qs, $started)`,
+        `INSERT INTO sessions (id, mode_id, graded, category_ids, question_ids, directions, started_at)
+         VALUES ($id, $mode, $graded, $cats, $qs, $directions, $started)`,
       )
       .run({
         id: session.id,
@@ -122,6 +139,7 @@ export class ProgressStore {
         graded: session.graded ? 1 : 0,
         cats: JSON.stringify(session.categoryIds),
         qs: JSON.stringify(session.questionIds),
+        directions: JSON.stringify(session.directions),
         started: session.startedAt,
       });
     return session;
@@ -136,6 +154,7 @@ export class ProgressStore {
       graded: row.graded === 1,
       categoryIds: JSON.parse(row.category_ids),
       questionIds: JSON.parse(row.question_ids),
+      directions: JSON.parse(row.directions),
       startedAt: row.started_at,
       finishedAt: row.finished_at,
     };
@@ -161,8 +180,8 @@ export class ProgressStore {
     this.db.transaction(() => {
       this.db
         .query(
-          `INSERT INTO attempts (session_id, mode_id, question_id, response, correct, points_awarded, points_possible, answered_at)
-           VALUES ($session, $mode, $question, $response, $correct, $awarded, $possible, $now)`,
+          `INSERT INTO attempts (session_id, mode_id, question_id, response, correct, points_awarded, points_possible, direction, answered_at)
+           VALUES ($session, $mode, $question, $response, $correct, $awarded, $possible, $direction, $now)`,
         )
         .run({
           session: a.sessionId,
@@ -172,6 +191,7 @@ export class ProgressStore {
           correct: a.correct === null ? null : a.correct ? 1 : 0,
           awarded: a.pointsAwarded,
           possible: a.pointsPossible,
+          direction: a.direction,
           now,
         });
       if (a.correct === null) return;

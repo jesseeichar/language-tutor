@@ -5,8 +5,16 @@
  * imported by both the server, which loads, selects and grades questions,
  * and the client, which pairs it with a React view in src/client/modes.
  */
-import type { z } from "zod";
+import { z } from "zod";
 import type { QuestionBase } from "./content";
+
+/** Which language a directional question is shown in first. */
+export const DirectionSchema = z.enum(["de-en", "en-de"]);
+export type Direction = z.infer<typeof DirectionSchema>;
+
+/** What the learner picks for a session. "random" decides per question. */
+export const DirectionChoiceSchema = z.enum(["de-en", "en-de", "random"]);
+export type DirectionChoice = z.infer<typeof DirectionChoiceSchema>;
 
 export interface GradeResult {
   correct: boolean;
@@ -27,6 +35,11 @@ interface ModeCommon<Q extends QuestionBase, R> {
   responseSchema: z.ZodType<R, any>;
   /** Default number of questions offered on the setup screen. */
   defaultSessionSize: number;
+  /**
+   * Present on modes whose questions can be asked German-first or English-first.
+   * Returns whether this particular question can; others are always shown one way.
+   */
+  isDirectional?(question: Q): boolean;
 }
 
 /** Study tools: answers are recorded so selection knows what was seen, but nothing is scored. Every question is worth 0 points. */
@@ -48,6 +61,10 @@ export type ModeDefinition<Q extends QuestionBase = QuestionBase, R = unknown> =
 
 /** Registries hold modes with different question types side by side, hence `any`. */
 export type AnyModeDefinition = ModeDefinition<any, any>;
+
+export function isDirectionalQuestion(mode: AnyModeDefinition, question: QuestionBase): boolean {
+  return mode.isDirectional?.(question) ?? false;
+}
 
 export function pointsFor(mode: AnyModeDefinition, question: QuestionBase): number {
   if (!mode.graded) return 0;

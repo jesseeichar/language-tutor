@@ -1,9 +1,13 @@
 {
+  "types": [
+    { "id": "translation", "label": "Translation" },
+    { "id": "fill-in-the-blank", "label": "Fill in the blank" }
+  ],
   "questions": [
-    { "id": "fc-zuerst", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "front": "zuerst", "back": "first, first of all" },
-    { "id": "fc-jedoch", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "front": "jedoch", "back": "however", "notes": "Verb comes next: Jedoch ist es teuer." },
-    { "id": "fc-kasus", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "an + ? when there is movement", "back": "Akkusativ" },
-    { "id": "fc-fresh-a", "categories": ["fresh-check"], "front": "Fresh card A", "back": "A" },
-    { "id": "fc-fresh-b", "categories": ["fresh-check"], "front": "Fresh card B", "back": "B" }
+    { "id": "fc-zuerst", "type": "translation", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "de": "zuerst", "en": "first, first of all" },
+    { "id": "fc-jedoch", "type": "translation", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "de": "jedoch", "en": "however", "notes": "Verb comes next: Jedoch ist es teuer." },
+    { "id": "fc-kasus", "type": "fill-in-the-blank", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "Ich lege das Buch auf ___ Tisch.", "back": "den (Akkusativ: movement)" },
+    { "id": "fc-fresh-a", "type": "fill-in-the-blank", "categories": ["fresh-check"], "front": "Fresh card A", "back": "A" },
+    { "id": "fc-fresh-b", "type": "fill-in-the-blank", "categories": ["fresh-check"], "front": "Fresh card B", "back": "B" }
   ]
 }

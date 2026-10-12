@@ -20,8 +20,8 @@ async function call<T>(path: string, body?: unknown): Promise<{ status: number; 
   return { status: res.status, body: (await res.json()) as T };
 }
 
-const startFlashcards = (categoryIds: string[], count?: number) =>
-  call<CreateSessionResponse>("/api/sessions", { modeId: "flashcards", categoryIds, count });
+const startFlashcards = (categoryIds: string[], count?: number, extra: Record<string, unknown> = {}) =>
+  call<CreateSessionResponse>("/api/sessions", { modeId: "flashcards", categoryIds, count, ...extra });
 
 describe("GET /api/modes", () => {
   test("lists modes with per-category counts, parents including children", async () => {
@@ -35,6 +35,12 @@ describe("GET /api/modes", () => {
     expect(counts["vocab-time"]).toBe(1);
     expect(counts.unused).toBeUndefined();
   });
+
+  test("lists question types with counts and whether the mode is directional", async () => {
+    const fc = (await call<ModeSummary[]>("/api/modes")).body.find((m) => m.id === "flashcards")!;
+    expect(fc.questionTypes.map((t) => [t.id, t.count])).toEqual([["translation", 3], ["fill-in-the-blank", 1]]);
+    expect(fc.directional).toBe(true);
+  });
 });
 
 describe("sessions", () => {
@@ -43,6 +49,28 @@ describe("sessions", () => {
     expect(status).toBe(200);
     expect(body.questions.map((q) => q.id).sort()).toEqual(["fc-jedoch", "fc-kasus", "fc-zuerst"]);
     expect(body.session.graded).toBe(false);
+  });
+
+  test("question types narrow the session", async () => {
+    const all = ["vocab-connectors", "vocab-work", "grammar-cases"];
+    const { body } = await startFlashcards(all, undefined, { questionTypes: ["fill-in-the-blank"] });
+    expect(body.questions.map((q) => q.id)).toEqual(["fc-kasus"]);
+    const none = await startFlashcards(["vocab-work"], undefined, { questionTypes: ["fill-in-the-blank"] });
+    expect(none.status).toBe(400);
+    expect((await startFlashcards(all, undefined, { questionTypes: [] })).status).toBe(400);
+  });
+
+  test("a chosen direction applies to every translation card, not to fixed cards", async () => {
+    const all = ["vocab-connectors", "vocab-work", "grammar-cases"];
+    const { body } = await startFlashcards(all, undefined, { direction: "en-de" });
+    expect(body.directions).toEqual({ "fc-zuerst": "en-de", "fc-jedoch": "en-de", "fc-lohn": "en-de" });
+  });
+
+  test("direction defaults to random", async () => {
+    const { body } = await startFlashcards(["vocab-connectors", "vocab-work"]);
+    expect(Object.keys(body.directions).sort()).toEqual(["fc-jedoch", "fc-lohn", "fc-zuerst"]);
+    for (const d of Object.values(body.directions)) expect(["de-en", "en-de"]).toContain(d);
+    expect((await startFlashcards(["vocab-work"], undefined, { direction: "sideways" })).status).toBe(400);
   });
 
   test("count limits the session size", async () => {

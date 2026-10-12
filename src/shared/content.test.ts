@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { IdSchema, QuestionBaseSchema } from "./content";
+import { IdSchema, QuestionBaseSchema, QuestionFileSchema } from "./content";
 
 describe("IdSchema", () => {
   test.each(["zuerst", "die-staerke", "a1"])("accepts %s", (id) => {
@@ -10,7 +10,21 @@ describe("IdSchema", () => {
   });
 });
 
+describe("QuestionFileSchema", () => {
+  test("question types default to none", () => {
+    expect(QuestionFileSchema.parse({ questions: [] }).types).toEqual([]);
+  });
+  test("question types need an id and a label", () => {
+    expect(QuestionFileSchema.safeParse({ types: [{ id: "t" }], questions: [] }).success).toBe(false);
+    expect(QuestionFileSchema.safeParse({ types: [{ id: "t", label: "T" }], questions: [] }).success).toBe(true);
+  });
+});
+
 describe("QuestionBaseSchema", () => {
+  test("type is optional but must be a valid id", () => {
+    expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], type: "translation" }).success).toBe(true);
+    expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], type: "Not Valid" }).success).toBe(false);
+  });
   test("defaults refs to empty lists", () => {
     expect(QuestionBaseSchema.parse({ id: "q", categories: ["c"] }).refs).toEqual({ words: [], topics: [] });
   });

@@ -6,20 +6,25 @@
 export {
   CategoriesFileSchema,
   GrammarTopicsFileSchema,
-  IdSchema,
   QuestionBaseSchema,
   QuestionFileSchema,
   VocabularyFileSchema,
   type Category,
   type GrammarTopic,
   type QuestionBase,
-  type Refs,
+  type QuestionType,
   type VocabWord,
 } from "./content";
-export { pointsFor, type AnyModeDefinition, type GradeResult, type GradedMode, type ModeDefinition, type UngradedMode } from "./mode";
+export {
+  DirectionChoiceSchema,
+  isDirectionalQuestion,
+  pointsFor,
+  type Direction,
+  type DirectionChoice,
+} from "./mode";
 export { expandCategories, matchesCategories } from "./categories";
 export { getMode, modes } from "./modes/registry";
-export type { FlashcardQuestion, FlashcardResponse } from "./modes/flashcards";
+export { cardSides, type FlashcardQuestion, type FlashcardResponse } from "./modes/flashcards";
 export {
   CreateSessionRequestSchema,
   SubmitAnswerRequestSchema,
@@ -30,6 +35,5 @@ export {
   type ModeSummary,
   type SessionInfo,
   type SessionSummary,
-  type SubmitAnswerRequest,
   type SubmitAnswerResponse,
 } from "./api";
