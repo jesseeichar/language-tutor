@@ -26,11 +26,15 @@ import { projectRoot } from "./config";
 import { ProgressBackup, ProgressBackupError } from "./progress-backup";
 import { ContentEditor, ContentEditError } from "./content-editor";
 import { AnswerError, recordAnswer } from "./answers";
+import { createJevGrader, GradingError, type GradingServices } from "./jev";
 
 export interface AppOptions {
   dataDir: string;
   progressPath: string | null;
   port: number;
+  typesafeApiKey?: string;
+  typesafeModel?: string;
+  gradingServices?: GradingServices;
 }
 
 class HttpError extends Error {
@@ -55,7 +59,7 @@ function handle(fn: (req: Request & { params: Record<string, string> }) => Promi
       if (e instanceof HttpError || e instanceof AnswerError) {
         return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
       }
-      if (e instanceof ProgressBackupError || e instanceof ContentEditError) {
+      if (e instanceof ProgressBackupError || e instanceof ContentEditError || e instanceof GradingError) {
         return json({ error: e.message } satisfies ApiError, e.status);
       }
       if (e instanceof ContentError) {
@@ -80,6 +84,7 @@ export function startServer(options: AppOptions): Server<undefined> {
   const backup = new ProgressBackup(projectRoot, options.progressPath, options.progressPath === null ? undefined : options.dataDir);
   const editor = new ContentEditor(options.dataDir);
   const content = () => loadContent(options.dataDir);
+  const grading = options.gradingServices ?? createJevGrader(options);
 
   function requireSession(id: string): StoredSession {
     const session = store.getSession(id);
@@ -203,7 +208,7 @@ export function startServer(options: AppOptions): Server<undefined> {
       },
 
       "/api/sessions/:id/answers": {
-        POST: handle(async (req) => recordAnswer(store, req.params.id!, await readBody(req), content)),
+        POST: handle(async (req) => recordAnswer(store, req.params.id!, await readBody(req), content, grading)),
       },
 
       "/api/sessions/:id/finish": {

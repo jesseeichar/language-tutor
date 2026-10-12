@@ -1,15 +1,18 @@
-import { afterEach, beforeEach, expect, test } from "bun:test";
+import { afterEach, beforeEach, expect, mock, test } from "bun:test";
 import { join } from "node:path";
 import type { CreateSessionResponse, QuizQuestion, SessionSummary, SubmitAnswerResponse } from "../shared";
 import { copyFixtureData } from "../../tests/support/fixtures";
 import { startServer } from "./app";
+import { createJevGrader } from "./jev";
+const gradingServices = { translation: mock(async (input: { answer: string }) => ({ correct: input.answer !== "wrong", score: input.answer === "wrong" ? 0 : 1, feedback: "Jev test grade" })) };
 
 let copy: ReturnType<typeof copyFixtureData>;
 let server: ReturnType<typeof startServer>;
 let progressPath: string;
 beforeEach(() => {
+  gradingServices.translation.mockClear();
   copy = copyFixtureData(); progressPath = join(copy.dir, "progress.json");
-  server = startServer({ dataDir: copy.dir, progressPath, port: 0 });
+  server = startServer({ dataDir: copy.dir, progressPath, port: 0, gradingServices });
 });
 afterEach(() => { server.stop(true); copy.cleanup(); });
 const post = (path: string, body: unknown) => fetch(`http://localhost:${server.port}${path}`, {
@@ -28,17 +31,21 @@ test.each(["de-en", "en-de"])("the server grades translation using session direc
   const res = await post(`/api/sessions/${session.session.id}/answers`, { questionId: question.id, response: { type: "translation", answer } });
   expect(res.status).toBe(200);
   expect((await res.json() as SubmitAnswerResponse).grade).toMatchObject({ correct: true, score: 1 });
+  expect(gradingServices.translation).toHaveBeenCalledWith({
+    source: direction === "de-en" ? question.de : question.en, reference: answer, answer,
+    targetLanguage: direction === "de-en" ? "English" : "German",
+  });
   const repeated = await (await post(`/api/sessions/${session.session.id}/repeat`, {})).json() as CreateSessionResponse;
   expect(repeated.directions).toEqual(session.directions);
   expect(repeated.questions).toEqual(session.questions);
 });
 
-test("graded attempts, exact mismatches, scores, strengths and history survive a restart", async () => {
+test("graded attempts, rejected translations, scores, strengths and history survive a restart", async () => {
   const session = await start(["multiple-choice", "fill-in-the-blank", "translation"], "en-de");
   for (const base of session.questions) {
     const q = base as QuizQuestion;
     const response = q.type === "multiple-choice" ? { type: q.type, optionIndex: q.correctIndex }
-      : { type: q.type, answer: q.type === "translation" ? `${q.de} ` : "wrong" };
+      : { type: q.type, answer: "wrong" };
     const res = await post(`/api/sessions/${session.session.id}/answers`, { questionId: q.id, response });
     expect(res.status).toBe(200);
     expect((await res.json() as SubmitAnswerResponse).grade?.correct).toBe(q.type === "multiple-choice");
@@ -50,7 +57,7 @@ test("graded attempts, exact mismatches, scores, strengths and history survive a
   expect(saved.strengths.find((s: any) => s.itemId === "kasus")).toMatchObject({ score: -2, attempts: 1, correct: 0 });
   expect(saved.strengths.find((s: any) => s.itemId === "zuerst")).toMatchObject({ score: 0, attempts: 3, correct: 2 });
   server.stop(true);
-  server = startServer({ dataDir: copy.dir, progressPath, port: 0 });
+  server = startServer({ dataDir: copy.dir, progressPath, port: 0, gradingServices });
   const history = await (await fetch(`http://localhost:${server.port}/api/sessions`)).json() as SessionSummary[];
   expect(history[0]).toMatchObject(summary);
 });
@@ -93,7 +100,7 @@ test("saved feedback and possible points survive restart and question edits or d
   file.questions = file.questions.filter((other: QuizQuestion) => other.id !== q.id).map((other: QuizQuestion) => ({ ...other, points: 100 }));
   await Bun.write(filePath, JSON.stringify(file));
   server.stop(true);
-  server = startServer({ dataDir: copy.dir, progressPath, port: 0 });
+  server = startServer({ dataDir: copy.dir, progressPath, port: 0, gradingServices });
   expect(await (await post(path, body)).json()).toEqual(first);
   const log = await (await fetch(`http://localhost:${server.port}/api/sessions`)).json() as SessionSummary[];
   expect(log[0]).toMatchObject(original);
@@ -115,4 +122,45 @@ test("the default session selects 25 vocabulary multiple-choice questions and 5 
   expect(session.questions.filter(q => q.type === "multiple-choice")).toHaveLength(25);
   expect(session.questions.filter(q => q.refs.topics.length > 0)).toHaveLength(5);
   expect(session.questions.some(q => q.type === "translation")).toBe(false);
+});
+
+test("a missing API key returns a retryable error without recording an answer", async () => {
+  server.stop(true);
+  server = startServer({ dataDir: copy.dir, progressPath, port: 0 });
+  const session = await start(["translation"]);
+  const q = session.questions[0] as Extract<QuizQuestion, { type: "translation" }>;
+  const res = await post(`/api/sessions/${session.session.id}/answers`, { questionId: q.id, response: { type: "translation", answer: q.en } });
+  expect(res.status).toBe(503);
+  expect(await res.json()).toMatchObject({ error: expect.stringContaining("TYPESAFE_API_KEY") });
+  expect((await Bun.file(progressPath).json()).attempts).toEqual([]);
+  expect((await Bun.file(progressPath).json()).strengths).toEqual([]);
+});
+
+test("provider failure then retry traverses the real adapter and saves just the final grade", async () => {
+  let calls = 0;
+  const transport = (async () => {
+    calls++;
+    if (calls === 1) return new Response("sensitive provider detail", { status: 500 });
+    return Response.json({ answers: { meaning: { type: "noul", noul: 0.9 }, grammar: { type: "noul", noul: 0.8 } } });
+  }) as unknown as typeof fetch;
+  server.stop(true);
+  server = startServer({ dataDir: copy.dir, progressPath, port: 0,
+    gradingServices: createJevGrader({ typesafeApiKey: "test-secret" }, transport) });
+  const session = await start(["translation"]);
+  const q = session.questions[0] as Extract<QuizQuestion, { type: "translation" }>;
+  const path = `/api/sessions/${session.session.id}/answers`;
+  const body = { questionId: q.id, response: { type: "translation", answer: "An alternative wording." } };
+  const failed = await post(path, body);
+  expect(failed.status).toBe(503);
+  expect(await failed.text()).not.toContain("sensitive");
+  expect((await Bun.file(progressPath).json()).attempts).toEqual([]);
+  const retry = await post(path, body);
+  expect(retry.status).toBe(200);
+  const grade = await retry.json();
+  expect(grade).toMatchObject({ grade: { correct: true, score: 1, feedback: expect.stringContaining("Reference translation:") } });
+  expect(await (await post(path, body)).json()).toEqual(grade);
+  expect(calls).toBe(2);
+  const saved = await Bun.file(progressPath).json();
+  expect(saved.attempts).toHaveLength(1);
+  expect(JSON.stringify(saved)).not.toContain("test-secret");
 });

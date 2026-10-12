@@ -39,18 +39,18 @@ for (const direction of ["German → English", "English → German"]) {
     await expect(page.getByText(direction, { exact: true })).toBeVisible();
   });
 
-  test(`translation ${direction}: literal match, punctuation mismatch and saved history`, async ({ page }, info) => {
+  test(`translation ${direction}: alternative wording accepted, incorrect meaning rejected and saved history`, async ({ page }, info) => {
     const session = await openQuiz(page, "Translation", "Time", direction);
     const question = session.questions[0] as Extract<QuizQuestion, { type: "translation" }>;
     const answer = direction === "German → English" ? question.en : question.de;
     await expect(page.getByRole("heading", { name: direction === "German → English" ? question.de : question.en, exact: true })).toBeVisible();
-    await page.getByLabel("Your answer").fill(answer);
+    await page.getByLabel("Your answer").fill(direction === "German → English" ? "We first read the report." : "Wir lesen zuerst den Bericht.");
     await page.getByRole("button", { name: "Check answer" }).click();
     await expect(page.getByRole("status")).toContainText("Correct");
     await page.getByRole("button", { name: "Finish", exact: true }).click();
     await expect(page.getByText("1 / 1 correct · 1 of 1 points", { exact: true })).toBeVisible();
     await page.getByRole("button", { name: "Repeat this session" }).click();
-    await page.getByLabel("Your answer").fill(answer.slice(0, -1));
+    await page.getByLabel("Your answer").fill("This sentence has the opposite meaning.");
     await page.getByRole("button", { name: "Check answer" }).click();
     await expect(page.getByRole("status")).toContainText("Incorrect");
     await expect(page.getByRole("status")).toContainText(answer);
@@ -103,6 +103,34 @@ test("a lost answer response can be retried without duplicate scoring, and pendi
   await page.getByRole("button", { name: "Check answer" }).click();
   await expect(page.getByRole("status")).toContainText("Correct");
   await expect(page.getByRole("status")).toContainText("Expected answer: den");
+  await page.getByRole("button", { name: "Finish", exact: true }).click();
+  await expect(page.getByText("1 / 1 correct · 1 of 1 points", { exact: true })).toBeVisible();
+});
+
+test("Jev failure preserves the translation and allows retry while pending grading blocks ending", async ({ page }) => {
+  let release!: () => void;
+  const pending = new Promise<void>(resolve => { release = resolve; });
+  let first = true;
+  await page.route("**/api/sessions/*/answers", async route => {
+    if (!first) return route.continue();
+    first = false;
+    await pending;
+    await route.fulfill({ status: 503, json: { error: "Jev is unavailable. Your answer has not been scored; please retry." } });
+  });
+  await openQuiz(page, "Translation", "Time");
+  const answer = "Initially, we read the report.";
+  await page.getByLabel("Your answer").fill(answer);
+  await page.getByRole("button", { name: "Check answer" }).click();
+  try {
+    await expect(page.getByRole("button", { name: "Checking with Jev…" })).toBeDisabled();
+    await expect(page.getByRole("button", { name: "End session" })).toBeDisabled();
+  } finally { release(); }
+  await expect(page.getByRole("alert")).toContainText("not been scored");
+  await expect(page.getByLabel("Your answer")).toHaveValue(answer);
+  await expect(page.getByRole("status")).toHaveCount(0);
+  await page.getByRole("button", { name: "Check answer" }).click();
+  await expect(page.getByRole("status")).toContainText("Meaning and grammar accepted");
+  await expect(page.getByRole("status")).toContainText("Reference translation:");
   await page.getByRole("button", { name: "Finish", exact: true }).click();
   await expect(page.getByText("1 / 1 correct · 1 of 1 points", { exact: true })).toBeVisible();
 });

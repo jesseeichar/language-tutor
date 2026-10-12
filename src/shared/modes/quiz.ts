@@ -32,7 +32,7 @@ export type QuizResponse = z.infer<typeof QuizResponseSchema>;
 export const quizMode: GradedMode<QuizQuestion, QuizResponse> = {
   id: "quiz",
   title: "Quiz",
-  description: "Multiple choice, fill in the blank, and exact-match translation. The default mix aims for 25 vocabulary and 5 grammar questions; select Translation to include it.",
+  description: "Multiple choice, fill in the blank, and AI-graded translation. The default mix aims for 25 vocabulary and 5 grammar questions; select Translation to include it.",
   graded: true,
   defaultPoints: 1,
   defaultSessionSize: 30,
@@ -42,8 +42,15 @@ export const quizMode: GradedMode<QuizQuestion, QuizResponse> = {
   responseSchema: QuizResponseSchema,
   isDirectional: (q) => q.type !== "fill-in-the-blank",
   questionPreview: (q) => q.type === "multiple-choice" ? q.de.prompt : q.type === "translation" ? q.de : q.prompt,
-  grade(question, response, direction) {
+  async grade(question, response, direction, services) {
     const germanFirst = direction !== "en-de";
+    if (question.type === "translation" && response.type === "translation") {
+      if (!services) throw new Error("Translation grading is not configured.");
+      const grade = await services.translation({ source: germanFirst ? question.de : question.en,
+        reference: germanFirst ? question.en : question.de, answer: response.answer,
+        targetLanguage: germanFirst ? "English" : "German" });
+      return { ...grade, feedback: `${grade.feedback ?? ""}${question.explanation ? `\n${question.explanation}` : ""}` };
+    }
     const expected = question.type === "multiple-choice"
       ? (germanFirst ? question.de : question.en).options[question.correctIndex]!
       : question.type === "translation" ? (germanFirst ? question.en : question.de) : question.answer;
