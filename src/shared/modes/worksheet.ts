@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { QuestionBaseSchema } from "../content";
-import type { GradedMode } from "../mode";
+import type { GradedMode, GradingServices } from "../mode";
 
 const text = z.string().trim().min(1);
 const itemBase = z.object({ id: text, prompt: text });
@@ -26,6 +26,24 @@ const responseSchema = z.strictObject({ answers: z.record(z.string(), z.union([
   z.string().max(10000), z.strictObject({ word: z.string().max(200), sentence: z.string().max(2000) }),
 ])) });
 
+type WorksheetAnswer = z.infer<typeof responseSchema>["answers"][string];
+
+async function gradeItem(question: WorksheetQuestion, item: WorksheetQuestion["items"][number], answer: WorksheetAnswer | undefined, services?: GradingServices) {
+  if (item.kind === "personal") {
+    const correct = typeof answer === "object" && !!answer.word.trim() && !!answer.sentence.trim();
+    return { correct, feedback: correct ? "Completed (personal choice, not judged)." : "Enter both a word and your own sentence." };
+  }
+  if (typeof answer !== "string" || !answer.trim()) return { correct: false, feedback: "No answer supplied." };
+  if (item.kind === "writing") {
+    if (!services?.exercise) throw new Error("Worksheet writing assessment is not configured.");
+    const grade = await services.exercise({ prompt: `${question.instructions}\n${item.prompt}`, rubric: item.rubric, answer });
+    return { correct: grade.correct, feedback: `${grade.feedback ?? ""}${item.exampleAnswer ? `\nExample answer: ${item.exampleAnswer}` : ""}` };
+  }
+  const correct = item.kind === "choice" ? answer === item.answer : item.answers.some(expected => expected.toLocaleLowerCase("de") === answer.trim().toLocaleLowerCase("de"));
+  const expected = item.kind === "choice" ? item.options.find(o => o.value === item.answer)!.label : item.answers.join(" / ");
+  return { correct, feedback: `Answer: ${expected}` };
+}
+
 export const worksheetMode: GradedMode<WorksheetQuestion, z.infer<typeof responseSchema>> = {
   id: "worksheet", title: "Zeitlicher Ablauf & Verbindungswörter",
   description: "The complete worksheet: 10 exercises in order. Start immediately, with no setup. Writing is checked by Jev.",
@@ -33,22 +51,7 @@ export const worksheetMode: GradedMode<WorksheetQuestion, z.infer<typeof respons
   questionSchema: WorksheetQuestionSchema, responseSchema,
   questionPreview: q => q.title,
   async grade(question, response, _direction, services) {
-    const settled = await Promise.allSettled(question.items.map(async item => {
-      const answer = response.answers[item.id];
-      if (item.kind === "personal") {
-        const correct = typeof answer === "object" && !!answer.word.trim() && !!answer.sentence.trim();
-        return { correct, feedback: correct ? "Completed (personal choice, not judged)." : "Enter both a word and your own sentence." };
-      }
-      if (typeof answer !== "string" || !answer.trim()) return { correct: false, feedback: "No answer supplied." };
-      if (item.kind === "writing") {
-        if (!services?.exercise) throw new Error("Worksheet writing assessment is not configured.");
-        const grade = await services.exercise({ prompt: `${question.instructions}\n${item.prompt}`, rubric: item.rubric, answer });
-        return { correct: grade.correct, feedback: `${grade.feedback ?? ""}${item.exampleAnswer ? `\nExample answer: ${item.exampleAnswer}` : ""}` };
-      }
-      const correct = item.kind === "choice" ? answer === item.answer : item.answers.some(expected => expected.toLocaleLowerCase("de") === answer.trim().toLocaleLowerCase("de"));
-      const expected = item.kind === "choice" ? item.options.find(o => o.value === item.answer)!.label : item.answers.join(" / ");
-      return { correct, feedback: `Answer: ${expected}` };
-    }));
+    const settled = await Promise.allSettled(question.items.map(item => gradeItem(question, item, response.answers[item.id], services)));
     // Keep the section pending until every request finishes, even if one provider call fails.
     const results = settled.map(result => {
       if (result.status === "rejected") throw result.reason;
