@@ -15,6 +15,30 @@ bun run dev
 
 Open http://localhost:5173.
 
+## Share on Tailscale
+
+With Bun dependencies installed and this machine logged into Tailscale, run:
+
+```bash
+bun run share
+```
+
+This builds the frontend, starts one server on loopback, and publishes it using foreground
+[Tailscale Serve](https://tailscale.com/docs/features/tailscale-serve). Open the HTTPS URL printed by
+Tailscale from another device in your tailnet. Ctrl+C, SIGTERM, or closing the terminal stops the app
+and removes its temporary Serve registration. Existing Tailscale services and device membership are
+preserved. The app is not published on the public internet.
+
+The local server uses `LT_API_PORT` (default 3001); stop `bun run dev` first. The HTTPS port defaults
+to 443; choose another with `LT_TAILSCALE_PORT=8443 bun run share` if that port already serves something.
+The script refuses to overwrite an existing Serve/Funnel registration. Tailscale may print a one-time
+link to enable HTTPS for your tailnet. Build, startup, or Serve failures stop the app as well.
+A forced SIGKILL cannot run cleanup; use Ctrl+C or a normal termination signal.
+
+The app uses the same JSON data and `.env` as local development. Everyone allowed to reach this
+Tailscale endpoint can use the app, edit content, and invoke backups; it has no separate login.
+Do not run another app instance against the same progress file.
+
 ## Documentation
 
 - [AGENTS.md](AGENTS.md): shared Codex/Claude commands, coding rules, and guidance for modes and questions.
