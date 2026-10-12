@@ -26,6 +26,7 @@ export { expandCategories, matchesCategories, categoryProblems } from "./categor
 export { ContentEditSchema, type ContentEdit, type EditorSnapshot } from "./editor";
 export { getMode, modes } from "./modes/registry";
 export { cardSides, type FlashcardQuestion, type FlashcardResponse } from "./modes/flashcards";
+export { type QuizQuestion, type QuizResponse } from "./modes/quiz";
 export {
   CreateSessionRequestSchema,
   SubmitAnswerRequestSchema,

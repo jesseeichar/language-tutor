@@ -28,6 +28,7 @@ export interface SelectionInput {
   freshShare?: number;
   now?: Date;
   random?: () => number;
+  quota?: { share: number; matches(question: QuestionBase): boolean };
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -64,6 +65,14 @@ export function selectQuestions(input: SelectionInput): QuestionBase[] {
   const now = (input.now ?? new Date()).getTime();
   const count = Math.min(input.count, questions.length);
   const freshShare = input.freshShare ?? 0.6;
+
+  if (input.quota) {
+    const reserved = questions.filter(input.quota.matches);
+    const remaining = questions.filter((q) => !input.quota!.matches(q));
+    const reservedCount = Math.min(reserved.length, Math.max(Math.round(count * input.quota.share), count - remaining.length));
+    const pick = (pool: readonly QuestionBase[], size: number) => selectQuestions({ ...input, questions: pool, count: size, quota: undefined });
+    return shuffle([...pick(reserved, reservedCount), ...pick(remaining, count - reservedCount)], random);
+  }
 
   const fresh = questions.filter((q) => !history.has(q.id));
   const seen = questions.filter((q) => history.has(q.id));

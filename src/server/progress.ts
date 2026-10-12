@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Direction } from "../shared";
+import type { Direction, SubmitAnswerResponse } from "../shared";
 import type { QuestionHistory } from "./selection";
 import { nextStrength } from "./scoring";
 import { ProgressFile } from "./progress-file";
@@ -17,6 +17,7 @@ export interface AttemptInput {
   pointsAwarded: number;
   pointsPossible: number;
   direction: Direction | null;
+  grade?: SubmitAnswerResponse["grade"];
   /** Strength items to update. Only used when correct is not null. */
   refs: { words: string[]; topics: string[] };
 }
@@ -62,10 +63,15 @@ export class ProgressStore {
     return this.data.attempts.some((a) => a.sessionId === sessionId && a.questionId === questionId);
   }
 
+  getAttempt(sessionId: string, questionId: string): ProgressData["attempts"][number] | undefined {
+    return structuredClone(this.data.attempts.find((a) => a.sessionId === sessionId && a.questionId === questionId));
+  }
+
   /** An answer and all its strength changes are persisted as one atomic update. */
   recordAttempt(a: AttemptInput): void {
     const now = new Date().toISOString();
     this.update((next) => {
+      if (next.sessions.find((s) => s.id === a.sessionId)?.finishedAt) throw new Error("Session is already finished");
       const { refs, response, ...attempt } = a;
       // Reject non-JSON responses instead of silently losing fields on disk.
       next.attempts.push({ ...attempt, response: z.json().parse(response), answeredAt: now });

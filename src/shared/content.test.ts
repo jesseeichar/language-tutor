@@ -34,4 +34,10 @@ describe("QuestionBaseSchema", () => {
   test("rejects negative points", () => {
     expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], points: -1 }).success).toBe(false);
   });
+  test("word and topic references cannot count the same item twice", () => {
+    for (const refs of [{ words: ["word", "word"] }, { topics: ["topic", "topic"] }]) {
+      expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], refs }).success).toBe(false);
+    }
+    expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], refs: { words: ["same"], topics: ["same"] } }).success).toBe(true);
+  });
 });

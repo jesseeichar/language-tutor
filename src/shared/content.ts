@@ -47,8 +47,8 @@ export const GrammarTopicsFileSchema = z.object({ topics: z.array(GrammarTopicSc
 
 /** Links from a question to the vocabulary words and grammar topics it exercises. Strength scores aggregate over these. */
 export const RefsSchema = z.object({
-  words: z.array(IdSchema).default([]),
-  topics: z.array(IdSchema).default([]),
+  words: z.array(IdSchema).refine((ids) => new Set(ids).size === ids.length, "duplicate word references").default([]),
+  topics: z.array(IdSchema).refine((ids) => new Set(ids).size === ids.length, "duplicate topic references").default([]),
 });
 export type Refs = z.infer<typeof RefsSchema>;
 

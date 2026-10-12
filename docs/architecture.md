@@ -72,6 +72,11 @@ A mode is defined in two halves with the same `id`:
 Study tools are ungraded modes. Their answers are recorded, so selection knows what was seen, but every
 question is worth 0 points and strength scores do not change.
 
+The `quiz` mode supports multiple-choice, fill-in-the-blank, and translation questions through a
+discriminated `type` schema. Its client sub-module has the same one-name interface budget as
+flashcards; no existing architecture limits are relaxed. Typed answers use literal string equality.
+See [quizzes.md](quizzes.md) for the data format and authoring workflow.
+
 ## Data
 
 `data/` is checked into git:
@@ -94,8 +99,10 @@ and reported together, by the API and by `bun run validate`.
 2. `POST /api/sessions` with a mode, one or more categories, a count, and optionally question types and
    a direction. The server filters questions by category and type, picks a selection, fixes a direction
    for each directional question, stores the session and returns the questions with their directions.
-3. `POST /api/sessions/:id/answers` once per question. The server validates the response with the mode's
-   schema, grades it if the mode is graded, records the attempt and updates strengths.
+3. `POST /api/sessions/:id/answers` records one answer per question. The server validates the response,
+   grades it, records the attempt and updates strengths. An identical retry returns the recorded
+   result without another update; a changed answer is rejected. `answers.ts` rechecks completion and
+   prior attempts after asynchronous content loading, immediately before the atomic store update.
 4. `POST /api/sessions/:id/finish` closes the session and returns a summary.
 
 Two more endpoints make up the session log:
@@ -122,7 +129,8 @@ are not. The learner picks German to English, English to German, or random.
 The server resolves the choice when the session starts, one direction per directional question, in
 `src/server/session-plan.ts`. Directions are stored with the session and with every answer, so a
 session can be replayed exactly and future quizzes can track strength per direction. Views receive
-the direction as a prop and never decide it themselves.
+the direction as a prop and never decide it themselves. Graders receive that same stored direction
+as their third argument: `grade(question, response, direction)`. Answer requests cannot choose it.
 
 ## Selection
 
@@ -133,11 +141,23 @@ the direction as a prop and never decide it themselves.
 - Seen questions are weighted by weakness and by how long since they were last seen.
 - Sampling is weighted random without replacement, then shuffled.
 
+Modes may provide `defaultQuestionTypes` and a `sessionQuota` predicate/share. The setup UI and API
+use available default types until the learner chooses one, falling back to all if none remain in the
+bank. A sole type is sent explicitly even though its picker is hidden. Selection partitions the filtered pool
+by the quota, allocates the reserved share (rounding to whole questions), fills shortages from the
+other pool, applies the existing freshness/weakness algorithm to each, and shuffles the result.
+Quiz defaults to multiple-choice and fill-in-the-blank with one sixth reserved for questions that
+reference grammar topics. With the supplied bank this produces 25 vocabulary choices and 5 grammar
+blanks for a full default session. Translation can be selected alone or alongside the other types.
+
 ## Scoring
 
 Strength per word or topic runs from -10 to 10, starting at 0. A correct graded answer adds 1; a wrong
 one subtracts 2, so a lucky guess counts for less than a real miss. Every word and topic in a question's
 `refs` is updated. Rules live in `src/server/scoring.ts`.
+References must be unique within each word/topic array to prevent counting an item twice.
+New sessions snapshot every question's point value; grading and history use this snapshot even if
+the question file changes later. Repeating a session captures the current point values.
 
 ## Storage
 
@@ -148,6 +168,13 @@ one subtracts 2, so a lucky guess counts for less than a real miss. Every word a
 - `sessions`: in creation order, preserving questions, directions, learner choices and repeat links.
 - `attempts`: in recording order, with responses, grades, points, directions and timestamps.
 - `strengths`: current scores, attempt/correct counters and last-update timestamps for words and topics.
+
+Version 1 now permits optional `sessions[].questionPoints` and `attempts[].grade` metadata. Existing
+logs without these fields still load without a migration. New sessions capture point values and new
+attempts persist complete grades/feedback for idempotent retries. Legacy retries return the stored
+correctness and point fraction without feedback if none was saved. Legacy fully answered sessions
+use recorded possible points; partially answered legacy sessions retain the previous content-based
+denominator because the original values for unanswered questions were never stored.
 
 The schema validates shapes, unique identifiers, references within the log, and counters. Historical
 content identifiers do not need to exist in today's question files. Stable serialization produces

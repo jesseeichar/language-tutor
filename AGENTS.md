@@ -3,7 +3,7 @@
 These instructions apply to Codex, Claude, and other coding agents working anywhere in this repository.
 Keep project-wide instructions here; `CLAUDE.md` points to this file so the rules cannot drift.
 
-A local web app for practising German: ungraded study tools (flashcards) and, later, graded quizzes.
+A local web app for practising German: ungraded flashcards and graded quizzes.
 It runs only in dev mode on one machine. Questions live in JSON files; progress lives in Git-trackable JSON.
 
 Read [docs/architecture.md](docs/architecture.md) before changing structure. It explains the modules, their
@@ -79,7 +79,8 @@ specific modes.
 
 1. `src/shared/modes/<id>.ts`: question schema (extend `QuestionBaseSchema`), response schema, and the
    mode definition. Provide `questionPreview` for a readable summary in the editor. Set `graded: false` for a study tool. For a quiz set `graded: true`,
-   `defaultPoints`, and a pure `grade(question, response)` function.
+   `defaultPoints`, and a pure `grade(question, response, direction)` function. Grade against the
+   server-stored direction, never a direction supplied with the answer.
 2. Register it in `src/shared/modes/registry.ts` and export its question and response types from
    `src/shared/index.ts`.
 3. `src/client/modes/<id>/`: a `QuestionView` component and an `index.ts` exporting the client mode.
@@ -108,6 +109,11 @@ on the setup screen. The flashcard file declares `translation`, `fill-in-the-bla
   always shown front first, whatever direction was chosen.
 
 Rules from the learner for quizzes:
+
+The implemented quiz types and JSON examples are in [docs/quizzes.md](docs/quizzes.md). Quiz questions
+live in `data/questions/quiz.json`; `type` selects multiple choice, fill in the blank, or translation.
+Version 1 typed answers must match literally, including case, punctuation, accents, and all spaces.
+Do not add normalization, synonyms, or AI grading without an explicit change to this requirement.
 
 - A default quiz is 25 multiple-choice vocabulary questions and 5 grammar questions.
 - Vocabulary questions mix German to English and English to German. Each shows a full sentence using

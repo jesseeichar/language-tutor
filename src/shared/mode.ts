@@ -37,6 +37,10 @@ interface ModeCommon<Q extends QuestionBase, R> {
   responseSchema: z.ZodType<R, any>;
   /** Default number of questions offered on the setup screen. */
   defaultSessionSize: number;
+  /** Initial type filter. Omit to offer every type. */
+  defaultQuestionTypes?: string[];
+  /** Reserve a share for a subset; unused places go to the other subset. */
+  sessionQuota?: { share: number; matches(question: Q): boolean };
   /**
    * Present on modes whose questions can be asked German-first or English-first.
    * Returns whether this particular question can; others are always shown one way.
@@ -54,7 +58,7 @@ export interface GradedMode<Q extends QuestionBase = QuestionBase, R = unknown> 
   graded: true;
   /** Points for a question that does not set its own `points`. */
   defaultPoints: number;
-  grade(question: Q, response: R): GradeResult;
+  grade(question: Q, response: R, direction: Direction | null): GradeResult;
 }
 
 export type ModeDefinition<Q extends QuestionBase = QuestionBase, R = unknown> =

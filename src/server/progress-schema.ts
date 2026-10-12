@@ -13,6 +13,8 @@ const SessionSchema = z.strictObject({
   graded: z.boolean(),
   categoryIds: ids,
   questionIds: ids,
+  /** Optional for progress saved before graded quizzes captured their point values. */
+  questionPoints: z.record(id, z.number().nonnegative()).optional(),
   directions: z.record(id, direction),
   questionTypes: ids.nullable(),
   direction: DirectionChoiceSchema.nullable(),
@@ -31,6 +33,8 @@ const AttemptSchema = z.strictObject({
   pointsPossible: z.number().nonnegative(),
   direction: direction.nullable(),
   answeredAt: timestamp,
+  /** Saved so retries return the original feedback, even after question edits. */
+  grade: z.strictObject({ correct: z.boolean(), score: z.number().min(0).max(1), feedback: z.string().optional() }).nullable().optional(),
 });
 
 const StrengthSchema = z.strictObject({
@@ -57,6 +61,11 @@ const ProgressSchema = z.strictObject({
     if (Object.keys(session.directions).some((q) => !session.questionIds.includes(q))) {
       problem(`unknown question in directions for session ${session.id}`);
     }
+    if (session.questionPoints && (Object.keys(session.questionPoints).length !== session.questionIds.length ||
+      session.questionIds.some((q) => session.questionPoints![q] === undefined) ||
+      (!session.graded && Object.values(session.questionPoints).some((points) => points !== 0)))) {
+      problem(`invalid point snapshot for session ${session.id}`);
+    }
     sessions.set(session.id, session);
   }
   const answers = new Set<string>();
@@ -74,6 +83,10 @@ const ProgressSchema = z.strictObject({
     if (attempt.pointsAwarded > attempt.pointsPossible) problem(`awarded points exceed possible points for ${attempt.questionId}`);
     if (attempt.correct === null && (attempt.pointsAwarded !== 0 || attempt.pointsPossible !== 0)) {
       problem(`ungraded attempt has points for ${attempt.questionId}`);
+    }
+    if (attempt.grade !== undefined && (attempt.grade === null ? attempt.correct !== null :
+      attempt.grade.correct !== attempt.correct || Math.abs(attempt.grade.score * attempt.pointsPossible - attempt.pointsAwarded) > 1e-9)) {
+      problem(`inconsistent saved grade for ${attempt.questionId}`);
     }
   }
   const strengths = new Set<string>();

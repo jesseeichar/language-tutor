@@ -4,5 +4,5 @@ import type { DirectionChoice } from "../shared";
 export const DIRECTION_LABELS: Record<DirectionChoice, string> = {
   "de-en": "German → English",
   "en-de": "English → German",
-  random: "Random, card by card",
+  random: "Random, question by question",
 };

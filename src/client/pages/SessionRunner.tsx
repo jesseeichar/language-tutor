@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import type { CreateSessionResponse, ModeSummary, SessionSummary } from "../../shared";
+import { useCallback, useRef, useState } from "react";
+import type { CreateSessionResponse, ModeSummary, SessionSummary, SubmitAnswerResponse } from "../../shared";
 import { api } from "../api";
 import { getClientMode } from "../modes";
 import { ErrorBox } from "./ErrorBox";
@@ -15,25 +15,44 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
   const { session, questions } = data;
   const [index, setIndex] = useState(0);
   const [error, setError] = useState<unknown>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [ending, setEnding] = useState(false);
+  const pendingAnswer = useRef<Promise<SubmitAnswerResponse> | null>(null);
+  const finishing = useRef(false);
   const clientMode = getClientMode(session.modeId);
   const question = questions[index];
   const typeLabel = mode.questionTypes.find((t) => t.id === question?.type)?.label;
 
   const finish = useCallback(async () => {
+    if (pendingAnswer.current || finishing.current) return;
+    finishing.current = true;
+    setEnding(true); setError(null);
     try {
       onFinished(await api.finishSession(session.id));
     } catch (e) {
       setError(e);
-    }
+    } finally { finishing.current = false; setEnding(false); }
   }, [session.id, onFinished]);
 
-  const next = useCallback(() => {
-    if (index + 1 >= questions.length) void finish();
-    else setIndex(index + 1);
+  const next = useCallback(async () => {
+    if (finishing.current) return;
+    try {
+      // Flashcards can request Next immediately after Flip. Preserve that intent until saving completes.
+      await pendingAnswer.current;
+      if (index + 1 >= questions.length) void finish();
+      else setIndex(index + 1);
+    } catch (e) { setError(e); }
   }, [index, questions.length, finish]);
 
   const submit = useCallback(
-    (response: unknown) => api.submitAnswer(session.id, question!.id, response),
+    async (response: unknown) => {
+      if (pendingAnswer.current || finishing.current) throw new Error("Wait for the current request to finish.");
+      setSubmitting(true);
+      const request = api.submitAnswer(session.id, question!.id, response);
+      pendingAnswer.current = request;
+      try { return await request; }
+      finally { pendingAnswer.current = null; setSubmitting(false); }
+    },
     [session.id, question],
   );
 
@@ -48,7 +67,7 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
         <span className="muted">
           {index + 1} / {questions.length}
         </span>
-        <button type="button" className="link" onClick={finish}>
+        <button type="button" className="link" onClick={finish} disabled={submitting || ending}>
           End session
         </button>
       </div>

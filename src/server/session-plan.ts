@@ -11,6 +11,13 @@ export interface PoolFilter {
   questionTypes?: readonly string[];
 }
 
+/** A data-only bank may no longer contain a mode's preferred types. Fall back to all in that case. */
+export function defaultTypes(preferred: readonly string[] | undefined, questions: readonly QuestionBase[]): string[] | undefined {
+  const available = new Set(questions.map((q) => q.type));
+  const selected = preferred?.filter((type) => available.has(type));
+  return selected?.length ? selected : undefined;
+}
+
 /** Questions in any selected category (parents include their children) and, if given, of a selected type. */
 export function filterPool(questions: readonly QuestionBase[], categories: readonly Category[], filter: PoolFilter): QuestionBase[] {
   const expanded = expandCategories(filter.categoryIds, categories);
