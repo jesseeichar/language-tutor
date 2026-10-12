@@ -52,10 +52,12 @@ function handle(fn: (req: Request & { params: Record<string, string> }) => Promi
     try {
       return json(await fn(req));
     } catch (e) {
-      if (e instanceof HttpError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
-      if (e instanceof AnswerError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
-      if (e instanceof ProgressBackupError) return json({ error: e.message } satisfies ApiError, e.status);
-      if (e instanceof ContentEditError) return json({ error: e.message } satisfies ApiError, e.status);
+      if (e instanceof HttpError || e instanceof AnswerError) {
+        return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
+      }
+      if (e instanceof ProgressBackupError || e instanceof ContentEditError) {
+        return json({ error: e.message } satisfies ApiError, e.status);
+      }
       if (e instanceof ContentError) {
         return json({ error: "The question data is invalid. Run `bun run validate`.", details: e.problems } satisfies ApiError, 500);
       }
