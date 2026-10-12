@@ -4,7 +4,7 @@ import { api } from "../api";
 import { getClientMode } from "../modes";
 import { ErrorBox } from "./ErrorBox";
 
-export function Home({ onPick }: { onPick: (mode: ModeSummary) => void }) {
+export function Home({ onPick, disabled = false }: { onPick: (mode: ModeSummary) => void; disabled?: boolean }) {
   const [modes, setModes] = useState<ModeSummary[] | null>(null);
   const [error, setError] = useState<unknown>(null);
 
@@ -27,13 +27,13 @@ export function Home({ onPick }: { onPick: (mode: ModeSummary) => void }) {
             key={m.id}
             type="button"
             className="mode-card"
-            disabled={m.questionCount === 0 || missingView}
+            disabled={disabled || m.questionCount === 0 || missingView}
             onClick={() => onPick(m)}
           >
             <h3>{m.title}</h3>
             <p>{m.description}</p>
             <span className="muted">
-              {missingView ? "No view registered in src/client/modes" : `${m.questionCount} questions`}
+              {missingView ? "No view registered in src/client/modes" : `${m.questionCount} ${m.fixedSession ? "exercises · Start worksheet" : "questions"}`}
             </span>
           </button>
         );

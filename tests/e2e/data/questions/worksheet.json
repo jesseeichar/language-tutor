@@ -1,0 +1,1144 @@
+{
+  "source": "Übung zeitlicher Ablauf.pdf",
+  "questions": [
+    {
+      "id": "ablauf-01",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 16,
+      "title": "1. Welche Funktion hat das Wort?",
+      "instructions": "Ordne die Wörter der richtigen Kategorie zu.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "choice",
+          "prompt": "deshalb",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Grund / Folge"
+        },
+        {
+          "id": "item-2",
+          "kind": "choice",
+          "prompt": "danach",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zeitlicher Ablauf"
+        },
+        {
+          "id": "item-3",
+          "kind": "choice",
+          "prompt": "ausserdem",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zusätzlich"
+        },
+        {
+          "id": "item-4",
+          "kind": "choice",
+          "prompt": "jedoch",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Gegensatz"
+        },
+        {
+          "id": "item-5",
+          "kind": "choice",
+          "prompt": "zunächst",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zeitlicher Ablauf"
+        },
+        {
+          "id": "item-6",
+          "kind": "choice",
+          "prompt": "weil",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Grund / Folge"
+        },
+        {
+          "id": "item-7",
+          "kind": "choice",
+          "prompt": "hingegen",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Gegensatz"
+        },
+        {
+          "id": "item-8",
+          "kind": "choice",
+          "prompt": "schliesslich",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zeitlicher Ablauf"
+        },
+        {
+          "id": "item-9",
+          "kind": "choice",
+          "prompt": "zudem",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zusätzlich"
+        },
+        {
+          "id": "item-10",
+          "kind": "choice",
+          "prompt": "dadurch",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Grund / Folge"
+        },
+        {
+          "id": "item-11",
+          "kind": "choice",
+          "prompt": "anschliessend",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zeitlicher Ablauf"
+        },
+        {
+          "id": "item-12",
+          "kind": "choice",
+          "prompt": "aber",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Gegensatz"
+        },
+        {
+          "id": "item-13",
+          "kind": "choice",
+          "prompt": "folglich",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Grund / Folge"
+        },
+        {
+          "id": "item-14",
+          "kind": "choice",
+          "prompt": "ebenfalls",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zusätzlich"
+        },
+        {
+          "id": "item-15",
+          "kind": "choice",
+          "prompt": "am Ende",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Zeitlicher Ablauf"
+        },
+        {
+          "id": "item-16",
+          "kind": "choice",
+          "prompt": "dagegen",
+          "options": [
+            {
+              "value": "Zeitlicher Ablauf",
+              "label": "Zeitlicher Ablauf"
+            },
+            {
+              "value": "Zusätzlich",
+              "label": "Zusätzlich"
+            },
+            {
+              "value": "Gegensatz",
+              "label": "Gegensatz"
+            },
+            {
+              "value": "Grund / Folge",
+              "label": "Grund / Folge"
+            }
+          ],
+          "answer": "Gegensatz"
+        }
+      ],
+      "wordBank": [
+        "deshalb",
+        "danach",
+        "ausserdem",
+        "jedoch",
+        "zunächst",
+        "weil",
+        "hingegen",
+        "schliesslich",
+        "zudem",
+        "dadurch",
+        "anschliessend",
+        "aber",
+        "folglich",
+        "ebenfalls",
+        "am Ende",
+        "dagegen"
+      ]
+    },
+    {
+      "id": "ablauf-02",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 8,
+      "title": "2. Wähle das passende Wort",
+      "instructions": "Setze ein passendes Verbindungswort ein.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "blank",
+          "prompt": "Ich stehe morgens um 7 Uhr auf. ___ dusche ich und ziehe mich an.",
+          "answers": [
+            "danach"
+          ]
+        },
+        {
+          "id": "item-2",
+          "kind": "blank",
+          "prompt": "Ich gehe gerne joggen. ___ fahre ich auch gerne Fahrrad.",
+          "answers": [
+            "ausserdem"
+          ]
+        },
+        {
+          "id": "item-3",
+          "kind": "blank",
+          "prompt": "Es regnet stark. ___ nehme ich einen Regenschirm mit.",
+          "answers": [
+            "deshalb"
+          ]
+        },
+        {
+          "id": "item-4",
+          "kind": "blank",
+          "prompt": "Meine Schwester mag den Winter. Ich ___ liebe den Sommer.",
+          "answers": [
+            "hingegen"
+          ]
+        },
+        {
+          "id": "item-5",
+          "kind": "blank",
+          "prompt": "___ mache ich meine Hausaufgaben. Danach treffe ich meine Freunde.",
+          "answers": [
+            "zunächst"
+          ]
+        },
+        {
+          "id": "item-6",
+          "kind": "blank",
+          "prompt": "Ich gehe heute nicht ins Kino, ___ ich keine Zeit habe.",
+          "answers": [
+            "weil"
+          ]
+        },
+        {
+          "id": "item-7",
+          "kind": "blank",
+          "prompt": "Das Restaurant war sehr teuer. Das Essen war ___ sehr gut.",
+          "answers": [
+            "jedoch"
+          ]
+        },
+        {
+          "id": "item-8",
+          "kind": "blank",
+          "prompt": "Wir haben lange gesucht. ___ haben wir das richtige Hotel gefunden.",
+          "answers": [
+            "schliesslich"
+          ]
+        }
+      ],
+      "wordBank": [
+        "zunächst",
+        "danach",
+        "ausserdem",
+        "jedoch",
+        "deshalb",
+        "schliesslich",
+        "hingegen",
+        "weil"
+      ]
+    },
+    {
+      "id": "ablauf-03",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 6,
+      "title": "3. Verbinde die Sätze",
+      "instructions": "Verbinde die beiden Sätze mit dem Wort in Klammern.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "writing",
+          "prompt": "Ich habe Hunger. Ich mache mir ein Sandwich. (deshalb)",
+          "rubric": "Use deshalb to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Ich habe Hunger. Deshalb mache ich mir ein Sandwich."
+        },
+        {
+          "id": "item-2",
+          "kind": "writing",
+          "prompt": "Zuerst mache ich meine Hausaufgaben. Danach sehe ich fern. (anschliessend)",
+          "rubric": "Use anschliessend to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Zuerst mache ich meine Hausaufgaben. Anschliessend sehe ich fern."
+        },
+        {
+          "id": "item-3",
+          "kind": "writing",
+          "prompt": "Lisa spricht sehr gut Deutsch. Sie spricht auch Französisch. (ausserdem)",
+          "rubric": "Use ausserdem to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Lisa spricht sehr gut Deutsch. Ausserdem spricht sie Französisch."
+        },
+        {
+          "id": "item-4",
+          "kind": "writing",
+          "prompt": "Peter mag Fussball. Sein Bruder mag Tennis. (hingegen)",
+          "rubric": "Use hingegen to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Peter mag Fussball. Sein Bruder hingegen mag Tennis."
+        },
+        {
+          "id": "item-5",
+          "kind": "writing",
+          "prompt": "Ich bleibe heute zu Hause. Ich bin krank. (weil)",
+          "rubric": "Use weil to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Ich bleibe heute zu Hause, weil ich krank bin."
+        },
+        {
+          "id": "item-6",
+          "kind": "writing",
+          "prompt": "Wir haben lange gewartet. Der Bus ist endlich gekommen. (schliesslich)",
+          "rubric": "Use schliesslich to connect both ideas without changing their meaning. One or two correctly connected sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Wir haben lange gewartet. Schliesslich ist der Bus gekommen."
+        }
+      ],
+      "example": "Ich bin müde. Ich gehe schlafen. (deshalb)\n→ Ich bin müde. Deshalb gehe ich schlafen."
+    },
+    {
+      "id": "ablauf-04",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 6,
+      "title": "4. Was passt zusammen?",
+      "instructions": "Verbinde die Satzanfänge mit der passenden Fortsetzung.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "choice",
+          "prompt": "Ich hatte keine Zeit,",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "F"
+        },
+        {
+          "id": "item-2",
+          "kind": "choice",
+          "prompt": "Es war sehr kalt,",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "item-3",
+          "kind": "choice",
+          "prompt": "Zuerst habe ich eingekauft,",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "C"
+        },
+        {
+          "id": "item-4",
+          "kind": "choice",
+          "prompt": "Meine Schwester liebt Katzen,",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "B"
+        },
+        {
+          "id": "item-5",
+          "kind": "choice",
+          "prompt": "Ich lerne jeden Tag Deutsch.",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "E"
+        },
+        {
+          "id": "item-6",
+          "kind": "choice",
+          "prompt": "Wir haben lange diskutiert,",
+          "options": [
+            {
+              "value": "A",
+              "label": "A. deshalb habe ich eine Jacke angezogen."
+            },
+            {
+              "value": "B",
+              "label": "B. hingegen mag mein Bruder Hunde."
+            },
+            {
+              "value": "C",
+              "label": "C. anschliessend habe ich gekocht."
+            },
+            {
+              "value": "D",
+              "label": "D. schliesslich haben wir eine Lösung gefunden."
+            },
+            {
+              "value": "E",
+              "label": "E. weil ich viel für meine Prüfung lernen muss."
+            },
+            {
+              "value": "F",
+              "label": "F. deswegen konnte ich nicht mitkommen."
+            }
+          ],
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "id": "ablauf-05",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 6,
+      "title": "5. Welches Wort passt?",
+      "instructions": "Kreuze die richtige Antwort an.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "choice",
+          "prompt": "Ich bin müde. ___ gehe ich ins Bett.",
+          "options": [
+            {
+              "value": "ausserdem",
+              "label": "ausserdem"
+            },
+            {
+              "value": "deshalb",
+              "label": "deshalb"
+            },
+            {
+              "value": "hingegen",
+              "label": "hingegen"
+            }
+          ],
+          "answer": "deshalb"
+        },
+        {
+          "id": "item-2",
+          "kind": "choice",
+          "prompt": "___ war ich einkaufen. Danach bin ich nach Hause gegangen.",
+          "options": [
+            {
+              "value": "Zunächst",
+              "label": "Zunächst"
+            },
+            {
+              "value": "Jedoch",
+              "label": "Jedoch"
+            },
+            {
+              "value": "Weil",
+              "label": "Weil"
+            }
+          ],
+          "answer": "Zunächst"
+        },
+        {
+          "id": "item-3",
+          "kind": "choice",
+          "prompt": "Ich mag Kaffee. ___ trinke ich auch gerne Tee.",
+          "options": [
+            {
+              "value": "Darüber hinaus",
+              "label": "Darüber hinaus"
+            },
+            {
+              "value": "Dagegen",
+              "label": "Dagegen"
+            },
+            {
+              "value": "Deshalb",
+              "label": "Deshalb"
+            }
+          ],
+          "answer": "Darüber hinaus"
+        },
+        {
+          "id": "item-4",
+          "kind": "choice",
+          "prompt": "Meine Mutter steht früh auf. Ich ___ schlafe gerne lange.",
+          "options": [
+            {
+              "value": "hingegen",
+              "label": "hingegen"
+            },
+            {
+              "value": "deshalb",
+              "label": "deshalb"
+            },
+            {
+              "value": "danach",
+              "label": "danach"
+            }
+          ],
+          "answer": "hingegen"
+        },
+        {
+          "id": "item-5",
+          "kind": "choice",
+          "prompt": "Ich gehe nicht spazieren, ___ es regnet.",
+          "options": [
+            {
+              "value": "schliesslich",
+              "label": "schliesslich"
+            },
+            {
+              "value": "weil",
+              "label": "weil"
+            },
+            {
+              "value": "ausserdem",
+              "label": "ausserdem"
+            }
+          ],
+          "answer": "weil"
+        },
+        {
+          "id": "item-6",
+          "kind": "choice",
+          "prompt": "Wir haben zuerst gegessen. ___ haben wir einen Film geschaut.",
+          "options": [
+            {
+              "value": "Anschliessend",
+              "label": "Anschliessend"
+            },
+            {
+              "value": "Allerdings",
+              "label": "Allerdings"
+            },
+            {
+              "value": "Deshalb",
+              "label": "Deshalb"
+            }
+          ],
+          "answer": "Anschliessend"
+        }
+      ]
+    },
+    {
+      "id": "ablauf-06",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 5,
+      "title": "6. Ersetze das Wort",
+      "instructions": "Ersetze das markierte Wort durch ein anderes Wort mit einer ähnlichen Bedeutung. Tippe nur das Ersatzwort oder die Wortgruppe.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "writing",
+          "prompt": "Zuerst mache ich meine Hausaufgaben.\nErsetze: Zuerst\n→ ___ mache ich meine Hausaufgaben.",
+          "rubric": "The answer must be a different word or phrase replacing Zuerst in this sentence: Zuerst mache ich meine Hausaufgaben. It must preserve meaning and fit the displayed word order. It must not repeat Zuerst. Accept any valid synonym, not only Zunächst.",
+          "rows": 1,
+          "exampleAnswer": "Zunächst"
+        },
+        {
+          "id": "item-2",
+          "kind": "writing",
+          "prompt": "Ich mag den Sommer. Ausserdem mag ich den Frühling.\nErsetze: Ausserdem\n→ Ich mag den Sommer. ___ mag ich den Frühling.",
+          "rubric": "The answer must be a different word or phrase replacing Ausserdem in this sentence: Ich mag den Sommer. Ausserdem mag ich den Frühling. It must preserve meaning and fit the displayed word order. It must not repeat Ausserdem. Accept any valid synonym, not only Zudem.",
+          "rows": 1,
+          "exampleAnswer": "Zudem"
+        },
+        {
+          "id": "item-3",
+          "kind": "writing",
+          "prompt": "Es regnet. Deshalb bleibe ich zu Hause.\nErsetze: Deshalb\n→ Es regnet. ___ bleibe ich zu Hause.",
+          "rubric": "The answer must be a different word or phrase replacing Deshalb in this sentence: Es regnet. Deshalb bleibe ich zu Hause. It must preserve meaning and fit the displayed word order. It must not repeat Deshalb. Accept any valid synonym, not only Deswegen.",
+          "rows": 1,
+          "exampleAnswer": "Deswegen"
+        },
+        {
+          "id": "item-4",
+          "kind": "writing",
+          "prompt": "Danach gehe ich einkaufen.\nErsetze: Danach\n→ ___ gehe ich einkaufen.",
+          "rubric": "The answer must be a different word or phrase replacing Danach in this sentence: Danach gehe ich einkaufen. It must preserve meaning and fit the displayed word order. It must not repeat Danach. Accept any valid synonym, not only Anschliessend.",
+          "rows": 1,
+          "exampleAnswer": "Anschliessend"
+        },
+        {
+          "id": "item-5",
+          "kind": "writing",
+          "prompt": "Ich mag Fussball. Jedoch spiele ich lieber Tennis.\nErsetze: Jedoch\n→ Ich mag Fussball. ___ spiele ich lieber Tennis.",
+          "rubric": "The answer must be a different word or phrase replacing Jedoch in this sentence: Ich mag Fussball. Jedoch spiele ich lieber Tennis. It must preserve meaning and fit the displayed word order. It must not repeat Jedoch. Accept any valid synonym, not only Allerdings.",
+          "rows": 1,
+          "exampleAnswer": "Allerdings"
+        }
+      ],
+      "example": "Ich bin krank. Deshalb gehe ich nicht zur Arbeit.\n→ Ich bin krank. Deswegen gehe ich nicht zur Arbeit."
+    },
+    {
+      "id": "ablauf-07",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 5,
+      "title": "7. Baue einen Satz",
+      "instructions": "Bilde mit den Wörtern einen korrekten Satz.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "writing",
+          "prompt": "zuerst / Frühstück / ich / essen",
+          "rubric": "Use all supplied concepts and the given connector. Conjugate the verbs and add articles, prepositions or linking verbs where needed. One or two coherent sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Zuerst esse ich Frühstück."
+        },
+        {
+          "id": "item-2",
+          "kind": "writing",
+          "prompt": "danach / Arbeit / ich / gehen",
+          "rubric": "Use all supplied concepts and the given connector. Conjugate the verbs and add articles, prepositions or linking verbs where needed. One or two coherent sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Danach gehe ich zur Arbeit."
+        },
+        {
+          "id": "item-3",
+          "kind": "writing",
+          "prompt": "ausserdem / gerne / ich / lesen",
+          "rubric": "Use all supplied concepts and the given connector. Conjugate the verbs and add articles, prepositions or linking verbs where needed. One or two coherent sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Ausserdem lese ich gerne."
+        },
+        {
+          "id": "item-4",
+          "kind": "writing",
+          "prompt": "es / regnen / deshalb / ich / zu Hause / bleiben",
+          "rubric": "Use all supplied concepts and the given connector. Conjugate the verbs and add articles, prepositions or linking verbs where needed. One or two coherent sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Es regnet. Deshalb bleibe ich zu Hause."
+        },
+        {
+          "id": "item-5",
+          "kind": "writing",
+          "prompt": "meine Schwester / Sommer / mögen / ich / hingegen / Winter / mögen",
+          "rubric": "Use all supplied concepts and the given connector. Conjugate the verbs and add articles, prepositions or linking verbs where needed. One or two coherent sentences are acceptable.",
+          "rows": 3,
+          "exampleAnswer": "Meine Schwester mag den Sommer. Ich hingegen mag den Winter."
+        }
+      ],
+      "example": "müde / deshalb / ich / ins Bett / gehen\n→ Ich bin müde. Deshalb gehe ich ins Bett."
+    },
+    {
+      "id": "ablauf-08",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 1,
+      "title": "8. Schreibe eine kleine Geschichte",
+      "instructions": "Schreibe einen kurzen Text über deinen Tagesablauf. Versuche, mindestens 6 Verbindungswörter zu benutzen.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "writing",
+          "prompt": "Mein Tagesablauf",
+          "rubric": "Write a coherent short German text about a daily routine. Use at least six connecting words or phrases appropriately. The suggested word bank is optional, equivalent connectors are allowed.",
+          "rows": 8
+        }
+      ],
+      "wordBank": [
+        "zuerst",
+        "zunächst",
+        "danach",
+        "anschliessend",
+        "ausserdem",
+        "später",
+        "schliesslich",
+        "am Ende"
+      ]
+    },
+    {
+      "id": "ablauf-09",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 1,
+      "title": "9. Challenge: Eine Geschichte schreiben",
+      "instructions": "Schreibe einen kurzen Text über das Thema: „Mein Wochenende“.\nVerwende mindestens:\n☐ 2 Wörter für zeitlichen Ablauf\n☐ 1 Wort für zusätzliche Informationen\n☐ 1 Wort für Gegensatz\n☐ 1 Wort für Grund/Folge",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "writing",
+          "prompt": "Mein Text",
+          "rubric": "Write a coherent short German text about a weekend. Appropriately use at least two distinct time-sequence connectors, one addition connector, one contrast connector, and one cause/consequence connector. All four requirements must be met; suggested connectors are examples, not an exclusive list.",
+          "rows": 8
+        }
+      ],
+      "wordBank": [
+        "Zeit: zuerst, danach, anschliessend, später, schliesslich",
+        "Zusätzlich: ausserdem, zudem, ebenfalls, darüber hinaus",
+        "Gegensatz: aber, jedoch, allerdings, hingegen",
+        "Grund/Folge: deshalb, deswegen, daher, weil, somit"
+      ]
+    },
+    {
+      "id": "ablauf-10",
+      "categories": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "refs": {
+        "words": [],
+        "topics": []
+      },
+      "points": 8,
+      "title": "10. Meine persönlichen Lieblingswörter",
+      "instructions": "Wähle 8 Verbindungswörter, die du besonders nützlich findest. Schreibe mit jedem Wort einen eigenen Satz.",
+      "items": [
+        {
+          "id": "item-1",
+          "kind": "personal",
+          "prompt": "1. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-2",
+          "kind": "personal",
+          "prompt": "2. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-3",
+          "kind": "personal",
+          "prompt": "3. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-4",
+          "kind": "personal",
+          "prompt": "4. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-5",
+          "kind": "personal",
+          "prompt": "5. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-6",
+          "kind": "personal",
+          "prompt": "6. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-7",
+          "kind": "personal",
+          "prompt": "7. Verbindungswort und eigener Satz"
+        },
+        {
+          "id": "item-8",
+          "kind": "personal",
+          "prompt": "8. Verbindungswort und eigener Satz"
+        }
+      ]
+    }
+  ]
+}

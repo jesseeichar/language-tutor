@@ -139,3 +139,13 @@ progress { width: 100%; height: 6px; margin-bottom: 24px; accent-color: var(--ac
 .log-head .question-type { margin-bottom: 0; }
 .log-foot { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-top: 4px; }
 .log-foot button { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 4px 14px; }
+
+.worksheet-instructions, .worksheet-example p, .worksheet-item > label, .worksheet-item legend { white-space: pre-wrap; }
+.worksheet-bank, .worksheet-example { padding: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.worksheet-item { display: grid; gap: 8px; margin: 22px 0; min-width: 0; }
+.worksheet-item input:not([type="radio"]), .worksheet-item textarea, .worksheet-item select { width: 100%; box-sizing: border-box; font: inherit; padding: 10px; }
+.worksheet-item textarea { resize: vertical; }
+.worksheet-item label { display: grid; gap: 5px; }
+.worksheet-item .worksheet-option { display: flex; align-items: center; gap: 10px; }
+
+.runner-head > .muted { white-space: nowrap; }

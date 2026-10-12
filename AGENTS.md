@@ -266,3 +266,13 @@ Editor writes must validate the whole current content set, check the client's re
 lost updates, and replace one file atomically. Preserve unknown file metadata and all question fields
 other than the edited category assignments. Content changes apply immediately; unsaved form edits
 need a discard prompt. The editor does not change question text, answers, vocabulary, or grammar topics.
+
+## Standalone worksheets
+
+The `worksheet` mode starts immediately with every exercise in JSON order (`fixedSession`); it has
+no category, type, count, or direction setup. The supplied Zeitlicher Ablauf worksheet preserves all
+ten sections and 62 answer items from the learner's PDF. Its writing and synonym tasks use the
+server-injected Jev exercise service; fixed answers are checked locally, and personal choices are
+checked only for completing both fields. Each item is worth one point; section grades may be partial.
+Worksheet refs are empty, so this standalone activity does not alter vocabulary strength. See
+[docs/worksheet.md](docs/worksheet.md). Do not replace open-ended writing with literal answer matching.

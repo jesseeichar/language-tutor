@@ -17,7 +17,6 @@ export {
 } from "./content";
 export {
   DirectionChoiceSchema,
-  isDirectionalQuestion,
   pointsFor,
   type Direction,
   type DirectionChoice,
@@ -27,6 +26,7 @@ export { ContentEditSchema, type ContentEdit, type EditorSnapshot } from "./edit
 export { getMode, modes } from "./modes/registry";
 export { cardSides, type FlashcardQuestion, type FlashcardResponse } from "./modes/flashcards";
 export { type QuizQuestion, type QuizResponse } from "./modes/quiz";
+export { type WorksheetQuestion } from "./modes/worksheet";
 export {
   CreateSessionRequestSchema,
   SubmitAnswerRequestSchema,

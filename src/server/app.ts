@@ -7,7 +7,6 @@ import {
   CreateSessionRequestSchema,
   ContentEditSchema,
   getMode,
-  isDirectionalQuestion,
   modes,
   pointsFor,
   type ApiError,
@@ -143,11 +142,12 @@ export function startServer(options: AppOptions): Server<undefined> {
               description: mode.description,
               graded: mode.graded,
               defaultSessionSize: mode.defaultSessionSize,
+              fixedSession: mode.fixedSession,
               defaultQuestionTypes: defaultTypes(mode.defaultQuestionTypes, questions),
               questionCount: questions.length,
               categories,
               questionTypes,
-              directional: questions.some((q) => isDirectionalQuestion(mode, q)),
+              directional: questions.some((q) => mode.isDirectional?.(q) ?? false),
             };
           });
         }),
@@ -179,6 +179,12 @@ export function startServer(options: AppOptions): Server<undefined> {
           const mode = getMode(modeId);
           if (!mode) throw new HttpError(404, `Unknown mode ${modeId}`);
           const c = await content();
+          if (mode.fixedSession) {
+            const questions = c.questions.get(mode.id) ?? [];
+            if (!questions.length) throw new HttpError(400, "This worksheet has no exercises");
+            return begin({ modeId, graded: mode.graded, categoryIds: [...new Set(questions.flatMap(q => q.categories))],
+              questionIds: questions.map(q => q.id), questionTypes: null, direction: null, directions: {}, repeatOf: null }, questions);
+          }
           const questionTypes = parsed.data.questionTypes ?? defaultTypes(mode.defaultQuestionTypes, c.questions.get(mode.id) ?? []);
           const pool = filterPool(c.questions.get(mode.id) ?? [], c.categories, { categoryIds, questionTypes });
           if (pool.length === 0) throw new HttpError(400, "No questions match the selected categories and question types");
@@ -190,7 +196,7 @@ export function startServer(options: AppOptions): Server<undefined> {
             strengths: store.allStrengths(),
             quota: mode.sessionQuota,
           });
-          const directions = assignDirections(questions, (q) => isDirectionalQuestion(mode, q), direction);
+          const directions = assignDirections(questions, (q) => mode.isDirectional?.(q) ?? false, direction);
           return begin(
             {
               modeId: mode.id,

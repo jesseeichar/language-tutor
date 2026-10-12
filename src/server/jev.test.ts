@@ -75,3 +75,14 @@ test("a slow provider is aborted by the timeout", async () => {
   }));
   await expect(createJevGrader({ typesafeApiKey: "test" }, send, 10).translation(input)).rejects.toThrow("has not been scored");
 });
+
+test("worksheet writing uses its own task rubric rather than translation instructions", async () => {
+  const send = transport(async (_url, init) => {
+    const body = JSON.parse(init!.body as string);
+    expect(body.state).toEqual({ task: "Mein Wochenende", rubric: "Use two time connectors.", learnerAnswer: "Zuerst lese ich. Danach esse ich." });
+    expect(body.questions.meaning.instructions).toContain("task and its rubric");
+    return Response.json(result(0.9, 0.2));
+  });
+  const grade = await createJevGrader({ typesafeApiKey: "test" }, send).exercise!({ prompt: "Mein Wochenende", rubric: "Use two time connectors.", answer: "Zuerst lese ich. Danach esse ich." });
+  expect(grade).toMatchObject({ correct: false, score: 0, feedback: "The grammar needs correction." });
+});

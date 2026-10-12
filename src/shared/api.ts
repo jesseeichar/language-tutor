@@ -19,6 +19,7 @@ export interface ModeSummary {
   description: string;
   graded: boolean;
   defaultSessionSize: number;
+  fixedSession?: boolean;
   defaultQuestionTypes?: string[];
   questionCount: number;
   /** Only categories that have at least one question in this mode. */

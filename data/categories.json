@@ -104,6 +104,11 @@
       "id": "grammar-adjektivdeklination-adjective-endings",
       "label": "Adjektivdeklination — Adjective Endings",
       "group": "Grammatik"
+    },
+    {
+      "id": "worksheet-zeitlicher-ablauf",
+      "label": "Zeitlicher Ablauf & Verbindungswörter",
+      "group": "Arbeitsblätter"
     }
   ]
 }

@@ -26,6 +26,7 @@ export interface GradeResult {
 
 /** Supplied by the server; shared modes never read credentials or perform network I/O. */
 export interface GradingServices {
+  exercise?(input: { prompt: string; rubric: string; answer: string }): Promise<GradeResult>;
   translation(input: { source: string; reference: string; answer: string; targetLanguage: "German" | "English" }): Promise<GradeResult>;
 }
 
@@ -42,6 +43,8 @@ interface ModeCommon<Q extends QuestionBase, R> {
   responseSchema: z.ZodType<R, any>;
   /** Default number of questions offered on the setup screen. */
   defaultSessionSize: number;
+  /** Start immediately with every question in authored order, without setup filters. */
+  fixedSession?: boolean;
   /** Initial type filter. Omit to offer every type. */
   defaultQuestionTypes?: string[];
   /** Reserve a share for a subset; unused places go to the other subset. */
@@ -72,10 +75,6 @@ export type ModeDefinition<Q extends QuestionBase = QuestionBase, R = unknown> =
 
 /** Registries hold modes with different question types side by side, hence `any`. */
 export type AnyModeDefinition = ModeDefinition<any, any>;
-
-export function isDirectionalQuestion(mode: AnyModeDefinition, question: QuestionBase): boolean {
-  return mode.isDirectional?.(question) ?? false;
-}
 
 export function pointsFor(mode: AnyModeDefinition, question: QuestionBase): number {
   if (!mode.graded) return 0;

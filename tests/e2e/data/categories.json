@@ -4,6 +4,7 @@
     { "id": "vocab-time", "label": "Time", "group": "Vokabular", "parent": "vocab-connectors" },
     { "id": "vocab-contrast", "label": "Contrast", "group": "Vokabular", "parent": "vocab-connectors" },
     { "id": "grammar-cases", "label": "Cases", "group": "Grammatik" },
-    { "id": "fresh-check", "label": "Freshness check", "group": "Test" }
+    { "id": "fresh-check", "label": "Freshness check", "group": "Test" },
+    { "id": "worksheet-zeitlicher-ablauf", "label": "Zeitlicher Ablauf & Verbindungswörter", "group": "Arbeitsblätter" }
   ]
 }
