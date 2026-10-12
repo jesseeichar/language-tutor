@@ -1,0 +1,43 @@
+import type {
+  ApiError,
+  CreateSessionRequest,
+  CreateSessionResponse,
+  ModeSummary,
+  SessionSummary,
+  SubmitAnswerResponse,
+} from "../shared";
+
+export class ApiRequestError extends Error {
+  constructor(
+    message: string,
+    public readonly details: string[] = [],
+  ) {
+    super(message);
+  }
+}
+
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const res = await fetch(path, {
+    ...init,
+    headers: { "Content-Type": "application/json", ...init?.headers },
+  });
+  const body = await res.json().catch(() => null);
+  if (!res.ok) {
+    const err = body as ApiError | null;
+    throw new ApiRequestError(err?.error ?? `Request failed (${res.status})`, err?.details);
+  }
+  return body as T;
+}
+
+export const api = {
+  modes: () => request<ModeSummary[]>("/api/modes"),
+  createSession: (body: CreateSessionRequest) =>
+    request<CreateSessionResponse>("/api/sessions", { method: "POST", body: JSON.stringify(body) }),
+  submitAnswer: (sessionId: string, questionId: string, response: unknown) =>
+    request<SubmitAnswerResponse>(`/api/sessions/${sessionId}/answers`, {
+      method: "POST",
+      body: JSON.stringify({ questionId, response }),
+    }),
+  finishSession: (sessionId: string) =>
+    request<SessionSummary>(`/api/sessions/${sessionId}/finish`, { method: "POST" }),
+};

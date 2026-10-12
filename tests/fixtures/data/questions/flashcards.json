@@ -1,0 +1,8 @@
+{
+  "questions": [
+    { "id": "fc-zuerst", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "front": "zuerst", "back": "first" },
+    { "id": "fc-jedoch", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "front": "jedoch", "back": "however", "notes": "Inversion follows." },
+    { "id": "fc-lohn", "categories": ["vocab-work"], "refs": { "words": ["lohn"] }, "front": "der Lohn", "back": "wage" },
+    { "id": "fc-kasus", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "an + ? (movement)", "back": "Akkusativ" }
+  ]
+}

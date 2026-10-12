@@ -1,0 +1,9 @@
+{
+  "questions": [
+    { "id": "fc-zuerst", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "front": "zuerst", "back": "first, first of all" },
+    { "id": "fc-jedoch", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "front": "jedoch", "back": "however", "notes": "Verb comes next: Jedoch ist es teuer." },
+    { "id": "fc-kasus", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "an + ? when there is movement", "back": "Akkusativ" },
+    { "id": "fc-fresh-a", "categories": ["fresh-check"], "front": "Fresh card A", "back": "A" },
+    { "id": "fc-fresh-b", "categories": ["fresh-check"], "front": "Fresh card B", "back": "B" }
+  ]
+}

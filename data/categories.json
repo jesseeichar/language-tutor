@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "id": "vocab-connectors-linking-words",
+      "label": "Verbindungswörter / Connectors & Linking Words",
+      "group": "Vokabular"
+    },
+    {
+      "id": "vocab-sequence-time-order",
+      "label": "Reihenfolge & zeitlicher Ablauf / Sequence & Time Order",
+      "group": "Vokabular",
+      "parent": "vocab-connectors-linking-words"
+    },
+    {
+      "id": "vocab-adding-information",
+      "label": "Zusätzliche Information / Adding Information",
+      "group": "Vokabular",
+      "parent": "vocab-connectors-linking-words"
+    },
+    {
+      "id": "vocab-contrast",
+      "label": "Gegensatz / Contrast",
+      "group": "Vokabular",
+      "parent": "vocab-connectors-linking-words"
+    },
+    {
+      "id": "vocab-cause-consequence",
+      "label": "Grund & Folge / Cause & Consequence",
+      "group": "Vokabular",
+      "parent": "vocab-connectors-linking-words"
+    },
+    {
+      "id": "vocab-other-connectors",
+      "label": "Weitere Verbindungswörter / Other Connectors",
+      "group": "Vokabular",
+      "parent": "vocab-connectors-linking-words"
+    },
+    {
+      "id": "vocab-job-workplace",
+      "label": "Beruf & Arbeit / Job & Workplace",
+      "group": "Vokabular"
+    },
+    {
+      "id": "vocab-key-verbs",
+      "label": "Wichtige Verben / Key Verbs",
+      "group": "Vokabular"
+    },
+    {
+      "id": "vocab-adjectives-determiners",
+      "label": "Adjektive & Artikel / Adjectives & Determiners",
+      "group": "Vokabular"
+    },
+    {
+      "id": "vocab-useful-phrases",
+      "label": "Nützliche Ausdrücke / Useful Phrases",
+      "group": "Vokabular"
+    },
+    {
+      "id": "grammar-ohne-dass-ohne-zu",
+      "label": "ohne dass / ohne zu",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-wegen-weil",
+      "label": "wegen / weil",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-weil-obwohl-gegenueberstellung-der-verwendung",
+      "label": "weil / obwohl — Gegenüberstellung der Verwendung",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-nebensatz-hauptsatz",
+      "label": "Nebensatz / Hauptsatz",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-wortbildung",
+      "label": "Wortbildung",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-es-als-korrelat-infinitivsatz-mit-es",
+      "label": "es als Korrelat — Infinitivsatz mit es",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-werden-vollverb-futur-passiv-konjunktiv-ii",
+      "label": "werden — Vollverb, Futur, Passiv & Konjunktiv II",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-kasus-nominativ-akkusativ-dativ-genitiv",
+      "label": "Kasus — Nominativ, Akkusativ, Dativ & Genitiv",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-praeteritum-simple-past-of-key-verbs",
+      "label": "Präteritum — Simple Past of Key Verbs",
+      "group": "Grammatik"
+    },
+    {
+      "id": "grammar-adjektivdeklination-adjective-endings",
+      "label": "Adjektivdeklination — Adjective Endings",
+      "group": "Grammatik"
+    }
+  ]
+}

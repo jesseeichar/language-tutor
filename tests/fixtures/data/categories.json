@@ -1,0 +1,10 @@
+{
+  "categories": [
+    { "id": "vocab-connectors", "label": "Connectors", "group": "Vokabular" },
+    { "id": "vocab-time", "label": "Time", "group": "Vokabular", "parent": "vocab-connectors" },
+    { "id": "vocab-contrast", "label": "Contrast", "group": "Vokabular", "parent": "vocab-connectors" },
+    { "id": "vocab-work", "label": "Work", "group": "Vokabular" },
+    { "id": "grammar-cases", "label": "Cases", "group": "Grammatik" },
+    { "id": "unused", "label": "Unused", "group": "Grammatik" }
+  ]
+}

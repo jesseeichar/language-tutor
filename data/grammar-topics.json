@@ -1,0 +1,94 @@
+{
+  "topics": [
+    {
+      "id": "ohne-dass-ohne-zu",
+      "title": "ohne dass / ohne zu",
+      "description": "Both constructions express the idea of doing something without doing something else. The choice between them depends on whether the subjects of both clauses are the same or different.",
+      "status": "In Arbeit",
+      "categories": [
+        "grammar-ohne-dass-ohne-zu"
+      ]
+    },
+    {
+      "id": "wegen-weil",
+      "title": "wegen / weil",
+      "description": "",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-wegen-weil"
+      ]
+    },
+    {
+      "id": "weil-obwohl-gegenueberstellung-der-verwendung",
+      "title": "weil / obwohl — Gegenüberstellung der Verwendung",
+      "description": "Both weil and obwohl are subordinating conjunctions — they both send the verb to the END of the clause. The difference is not grammatical but logical: they express opposite relationships between two clauses.",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-weil-obwohl-gegenueberstellung-der-verwendung"
+      ]
+    },
+    {
+      "id": "nebensatz-hauptsatz",
+      "title": "Nebensatz / Hauptsatz",
+      "description": "",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-nebensatz-hauptsatz"
+      ]
+    },
+    {
+      "id": "wortbildung",
+      "title": "Wortbildung",
+      "description": "",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-wortbildung"
+      ]
+    },
+    {
+      "id": "es-als-korrelat-infinitivsatz-mit-es",
+      "title": "es als Korrelat — Infinitivsatz mit es",
+      "description": "In German, es can act as a placeholder (Korrelat) standing in for a following infinitive clause or subordinate clause. The main clause uses es to announce the clause that comes after the comma.",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-es-als-korrelat-infinitivsatz-mit-es"
+      ]
+    },
+    {
+      "id": "werden-vollverb-futur-passiv-konjunktiv-ii",
+      "title": "werden — Vollverb, Futur, Passiv & Konjunktiv II",
+      "description": "werden is one of the most important — and most versatile — verbs in German. It is used in four distinct ways, each with a different following structure. The key to understanding it is always looking at what comes after it.",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ]
+    },
+    {
+      "id": "kasus-nominativ-akkusativ-dativ-genitiv",
+      "title": "Kasus — Nominativ, Akkusativ, Dativ & Genitiv",
+      "description": "German has four grammatical cases. The case determines which article form to use. It is set by the role the noun plays in the sentence, or by the preposition governing it.",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ]
+    },
+    {
+      "id": "praeteritum-simple-past-of-key-verbs",
+      "title": "Präteritum — Simple Past of Key Verbs",
+      "description": "The Präteritum (simple past) is the standard past tense in writing and is also used in speech for a small set of very common verbs: sein, haben, and the modal verbs. For these verbs, the Präteritum is preferred over the Perfekt even in conversation. Note: the ich and er/sie/es forms are always identical.",
+      "status": "Ausstehend",
+      "categories": [
+        "grammar-praeteritum-simple-past-of-key-verbs"
+      ]
+    },
+    {
+      "id": "adjektivdeklination-adjective-endings",
+      "title": "Adjektivdeklination — Adjective Endings",
+      "description": "Current main weakness (Quiz 8 and 9). Every miss had the same shape: the article was right, the noun was right, only the adjective ending was wrong. It looks like three separate case problems, but it is one rule.",
+      "status": "In Arbeit",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ]
+    }
+  ]
+}

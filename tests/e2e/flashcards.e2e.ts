@@ -1,0 +1,104 @@
+import { expect, test, type Page } from "@playwright/test";
+
+async function openFlashcards(page: Page) {
+  await page.goto("/");
+  await page.getByRole("button", { name: /Flashcards/ }).click();
+  await expect(page.getByRole("heading", { name: "Flashcards" })).toBeVisible();
+}
+
+async function studyAll(page: Page, cards: number) {
+  for (let i = 1; i <= cards; i++) {
+    await expect(page.getByText(`${i} / ${cards}`)).toBeVisible();
+    await page.getByRole("button", { name: /Flip/ }).click();
+    await page.getByRole("button", { name: i === cards ? /Finish/ : /Next/ }).click();
+  }
+}
+
+test("home lists the flashcard study tool", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Study" })).toBeVisible();
+  await expect(page.getByRole("button", { name: /Flashcards/ })).toContainText("5 questions");
+  await expect(page.getByText(/No quizzes yet/)).toBeVisible();
+});
+
+test("Start needs at least one category", async ({ page }) => {
+  await openFlashcards(page);
+  await expect(page.getByRole("button", { name: "Start" })).toBeDisabled();
+  await page.getByLabel("Time").check();
+  await expect(page.getByRole("button", { name: "Start" })).toBeEnabled();
+});
+
+test("study a session across several categories", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Time").check();
+  await page.getByLabel("Cases").check();
+  await page.getByRole("button", { name: "Start" }).click();
+
+  await expect(page.getByText("Question", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /Flip/ }).click();
+  await expect(page.getByText("Answer", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /Next/ }).click();
+  await page.getByRole("button", { name: /Flip/ }).click();
+  await page.getByRole("button", { name: /Finish/ }).click();
+
+  await expect(page.getByText("Studied 2 of 2 cards")).toBeVisible();
+  await expect(page.getByText(/worth 0 points/)).toBeVisible();
+});
+
+test("a parent category includes its children", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Connectors").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await studyAll(page, 2);
+  await expect(page.getByText("Studied 2 of 2 cards")).toBeVisible();
+});
+
+test("keyboard: Space flips, arrow moves on", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Contrast").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.getByText("jedoch")).toBeVisible();
+  await page.keyboard.press("Space");
+  await expect(page.getByText("however")).toBeVisible();
+  await expect(page.getByText(/Jedoch ist es teuer/)).toBeVisible();
+  await page.keyboard.press("ArrowRight");
+  await expect(page.getByText("Studied 1 of 1 cards")).toBeVisible();
+});
+
+test("ending a session early shows how far you got", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Connectors").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await page.getByRole("button", { name: /Flip/ }).click();
+  await page.getByRole("button", { name: "End session" }).click();
+  await expect(page.getByText("Studied 1 of 2 cards")).toBeVisible();
+});
+
+test("the category selection is remembered", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Cases").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await studyAll(page, 1);
+  await page.getByRole("button", { name: "Another session" }).click();
+  await expect(page.getByLabel("Cases")).toBeChecked();
+  await expect(page.getByLabel("Time")).not.toBeChecked();
+});
+
+test("progress is stored: a card already studied gives way to a fresh one", async ({ page }) => {
+  const studyOneFreshCard = async () => {
+    await openFlashcards(page);
+    await page.getByLabel("Freshness check").check();
+    const count = page.getByLabel(/Questions in this session/);
+    await count.fill("1");
+    await page.getByRole("button", { name: "Start" }).click();
+    const front = (await page.locator(".flashcard-front").textContent()) ?? "";
+    await page.getByRole("button", { name: /Flip/ }).click();
+    await page.getByRole("button", { name: /Finish/ }).click();
+    await expect(page.getByText("Studied 1 of 1 cards")).toBeVisible();
+    return front;
+  };
+  const first = await studyOneFreshCard();
+  await page.reload();
+  const second = await studyOneFreshCard();
+  expect(new Set([first, second])).toEqual(new Set(["Fresh card A", "Fresh card B"]));
+});

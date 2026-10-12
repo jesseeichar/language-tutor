@@ -1,0 +1,1984 @@
+{
+  "words": [
+    {
+      "id": "zuerst",
+      "de": "zuerst",
+      "en": "first, first of all",
+      "partOfSpeech": "Adv.",
+      "example": "Zuerst lesen wir den Text, dann beantworten wir die Fragen.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "zunaechst",
+      "de": "zunächst",
+      "en": "first, initially, to begin with (slightly formal)",
+      "partOfSpeech": "Adv.",
+      "example": "Zunächst möchte ich mich vorstellen.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "anfangs",
+      "de": "anfangs",
+      "en": "at first, in the beginning (and it changed later)",
+      "partOfSpeech": "Adv.",
+      "example": "Anfangs war es schwierig, jetzt geht es gut.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "am-anfang",
+      "de": "am Anfang",
+      "en": "at the beginning",
+      "partOfSpeech": "Phrase",
+      "example": "Am Anfang der Sitzung besprechen wir die Traktanden.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "zu-beginn",
+      "de": "zu Beginn",
+      "en": "at the start, at the outset (formal)",
+      "partOfSpeech": "Phrase",
+      "example": "Zu Beginn des Projekts fehlten uns die Ressourcen.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "danach",
+      "de": "danach",
+      "en": "after that, afterwards",
+      "partOfSpeech": "Adv.",
+      "example": "Wir essen zuerst, danach gehen wir spazieren.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "anschliessend",
+      "de": "anschliessend / anschließend",
+      "en": "afterwards, subsequently (directly after)",
+      "partOfSpeech": "Adv.",
+      "example": "Wir essen, anschliessend gehen wir spazieren.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "dann",
+      "de": "dann",
+      "en": "then, next",
+      "partOfSpeech": "Adv.",
+      "example": "Ich stehe auf, dann trinke ich Kaffee.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "daraufhin",
+      "de": "daraufhin",
+      "en": "thereupon, as a result of that (reaction)",
+      "partOfSpeech": "Adv.",
+      "example": "Er hat sich beschwert, daraufhin wurde die Regel geändert.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "im-anschluss-an-akk",
+      "de": "im Anschluss (an + Akk.)",
+      "en": "following, right after (formal) — an + Akk.",
+      "partOfSpeech": "Phrase",
+      "example": "Im Anschluss an die Sitzung gibt es einen Apéro.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "spaeter",
+      "de": "später",
+      "en": "later",
+      "partOfSpeech": "Adv.",
+      "example": "Das besprechen wir später.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "als-naechstes",
+      "de": "als Nächstes",
+      "en": "next, as the next step",
+      "partOfSpeech": "Phrase",
+      "example": "Als Nächstes prüfen wir die Offerten.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "nachher",
+      "de": "nachher",
+      "en": "afterwards, later on (soon, same context)",
+      "partOfSpeech": "Adv.",
+      "example": "Bis nachher! / Ich rufe dich nachher an.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "schliesslich",
+      "de": "schliesslich / schließlich",
+      "en": "finally, in the end; after all",
+      "partOfSpeech": "Adv.",
+      "example": "Schliesslich haben wir uns geeinigt. / Er ist schliesslich der Chef.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "zuletzt",
+      "de": "zuletzt",
+      "en": "last, lastly; most recently",
+      "partOfSpeech": "Adv.",
+      "example": "Zuletzt danke ich allen Beteiligten. / Wann hast du ihn zuletzt gesehen?",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "am-ende",
+      "de": "am Ende",
+      "en": "at the end, in the end",
+      "partOfSpeech": "Phrase",
+      "example": "Am Ende des Jahres ziehen wir Bilanz.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "am-schluss",
+      "de": "am Schluss",
+      "en": "at the end, at the close (of an event/text)",
+      "partOfSpeech": "Phrase",
+      "example": "Am Schluss der Präsentation gab es Fragen.",
+      "categories": [
+        "vocab-sequence-time-order"
+      ]
+    },
+    {
+      "id": "ausserdem",
+      "de": "ausserdem / außerdem",
+      "en": "besides, moreover, in addition",
+      "partOfSpeech": "Adv.",
+      "example": "Ich bin müde, ausserdem habe ich Hunger.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "zudem",
+      "de": "zudem",
+      "en": "in addition, moreover (slightly formal)",
+      "partOfSpeech": "Adv.",
+      "example": "Die Lösung ist teuer, zudem ist sie langsam.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "darueber-hinaus",
+      "de": "darüber hinaus",
+      "en": "beyond that, furthermore",
+      "partOfSpeech": "Phrase",
+      "example": "Darüber hinaus brauchen wir mehr Personal.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "weiterhin",
+      "de": "weiterhin",
+      "en": "furthermore; (also) still, continuing to",
+      "partOfSpeech": "Adv.",
+      "example": "Weiterhin ist zu beachten, dass … / Er arbeitet weiterhin bei uns.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "ebenfalls",
+      "de": "ebenfalls",
+      "en": "likewise, as well, also",
+      "partOfSpeech": "Adv.",
+      "example": "Sie hat ebenfalls zugestimmt. / Danke, ebenfalls!",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "ferner",
+      "de": "ferner",
+      "en": "furthermore, moreover (formal/written)",
+      "partOfSpeech": "Adv.",
+      "example": "Ferner wird empfohlen, die Frist zu verlängern.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "des-weiteren",
+      "de": "des Weiteren",
+      "en": "furthermore, in addition (formal/written)",
+      "partOfSpeech": "Phrase",
+      "example": "Des Weiteren möchte ich auf zwei Punkte hinweisen.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "auch",
+      "de": "auch",
+      "en": "also, too",
+      "partOfSpeech": "Adv.",
+      "example": "Ich komme auch mit.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "und",
+      "de": "und",
+      "en": "and",
+      "partOfSpeech": "Konj.",
+      "example": "Wir planen und wir testen.",
+      "categories": [
+        "vocab-adding-information"
+      ]
+    },
+    {
+      "id": "aber",
+      "de": "aber",
+      "en": "but",
+      "partOfSpeech": "Konj.",
+      "example": "Ich wollte kommen, aber ich hatte keine Zeit.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "jedoch",
+      "de": "jedoch",
+      "en": "however, yet (more formal than aber)",
+      "partOfSpeech": "Adv.",
+      "example": "Der Plan war gut, jedoch fehlte das Geld. / Das Geld fehlte jedoch.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "allerdings",
+      "de": "allerdings",
+      "en": "however, mind you, admittedly (concedes a point)",
+      "partOfSpeech": "Adv.",
+      "example": "Das ist günstig, allerdings dauert es länger.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "dagegen",
+      "de": "dagegen",
+      "en": "by contrast, on the other hand; (also) against it",
+      "partOfSpeech": "Adv.",
+      "example": "Mein Bruder mag Sport, ich dagegen lese lieber. / Ich bin dagegen.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "hingegen",
+      "de": "hingegen",
+      "en": "whereas, by contrast (formal, written)",
+      "partOfSpeech": "Adv.",
+      "example": "Die Kosten sinken, der Aufwand hingegen steigt.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "waehrenddessen",
+      "de": "währenddessen",
+      "en": "meanwhile, in the meantime",
+      "partOfSpeech": "Adv.",
+      "example": "Er kochte, währenddessen deckte sie den Tisch.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "im-gegensatz-dazu",
+      "de": "im Gegensatz dazu",
+      "en": "in contrast to that, unlike that",
+      "partOfSpeech": "Phrase",
+      "example": "Im Gegensatz dazu ist die neue Lösung viel schneller.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "obwohl",
+      "de": "obwohl",
+      "en": "even though, although",
+      "partOfSpeech": "Konj.",
+      "example": "Sie kam, obwohl sie müde war.",
+      "categories": [
+        "vocab-contrast"
+      ]
+    },
+    {
+      "id": "deshalb",
+      "de": "deshalb",
+      "en": "therefore, that's why, for that reason",
+      "partOfSpeech": "Adv.",
+      "example": "Er war krank, deshalb kam er nicht.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "daher",
+      "de": "daher",
+      "en": "therefore, hence (reason → conclusion)",
+      "partOfSpeech": "Adv.",
+      "example": "Die Daten fehlen, daher können wir nichts sagen.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "deswegen",
+      "de": "deswegen",
+      "en": "because of that, that's why (more spoken)",
+      "partOfSpeech": "Adv.",
+      "example": "Es regnete, deswegen sind wir zu Hause geblieben.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "somit",
+      "de": "somit",
+      "en": "thus, and so (formal conclusion)",
+      "partOfSpeech": "Adv.",
+      "example": "Die Frist ist abgelaufen, somit ist der Antrag ungültig.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "folglich",
+      "de": "folglich",
+      "en": "consequently, it follows that (formal/logical)",
+      "partOfSpeech": "Adv.",
+      "example": "Er hat nicht unterschrieben, folglich gilt der Vertrag nicht.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "dadurch",
+      "de": "dadurch",
+      "en": "as a result of that, by that means (through it)",
+      "partOfSpeech": "Adv.",
+      "example": "Wir haben automatisiert, dadurch sparen wir viel Zeit.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "aus-diesem-grund",
+      "de": "aus diesem Grund",
+      "en": "for this reason",
+      "partOfSpeech": "Phrase",
+      "example": "Aus diesem Grund haben wir das Projekt verschoben.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "weil",
+      "de": "weil",
+      "en": "because (+ Verb am Ende)",
+      "partOfSpeech": "Konj.",
+      "example": "Er kam nicht, weil er krank war.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "wegen",
+      "de": "wegen",
+      "en": "because of (+ Genitiv)",
+      "partOfSpeech": "Präp.",
+      "example": "Wegen des Wetters blieben wir zu Hause.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "das-liegt-nur-daran",
+      "de": "das liegt nur daran",
+      "en": "that is only because / the reason is simply that",
+      "partOfSpeech": "Phrase",
+      "example": "Das liegt nur daran, dass ich wenig schlafe.",
+      "categories": [
+        "vocab-cause-consequence"
+      ]
+    },
+    {
+      "id": "zurzeit",
+      "de": "zurzeit",
+      "en": "at the moment, currently",
+      "partOfSpeech": "Adv.",
+      "example": "Ich lerne zurzeit viel Deutsch.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "innerhalb",
+      "de": "innerhalb",
+      "en": "within, inside (+ Genitiv)",
+      "partOfSpeech": "Präp.",
+      "example": "innerhalb der Abteilung / innerhalb von zwei Wochen.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "sogar",
+      "de": "sogar",
+      "en": "even, in fact (adds emphasis or surprise)",
+      "partOfSpeech": "Adv.",
+      "example": "Er arbeitet sogar am Wochenende. / Das war sogar besser als erwartet.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "gegebenenfalls-ggf",
+      "de": "gegebenenfalls (ggf.)",
+      "en": "if necessary, where applicable, if the case arises",
+      "partOfSpeech": "Adv.",
+      "example": "Bitte melden Sie sich gegebenenfalls bei mir. / ggf. in formal writing",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "vermutlich",
+      "de": "vermutlich",
+      "en": "probably, presumably",
+      "partOfSpeech": "Adv.",
+      "example": "Er ist vermutlich schon zu Hause. / Das wird vermutlich länger dauern.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "dafuer",
+      "de": "dafür",
+      "en": "for it, in favour of it, in return",
+      "partOfSpeech": "Adv.",
+      "example": "Ich bin dafür. / Er arbeitet hart dafür.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "gemaess",
+      "de": "gemäss / gemäß",
+      "en": "according to, in accordance with (Swiss / Standard German)",
+      "partOfSpeech": "Präp.",
+      "example": "Gemäss den Vorschriften ist das nicht erlaubt.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "ausschliesslich",
+      "de": "ausschliesslich / ausschließlich",
+      "en": "exclusively, solely, only (Swiss / Standard German)",
+      "partOfSpeech": "Adv./Adj.",
+      "example": "Das ist ausschliesslich für interne Zwecke.",
+      "categories": [
+        "vocab-other-connectors"
+      ]
+    },
+    {
+      "id": "das-bewerbungsgespraech",
+      "de": "das Bewerbungsgespräch",
+      "en": "job interview",
+      "partOfSpeech": "Nomen n.",
+      "example": "Das Bewerbungsgespräch war sehr stressig.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-staerke-staerken",
+      "de": "die Stärke / Stärken",
+      "en": "strength / strengths",
+      "partOfSpeech": "Nomen f.",
+      "example": "Meine Stärken sind Teamarbeit und Kreativität.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "anerkannt",
+      "de": "anerkannt",
+      "en": "recognised, accepted, qualified",
+      "partOfSpeech": "Adj.",
+      "example": "Ihr Abschluss ist in Deutschland anerkannt.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-lohn",
+      "de": "der Lohn",
+      "en": "wage, pay (usually hourly/manual)",
+      "partOfSpeech": "Nomen m.",
+      "example": "Der Lohn wird am Ende des Monats gezahlt.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "lohn-bekommen",
+      "de": "Lohn bekommen",
+      "en": "to receive / get paid",
+      "partOfSpeech": "Phrase",
+      "example": "Sie bekommt einen guten Lohn.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "lohn-erhalten",
+      "de": "Lohn erhalten",
+      "en": "to receive pay (more formal)",
+      "partOfSpeech": "Phrase",
+      "example": "Er erhält seinen Lohn pünktlich.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "geld-verdienen",
+      "de": "Geld verdienen",
+      "en": "to earn money",
+      "partOfSpeech": "Phrase",
+      "example": "Ich möchte mehr Geld verdienen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "das-beduerfnis-die-beduerfnisse",
+      "de": "das Bedürfnis / die Bedürfnisse",
+      "en": "need, requirement / needs",
+      "partOfSpeech": "Nomen n.",
+      "example": "Die Bedürfnisse der Kunden sind sehr unterschiedlich.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "das-lernbeduerfnis-die-lernbeduerfnisse",
+      "de": "das Lernbedürfnis / die Lernbedürfnisse",
+      "en": "learning need / learning requirements",
+      "partOfSpeech": "Nomen n.",
+      "example": "Die Lernbedürfnisse der Schüler sind sehr unterschiedlich.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-behoerde-die-behoerden",
+      "de": "die Behörde / die Behörden",
+      "en": "authority, public office, government agency",
+      "partOfSpeech": "Nomen f.",
+      "example": "Ich muss morgen zur Behörde gehen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-vereinbarung-die-vereinbarungen",
+      "de": "die Vereinbarung / die Vereinbarungen",
+      "en": "agreement, arrangement, commitment",
+      "partOfSpeech": "Nomen f.",
+      "example": "Wir haben eine Vereinbarung getroffen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-abstimmung",
+      "de": "die Abstimmung",
+      "en": "coordination, vote, alignment (between parties)",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Abstimmung mit den Abteilungen ist wichtig.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-teilnahme",
+      "de": "die Teilnahme",
+      "en": "participation, attendance",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Teilnahme an der Sitzung ist freiwillig.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-mitgestaltung",
+      "de": "die Mitgestaltung",
+      "en": "co-design, active participation in shaping",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Mitgestaltung der Mitarbeitenden ist erwünscht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-einfuehrungssession",
+      "de": "die Einführungssession",
+      "en": "introductory session (Einführung = introduction + Session = session)",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Einführungssession findet am Montag statt.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-bewilligung",
+      "de": "die Bewilligung",
+      "en": "approval, permit, authorisation",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Bewilligung wurde erteilt.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-leitung",
+      "de": "die Leitung",
+      "en": "management, leadership, direction; head (of a dept.)",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er hat die Leitung des Projekts übernommen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-verantwortung",
+      "de": "die Verantwortung",
+      "en": "responsibility",
+      "partOfSpeech": "Nomen f.",
+      "example": "Sie trägt die Verantwortung für das Team.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-gehaltserhoehung-en",
+      "de": "die Gehaltserhöhung / -en",
+      "en": "salary increase, pay rise",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er hat eine Gehaltserhöhung bekommen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-auswirkung-en",
+      "de": "die Auswirkung / -en",
+      "en": "effect, impact, consequence",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Auswirkungen auf das Team waren gross.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-einstellung-en",
+      "de": "die Einstellung / -en",
+      "en": "attitude; setting; hiring/recruitment",
+      "partOfSpeech": "Nomen f.",
+      "example": "Seine Einstellung ist positiv. / die Einstellung neuer Mitarbeitender.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-auftritt-die-auftritte",
+      "de": "der Auftritt / die Auftritte",
+      "en": "appearance, performance, presentation",
+      "partOfSpeech": "Nomen m.",
+      "example": "Ihr Auftritt vor dem Team war sehr professionell.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-textvorhersage-n",
+      "de": "die Textvorhersage / -n",
+      "en": "text prediction, autocomplete",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Textvorhersagen helfen beim Schreiben.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-vorschlag-die-vorschlaege",
+      "de": "der Vorschlag / die Vorschläge",
+      "en": "suggestion, proposal",
+      "partOfSpeech": "Nomen m.",
+      "example": "Ich habe einen Vorschlag gemacht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-kuendigung-en",
+      "de": "die Kündigung / -en",
+      "en": "resignation, termination, notice (of employment)",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er hat seine Kündigung eingereicht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-zielfestlegung",
+      "de": "die Zielfestlegung",
+      "en": "goal setting, target definition",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Zielfestlegung erfolgt jährlich.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-bericht-die-berichte",
+      "de": "der Bericht / die Berichte",
+      "en": "report",
+      "partOfSpeech": "Nomen m.",
+      "example": "Sie hat einen Bericht erstellt. / den Bericht einreichen (to submit the report)",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-empfaenger-die-empfaenger",
+      "de": "der Empfänger / die Empfänger",
+      "en": "recipient, receiver",
+      "partOfSpeech": "Nomen m.",
+      "example": "Der Empfänger der E-Mail hat noch nicht geantwortet.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-abhaengigkeit-en",
+      "de": "die Abhängigkeit / -en",
+      "en": "dependency, dependence",
+      "partOfSpeech": "Nomen f.",
+      "example": "Es gibt viele Abhängigkeiten zwischen den Projekten.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-erfolgsmessung",
+      "de": "die Erfolgsmessung",
+      "en": "success measurement, measuring outcomes",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Erfolgsmessung erfolgt nach sechs Monaten.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-betreuer-die-betreuerin",
+      "de": "der Betreuer / die Betreuerin",
+      "en": "supervisor, mentor, caretaker",
+      "partOfSpeech": "Nomen m./f.",
+      "example": "Mein Betreuer hat mir sehr geholfen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-menge-die-mengen",
+      "de": "die Menge / die Mengen",
+      "en": "quantity, amount, crowd",
+      "partOfSpeech": "Nomen f.",
+      "example": "Eine grosse Menge an Informationen. / eine Menge Arbeit.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-kenntnisse-pl",
+      "de": "die Kenntnisse (pl.)",
+      "en": "knowledge, skills, expertise",
+      "partOfSpeech": "Nomen pl.",
+      "example": "Sie hat sehr gute Kenntnisse in Deutsch.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-eigenschaften-pl",
+      "de": "die Eigenschaften (pl.)",
+      "en": "characteristics, properties, traits",
+      "partOfSpeech": "Nomen pl.",
+      "example": "Welche Eigenschaften sind für diese Stelle wichtig?",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-anlass-die-anlaesse",
+      "de": "der Anlass / die Anlässe",
+      "en": "occasion, cause, reason, event",
+      "partOfSpeech": "Nomen m.",
+      "example": "Das war kein Anlass zur Sorge. / ein festlicher Anlass.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-beauftragung",
+      "de": "die Beauftragung",
+      "en": "commissioning, assignment, mandate",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Beauftragung des externen Beraters wurde genehmigt.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-umsatz-die-umsaetze",
+      "de": "der Umsatz / die Umsätze",
+      "en": "revenue, turnover, sales",
+      "partOfSpeech": "Nomen m.",
+      "example": "Der Umsatz ist dieses Jahr gestiegen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-abwesenheit-en",
+      "de": "die Abwesenheit / -en",
+      "en": "absence",
+      "partOfSpeech": "Nomen f.",
+      "example": "Während seiner Abwesenheit hat das Team die Arbeit übernommen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-verweis-die-verweise",
+      "de": "der Verweis / die Verweise",
+      "en": "reference, note, cross-reference",
+      "partOfSpeech": "Nomen m.",
+      "example": "Der Text enthält mehrere Verweise auf frühere Studien.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-haltung",
+      "de": "die Haltung",
+      "en": "attitude, stance, posture",
+      "partOfSpeech": "Nomen f.",
+      "example": "Seine Haltung gegenüber dem Team ist sehr positiv.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-zugang-die-zugaenge",
+      "de": "der Zugang / die Zugänge",
+      "en": "access, entry, approach",
+      "partOfSpeech": "Nomen m.",
+      "example": "Sie hat keinen Zugang zu diesem System.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-ankuendigung-en",
+      "de": "die Ankündigung / -en",
+      "en": "announcement, notice, advance notice",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Ankündigung kam sehr kurzfristig.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-einheitsbrei",
+      "de": "der Einheitsbrei",
+      "en": "bland uniformity, one-size-fits-all (colloquial)",
+      "partOfSpeech": "Nomen m.",
+      "example": "Das ist doch alles Einheitsbrei — wo bleibt die Individualität?",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-wirkung-en",
+      "de": "die Wirkung / -en",
+      "en": "effect, impact (direct effect of something)",
+      "partOfSpeech": "Nomen f.",
+      "example": "Das Medikament hat eine starke Wirkung. / Die Wirkung war sofort spürbar.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-auswertung-en",
+      "de": "die Auswertung / -en",
+      "en": "evaluation, analysis, assessment of data/results",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Auswertung der Umfrage dauert zwei Wochen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-bedarf",
+      "de": "der Bedarf",
+      "en": "need, demand, requirement (practical/quantifiable)",
+      "partOfSpeech": "Nomen m.",
+      "example": "Es besteht grosser Bedarf an Fachkräften. / bei Bedarf = if needed.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "das-pendent-die-pendents",
+      "de": "das Pendent / die Pendents",
+      "en": "pending item, open task (Swiss German; = offener Punkt)",
+      "partOfSpeech": "Nomen n.",
+      "example": "Bitte erledigen Sie die Pendents bis Freitag.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-bewerber-die-bewerberin",
+      "de": "der Bewerber / die Bewerberin",
+      "en": "applicant, candidate",
+      "partOfSpeech": "Nomen m./f.",
+      "example": "Die Bewerberin hat einen sehr guten Eindruck gemacht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-beschaeftigung-en",
+      "de": "die Beschäftigung / -en",
+      "en": "employment, occupation; activity",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er ist auf der Suche nach einer neuen Beschäftigung.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-zuverlaessigkeit",
+      "de": "die Zuverlässigkeit",
+      "en": "reliability, dependability",
+      "partOfSpeech": "Nomen f.",
+      "example": "Seine Zuverlässigkeit ist vorbildlich.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-bedingung-en",
+      "de": "die Bedingung / -en",
+      "en": "condition, requirement, term",
+      "partOfSpeech": "Nomen f.",
+      "example": "unter einer Bedingung / die Bedingungen des Vertrags.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-enttaeuschung-en",
+      "de": "die Enttäuschung / -en",
+      "en": "disappointment",
+      "partOfSpeech": "Nomen f.",
+      "example": "Das war eine grosse Enttäuschung.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-taeuschung-en",
+      "de": "die Täuschung / -en",
+      "en": "deception, illusion, false impression",
+      "partOfSpeech": "Nomen f.",
+      "example": "Das war eine Täuschung — die Zahlen stimmten nicht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-beziehung-en",
+      "de": "die Beziehung / -en",
+      "en": "relationship, relation, connection",
+      "partOfSpeech": "Nomen f.",
+      "example": "eine gute Beziehung aufbauen / internationale Beziehungen.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-reife",
+      "de": "die Reife",
+      "en": "maturity, ripeness",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er zeigt eine hohe emotionale Reife.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-eindruck-die-eindruecke",
+      "de": "der Eindruck / die Eindrücke",
+      "en": "impression",
+      "partOfSpeech": "Nomen m.",
+      "example": "Er hat einen sehr guten Eindruck gemacht.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "das-ergebnis-die-ergebnisse",
+      "de": "das Ergebnis / die Ergebnisse",
+      "en": "result, outcome (-nis → das)",
+      "partOfSpeech": "Nomen n.",
+      "example": "Das Ergebnis war überraschend gut.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-beteiligten-pl",
+      "de": "die Beteiligten (pl.)",
+      "en": "those involved, the parties concerned",
+      "partOfSpeech": "Nomen pl.",
+      "example": "Alle Beteiligten wurden informiert.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-zweck-die-zwecke",
+      "de": "der Zweck / die Zwecke",
+      "en": "purpose, aim, point",
+      "partOfSpeech": "Nomen m.",
+      "example": "Was ist der Zweck dieser Massnahme? / zu diesem Zweck = for this purpose.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "der-zugriff-die-zugriffe",
+      "de": "der Zugriff / die Zugriffe",
+      "en": "access (to data/systems), log-in",
+      "partOfSpeech": "Nomen m.",
+      "example": "Sie hat keinen Zugriff auf diese Daten.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-verfuegung-en",
+      "de": "die Verfügung / -en",
+      "en": "disposal, decree; zur Verfügung = available",
+      "partOfSpeech": "Nomen f.",
+      "example": "Das steht Ihnen zur Verfügung. / zur Verfügung stellen = to make available.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-abweichung-en",
+      "de": "die Abweichung / -en",
+      "en": "deviation, discrepancy, variance",
+      "partOfSpeech": "Nomen f.",
+      "example": "Es gibt eine Abweichung zwischen Plan und Ergebnis.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-pauschale-die-pauschalen",
+      "de": "die Pauschale / die Pauschalen",
+      "en": "flat rate, lump sum, flat fee",
+      "partOfSpeech": "Nomen f.",
+      "example": "Die Reisekosten werden als Pauschale abgerechnet.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-frist-die-fristen",
+      "de": "die Frist / die Fristen",
+      "en": "deadline, time limit, notice period",
+      "partOfSpeech": "Nomen f.",
+      "example": "Er hat die Frist versäumt. / die Frist einhalten = to meet the deadline.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "die-auszeichnung-en",
+      "de": "die Auszeichnung / -en",
+      "en": "award, distinction, honour; (also) labelling, marking",
+      "partOfSpeech": "Nomen f.",
+      "example": "Sie hat eine Auszeichnung für ihre Arbeit erhalten. / mit Auszeichnung bestehen = to pass with distinction.",
+      "categories": [
+        "vocab-job-workplace"
+      ]
+    },
+    {
+      "id": "verbringen",
+      "de": "verbringen",
+      "en": "to spend (time)",
+      "partOfSpeech": "Verb",
+      "example": "Ich verbringe viel Zeit mit Lesen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "sich-kuemmern-um",
+      "de": "sich kümmern (um)",
+      "en": "to take care of, to look after",
+      "partOfSpeech": "Verb refl.",
+      "example": "Sie kümmert sich um ihre Eltern.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "sich-sorgen-um",
+      "de": "sich sorgen (um)",
+      "en": "to worry about",
+      "partOfSpeech": "Verb refl.",
+      "example": "Er sorgt sich um seine Gesundheit.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "schaffen",
+      "de": "schaffen",
+      "en": "to manage, to accomplish; to create",
+      "partOfSpeech": "Verb",
+      "example": "Ich schaffe das! / Er hat ein Werk geschaffen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "abbauen",
+      "de": "abbauen",
+      "en": "to reduce, to break down, to dismantle",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Wir müssen Stress abbauen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "aufbauen",
+      "de": "aufbauen",
+      "en": "to build up, to establish, to construct",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Sie hat eine Firma aufgebaut.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erfahren",
+      "de": "erfahren",
+      "en": "to find out, to learn (news/info); to experience",
+      "partOfSpeech": "Verb",
+      "example": "Ich habe erfahren, dass er krank ist. / Sie hat viel Leid erfahren.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "uebertragen",
+      "de": "übertragen",
+      "en": "to transfer, transmit, broadcast; to translate/apply",
+      "partOfSpeech": "Verb",
+      "example": "Das Wissen lässt sich auf andere Bereiche übertragen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "auswaehlen",
+      "de": "auswählen",
+      "en": "to select, to choose",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Sie hat das beste Angebot ausgewählt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erkennen",
+      "de": "erkennen",
+      "en": "to recognise, to identify, to realise",
+      "partOfSpeech": "Verb",
+      "example": "Ich habe das Problem sofort erkannt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erwaehnen",
+      "de": "erwähnen",
+      "en": "to mention",
+      "partOfSpeech": "Verb",
+      "example": "Er hat das Problem kurz erwähnt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "ermoeglichen",
+      "de": "ermöglichen",
+      "en": "to enable, to make possible",
+      "partOfSpeech": "Verb",
+      "example": "Das ermöglicht uns, effizienter zu arbeiten.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "beachten",
+      "de": "beachten",
+      "en": "to observe, to respect, to comply with",
+      "partOfSpeech": "Verb",
+      "example": "Bitte beachten Sie die Vorschriften. / beachtet (P.II)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "anpassen",
+      "de": "anpassen",
+      "en": "to adapt, to adjust, to tailor",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Der Plan wurde angepasst. / passt … an (present)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "umsetzen",
+      "de": "umsetzen",
+      "en": "to implement, to put into practice, to convert",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Wir müssen die Strategie umsetzen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "annehmen",
+      "de": "annehmen",
+      "en": "to accept, to take on; to assume",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Sie hat die Stelle angenommen. / Ich nehme an, dass … (I assume that…)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "sicherstellen",
+      "de": "sicherstellen",
+      "en": "to ensure, to guarantee, to make sure",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Wir müssen sicherstellen, dass alles funktioniert.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erreichen",
+      "de": "erreichen",
+      "en": "to reach, to achieve, to attain",
+      "partOfSpeech": "Verb",
+      "example": "Wir haben unser Ziel erreicht.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erstellen",
+      "de": "erstellen",
+      "en": "to create, to produce, to draw up (a document)",
+      "partOfSpeech": "Verb",
+      "example": "Sie hat einen Bericht erstellt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "anordnen",
+      "de": "anordnen",
+      "en": "to order, to instruct, to arrange",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Der Chef hat eine Änderung angeordnet.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "einbeziehen",
+      "de": "einbeziehen",
+      "en": "to include, to involve, to take into account",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Alle Mitarbeitenden wurden einbezogen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "zuweisen",
+      "de": "zuweisen",
+      "en": "to assign, to allocate",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Die Aufgabe wurde ihr zugewiesen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "absprechen",
+      "de": "absprechen",
+      "en": "to agree on, to coordinate, to arrange with someone",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Das wurde vorher abgesprochen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "ausfuehren",
+      "de": "ausführen",
+      "en": "to carry out, to execute, to perform",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Die Aufgabe wurde sorgfältig ausgeführt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "vorschlagen",
+      "de": "vorschlagen",
+      "en": "to suggest, to propose, to recommend",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Ich schlage vor, dass wir das anders machen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "zulassen",
+      "de": "zulassen",
+      "en": "to allow, to permit, to admit",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Das wird nicht zugelassen. / lässt … zu (present)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "foerdern",
+      "de": "fördern",
+      "en": "to promote, to support, to foster, to fund",
+      "partOfSpeech": "Verb",
+      "example": "Das Projekt wird vom Staat gefördert.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "beraten",
+      "de": "beraten",
+      "en": "to advise, to counsel, to consult",
+      "partOfSpeech": "Verb",
+      "example": "Er hat mich gut beraten. / sich beraten lassen (to seek advice)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "bevorzugen",
+      "de": "bevorzugen",
+      "en": "to prefer, to favour",
+      "partOfSpeech": "Verb",
+      "example": "Sie bevorzugt direkte Kommunikation.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "befoerdern",
+      "de": "befördern",
+      "en": "to promote (at work); to transport",
+      "partOfSpeech": "Verb",
+      "example": "Er wurde zum Manager befördert.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "herunterbrechen-runterbrechen",
+      "de": "herunterbrechen / runterbrechen",
+      "en": "to break down into smaller parts (formal/colloquial)",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Das Ziel wurde in kleine Schritte runtergebrochen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "abzweigen",
+      "de": "abzweigen",
+      "en": "to branch off, to divert (funds/resources)",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Ein Teil des Budgets wurde abgezweigt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "verteilen",
+      "de": "verteilen",
+      "en": "to distribute, to hand out, to spread",
+      "partOfSpeech": "Verb",
+      "example": "Die Aufgaben wurden gleichmässig verteilt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "absagen",
+      "de": "absagen",
+      "en": "to cancel (appointments, meetings, events)",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Das Meeting wurde abgesagt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "stornieren",
+      "de": "stornieren",
+      "en": "to cancel (orders, reservations, bookings)",
+      "partOfSpeech": "Verb",
+      "example": "Ich möchte meine Reservierung stornieren.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "treffen",
+      "de": "treffen",
+      "en": "to meet; to make (a decision); to hit",
+      "partOfSpeech": "Verb",
+      "example": "eine Entscheidung treffen / Wir treffen uns um 10 Uhr. / getroffen (P.II)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "vorstellen",
+      "de": "vorstellen",
+      "en": "to introduce (someone); sich vorstellen = to introduce oneself / to imagine",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Darf ich mich vorstellen? / Ich kann mir das gut vorstellen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "abgleichen",
+      "de": "abgleichen",
+      "en": "to compare, to reconcile, to align/sync",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Wir müssen die Daten abgleichen.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "sich-beschweren-ueber",
+      "de": "sich beschweren (über)",
+      "en": "to complain (about)",
+      "partOfSpeech": "Verb refl.",
+      "example": "Er hat sich über die Bedingungen beschwert.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "erwischen",
+      "de": "erwischen",
+      "en": "to catch, to catch someone in the act",
+      "partOfSpeech": "Verb",
+      "example": "Sie wurde beim Lügen erwischt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "betrachten",
+      "de": "betrachten",
+      "en": "to consider, to look at, to regard as",
+      "partOfSpeech": "Verb",
+      "example": "Ich betrachte das als Erfolg.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "verbinden",
+      "de": "verbinden",
+      "en": "to connect, to link, to combine",
+      "partOfSpeech": "Verb",
+      "example": "Was verbindet die beiden Konzepte?",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "untersagen",
+      "de": "untersagen",
+      "en": "to prohibit, to forbid, to ban",
+      "partOfSpeech": "Verb",
+      "example": "Das Rauchen ist hier untersagt.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "einsetzen",
+      "de": "einsetzen",
+      "en": "to deploy, to use, to employ, to apply",
+      "partOfSpeech": "Verb trennb.",
+      "example": "KI wird zunehmend eingesetzt. / setzt … ein (present)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "ablehnen",
+      "de": "ablehnen",
+      "en": "to reject, to decline, to turn down",
+      "partOfSpeech": "Verb trennb.",
+      "example": "Sie hat den Vorschlag abgelehnt. / lehnt … ab (present)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "versaeumen",
+      "de": "versäumen",
+      "en": "to miss (a deadline, chance, opportunity); to neglect",
+      "partOfSpeech": "Verb",
+      "example": "Er hat die Frist versäumt. / vs. verpassen (miss a train/event)",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "sich-abstimmen-mit",
+      "de": "sich abstimmen (mit)",
+      "en": "to coordinate with, to align with (each other)",
+      "partOfSpeech": "Verb refl.",
+      "example": "Die Abteilungsleiter stimmen sich jeden Montag ab.",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "ueberzeugen",
+      "de": "überzeugen",
+      "en": "to convince, to persuade",
+      "partOfSpeech": "Verb",
+      "example": "Er hat mich überzeugt. / Ich bin davon überzeugt. / jemanden von etwas überzeugen",
+      "categories": [
+        "vocab-key-verbs"
+      ]
+    },
+    {
+      "id": "solche-solcher-solches",
+      "de": "solche / solcher / solches",
+      "en": "such, such a",
+      "partOfSpeech": "Pron./Adj.",
+      "example": "Solche Fehler sollte man vermeiden.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "bestimmt",
+      "de": "bestimmt",
+      "en": "definite; certain, specific",
+      "partOfSpeech": "Adj.",
+      "example": "Der bestimmte Artikel: der/die/das.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "unbestimmt",
+      "de": "unbestimmt",
+      "en": "indefinite; uncertain",
+      "partOfSpeech": "Adj.",
+      "example": "Der unbestimmte Artikel: ein/eine.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "spannend",
+      "de": "spannend",
+      "en": "exciting, thrilling, interesting",
+      "partOfSpeech": "Adj.",
+      "example": "Das Buch ist wirklich spannend.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "aehnlich",
+      "de": "ähnlich",
+      "en": "similar, alike",
+      "partOfSpeech": "Adj.",
+      "example": "Die zwei Methoden sind sehr ähnlich. / ein ähnliches Problem",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "abteilungsuebergreifend",
+      "de": "abteilungsübergreifend",
+      "en": "cross-departmental, interdepartmental",
+      "partOfSpeech": "Adj.",
+      "example": "Ein abteilungsübergreifendes Projekt erfordert gute Kommunikation.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "eher",
+      "de": "eher",
+      "en": "rather, more of a (degree); sooner/earlier (time)",
+      "partOfSpeech": "Adv.",
+      "example": "Er ist eher ruhig. / Ich komme eher als erwartet.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "verantwortlich",
+      "de": "verantwortlich",
+      "en": "responsible, accountable",
+      "partOfSpeech": "Adj.",
+      "example": "Sie ist verantwortlich für das Projekt. / Wer ist dafür verantwortlich?",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "fachlich",
+      "de": "fachlich",
+      "en": "professional, technical, subject-specific",
+      "partOfSpeech": "Adj.",
+      "example": "Sie hat fachliche Kompetenz. / fachliche Unterstützung",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "noetig",
+      "de": "nötig",
+      "en": "necessary, needed",
+      "partOfSpeech": "Adj.",
+      "example": "Das ist nicht nötig. / die nötigen Schritte unternehmen",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "ausfuehrlich",
+      "de": "ausführlich",
+      "en": "detailed, thorough, comprehensive",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "Er hat das Thema ausführlich erklärt. / eine ausführliche Antwort",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "gewesen",
+      "de": "gewesen",
+      "en": "been (Partizip II of sein)",
+      "partOfSpeech": "P.II",
+      "example": "Ich bin dort gewesen. / Das wäre nicht nötig gewesen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "jeweilig-jeweils",
+      "de": "jeweilig / jeweils",
+      "en": "respective/respectively; in each case, each time",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "Die jeweiligen Abteilungen. / jeweils am Montag.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "vorab-im-voraus",
+      "de": "vorab / im Voraus",
+      "en": "beforehand, in advance",
+      "partOfSpeech": "Adv.",
+      "example": "Bitte melden Sie sich vorab an. / Vielen Dank im Voraus.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "zufaellig",
+      "de": "zufällig",
+      "en": "coincidental, random, by chance",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "Das war ein zufälliger Fehler. / Ich habe ihn zufällig getroffen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "bezueglich",
+      "de": "bezüglich",
+      "en": "regarding, with regard to, concerning (+ Genitiv)",
+      "partOfSpeech": "Präp.",
+      "example": "Bezüglich Ihrer Anfrage möchten wir Ihnen mitteilen…",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "entsprechend",
+      "de": "entsprechend",
+      "en": "corresponding, accordingly, appropriate, in accordance with",
+      "partOfSpeech": "Adj./Adv./Präp.",
+      "example": "Bitte handeln Sie entsprechend. / die entsprechenden Unterlagen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "nachhaltig",
+      "de": "nachhaltig",
+      "en": "sustainable, lasting, effective long-term",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "eine nachhaltige Lösung finden / nachhaltig wirken.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "notwendig",
+      "de": "notwendig",
+      "en": "necessary, essential (more formal than nötig)",
+      "partOfSpeech": "Adj.",
+      "example": "Es ist notwendig, dass wir handeln. / die notwendigen Massnahmen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "steuerbar",
+      "de": "steuerbar",
+      "en": "controllable, manageable, adjustable",
+      "partOfSpeech": "Adj.",
+      "example": "Das Risiko ist steuerbar. / ein steuerbarer Prozess.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "auffaellig",
+      "de": "auffällig",
+      "en": "noticeable, conspicuous, striking",
+      "partOfSpeech": "Adj.",
+      "example": "Sein Verhalten war sehr auffällig.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "seltsam",
+      "de": "seltsam",
+      "en": "strange, odd, peculiar",
+      "partOfSpeech": "Adj.",
+      "example": "Das ist eine seltsame Situation.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "staendig",
+      "de": "ständig",
+      "en": "constant, permanent, always",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "Er kommt ständig zu spät.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "erforderlich",
+      "de": "erforderlich",
+      "en": "required, necessary (formal/official)",
+      "partOfSpeech": "Adj.",
+      "example": "Eine Bewilligung ist erforderlich.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "disziplinarisch",
+      "de": "disziplinarisch",
+      "en": "disciplinary",
+      "partOfSpeech": "Adj.",
+      "example": "disziplinarische Massnahmen ergreifen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "verlaesslich",
+      "de": "verlässlich",
+      "en": "reliable, dependable, trustworthy",
+      "partOfSpeech": "Adj.",
+      "example": "Sie ist eine sehr verlässliche Mitarbeiterin.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "ausgepraegt",
+      "de": "ausgeprägt",
+      "en": "pronounced, marked, strong, distinct",
+      "partOfSpeech": "Adj.",
+      "example": "Er hat ein ausgeprägtes Talent für Sprachen.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "irgendwelche",
+      "de": "irgendwelche",
+      "en": "any, some (unspecified); declines like an adjective",
+      "partOfSpeech": "Pron./Adj.",
+      "example": "Haben Sie irgendwelche Fragen? / ohne irgendwelche Probleme.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "gering",
+      "de": "gering",
+      "en": "low, small, slight, minor",
+      "partOfSpeech": "Adj.",
+      "example": "Das Risiko ist gering. / ein geringer Unterschied / geringe Kenntnisse.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "zunehmend",
+      "de": "zunehmend",
+      "en": "increasingly, growing, progressively",
+      "partOfSpeech": "Adj./Adv.",
+      "example": "KI wird zunehmend eingesetzt. / eine zunehmende Bedeutung.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "ueberzeugt",
+      "de": "überzeugt",
+      "en": "convinced, certain; confident (P.II of überzeugen)",
+      "partOfSpeech": "Adj./P.II",
+      "example": "Ich bin überzeugt, dass es funktioniert. / eine überzeugte Haltung.",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ]
+    },
+    {
+      "id": "auf-dem-bild",
+      "de": "auf dem Bild",
+      "en": "in the picture / in the image",
+      "partOfSpeech": "Phrase",
+      "example": "Auf dem Bild sieht man eine Stadt.",
+      "categories": [
+        "vocab-useful-phrases"
+      ]
+    },
+    {
+      "id": "auf-diesem-bild",
+      "de": "auf diesem Bild",
+      "en": "in this picture / in this image",
+      "partOfSpeech": "Phrase",
+      "example": "Auf diesem Bild sieht man eine Stadt. / Was passiert auf diesem Bild?",
+      "categories": [
+        "vocab-useful-phrases"
+      ]
+    }
+  ]
+}

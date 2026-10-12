@@ -1,0 +1,7 @@
+{
+  "words": [
+    { "id": "zuerst", "de": "zuerst", "en": "first", "categories": ["vocab-time"] },
+    { "id": "jedoch", "de": "jedoch", "en": "however", "categories": ["vocab-contrast"] },
+    { "id": "lohn", "de": "der Lohn", "en": "wage", "categories": ["vocab-work"] }
+  ]
+}

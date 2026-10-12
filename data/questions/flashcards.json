@@ -1,0 +1,95 @@
+{
+  "questions": [
+    {
+      "id": "fc-zuerst-zunaechst-anfangs",
+      "categories": ["vocab-sequence-time-order"],
+      "refs": { "words": ["zuerst", "zunaechst", "anfangs"], "topics": [] },
+      "front": "zuerst / zunächst / anfangs\nWhat is the difference?",
+      "back": "zuerst = first (everyday)\nzunächst = first, to begin with (a shade more formal)\nanfangs = at first, but it changed later",
+      "notes": "Anfangs war es schwierig, jetzt geht es gut."
+    },
+    {
+      "id": "fc-daraufhin",
+      "categories": ["vocab-sequence-time-order"],
+      "refs": { "words": ["daraufhin"], "topics": [] },
+      "front": "daraufhin",
+      "back": "thereupon, as a result of that (a reaction, not just the next step)",
+      "notes": "Er hat sich beschwert, daraufhin wurde die Regel geändert."
+    },
+    {
+      "id": "fc-nachher-spaeter",
+      "categories": ["vocab-sequence-time-order"],
+      "refs": { "words": ["nachher", "spaeter"], "topics": [] },
+      "front": "nachher vs. später",
+      "back": "nachher = later today, soon, within the current situation (Bis nachher!)\nspäter = later, open-ended (drei Jahre später)"
+    },
+    {
+      "id": "fc-schliesslich-two-meanings",
+      "categories": ["vocab-sequence-time-order"],
+      "refs": { "words": ["schliesslich"], "topics": [] },
+      "front": "schliesslich has two meanings. What are they?",
+      "back": "1. finally, in the end\n2. after all (giving a justification)",
+      "notes": "Er muss es wissen, er ist schliesslich der Chef."
+    },
+    {
+      "id": "fc-im-anschluss-an-case",
+      "categories": ["vocab-sequence-time-order", "grammar-kasus-nominativ-akkusativ-dativ-genitiv"],
+      "refs": { "words": ["im-anschluss-an-akk"], "topics": ["kasus-nominativ-akkusativ-dativ-genitiv"] },
+      "front": "Im Anschluss an ___ Sitzung gibt es einen Apéro.\nWhich case follows \"im Anschluss an\"?",
+      "back": "Akkusativ: im Anschluss an die Sitzung"
+    },
+    {
+      "id": "fc-waehrenddessen",
+      "categories": ["vocab-contrast"],
+      "refs": { "words": ["waehrenddessen"], "topics": [] },
+      "front": "währenddessen",
+      "back": "meanwhile, in the meantime",
+      "notes": "Er kochte, währenddessen deckte sie den Tisch. Verb comes straight after it (Inversion)."
+    },
+    {
+      "id": "fc-ausgepraegt",
+      "categories": ["vocab-adjectives-determiners"],
+      "refs": { "words": ["ausgepraegt"], "topics": [] },
+      "front": "ausgeprägt",
+      "back": "pronounced, marked, strong, distinct",
+      "notes": "Er hat ein ausgeprägtes Talent für Sprachen."
+    },
+    {
+      "id": "fc-einstellung",
+      "categories": ["vocab-job-workplace"],
+      "refs": { "words": ["die-einstellung-en"], "topics": [] },
+      "front": "die Einstellung (three meanings)",
+      "back": "1. attitude\n2. setting\n3. hiring, recruitment",
+      "notes": "Seine Einstellung ist positiv. / die Einstellung neuer Mitarbeiter"
+    },
+    {
+      "id": "fc-auf-diesem-bild",
+      "categories": ["vocab-useful-phrases"],
+      "refs": { "words": ["auf-diesem-bild"], "topics": [] },
+      "front": "\"in this picture\" when describing what you see",
+      "back": "auf diesem Bild (Dativ), not \"in diesem Bild\""
+    },
+    {
+      "id": "fc-ohne-zu-vs-ohne-dass",
+      "categories": ["grammar-ohne-dass-ohne-zu"],
+      "refs": { "words": [], "topics": ["ohne-dass-ohne-zu"] },
+      "front": "ohne zu or ohne dass: how do you choose?",
+      "back": "Same subject in both clauses: ohne … zu + Infinitiv\nDifferent subjects: ohne dass + verb at the end",
+      "notes": "Er ging weg, ohne sich zu verabschieden. / Er ging weg, ohne dass ich es bemerkte."
+    },
+    {
+      "id": "fc-partizip-ii-inseparable",
+      "categories": ["grammar-werden-vollverb-futur-passiv-konjunktiv-ii"],
+      "refs": { "words": [], "topics": ["werden-vollverb-futur-passiv-konjunktiv-ii"] },
+      "front": "Partizip II of: erstellen, verteilen, einreichen, absagen",
+      "back": "erstellt, verteilt (inseparable prefix, no ge-)\neingereicht, abgesagt (separable prefix, ge- goes in the middle)"
+    },
+    {
+      "id": "fc-adjective-genitive",
+      "categories": ["grammar-adjektivdeklination-adjective-endings"],
+      "refs": { "words": [], "topics": ["adjektivdeklination-adjective-endings"] },
+      "front": "wegen des ___ Regens (stark)",
+      "back": "wegen des starken Regens\nAfter a definite article, every Genitiv and Dativ ending is -en."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "categories": [
+    { "id": "vocab-connectors", "label": "Connectors", "group": "Vokabular" },
+    { "id": "vocab-time", "label": "Time", "group": "Vokabular", "parent": "vocab-connectors" },
+    { "id": "vocab-contrast", "label": "Contrast", "group": "Vokabular", "parent": "vocab-connectors" },
+    { "id": "grammar-cases", "label": "Cases", "group": "Grammatik" },
+    { "id": "fresh-check", "label": "Freshness check", "group": "Test" }
+  ]
+}
