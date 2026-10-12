@@ -83,7 +83,7 @@ export function selectQuestions(input: SelectionInput): QuestionBase[] {
   // Fresh questions about weak words still go first.
   const freshWeight = (q: QuestionBase) => 0.5 + weakness(q, strengths);
 
-  // Seen questions: weak items and ones not seen for a while are favoured.
+  // Seen questions: weak items and ones not seen for a while are favored.
   const seenWeight = (q: QuestionBase) => {
     const h = history.get(q.id)!;
     const days = (now - new Date(h.lastSeen).getTime()) / DAY_MS;

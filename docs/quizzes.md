@@ -148,7 +148,8 @@ Include a hint such as the uninflected adjective when it makes the intended answ
 ```
 
 Here `de` and `en` are single-line strings; line breaks are rejected because the answer input is
-single-line. German → English shows `de` and grades against `en`;
+single-line. Write English in American spelling and German in Swiss Standard spelling (`ss`, never
+`ß`), as everywhere else in the bank. German → English shows `de` and grades against `en`;
 English → German shows `en` and grades against `de`. Write exactly the punctuation, capitalization,
 and spelling you expect the learner to type. Put explanations in `explanation`, not inside answers.
 
@@ -171,4 +172,4 @@ and spelling you expect the learner to type. Put explanations in `explanation`, 
 Adding questions of these three types needs no code change. Adding a fourth format requires changes
 to the quiz schema, response schema, grader, view, tests, and this guide; a new `types` entry alone
 does not implement a new answer format. Existing flashcard types remain ungraded study cards, even
-when labelled Translation or Fill in the blank.
+when labeled Translation or Fill in the blank.

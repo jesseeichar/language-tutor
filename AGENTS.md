@@ -96,6 +96,19 @@ keyed on it), one or more `categories`, and `refs` naming the vocabulary words a
 exercises. Strength scores aggregate over `refs`, so set them carefully. Run `bun run validate` after
 editing.
 
+**Spelling.** English is American everywhere: questions, explanations, UI text and docs (recognized,
+favor, canceled, labeled, program). German uses Swiss Standard spelling: `ss`, never `ß`. Typed answers
+match exactly, so a mixed convention would mark correct answers wrong.
+
+**Coverage.** Every vocabulary word has a translation flashcard (`fc-<wordId>`) and one quiz question of
+each type (`quiz-mc-<wordId>`, `quiz-translate-<wordId>`, `quiz-blank-<wordId>`). Every grammar topic has
+at least 3 flashcards, 6 fill-in-the-blank and 2 translation quiz questions. After importing new words
+or topics from the notes, add their questions so the banks stay complete.
+
+**Near-synonyms in typed translations.** When two words share an English meaning (jedoch/allerdings,
+ferner/des Weiteren, dagegen/hingegen), give each a distinct English cue and say which cue maps to
+which word in `explanation`. In fill-in hints, add a register note or a letter count.
+
 **Question types.** A question file may declare `types` at the top, e.g. translation or fill in the
 blank. When it does, every question must set `type` to one of them, and the learner can filter by type
 on the setup screen. The flashcard file declares `translation`, `fill-in-the-blank`, `usage` and
