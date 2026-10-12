@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "bun run scripts/dev.ts",
+    "build": "bun --bun vite build",
+    "share": "bun run scripts/tailscale.ts",
     "dev:api": "bun --watch src/server/main.ts",
     "dev:web": "bun --bun vite",
     "validate": "bun run scripts/validate-data.ts",

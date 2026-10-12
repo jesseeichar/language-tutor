@@ -4,7 +4,7 @@ These instructions apply to Codex, Claude, and other coding agents working anywh
 Keep project-wide instructions here; `CLAUDE.md` points to this file so the rules cannot drift.
 
 A local web app for practising German: ungraded flashcards and graded quizzes.
-It runs only in dev mode on one machine. Questions live in JSON files; progress lives in Git-trackable JSON.
+It runs on one machine, either in dev mode or as a built app shared through Tailscale. Questions live in JSON files; progress lives in Git-trackable JSON.
 
 Read [docs/architecture.md](docs/architecture.md) before changing structure. It explains the modules, their
 interfaces and the rules the architecture tests enforce.
@@ -28,6 +28,7 @@ Use the notes' quiz history and "My Notes" sections to decide what questions to 
 
 ```bash
 bun install              # once, and after pulling dependency changes
+bun run share            # build, serve on loopback, share on tailnet until Ctrl+C
 bun run dev              # API on :3001 + Vite on :5173, open http://localhost:5173
 bun run check            # typecheck + all unit, UI and architecture tests + data validation
 bun run test:e2e         # Playwright end-to-end tests (starts its own servers)
