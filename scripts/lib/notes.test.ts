@@ -87,6 +87,17 @@ describe("mergeNotes", () => {
     expect(r.addedWords).toBe(3);
   });
 
+  test("re-import preserves edited category definitions and categories referenced only by questions", () => {
+    const first = mergeNotes(VOCAB, GRAMMAR, empty);
+    const original = first.categories.find((c) => c.id === "vocab-sequence")!;
+    const edited = { ...original, label: "My sequence", group: "Review", description: "Edited in the app", parent: undefined };
+    const categories = first.categories.map((c) => c.id === edited.id ? edited : c);
+    categories.push({ id: "vocab-question-only", label: "Question-only", group: "Custom" });
+    const next = mergeNotes(VOCAB, GRAMMAR, { ...first, categories });
+    expect(next.categories.find((c) => c.id === edited.id)).toEqual(edited);
+    expect(next.categories.some((c) => c.id === "vocab-question-only")).toBe(true);
+  });
+
   test("re-import keeps existing ids, keeps orphans and custom categories", () => {
     const first = mergeNotes(VOCAB, GRAMMAR, empty);
     const custom = { id: "my-own", label: "Mine", group: "Custom" };
@@ -103,6 +114,6 @@ describe("mergeNotes", () => {
     const ids = r.categories.map((c) => c.id);
     expect(ids).toContain("my-own");
     expect(ids).toContain("vocab-old");
-    expect(ids).not.toContain("vocab-stale");
+    expect(ids).toContain("vocab-stale");
   });
 });

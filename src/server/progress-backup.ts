@@ -1,7 +1,8 @@
 import { existsSync, lstatSync, readFileSync, realpathSync } from "node:fs";
-import { isAbsolute, relative, resolve } from "node:path";
+import { isAbsolute, join, relative, resolve } from "node:path";
 import { env } from "node:process";
-import type { BackupProgressResponse } from "../shared";
+import { modes, type BackupProgressResponse } from "../shared";
+import { loadContent } from "./content";
 import { parseProgress } from "./progress-schema";
 
 export class ProgressBackupError extends Error {
@@ -12,7 +13,7 @@ export class ProgressBackupError extends Error {
 export class ProgressBackup {
   private busy = false;
 
-  constructor(private readonly repository: string, private readonly progressPath: string | null) {}
+  constructor(private readonly repository: string, private readonly progressPath: string | null, private readonly dataDir?: string) {}
 
   private async git(args: string[], failure: string, allowed = [0]): Promise<string> {
     let process;
@@ -63,20 +64,27 @@ export class ProgressBackup {
   }
 
   private async performBackup(): Promise<BackupProgressResponse> {
-    if (!this.progressPath || !existsSync(this.progressPath)) {
-      throw new ProgressBackupError("No saved progress to back up yet. Start a study session first.");
+    const files: string[] = [];
+    if (this.progressPath && existsSync(this.progressPath)) {
+      try { parseProgress(JSON.parse(readFileSync(this.progressPath, "utf8"))); }
+      catch { throw new ProgressBackupError("The progress file is invalid. Fix it or restore it from Git before backing up."); }
+      files.push(this.progressPath);
     }
-    if (lstatSync(this.progressPath).isSymbolicLink()) throw new ProgressBackupError("The progress file must not be a symbolic link.");
+    if (this.dataDir) {
+      await loadContent(this.dataDir);
+      files.push(join(this.dataDir, "categories.json"));
+      files.push(...modes.map((m) => join(this.dataDir!, "questions", `${m.id}.json`)).filter(existsSync));
+    }
+    if (!files.length) throw new ProgressBackupError("No saved progress to back up yet. Start a study session first.");
     const root = realpathSync(await this.git(["rev-parse", "--show-toplevel"], "The app is not inside a Git repository."));
-    const path = relative(root, realpathSync(this.progressPath));
-    if (path.startsWith("../") || isAbsolute(path) || path.split("/").includes(".git")) {
-      throw new ProgressBackupError("The progress file must be inside this Git repository to back it up.");
-    }
-    try {
-      parseProgress(JSON.parse(readFileSync(this.progressPath, "utf8")));
-    } catch {
-      throw new ProgressBackupError("The progress file is invalid. Fix it or restore it from Git before backing up.");
-    }
+    const paths = files.map((file) => {
+      if (lstatSync(file).isSymbolicLink()) throw new ProgressBackupError("Backup files must not be symbolic links.");
+      const path = relative(root, realpathSync(file));
+      if (path.startsWith("../") || isAbsolute(path) || path.split("/").includes(".git")) {
+        throw new ProgressBackupError("Backup files must be inside this Git repository.");
+      }
+      return relative(realpathSync(this.repository), realpathSync(file));
+    });
     const branch = await this.git(["symbolic-ref", "--quiet", "--short", "HEAD"], "Check out a branch before backing up.");
     await this.git(["rev-parse", "--verify", "HEAD"], "Commit the project before backing up progress.");
     if (await this.git(["ls-files", "--unmerged"], "Could not inspect Git conflicts.")) {
@@ -93,16 +101,16 @@ export class ProgressBackup {
     }
     await this.git(["remote", "get-url", "--push", remote], `No usable ${remote} remote is configured.`);
     await this.git(["check-ref-format", target], "The upstream branch name is invalid.");
-    await this.git(["add", "--", path], "Could not stage progress. Ensure the progress file is not ignored.");
-    const changes = await this.git(["diff", "--cached", "--name-only", "HEAD", "--", path], "Could not inspect progress changes.");
+    await this.git(["add", "--", ...paths], "Could not stage progress. Ensure the progress file is not ignored.");
+    const changes = await this.git(["diff", "--cached", "--name-only", "HEAD", "--", ...paths], "Could not inspect progress changes.");
     const createdCommit = changes.length > 0;
     if (createdCommit) {
-      await this.git(["commit", "--only", "-m", "Save study progress", "--", path], "Could not commit progress.");
+      await this.git(["commit", "--only", "-m", "Save study data", "--", ...paths], "Could not commit progress.");
     }
     const commit = await this.git(["rev-parse", "HEAD"], "Could not read the progress commit.");
     // An explicit refspec avoids push.default or remote push rules sending other branches/tags.
     await this.git(["-c", "push.followTags=false", "push", remote, `${commit}:${target}`],
-      "Progress is committed locally, but pushing failed. You can retry the backup.");
+      "Changes are committed locally, but pushing failed. You can retry the backup.");
     return { commit, remote, branch: target.slice("refs/heads/".length), createdCommit };
   }
 }

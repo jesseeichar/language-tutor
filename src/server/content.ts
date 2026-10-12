@@ -18,6 +18,7 @@ import {
   type QuestionType,
   type VocabWord,
   modes,
+  categoryProblems,
 } from "../shared";
 
 export interface Content {
@@ -91,6 +92,7 @@ export async function loadContent(dataDir: string): Promise<Content> {
   for (const c of categories) {
     if (c.parent && !categoryIds.has(c.parent)) problems.push(`categories.json: "${c.id}" has unknown parent "${c.parent}"`);
   }
+  problems.push(...categoryProblems(categories).map((p) => `categories.json: ${p}`));
   const checkCategories = (file: string, owner: string, ids: string[]) => {
     for (const id of ids) if (!categoryIds.has(id)) problems.push(`${file}: "${owner}" uses unknown category "${id}"`);
   };

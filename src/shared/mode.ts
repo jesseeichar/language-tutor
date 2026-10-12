@@ -31,6 +31,8 @@ interface ModeCommon<Q extends QuestionBase, R> {
   description: string;
   /** Validates one entry of the question file. Must extend QuestionBaseSchema. */
   questionSchema: z.ZodType<Q, any>;
+  /** Human-readable summary for the content editor. Falls back to the stable id. */
+  questionPreview?(question: Q): string;
   /** Validates what the client sends when the learner answers or reveals a question. */
   responseSchema: z.ZodType<R, any>;
   /** Default number of questions offered on the setup screen. */

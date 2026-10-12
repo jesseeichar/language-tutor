@@ -29,7 +29,7 @@ export default defineConfig({
   webServer: [
     {
       // Fresh progress on every run.
-      command: "rm -f storage/e2e-progress.json && bun src/server/main.ts",
+      command: "rm -f storage/e2e-progress.json && bun scripts/e2e-server.ts",
       url: `http://localhost:${API_PORT}/api/health`,
       env,
       reuseExistingServer: false,

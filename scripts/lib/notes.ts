@@ -145,9 +145,6 @@ export interface MergeResult extends ExistingData {
   orphanTopics: GrammarTopic[];
 }
 
-/** Ids of importer-managed categories start with these prefixes. All other categories are left untouched. */
-const isManagedCategory = (id: string) => id.startsWith("vocab-") || id.startsWith("grammar-");
-
 /**
  * Combines freshly parsed notes with what is already in data/.
  * Existing ids are kept (matched on German text / topic title) so progress stays attached.
@@ -191,12 +188,10 @@ export function mergeNotes(vocabMarkdown: string, grammarMarkdown: string, exist
   topics.push(...orphanTopics);
 
   const generated = [...parsedVocab.categories, ...topicCategories];
-  const generatedIds = new Set(generated.map((c) => c.id));
-  const stillUsed = new Set([...orphanWords, ...orphanTopics].flatMap((x) => x.categories));
-  const categories = [
-    ...generated,
-    ...existing.categories.filter((c) => !generatedIds.has(c.id) && (!isManagedCategory(c.id) || stillUsed.has(c.id))),
-  ];
+  // Category definitions belong to the editor once created. Keep stable ids, app edits, and
+  // categories referenced only by questions; importing notes must not silently remove them.
+  const existingIds = new Set(existing.categories.map((c) => c.id));
+  const categories = [...existing.categories, ...generated.filter((c) => !existingIds.has(c.id))];
 
   return { words, topics, categories, addedWords, addedTopics, orphanWords, orphanTopics };
 }

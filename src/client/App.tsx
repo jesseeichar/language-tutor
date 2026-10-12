@@ -6,18 +6,25 @@ import { HistoryPage } from "./pages/HistoryPage";
 import { SessionRunner } from "./pages/SessionRunner";
 import { SessionSetup } from "./pages/SessionSetup";
 import { SummaryPage } from "./pages/SummaryPage";
+import { ContentEditorPage } from "./pages/ContentEditorPage";
 
 /** The whole app is a handful of screens; plain state is enough, no router needed. */
 type View =
   | { name: "home" }
   | { name: "history" }
+  | { name: "editor" }
   | { name: "setup"; mode: ModeSummary }
   | { name: "session"; mode: ModeSummary; data: CreateSessionResponse }
   | { name: "summary"; mode: ModeSummary; summary: SessionSummary };
 
 export function App() {
   const [view, setView] = useState<View>({ name: "home" });
-  const home = () => setView({ name: "home" });
+  const [editorDirty, setEditorDirty] = useState(false);
+  const navigate = (next: View) => {
+    if (editorDirty && !window.confirm("Discard unsaved edits?")) return;
+    setEditorDirty(false); setView(next);
+  };
+  const home = () => navigate({ name: "home" });
 
   /** Replays a past session exactly. Rejects so the calling page can show the error. */
   const repeat = async (sessionId: string) => {
@@ -33,13 +40,15 @@ export function App() {
         <button type="button" className="brand" onClick={home}>
           Language Tutor
         </button>
-        <button type="button" className="link" onClick={() => setView({ name: "history" })}>
+        <button type="button" className="link" onClick={() => { if (view.name !== "editor") navigate({ name: "editor" }); }}>Manage content</button>
+        <button type="button" className="link" onClick={() => navigate({ name: "history" })}>
           History
         </button>
       </header>
       <main>
         {view.name === "home" && <Home onPick={(mode) => setView({ name: "setup", mode })} />}
         {view.name === "history" && <HistoryPage onRepeat={repeat} />}
+        {view.name === "editor" && <ContentEditorPage onDirtyChange={setEditorDirty} />}
         {view.name === "setup" && (
           <SessionSetup
             mode={view.mode}

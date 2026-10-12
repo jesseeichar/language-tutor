@@ -16,7 +16,7 @@ export function ProgressBackup() {
     setError(null);
     try {
       const result = await api.backupProgress();
-      setMessage(`Progress backed up to ${result.remote}/${result.branch}.`);
+      setMessage(`Changes backed up to ${result.remote}/${result.branch}.`);
     } catch (e) {
       setError(e);
     } finally {
@@ -28,9 +28,9 @@ export function ProgressBackup() {
   return (
     <section className="progress-backup" aria-label="Progress backup">
       <button type="button" className="primary" onClick={backup} disabled={busy}>
-        {busy ? "Backing up…" : "Back up progress"}
+        {busy ? "Backing up…" : "Back up changes"}
       </button>
-      <p className="muted small">Commits your saved progress and pushes the current branch to Git.</p>
+      <p className="muted small">Commits saved progress, questions, and categories, then pushes the current branch to Git.</p>
       {message && <p role="status">{message}</p>}
       <ErrorBox error={error} />
     </section>
