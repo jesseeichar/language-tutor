@@ -14,7 +14,8 @@ the same in every direction. Practise one type alone or combine types in a sessi
 
 Initially, Multiple choice and Fill in the blank are selected. The default session size is 30:
 with the supplied question bank and all categories selected, this gives 25 vocabulary multiple-choice
-questions and 5 grammar blanks. Translation is opt-in. Custom counts reserve approximately one sixth
+questions and 5 grammar blanks. The size field is a dropdown of suggested sizes, **All questions (n)**
+for everything the selected categories and types match, and **Custom…** for any other number. Translation is opt-in. Custom counts reserve approximately one sixth
 of the session for questions with grammar-topic references. If either pool is too small, the other
 fills the remaining places. Sessions never include questions outside the selected categories/types
 or repeat a question. The existing fresh/weak-question selection runs within each pool. Your type,

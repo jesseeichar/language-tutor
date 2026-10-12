@@ -42,6 +42,12 @@ export const api = {
     method: "POST", headers: { "X-Language-Tutor-Backup": "1" },
   }),
   modes: () => request<ModeSummary[]>("/api/modes"),
+  /** Questions in a mode matching the given categories and (optionally) types. */
+  poolSize: (modeId: string, categoryIds: string[], questionTypes?: string[]) => {
+    const params = new URLSearchParams({ categories: categoryIds.join(",") });
+    if (questionTypes) params.set("types", questionTypes.join(","));
+    return request<{ count: number }>(`/api/modes/${modeId}/pool?${params}`);
+  },
   createSession: (body: CreateSessionRequest) =>
     request<CreateSessionResponse>("/api/sessions", { method: "POST", body: JSON.stringify(body) }),
   submitAnswer: (sessionId: string, questionId: string, response: unknown) =>

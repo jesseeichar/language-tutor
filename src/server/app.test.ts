@@ -58,6 +58,30 @@ async function call<T>(path: string, body?: unknown): Promise<{ status: number; 
   return { status: res.status, body: (await res.json()) as T };
 }
 
+describe("GET /api/modes/:id/pool", () => {
+  const summary = async (id: string) => (await call<ModeSummary[]>("/api/modes")).body.find((m) => m.id === id)!;
+  const pool = async (id: string, query: string) => (await call<{ count: number }>(`/api/modes/${id}/pool?${query}`)).body.count;
+
+  test("counts the questions matching the selected categories", async () => {
+    const mode = await summary("flashcards");
+    const roots = mode.categories.filter((c) => !c.parent);
+    expect(await pool("flashcards", `categories=${roots.map((c) => c.id).join(",")}`)).toBe(mode.questionCount);
+    expect(await pool("flashcards", `categories=${roots[0]!.id}`)).toBe(roots[0]!.count);
+    expect(await pool("flashcards", "categories=")).toBe(0);
+  });
+
+  test("narrows by question type when types are given", async () => {
+    const mode = await summary("flashcards");
+    const roots = mode.categories.filter((c) => !c.parent).map((c) => c.id).join(",");
+    const type = mode.questionTypes[0]!;
+    expect(await pool("flashcards", `categories=${roots}&types=${type.id}`)).toBe(type.count);
+  });
+
+  test("rejects an unknown mode", async () => {
+    expect((await call("/api/modes/nope/pool?categories=x")).status).toBe(404);
+  });
+});
+
 const startFlashcards = (categoryIds: string[], count?: number, extra: Record<string, unknown> = {}) =>
   call<CreateSessionResponse>("/api/sessions", { modeId: "flashcards", categoryIds, count, ...extra });
 

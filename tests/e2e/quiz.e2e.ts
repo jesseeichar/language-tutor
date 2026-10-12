@@ -9,7 +9,8 @@ async function openQuiz(page: Page, type: string, category: string, direction = 
     await page.getByRole("group", { name: "Question types", exact: true }).getByLabel(new RegExp(`^${label}`)).setChecked(label === type);
   }
   await page.getByLabel(direction, { exact: true }).check();
-  await page.getByLabel("Questions in this session").fill(count);
+  await page.getByLabel("Questions in this session").selectOption("custom");
+  await page.getByLabel("Number of questions").fill(count);
   const response = page.waitForResponse(r => r.url().endsWith("/api/sessions") && r.request().method() === "POST");
   await page.getByRole("button", { name: "Start", exact: true }).click();
   return await (await response).json() as CreateSessionResponse;
