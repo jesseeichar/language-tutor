@@ -3,6 +3,7 @@ import type {
   CreateSessionRequest,
   CreateSessionResponse,
   ModeSummary,
+  SessionLogEntry,
   SessionSummary,
   SubmitAnswerResponse,
 } from "../shared";
@@ -40,4 +41,7 @@ export const api = {
     }),
   finishSession: (sessionId: string) =>
     request<SessionSummary>(`/api/sessions/${sessionId}/finish`, { method: "POST" }),
+  sessionLog: () => request<SessionLogEntry[]>("/api/sessions"),
+  repeatSession: (sessionId: string) =>
+    request<CreateSessionResponse>(`/api/sessions/${sessionId}/repeat`, { method: "POST" }),
 };

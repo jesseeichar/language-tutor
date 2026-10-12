@@ -10,6 +10,16 @@ describe("api", () => {
     expect(calls[0]).toEqual({ method: "POST", path: "/api/sessions/s1/answers", body: { questionId: "q1", response: { revealed: true } } });
   });
 
+  test("reads the session log and repeats a session", async () => {
+    const calls = mockApi({
+      "GET /api/sessions": () => ({ body: [] }),
+      "POST /api/sessions/s1/repeat": () => ({ body: { session: { id: "s2" }, questions: [], directions: {} } }),
+    });
+    expect(await api.sessionLog()).toEqual([]);
+    expect((await api.repeatSession("s1")).session.id).toBe("s2");
+    expect(calls.map((c) => `${c.method} ${c.path}`)).toEqual(["GET /api/sessions", "POST /api/sessions/s1/repeat"]);
+  });
+
   test("turns error responses into ApiRequestError with details", async () => {
     mockApi({ "GET /api/modes": () => ({ status: 500, body: { error: "Broken", details: ["a", "b"] } }) });
     const err = await api.modes().catch((e) => e);

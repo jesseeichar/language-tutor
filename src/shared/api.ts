@@ -1,7 +1,7 @@
 /** Request and response shapes for the HTTP API, shared by server and client. */
 import { z } from "zod";
 import type { Category, QuestionBase, QuestionType } from "./content";
-import { DirectionChoiceSchema, type Direction, type GradeResult } from "./mode";
+import { DirectionChoiceSchema, type Direction, type DirectionChoice, type GradeResult } from "./mode";
 
 export interface CategoryCount extends Category {
   /** Questions in this mode tagged with this category or one of its children. */
@@ -44,6 +44,12 @@ export interface SessionInfo {
   modeId: string;
   graded: boolean;
   categoryIds: string[];
+  /** null = all question types. */
+  questionTypes: string[] | null;
+  /** The learner's choice. null when the mode has no directional questions. */
+  direction: DirectionChoice | null;
+  /** The session this one repeats, if any. */
+  repeatOf: string | null;
   startedAt: string;
 }
 
@@ -75,6 +81,15 @@ export interface SessionSummary {
   correct: number | null;
   pointsAwarded: number;
   pointsPossible: number;
+}
+
+/** One row of the session log. Labels are resolved from the current data; ids no longer present are shown as ids. */
+export interface SessionLogEntry extends SessionSummary {
+  modeTitle: string;
+  finishedAt: string | null;
+  categoryLabels: string[];
+  /** null = all question types. */
+  questionTypeLabels: string[] | null;
 }
 
 export interface ApiError {

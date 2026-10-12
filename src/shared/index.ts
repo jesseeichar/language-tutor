@@ -34,6 +34,7 @@ export {
   type CreateSessionResponse,
   type ModeSummary,
   type SessionInfo,
+  type SessionLogEntry,
   type SessionSummary,
   type SubmitAnswerResponse,
 } from "./api";

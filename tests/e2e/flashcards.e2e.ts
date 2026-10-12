@@ -1,18 +1,5 @@
-import { expect, test, type Page } from "@playwright/test";
-
-async function openFlashcards(page: Page) {
-  await page.goto("/");
-  await page.getByRole("button", { name: /Flashcards/ }).click();
-  await expect(page.getByRole("heading", { name: "Flashcards" })).toBeVisible();
-}
-
-async function studyAll(page: Page, cards: number) {
-  for (let i = 1; i <= cards; i++) {
-    await expect(page.getByText(`${i} / ${cards}`)).toBeVisible();
-    await page.getByRole("button", { name: /Flip/ }).click();
-    await page.getByRole("button", { name: i === cards ? /Finish/ : /Next/ }).click();
-  }
-}
+import { expect, test } from "@playwright/test";
+import { openFlashcards, studyAndRecord } from "./support";
 
 test("home lists the flashcard study tool", async ({ page }) => {
   await page.goto("/");
@@ -49,7 +36,7 @@ test("a parent category includes its children", async ({ page }) => {
   await openFlashcards(page);
   await page.getByLabel("Connectors").check();
   await page.getByRole("button", { name: "Start" }).click();
-  await studyAll(page, 2);
+  expect(await studyAndRecord(page)).toHaveLength(2);
   await expect(page.getByText("Studied 2 of 2 cards")).toBeVisible();
 });
 
@@ -79,8 +66,8 @@ test("the category selection is remembered", async ({ page }) => {
   await openFlashcards(page);
   await page.getByLabel("Cases").check();
   await page.getByRole("button", { name: "Start" }).click();
-  await studyAll(page, 1);
-  await page.getByRole("button", { name: "Another session" }).click();
+  expect(await studyAndRecord(page)).toHaveLength(1);
+  await page.getByRole("button", { name: "New session" }).click();
   await expect(page.getByLabel("Cases")).toBeChecked();
   await expect(page.getByLabel("Time")).not.toBeChecked();
 });
