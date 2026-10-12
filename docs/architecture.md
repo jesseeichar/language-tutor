@@ -264,3 +264,17 @@ no migration is needed. Empty refs keep worksheet practice separate from vocabul
 The client worksheet module has the same one-export budget as other mode views. The shared module
 keeps its 40-name budget: the thin `isDirectionalQuestion` export was removed in favor of direct use
 of the existing optional mode capability, making room for the worksheet question type.
+
+## Built app and Tailscale lifecycle
+
+`bun run share` builds Vite assets into ignored `dist/`, validates content, and starts the API with
+static asset serving on `127.0.0.1`. Static responses are restricted to real files inside `dist/`;
+traversal, dotfiles, directory listings and escaping symlinks are rejected. API routes still take
+precedence. The ordinary dev server keeps its existing behavior.
+
+The sharing script owns a foreground `tailscale serve --https=<port>` child. Exiting or receiving
+SIGINT/SIGTERM/SIGHUP stops that child (removing its session-owned registration) and the app. It never
+resets Serve globally, enables Funnel, or logs the machine out of Tailscale. Occupied Tailscale ports
+are rejected before building; an occupied local port fails before publishing. Existing local JSON
+and environment configuration are reused. Unit tests inject subprocesses; static-serving tests use
+temporary directories and isolated progress.

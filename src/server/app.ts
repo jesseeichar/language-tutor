@@ -3,6 +3,7 @@
  * knows about flashcards or any other specific mode.
  */
 import type { Server } from "bun";
+import { staticFiles } from "./static";
 import {
   CreateSessionRequestSchema,
   ContentEditSchema,
@@ -31,6 +32,8 @@ export interface AppOptions {
   dataDir: string;
   progressPath: string | null;
   port: number;
+  hostname?: string;
+  staticDir?: string;
   typesafeApiKey?: string;
   typesafeModel?: string;
   gradingServices?: GradingServices;
@@ -101,6 +104,8 @@ export function startServer(options: AppOptions): Server<undefined> {
 
   return Bun.serve({
     port: options.port,
+    hostname: options.hostname,
+    fetch: staticFiles(options.staticDir),
     idleTimeout: 60,
     routes: {
       "/api/health": { GET: () => json({ ok: true }) },
