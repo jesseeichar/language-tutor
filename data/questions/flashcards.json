@@ -344,6 +344,3654 @@
       "front": "___ dem Bild sieht man eine Stadt.",
       "back": "Auf",
       "notes": "For what a picture shows, German uses auf, not in."
+    },
+    {
+      "id": "fc-zuerst",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": "zuerst",
+      "en": "first, first of all",
+      "notes": "Zuerst lesen wir den Text, dann beantworten wir die Fragen.\nThe neutral, everyday word for the first step; zunächst is slightly more formal."
+    },
+    {
+      "id": "fc-zunaechst",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zunaechst"
+        ],
+        "topics": []
+      },
+      "de": "zunächst",
+      "en": "first, initially, to begin with (slightly formal)",
+      "notes": "Zunächst möchte ich mich vorstellen.\nSlightly more formal than zuerst; common in presentations and emails."
+    },
+    {
+      "id": "fc-anfangs",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "anfangs"
+        ],
+        "topics": []
+      },
+      "de": "anfangs",
+      "en": "at first, in the beginning (and it changed later)",
+      "notes": "Anfangs war es schwierig, jetzt geht es gut.\nImplies that things changed later; for the first step of a sequence use zuerst."
+    },
+    {
+      "id": "fc-am-anfang",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "am-anfang"
+        ],
+        "topics": []
+      },
+      "de": "am Anfang",
+      "en": "at the beginning",
+      "notes": "Am Anfang der Sitzung besprechen wir die Traktanden.\nWith a genitive: am Anfang des Jahres, am Anfang der Woche."
+    },
+    {
+      "id": "fc-zu-beginn",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zu-beginn"
+        ],
+        "topics": []
+      },
+      "de": "zu Beginn",
+      "en": "at the start, at the outset (formal)",
+      "notes": "Zu Beginn des Projekts fehlten uns die Ressourcen.\nOften with a genitive: zu Beginn des Jahres. More formal than am Anfang."
+    },
+    {
+      "id": "fc-danach",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "danach"
+        ],
+        "topics": []
+      },
+      "de": "danach",
+      "en": "after that, afterwards",
+      "notes": "Wir essen zuerst, danach gehen wir spazieren.\nThe verb comes straight after danach: danach gehen wir."
+    },
+    {
+      "id": "fc-anschliessend",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "anschliessend"
+        ],
+        "topics": []
+      },
+      "de": "anschliessend",
+      "en": "afterwards, subsequently (directly after)",
+      "notes": "Wir essen, anschliessend gehen wir spazieren.\nStresses that the next thing follows immediately; a bit more formal than danach."
+    },
+    {
+      "id": "fc-dann",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "dann"
+        ],
+        "topics": []
+      },
+      "de": "dann",
+      "en": "then, next",
+      "notes": "Ich stehe auf, dann trinke ich Kaffee.\nThe verb comes straight after dann: dann trinke ich."
+    },
+    {
+      "id": "fc-im-anschluss-an-akk",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "im-anschluss-an-akk"
+        ],
+        "topics": []
+      },
+      "de": "im Anschluss an (+ Akk.)",
+      "en": "following, right after (formal)",
+      "notes": "Im Anschluss an die Sitzung gibt es einen Apéro.\nan + accusative: im Anschluss an den Vortrag / die Sitzung / das Meeting."
+    },
+    {
+      "id": "fc-spaeter",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "spaeter"
+        ],
+        "topics": []
+      },
+      "de": "später",
+      "en": "later",
+      "notes": "Das besprechen wir später.\nComparative of spät; more open-ended than nachher (soon, same context)."
+    },
+    {
+      "id": "fc-als-naechstes",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "als-naechstes"
+        ],
+        "topics": []
+      },
+      "de": "als Nächstes",
+      "en": "next, as the next step",
+      "notes": "Als Nächstes prüfen wir die Offerten.\nNächstes is written with a capital N (used as a noun)."
+    },
+    {
+      "id": "fc-nachher",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "nachher"
+        ],
+        "topics": []
+      },
+      "de": "nachher",
+      "en": "afterwards, later on (soon, same context)",
+      "notes": "Ich rufe dich nachher an. / Bis nachher!\nA moment soon after now or after the current activity; später is more open-ended."
+    },
+    {
+      "id": "fc-schliesslich",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "schliesslich"
+        ],
+        "topics": []
+      },
+      "de": "schliesslich",
+      "en": "finally, in the end; after all",
+      "notes": "Schliesslich haben wir uns geeinigt. / Er ist schliesslich der Chef.\nTwo uses: the end of a process, or 'after all' as a justification."
+    },
+    {
+      "id": "fc-zuletzt",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zuletzt"
+        ],
+        "topics": []
+      },
+      "de": "zuletzt",
+      "en": "last, lastly; most recently",
+      "notes": "Zuletzt danke ich allen Beteiligten. / Wann hast du ihn zuletzt gesehen?\nTwo uses: the final step, or the last time something happened."
+    },
+    {
+      "id": "fc-am-ende",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "am-ende"
+        ],
+        "topics": []
+      },
+      "de": "am Ende",
+      "en": "at the end, in the end",
+      "notes": "Am Ende des Jahres ziehen wir Bilanz.\nWith a genitive: am Ende des Monats. Also 'in the end': Am Ende hat alles geklappt."
+    },
+    {
+      "id": "fc-am-schluss",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "am-schluss"
+        ],
+        "topics": []
+      },
+      "de": "am Schluss",
+      "en": "at the end, at the close (of an event or text)",
+      "notes": "Am Schluss der Präsentation gab es Fragen.\nClose to am Ende; typical for events, meetings and texts."
+    },
+    {
+      "id": "fc-ausserdem",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "ausserdem"
+        ],
+        "topics": []
+      },
+      "de": "ausserdem",
+      "en": "besides, moreover, in addition",
+      "notes": "Ich bin müde, ausserdem habe ich Hunger.\nThe verb comes straight after ausserdem: ausserdem habe ich."
+    },
+    {
+      "id": "fc-darueber-hinaus",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "darueber-hinaus"
+        ],
+        "topics": []
+      },
+      "de": "darüber hinaus",
+      "en": "beyond that, furthermore",
+      "notes": "Darüber hinaus brauchen wir mehr Personal.\nThe verb follows directly: Darüber hinaus brauchen wir..."
+    },
+    {
+      "id": "fc-weiterhin",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "weiterhin"
+        ],
+        "topics": []
+      },
+      "de": "weiterhin",
+      "en": "furthermore; still, continuing to",
+      "notes": "Er arbeitet weiterhin bei uns.\nMost often: something continues. In formal texts also 'furthermore': Weiterhin ist zu beachten, dass..."
+    },
+    {
+      "id": "fc-ebenfalls",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "ebenfalls"
+        ],
+        "topics": []
+      },
+      "de": "ebenfalls",
+      "en": "likewise, as well, also",
+      "notes": "Sie hat ebenfalls zugestimmt. / Danke, ebenfalls!\nA bit more formal than auch. 'Danke, ebenfalls!' = 'Thanks, you too!'"
+    },
+    {
+      "id": "fc-ferner",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "ferner"
+        ],
+        "topics": []
+      },
+      "de": "ferner",
+      "en": "furthermore, moreover (formal, written)",
+      "notes": "Ferner wird empfohlen, die Frist zu verlängern.\nTypical of reports and official letters; rare in speech."
+    },
+    {
+      "id": "fc-auch",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "auch"
+        ],
+        "topics": []
+      },
+      "de": "auch",
+      "en": "also, too",
+      "notes": "Ich komme auch mit.\nUsually stands just before the part it refers to."
+    },
+    {
+      "id": "fc-und",
+      "type": "translation",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "und"
+        ],
+        "topics": []
+      },
+      "de": "und",
+      "en": "and",
+      "notes": "Wir planen und wir testen.\nDoes not change word order (position 0): und wir testen."
+    },
+    {
+      "id": "fc-aber",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "aber"
+        ],
+        "topics": []
+      },
+      "de": "aber",
+      "en": "but",
+      "notes": "Ich wollte kommen, aber ich hatte keine Zeit.\nDoes not change word order (position 0): aber ich hatte."
+    },
+    {
+      "id": "fc-jedoch",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "jedoch"
+        ],
+        "topics": []
+      },
+      "de": "jedoch",
+      "en": "however, yet (more formal than aber)",
+      "notes": "Der Plan war gut, jedoch fehlte das Geld. / Das Geld fehlte jedoch.\nAt the start of a clause the verb follows directly (jedoch fehlte); it can also come after the verb."
+    },
+    {
+      "id": "fc-allerdings",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "allerdings"
+        ],
+        "topics": []
+      },
+      "de": "allerdings",
+      "en": "however, mind you, admittedly (concedes a point)",
+      "notes": "Das ist günstig, allerdings dauert es länger.\nAdmits a limitation; softer than jedoch. As a reply, 'Allerdings!' means 'Indeed!'"
+    },
+    {
+      "id": "fc-dagegen",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "dagegen"
+        ],
+        "topics": []
+      },
+      "de": "dagegen",
+      "en": "by contrast, on the other hand; against it",
+      "notes": "Mein Bruder mag Sport, ich dagegen lese lieber. / Ich bin dagegen.\nContrast: often right after the subject (ich dagegen). Against: Hast du etwas dagegen?"
+    },
+    {
+      "id": "fc-hingegen",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "hingegen"
+        ],
+        "topics": []
+      },
+      "de": "hingegen",
+      "en": "whereas, by contrast (formal, written)",
+      "notes": "Die Kosten sinken, der Aufwand hingegen steigt.\nOften placed right after the subject it contrasts; more formal than dagegen."
+    },
+    {
+      "id": "fc-im-gegensatz-dazu",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "im-gegensatz-dazu"
+        ],
+        "topics": []
+      },
+      "de": "im Gegensatz dazu",
+      "en": "in contrast to that, unlike that",
+      "notes": "Im Gegensatz dazu ist die neue Lösung viel schneller.\nThe verb follows directly. With a noun: im Gegensatz zu + Dat. (im Gegensatz zum alten System)."
+    },
+    {
+      "id": "fc-obwohl",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "obwohl"
+        ],
+        "topics": []
+      },
+      "de": "obwohl",
+      "en": "although; even though",
+      "notes": "Sie kam ins Büro, obwohl sie müde war.\nSubordinating conjunction: the conjugated verb goes to the end."
+    },
+    {
+      "id": "fc-deshalb",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "deshalb"
+        ],
+        "topics": []
+      },
+      "de": "deshalb",
+      "en": "therefore; that's why; for that reason",
+      "notes": "Er war krank, deshalb kam er nicht.\nAt the start of a clause it is followed directly by the verb (deshalb kam er)."
+    },
+    {
+      "id": "fc-daher",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "daher"
+        ],
+        "topics": []
+      },
+      "de": "daher",
+      "en": "therefore; hence (from a reason to a conclusion)",
+      "notes": "Die Daten fehlen, daher können wir nichts sagen.\nAt the start of a clause it is followed directly by the verb."
+    },
+    {
+      "id": "fc-deswegen",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "deswegen"
+        ],
+        "topics": []
+      },
+      "de": "deswegen",
+      "en": "because of that; that's why (more spoken)",
+      "notes": "Es regnete, deswegen sind wir zu Hause geblieben.\nSame meaning as deshalb, a bit more colloquial; the verb follows directly."
+    },
+    {
+      "id": "fc-somit",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "somit"
+        ],
+        "topics": []
+      },
+      "de": "somit",
+      "en": "thus; and so (formal conclusion)",
+      "notes": "Die Frist ist abgelaufen, somit ist der Antrag ungültig.\nFormal; the verb follows directly."
+    },
+    {
+      "id": "fc-folglich",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "folglich"
+        ],
+        "topics": []
+      },
+      "de": "folglich",
+      "en": "consequently; it follows that (formal, logical)",
+      "notes": "Er hat nicht unterschrieben, folglich gilt der Vertrag nicht."
+    },
+    {
+      "id": "fc-dadurch",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "dadurch"
+        ],
+        "topics": []
+      },
+      "de": "dadurch",
+      "en": "as a result (of that); by that means, through it",
+      "notes": "Wir haben automatisiert, dadurch sparen wir viel Zeit.\nda + durch: points back to the cause or method."
+    },
+    {
+      "id": "fc-aus-diesem-grund",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "aus-diesem-grund"
+        ],
+        "topics": []
+      },
+      "de": "aus diesem Grund",
+      "en": "for this reason",
+      "notes": "Aus diesem Grund haben wir das Projekt verschoben.\naus + dative (diesem Grund); at the start of a sentence the verb follows directly."
+    },
+    {
+      "id": "fc-weil",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "weil"
+        ],
+        "topics": []
+      },
+      "de": "weil",
+      "en": "because (verb at the end)",
+      "notes": "Er kam nicht, weil er krank war.\nSubordinating conjunction: the conjugated verb goes to the end of the clause."
+    },
+    {
+      "id": "fc-wegen",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "wegen"
+        ],
+        "topics": []
+      },
+      "de": "wegen",
+      "en": "because of (+ genitive)",
+      "notes": "Wegen des Wetters blieben wir zu Hause.\nWritten German uses the genitive (wegen des Staus); in speech you often hear the dative (wegen dem Stau)."
+    },
+    {
+      "id": "fc-das-liegt-nur-daran",
+      "type": "translation",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "das-liegt-nur-daran"
+        ],
+        "topics": []
+      },
+      "de": "das liegt nur daran, dass ...",
+      "en": "that is only because ...; the reason is simply that ...",
+      "notes": "Das liegt nur daran, dass ich wenig schlafe.\nliegen an + dative: Woran liegt das? - Das liegt daran, dass ..."
+    },
+    {
+      "id": "fc-zurzeit",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "zurzeit"
+        ],
+        "topics": []
+      },
+      "de": "zurzeit",
+      "en": "at the moment; currently",
+      "notes": "Ich lerne zurzeit viel Deutsch.\nOne word when it means 'currently' (not: zur Zeit)."
+    },
+    {
+      "id": "fc-innerhalb",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "innerhalb"
+        ],
+        "topics": []
+      },
+      "de": "innerhalb",
+      "en": "within; inside (+ genitive)",
+      "notes": "Bitte antworten Sie innerhalb einer Woche.\n+ genitive; 'innerhalb von' + dative is also common (innerhalb von zwei Wochen)."
+    },
+    {
+      "id": "fc-sogar",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "sogar"
+        ],
+        "topics": []
+      },
+      "de": "sogar",
+      "en": "even (adds emphasis or surprise)",
+      "notes": "Er arbeitet sogar am Wochenende."
+    },
+    {
+      "id": "fc-gegebenenfalls-ggf",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "gegebenenfalls-ggf"
+        ],
+        "topics": []
+      },
+      "de": "gegebenenfalls (ggf.)",
+      "en": "if necessary; where applicable; if the case arises",
+      "notes": "Bitte melden Sie sich gegebenenfalls bei mir.\nFormal; in writing often abbreviated ggf."
+    },
+    {
+      "id": "fc-vermutlich",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "vermutlich"
+        ],
+        "topics": []
+      },
+      "de": "vermutlich",
+      "en": "probably; presumably",
+      "notes": "Er ist vermutlich schon zu Hause.\nA little more formal than wahrscheinlich."
+    },
+    {
+      "id": "fc-dafuer",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "dafuer"
+        ],
+        "topics": []
+      },
+      "de": "dafür",
+      "en": "for it; in favor of it; in return",
+      "notes": "Ich bin dafür.\nda + für replaces 'für + thing': Er bekommt Geld dafür."
+    },
+    {
+      "id": "fc-gemaess",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "gemaess"
+        ],
+        "topics": []
+      },
+      "de": "gemäss",
+      "en": "according to; in accordance with (+ dative)",
+      "notes": "Gemäss den Vorschriften ist das nicht erlaubt.\nSwiss spelling with ss; it can also follow the noun (dem Vertrag gemäss)."
+    },
+    {
+      "id": "fc-ausschliesslich",
+      "type": "translation",
+      "categories": [
+        "vocab-other-connectors"
+      ],
+      "refs": {
+        "words": [
+          "ausschliesslich"
+        ],
+        "topics": []
+      },
+      "de": "ausschliesslich",
+      "en": "exclusively; solely; only",
+      "notes": "Das ist ausschliesslich für interne Zwecke.\nMore formal and stronger than nur."
+    },
+    {
+      "id": "fc-das-bewerbungsgespraech",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "das-bewerbungsgespraech"
+        ],
+        "topics": []
+      },
+      "de": "das Bewerbungsgespräch, die Bewerbungsgespräche",
+      "en": "job interview",
+      "notes": "Das Bewerbungsgespräch war sehr stressig.\nein Bewerbungsgespräch haben / führen"
+    },
+    {
+      "id": "fc-die-staerke-staerken",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-staerke-staerken"
+        ],
+        "topics": []
+      },
+      "de": "die Stärke, die Stärken",
+      "en": "strength",
+      "notes": "Meine Stärken sind Teamarbeit und Kreativität.\nOpposite: die Schwäche, die Schwächen."
+    },
+    {
+      "id": "fc-anerkannt",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "anerkannt"
+        ],
+        "topics": []
+      },
+      "de": "anerkannt",
+      "en": "recognized; accepted; acknowledged",
+      "notes": "Ihr Abschluss ist in der Schweiz anerkannt.\nPartizip II of anerkennen (separable: Sie erkennen den Abschluss an)."
+    },
+    {
+      "id": "fc-der-lohn",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-lohn"
+        ],
+        "topics": []
+      },
+      "de": "der Lohn, die Löhne",
+      "en": "wage; pay",
+      "notes": "Der Lohn wird Ende Monat bezahlt.\nIn Switzerland Lohn is the usual word for any pay, also for office jobs (Germany often: das Gehalt)."
+    },
+    {
+      "id": "fc-lohn-bekommen",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "lohn-bekommen"
+        ],
+        "topics": []
+      },
+      "de": "Lohn bekommen",
+      "en": "to get paid; to receive pay",
+      "notes": "Sie bekommt einen guten Lohn.\nEveryday register; more formal: Lohn erhalten."
+    },
+    {
+      "id": "fc-lohn-erhalten",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "lohn-erhalten"
+        ],
+        "topics": []
+      },
+      "de": "Lohn erhalten",
+      "en": "to receive pay (more formal)",
+      "notes": "Er erhält seinen Lohn pünktlich.\nerhalten - erhielt - hat erhalten"
+    },
+    {
+      "id": "fc-geld-verdienen",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "geld-verdienen"
+        ],
+        "topics": []
+      },
+      "de": "Geld verdienen",
+      "en": "to earn money",
+      "notes": "Ich möchte mehr Geld verdienen.\nAlso: gut verdienen (to earn well)."
+    },
+    {
+      "id": "fc-das-beduerfnis-die-beduerfnisse",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "das-beduerfnis-die-beduerfnisse"
+        ],
+        "topics": []
+      },
+      "de": "das Bedürfnis, die Bedürfnisse",
+      "en": "need; requirement",
+      "notes": "Die Bedürfnisse der Kunden sind sehr unterschiedlich.\nPlural: die Bedürfnisse (double s + e)."
+    },
+    {
+      "id": "fc-das-lernbeduerfnis-die-lernbeduerfnisse",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "das-lernbeduerfnis-die-lernbeduerfnisse"
+        ],
+        "topics": []
+      },
+      "de": "das Lernbedürfnis, die Lernbedürfnisse",
+      "en": "learning need",
+      "notes": "Die Lernbedürfnisse der Schüler sind sehr unterschiedlich."
+    },
+    {
+      "id": "fc-die-behoerde-die-behoerden",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-behoerde-die-behoerden"
+        ],
+        "topics": []
+      },
+      "de": "die Behörde, die Behörden",
+      "en": "authority; public office; government agency",
+      "notes": "Ich muss morgen zur Behörde gehen.\n'The authorities' = die Behörden."
+    },
+    {
+      "id": "fc-die-vereinbarung-die-vereinbarungen",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-vereinbarung-die-vereinbarungen"
+        ],
+        "topics": []
+      },
+      "de": "die Vereinbarung, die Vereinbarungen",
+      "en": "agreement; arrangement",
+      "notes": "Wir haben eine Vereinbarung getroffen.\neine Vereinbarung treffen = to make/reach an agreement"
+    },
+    {
+      "id": "fc-die-abstimmung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-abstimmung"
+        ],
+        "topics": []
+      },
+      "de": "die Abstimmung, die Abstimmungen",
+      "en": "coordination; alignment; vote",
+      "notes": "Die Abstimmung mit den Abteilungen ist wichtig.\nVerb: (sich) abstimmen. In Switzerland also a popular vote (die Volksabstimmung)."
+    },
+    {
+      "id": "fc-die-teilnahme",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-teilnahme"
+        ],
+        "topics": []
+      },
+      "de": "die Teilnahme",
+      "en": "participation; attendance",
+      "notes": "Die Teilnahme an der Sitzung ist freiwillig.\nTeilnahme an + dative; verb: teilnehmen an (separable)."
+    },
+    {
+      "id": "fc-die-mitgestaltung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-mitgestaltung"
+        ],
+        "topics": []
+      },
+      "de": "die Mitgestaltung",
+      "en": "co-design; active participation in shaping something",
+      "notes": "Die Mitgestaltung der Mitarbeitenden ist erwünscht.\nVerb: mitgestalten (separable): Wir gestalten das Projekt mit."
+    },
+    {
+      "id": "fc-die-einfuehrungssession",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-einfuehrungssession"
+        ],
+        "topics": []
+      },
+      "de": "die Einführungssession",
+      "en": "introductory session, onboarding session",
+      "notes": "Die Einführungssession findet am Montag statt.\ndie Einführung (introduction) + die Session"
+    },
+    {
+      "id": "fc-die-bewilligung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-bewilligung"
+        ],
+        "topics": []
+      },
+      "de": "die Bewilligung, die Bewilligungen",
+      "en": "approval, permit, authorization",
+      "notes": "Für den Umbau braucht man eine Bewilligung.\nIn Switzerland also the residence/work permit: die Aufenthaltsbewilligung, die Arbeitsbewilligung."
+    },
+    {
+      "id": "fc-die-leitung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-leitung"
+        ],
+        "topics": []
+      },
+      "de": "die Leitung, die Leitungen",
+      "en": "management, leadership; head (of a department)",
+      "notes": "Er hat die Leitung des Projekts übernommen.\nunter der Leitung von (+ Dat.) = led by. Also: line, cable, pipe (die Telefonleitung)."
+    },
+    {
+      "id": "fc-die-verantwortung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-verantwortung"
+        ],
+        "topics": []
+      },
+      "de": "die Verantwortung",
+      "en": "responsibility",
+      "notes": "Sie trägt die Verantwortung für das Team.\nVerantwortung tragen / übernehmen für (+ Akk.)"
+    },
+    {
+      "id": "fc-die-gehaltserhoehung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-gehaltserhoehung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Gehaltserhöhung, die Gehaltserhöhungen",
+      "en": "salary increase, pay raise",
+      "notes": "Er hat eine Gehaltserhöhung bekommen.\nIn Switzerland often: die Lohnerhöhung."
+    },
+    {
+      "id": "fc-die-auswirkung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-auswirkung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Auswirkung, die Auswirkungen",
+      "en": "effect, impact, consequence",
+      "notes": "Die Auswirkungen auf das Team waren gross.\nAuswirkung auf (+ Akk.), often plural. Compare die Wirkung = the direct effect itself."
+    },
+    {
+      "id": "fc-der-auftritt-die-auftritte",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-auftritt-die-auftritte"
+        ],
+        "topics": []
+      },
+      "de": "der Auftritt, die Auftritte",
+      "en": "appearance (in public), performance; way of presenting oneself",
+      "notes": "Ihr Auftritt vor dem Team war sehr professionell.\nauftreten (separable) = to appear, perform; der Webauftritt = web presence."
+    },
+    {
+      "id": "fc-die-textvorhersage-n",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-textvorhersage-n"
+        ],
+        "topics": []
+      },
+      "de": "die Textvorhersage, die Textvorhersagen",
+      "en": "text prediction, autocomplete",
+      "notes": "Die Textvorhersagen helfen beim Schreiben.\nder Text + die Vorhersage (prediction, forecast)"
+    },
+    {
+      "id": "fc-der-vorschlag-die-vorschlaege",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-vorschlag-die-vorschlaege"
+        ],
+        "topics": []
+      },
+      "de": "der Vorschlag, die Vorschläge",
+      "en": "suggestion, proposal",
+      "notes": "Ich habe einen Vorschlag gemacht.\neinen Vorschlag machen; vorschlagen (separable) = to suggest."
+    },
+    {
+      "id": "fc-die-kuendigung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-kuendigung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Kündigung, die Kündigungen",
+      "en": "resignation; dismissal, termination; notice (of a contract)",
+      "notes": "Er hat seine Kündigung eingereicht.\nkündigen = to resign, to give notice; die Kündigungsfrist = notice period."
+    },
+    {
+      "id": "fc-die-zielfestlegung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-zielfestlegung"
+        ],
+        "topics": []
+      },
+      "de": "die Zielfestlegung",
+      "en": "goal setting, target definition",
+      "notes": "Die Zielfestlegung erfolgt jährlich.\ndas Ziel (goal) + festlegen (to set, define)"
+    },
+    {
+      "id": "fc-der-bericht-die-berichte",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-bericht-die-berichte"
+        ],
+        "topics": []
+      },
+      "de": "der Bericht, die Berichte",
+      "en": "report",
+      "notes": "Sie hat einen Bericht erstellt.\neinen Bericht erstellen / einreichen = to write / to submit a report"
+    },
+    {
+      "id": "fc-der-empfaenger-die-empfaenger",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-empfaenger-die-empfaenger"
+        ],
+        "topics": []
+      },
+      "de": "der Empfänger, die Empfänger",
+      "en": "recipient, receiver",
+      "notes": "Der Empfänger der E-Mail hat noch nicht geantwortet.\nfem.: die Empfängerin; opposite: der Absender (sender)"
+    },
+    {
+      "id": "fc-die-abhaengigkeit-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-abhaengigkeit-en"
+        ],
+        "topics": []
+      },
+      "de": "die Abhängigkeit, die Abhängigkeiten",
+      "en": "dependency; dependence",
+      "notes": "Es gibt viele Abhängigkeiten zwischen den Projekten.\nabhängig von (+ Dat.) = dependent on"
+    },
+    {
+      "id": "fc-die-erfolgsmessung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-erfolgsmessung"
+        ],
+        "topics": []
+      },
+      "de": "die Erfolgsmessung",
+      "en": "measuring success, success measurement",
+      "notes": "Die Erfolgsmessung erfolgt nach sechs Monaten.\nder Erfolg (success) + die Messung (measurement)"
+    },
+    {
+      "id": "fc-der-betreuer-die-betreuerin",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-betreuer-die-betreuerin"
+        ],
+        "topics": []
+      },
+      "de": "der Betreuer, die Betreuer / die Betreuerin, die Betreuerinnen",
+      "en": "supervisor, mentor; carer",
+      "notes": "Mein Betreuer hat mir sehr geholfen.\nbetreuen = to look after, to supervise"
+    },
+    {
+      "id": "fc-die-menge-die-mengen",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-menge-die-mengen"
+        ],
+        "topics": []
+      },
+      "de": "die Menge, die Mengen",
+      "en": "quantity, amount; crowd",
+      "notes": "Wir haben eine grosse Menge an Daten.\neine Menge Arbeit = a lot of work (colloquial)"
+    },
+    {
+      "id": "fc-die-kenntnisse-pl",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-kenntnisse-pl"
+        ],
+        "topics": []
+      },
+      "de": "die Kenntnisse (pl.)",
+      "en": "knowledge, skills (in a field)",
+      "notes": "Sie hat sehr gute Kenntnisse in Deutsch.\nKenntnisse in (+ Dat.); die Vorkenntnisse = prior knowledge"
+    },
+    {
+      "id": "fc-die-eigenschaften-pl",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-eigenschaften-pl"
+        ],
+        "topics": []
+      },
+      "de": "die Eigenschaften (pl.), sg. die Eigenschaft",
+      "en": "characteristics, properties, traits",
+      "notes": "Welche Eigenschaften sind für diese Stelle wichtig?\nAlso properties of an object or file (die Dateieigenschaften)."
+    },
+    {
+      "id": "fc-der-anlass-die-anlaesse",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-anlass-die-anlaesse"
+        ],
+        "topics": []
+      },
+      "de": "der Anlass, die Anlässe",
+      "en": "occasion, event; cause, reason",
+      "notes": "Das war kein Anlass zur Sorge.\nIn Switzerland, Anlass is the everyday word for an event (der Firmenanlass)."
+    },
+    {
+      "id": "fc-die-beauftragung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-beauftragung"
+        ],
+        "topics": []
+      },
+      "de": "die Beauftragung",
+      "en": "commissioning, assignment (of a task or contract), mandate",
+      "notes": "Die Beauftragung des externen Beraters wurde genehmigt.\nbeauftragen = to commission, to instruct someone to do something"
+    },
+    {
+      "id": "fc-der-umsatz-die-umsaetze",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-umsatz-die-umsaetze"
+        ],
+        "topics": []
+      },
+      "de": "der Umsatz, die Umsätze",
+      "en": "revenue, turnover, sales",
+      "notes": "Der Umsatz ist dieses Jahr gestiegen.\nUmsatz = money taken in, not profit (der Gewinn)."
+    },
+    {
+      "id": "fc-die-abwesenheit-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-abwesenheit-en"
+        ],
+        "topics": []
+      },
+      "de": "die Abwesenheit, die Abwesenheiten",
+      "en": "absence",
+      "notes": "Während seiner Abwesenheit hat das Team die Arbeit übernommen.\nabwesend = absent; die Abwesenheitsnotiz = out-of-office message"
+    },
+    {
+      "id": "fc-der-verweis-die-verweise",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-verweis-die-verweise"
+        ],
+        "topics": []
+      },
+      "de": "der Verweis, die Verweise",
+      "en": "reference, cross-reference; (also) reprimand",
+      "notes": "Der Text enthält mehrere Verweise auf frühere Studien.\nVerweis auf (+ Akk.); verweisen auf = to refer to"
+    },
+    {
+      "id": "fc-die-haltung",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-haltung"
+        ],
+        "topics": []
+      },
+      "de": "die Haltung, die Haltungen",
+      "en": "attitude, stance; posture",
+      "notes": "Seine Haltung gegenüber dem Team ist sehr positiv.\nHaltung zu / gegenüber (+ Dat.); physical posture: eine gerade Haltung"
+    },
+    {
+      "id": "fc-der-zugang-die-zugaenge",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-zugang-die-zugaenge"
+        ],
+        "topics": []
+      },
+      "de": "der Zugang, die Zugänge",
+      "en": "access; entrance, entry",
+      "notes": "Sie hat keinen Zugang zu diesem System.\nZugang zu (+ Dat.); compare der Zugriff auf (+ Akk.) = (technical) access to data"
+    },
+    {
+      "id": "fc-die-ankuendigung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-ankuendigung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Ankündigung, die Ankündigungen",
+      "en": "announcement; (advance) notice",
+      "notes": "Die Ankündigung kam sehr kurzfristig.\nankündigen (separable) = to announce"
+    },
+    {
+      "id": "fc-der-einheitsbrei",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-einheitsbrei"
+        ],
+        "topics": []
+      },
+      "de": "der Einheitsbrei",
+      "en": "bland uniformity, one-size-fits-all mush (colloquial, critical)",
+      "notes": "Das ist doch alles Einheitsbrei, wo bleibt die Individualität?\nLiterally 'uniform porridge'; usually without an article."
+    },
+    {
+      "id": "fc-die-wirkung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-wirkung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Wirkung, die Wirkungen",
+      "en": "effect, impact (the direct effect of something)",
+      "notes": "Das Medikament hat eine starke Wirkung.\nwirken = to have an effect; compare die Auswirkung (knock-on consequence)"
+    },
+    {
+      "id": "fc-die-auswertung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-auswertung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Auswertung, die Auswertungen",
+      "en": "evaluation, analysis (of data or results)",
+      "notes": "Die Auswertung der Umfrage dauert zwei Wochen.\nauswerten (separable) = to evaluate, to analyze"
+    },
+    {
+      "id": "fc-der-bedarf",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-bedarf"
+        ],
+        "topics": []
+      },
+      "de": "der Bedarf",
+      "en": "need, demand, requirement",
+      "notes": "Es besteht grosser Bedarf an Fachkräften.\nBedarf an (+ Dat.); bei Bedarf = if needed"
+    },
+    {
+      "id": "fc-das-pendent-die-pendents",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "das-pendent-die-pendents"
+        ],
+        "topics": []
+      },
+      "de": "das Pendent, die Pendents",
+      "en": "pending item, open task (Swiss usage)",
+      "notes": "Bitte erledigen Sie die Pendents bis Freitag.\nSwiss; also die Pendenz, die Pendenzen. Elsewhere: der offene Punkt."
+    },
+    {
+      "id": "fc-der-bewerber-die-bewerberin",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-bewerber-die-bewerberin"
+        ],
+        "topics": []
+      },
+      "de": "der Bewerber, die Bewerber / die Bewerberin, die Bewerberinnen",
+      "en": "applicant, candidate (for a job)",
+      "notes": "Die Bewerberin hat einen sehr guten Eindruck gemacht.\nVerb: sich bewerben um + Akk. = to apply for"
+    },
+    {
+      "id": "fc-die-beschaeftigung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-beschaeftigung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Beschäftigung, die Beschäftigungen",
+      "en": "employment, occupation; activity",
+      "notes": "Er ist auf der Suche nach einer neuen Beschäftigung.\nVerb: sich beschäftigen mit + Dat. = to deal with, to be busy with"
+    },
+    {
+      "id": "fc-die-zuverlaessigkeit",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-zuverlaessigkeit"
+        ],
+        "topics": []
+      },
+      "de": "die Zuverlässigkeit",
+      "en": "reliability, dependability",
+      "notes": "Seine Zuverlässigkeit ist vorbildlich.\nAdjective: zuverlässig. No plural in normal use."
+    },
+    {
+      "id": "fc-die-bedingung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-bedingung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Bedingung, die Bedingungen",
+      "en": "condition, requirement; terms (pl.)",
+      "notes": "Ich mache es unter einer Bedingung.\nunter der Bedingung, dass ... = on condition that ...; die Bedingungen des Vertrags = the terms of the contract"
+    },
+    {
+      "id": "fc-die-enttaeuschung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-enttaeuschung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Enttäuschung, die Enttäuschungen",
+      "en": "disappointment",
+      "notes": "Das war eine grosse Enttäuschung.\nVerb: enttäuschen; adjective: enttäuscht von + Dat."
+    },
+    {
+      "id": "fc-die-taeuschung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-taeuschung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Täuschung, die Täuschungen",
+      "en": "deception; illusion, false impression",
+      "notes": "Das war eine Täuschung, die Zahlen stimmten nicht.\noptische Täuschung = optical illusion. Verb: täuschen; sich täuschen = to be mistaken. Do not confuse with Enttäuschung (disappointment)."
+    },
+    {
+      "id": "fc-die-beziehung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-beziehung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Beziehung, die Beziehungen",
+      "en": "relationship, relation, connection",
+      "notes": "Wir wollen eine gute Beziehung zu unseren Kunden aufbauen.\neine Beziehung zu + Dat.; in dieser Beziehung = in this respect"
+    },
+    {
+      "id": "fc-die-reife",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-reife"
+        ],
+        "topics": []
+      },
+      "de": "die Reife",
+      "en": "maturity; ripeness",
+      "notes": "Er zeigt eine hohe emotionale Reife.\nAdjective: reif (mature, ripe)."
+    },
+    {
+      "id": "fc-der-eindruck-die-eindruecke",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-eindruck-die-eindruecke"
+        ],
+        "topics": []
+      },
+      "de": "der Eindruck, die Eindrücke",
+      "en": "impression",
+      "notes": "Er hat einen sehr guten Eindruck gemacht.\neinen Eindruck machen = to make an impression; Ich habe den Eindruck, dass ... = I have the impression that ..."
+    },
+    {
+      "id": "fc-das-ergebnis-die-ergebnisse",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "das-ergebnis-die-ergebnisse"
+        ],
+        "topics": []
+      },
+      "de": "das Ergebnis, die Ergebnisse",
+      "en": "result, outcome",
+      "notes": "Das Ergebnis war überraschend gut.\nNouns in -nis are mostly neuter and double the s in the plural: Ergebnisse."
+    },
+    {
+      "id": "fc-die-beteiligten-pl",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-beteiligten-pl"
+        ],
+        "topics": []
+      },
+      "de": "die Beteiligten (pl.)",
+      "en": "those involved, the parties concerned",
+      "notes": "Alle Beteiligten wurden informiert.\nAdjectival noun: ein Beteiligter, eine Beteiligte; mit allen Beteiligten (dat.)"
+    },
+    {
+      "id": "fc-der-zweck-die-zwecke",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-zweck-die-zwecke"
+        ],
+        "topics": []
+      },
+      "de": "der Zweck, die Zwecke",
+      "en": "purpose, aim, point",
+      "notes": "Was ist der Zweck dieser Massnahme?\nzu diesem Zweck = for this purpose; Das hat keinen Zweck. = There is no point."
+    },
+    {
+      "id": "fc-der-zugriff-die-zugriffe",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-zugriff-die-zugriffe"
+        ],
+        "topics": []
+      },
+      "de": "der Zugriff, die Zugriffe",
+      "en": "access (to data or systems)",
+      "notes": "Sie hat keinen Zugriff auf diese Daten.\nZugriff auf + Akk.; verb: zugreifen auf (separable)"
+    },
+    {
+      "id": "fc-die-verfuegung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-verfuegung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Verfügung, die Verfügungen",
+      "en": "disposal; decree, order; zur Verfügung = available",
+      "notes": "Das steht Ihnen zur Verfügung.\nzur Verfügung stehen = to be available; zur Verfügung stellen = to make available, to provide"
+    },
+    {
+      "id": "fc-die-abweichung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-abweichung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Abweichung, die Abweichungen",
+      "en": "deviation, discrepancy, variance",
+      "notes": "Es gibt eine Abweichung zwischen Plan und Ergebnis.\nVerb: abweichen von + Dat. (separable)"
+    },
+    {
+      "id": "fc-die-pauschale-die-pauschalen",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-pauschale-die-pauschalen"
+        ],
+        "topics": []
+      },
+      "de": "die Pauschale, die Pauschalen",
+      "en": "flat rate, lump sum, flat fee",
+      "notes": "Die Reisekosten werden als Pauschale abgerechnet.\nAdjective/adverb: pauschal (flat-rate; also sweeping, general)"
+    },
+    {
+      "id": "fc-die-auszeichnung-en",
+      "type": "translation",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-auszeichnung-en"
+        ],
+        "topics": []
+      },
+      "de": "die Auszeichnung, die Auszeichnungen",
+      "en": "award, distinction, honor; labeling, marking",
+      "notes": "Sie hat eine Auszeichnung für ihre Arbeit erhalten.\nmit Auszeichnung bestehen = to pass with distinction; verb: auszeichnen (separable)"
+    },
+    {
+      "id": "fc-verbringen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "verbringen"
+        ],
+        "topics": []
+      },
+      "de": "verbringen",
+      "en": "to spend (time)",
+      "notes": "Ich verbringe viel Zeit mit Lesen.\nOnly for time; for money use ausgeben. verbrachte, hat verbracht"
+    },
+    {
+      "id": "fc-sich-kuemmern-um",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sich-kuemmern-um"
+        ],
+        "topics": []
+      },
+      "de": "sich kümmern um",
+      "en": "to take care of, to look after, to deal with",
+      "notes": "Sie kümmert sich um ihre Eltern.\num + Akk.; Ich kümmere mich darum. = I will take care of it."
+    },
+    {
+      "id": "fc-sich-sorgen-um",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sich-sorgen-um"
+        ],
+        "topics": []
+      },
+      "de": "sich sorgen um",
+      "en": "to worry about",
+      "notes": "Er sorgt sich um seine Gesundheit.\num + Akk. Same meaning: sich Sorgen machen um. But sorgen für (no sich) = to take care of, to provide."
+    },
+    {
+      "id": "fc-schaffen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "schaffen"
+        ],
+        "topics": []
+      },
+      "de": "schaffen",
+      "en": "to manage, to accomplish; to create",
+      "notes": "Ich schaffe das!\nmanage: schaffte, hat geschafft; create: schuf, hat geschaffen"
+    },
+    {
+      "id": "fc-abbauen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "abbauen"
+        ],
+        "topics": []
+      },
+      "de": "abbauen",
+      "en": "to reduce, to break down, to dismantle",
+      "notes": "Wir müssen Stress abbauen.\nSeparable: Wir bauen Stress ab. Partizip II: abgebaut. Opposite: aufbauen"
+    },
+    {
+      "id": "fc-aufbauen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "aufbauen"
+        ],
+        "topics": []
+      },
+      "de": "aufbauen",
+      "en": "to build up, to establish, to construct; to set up",
+      "notes": "Sie hat eine Firma aufgebaut.\nSeparable: Wir bauen das Team auf. Partizip II: aufgebaut. Opposite: abbauen"
+    },
+    {
+      "id": "fc-erfahren",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erfahren"
+        ],
+        "topics": []
+      },
+      "de": "erfahren",
+      "en": "to find out, to learn (news, information); to experience",
+      "notes": "Ich habe erfahren, dass er krank ist.\nerfährt, erfuhr, hat erfahren. Also an adjective: erfahren = experienced"
+    },
+    {
+      "id": "fc-uebertragen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "uebertragen"
+        ],
+        "topics": []
+      },
+      "de": "übertragen",
+      "en": "to transfer, to transmit, to broadcast; to apply (to)",
+      "notes": "Das Wissen lässt sich auf andere Bereiche übertragen.\nInseparable: überträgt, übertrug, hat übertragen. jemandem eine Aufgabe übertragen = to assign someone a task"
+    },
+    {
+      "id": "fc-auswaehlen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "auswaehlen"
+        ],
+        "topics": []
+      },
+      "de": "auswählen",
+      "en": "to select, to choose",
+      "notes": "Sie hat das beste Angebot ausgewählt.\nSeparable: Wir wählen das Angebot aus. Partizip II: ausgewählt"
+    },
+    {
+      "id": "fc-erkennen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erkennen"
+        ],
+        "topics": []
+      },
+      "de": "erkennen",
+      "en": "to recognize, to identify, to realize",
+      "notes": "Ich habe das Problem sofort erkannt.\nerkannte, hat erkannt. Do not confuse with anerkennen = to acknowledge"
+    },
+    {
+      "id": "fc-erwaehnen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erwaehnen"
+        ],
+        "topics": []
+      },
+      "de": "erwähnen",
+      "en": "to mention",
+      "notes": "Er hat das Problem kurz erwähnt.\nerwähnte, hat erwähnt (inseparable, no ge-)"
+    },
+    {
+      "id": "fc-ermoeglichen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "ermoeglichen"
+        ],
+        "topics": []
+      },
+      "de": "ermöglichen",
+      "en": "to enable, to make possible",
+      "notes": "Das ermöglicht uns, effizienter zu arbeiten.\njemandem etwas ermöglichen (Dat. + Akk.). Partizip II: ermöglicht"
+    },
+    {
+      "id": "fc-beachten",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "beachten"
+        ],
+        "topics": []
+      },
+      "de": "beachten",
+      "en": "to observe, to respect, to comply with; to pay attention to",
+      "notes": "Bitte beachten Sie die Vorschriften.\nbeachtete, hat beachtet (no ge- because of be-)"
+    },
+    {
+      "id": "fc-anpassen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "anpassen"
+        ],
+        "topics": []
+      },
+      "de": "anpassen",
+      "en": "to adapt, to adjust, to tailor",
+      "notes": "Der Plan wurde angepasst.\nSeparable: Wir passen den Plan an. sich anpassen an + Akk. = to adapt to"
+    },
+    {
+      "id": "fc-umsetzen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "umsetzen"
+        ],
+        "topics": []
+      },
+      "de": "umsetzen",
+      "en": "to implement, to put into practice; to convert",
+      "notes": "Wir müssen die Strategie umsetzen.\nSeparable: Wir setzen den Plan um. Partizip II: umgesetzt. Noun: die Umsetzung"
+    },
+    {
+      "id": "fc-annehmen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "annehmen"
+        ],
+        "topics": []
+      },
+      "de": "annehmen",
+      "en": "to accept, to take on; to assume",
+      "notes": "Sie hat die Stelle angenommen.\nSeparable: nimmt ... an, nahm ... an, angenommen. Ich nehme an, dass ... = I assume that ..."
+    },
+    {
+      "id": "fc-sicherstellen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sicherstellen"
+        ],
+        "topics": []
+      },
+      "de": "sicherstellen",
+      "en": "to ensure, to make sure, to guarantee",
+      "notes": "Wir müssen sicherstellen, dass alles funktioniert.\nSeparable: stellt ... sicher. Usually followed by a dass-clause."
+    },
+    {
+      "id": "fc-erreichen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erreichen"
+        ],
+        "topics": []
+      },
+      "de": "erreichen",
+      "en": "to reach, to achieve, to attain",
+      "notes": "Wir haben unser Ziel erreicht.\nInseparable (er-): Partizip II erreicht. Also: jemanden erreichen = to reach someone (by phone)."
+    },
+    {
+      "id": "fc-erstellen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erstellen"
+        ],
+        "topics": []
+      },
+      "de": "erstellen",
+      "en": "to create, to produce, to draw up (a document)",
+      "notes": "Sie hat einen Bericht erstellt.\nInseparable (er-): Partizip II erstellt, no ge-. Typical objects: Bericht, Konzept, Offerte, Plan."
+    },
+    {
+      "id": "fc-anordnen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "anordnen"
+        ],
+        "topics": []
+      },
+      "de": "anordnen",
+      "en": "to order, to instruct; to arrange",
+      "notes": "Der Chef hat eine Änderung angeordnet.\nSeparable: ordnet ... an. Formal, used for orders from authorities or management."
+    },
+    {
+      "id": "fc-einbeziehen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "einbeziehen"
+        ],
+        "topics": []
+      },
+      "de": "einbeziehen",
+      "en": "to include, to involve, to take into account",
+      "notes": "Alle Mitarbeitenden wurden einbezogen.\nSeparable: bezieht ... ein, bezog ... ein, einbezogen (no extra ge-). jemanden in etwas (Akk.) einbeziehen."
+    },
+    {
+      "id": "fc-zuweisen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "zuweisen"
+        ],
+        "topics": []
+      },
+      "de": "zuweisen",
+      "en": "to assign, to allocate",
+      "notes": "Die Aufgabe wurde ihr zugewiesen.\nSeparable: weist ... zu, wies ... zu, zugewiesen. jemandem (Dat.) etwas (Akk.) zuweisen."
+    },
+    {
+      "id": "fc-absprechen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "absprechen"
+        ],
+        "topics": []
+      },
+      "de": "absprechen",
+      "en": "to agree on, to coordinate, to arrange (with someone)",
+      "notes": "Das wurde vorher abgesprochen.\nSeparable: spricht ... ab, sprach ... ab, abgesprochen. etwas mit jemandem absprechen."
+    },
+    {
+      "id": "fc-ausfuehren",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "ausfuehren"
+        ],
+        "topics": []
+      },
+      "de": "ausführen",
+      "en": "to carry out, to execute, to perform",
+      "notes": "Die Aufgabe wurde sorgfältig ausgeführt.\nSeparable: führt ... aus. In IT: ein Programm/einen Befehl ausführen = to run/execute."
+    },
+    {
+      "id": "fc-vorschlagen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "vorschlagen"
+        ],
+        "topics": []
+      },
+      "de": "vorschlagen",
+      "en": "to suggest, to propose",
+      "notes": "Ich schlage vor, dass wir das anders machen.\nSeparable: schlägt ... vor, schlug ... vor, vorgeschlagen. Noun: der Vorschlag."
+    },
+    {
+      "id": "fc-zulassen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "zulassen"
+        ],
+        "topics": []
+      },
+      "de": "zulassen",
+      "en": "to allow, to permit; to admit",
+      "notes": "Das wird nicht zugelassen.\nSeparable: lässt ... zu, liess ... zu, zugelassen. Often: etwas nicht zulassen = not to let something happen."
+    },
+    {
+      "id": "fc-foerdern",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "foerdern"
+        ],
+        "topics": []
+      },
+      "de": "fördern",
+      "en": "to promote, to support, to foster; to fund",
+      "notes": "Das Projekt wird vom Staat gefördert.\nNot the same as befördern (to promote someone to a higher position)."
+    },
+    {
+      "id": "fc-beraten",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "beraten"
+        ],
+        "topics": []
+      },
+      "de": "beraten",
+      "en": "to advise, to counsel, to consult",
+      "notes": "Er hat mich gut beraten.\nIrregular: berät, beriet, beraten. sich beraten lassen = to seek advice."
+    },
+    {
+      "id": "fc-bevorzugen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "bevorzugen"
+        ],
+        "topics": []
+      },
+      "de": "bevorzugen",
+      "en": "to prefer, to favor",
+      "notes": "Sie bevorzugt direkte Kommunikation.\nRegular, inseparable: bevorzugt, bevorzugte, bevorzugt. More formal than lieber mögen."
+    },
+    {
+      "id": "fc-befoerdern",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "befoerdern"
+        ],
+        "topics": []
+      },
+      "de": "befördern",
+      "en": "to promote (at work); to transport",
+      "notes": "Er wurde zum Manager befördert.\njemanden zu etwas (Dat.) befördern. Inseparable: Partizip II befördert. Not the same as fördern (to support)."
+    },
+    {
+      "id": "fc-herunterbrechen-runterbrechen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "herunterbrechen-runterbrechen"
+        ],
+        "topics": []
+      },
+      "de": "herunterbrechen / runterbrechen",
+      "en": "to break down into smaller parts (runterbrechen is colloquial)",
+      "notes": "Das Ziel wurde in kleine Schritte runtergebrochen.\nSeparable and irregular: bricht ... herunter, brach ... herunter, heruntergebrochen. etwas auf/in etwas (Akk.) herunterbrechen."
+    },
+    {
+      "id": "fc-abzweigen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "abzweigen"
+        ],
+        "topics": []
+      },
+      "de": "abzweigen",
+      "en": "to branch off; to divert (funds, resources)",
+      "notes": "Ein Teil des Budgets wurde abgezweigt.\nSeparable: zweigt ... ab. Der Weg zweigt nach links ab = the path branches off to the left."
+    },
+    {
+      "id": "fc-verteilen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "verteilen"
+        ],
+        "topics": []
+      },
+      "de": "verteilen",
+      "en": "to distribute, to hand out, to spread",
+      "notes": "Die Aufgaben wurden gleichmässig verteilt.\nInseparable (ver-): Partizip II verteilt. etwas an jemanden (Akk.) verteilen."
+    },
+    {
+      "id": "fc-absagen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "absagen"
+        ],
+        "topics": []
+      },
+      "de": "absagen",
+      "en": "to cancel (appointments, meetings, events)",
+      "notes": "Das Meeting wurde abgesagt.\nSeparable: sagt ... ab. For bookings and orders use stornieren."
+    },
+    {
+      "id": "fc-stornieren",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "stornieren"
+        ],
+        "topics": []
+      },
+      "de": "stornieren",
+      "en": "to cancel (orders, reservations, bookings)",
+      "notes": "Ich möchte meine Reservierung stornieren.\nRegular: storniert, stornierte, storniert. For meetings use absagen."
+    },
+    {
+      "id": "fc-treffen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "treffen"
+        ],
+        "topics": []
+      },
+      "de": "treffen",
+      "en": "to meet; to make (a decision); to hit",
+      "notes": "Wir treffen uns um 10 Uhr.\nIrregular: trifft, traf, getroffen. eine Entscheidung treffen = to make a decision."
+    },
+    {
+      "id": "fc-vorstellen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "vorstellen"
+        ],
+        "topics": []
+      },
+      "de": "vorstellen",
+      "en": "to introduce (someone); sich vorstellen = to introduce oneself; sich (Dat.) etwas vorstellen = to imagine",
+      "notes": "Darf ich mich vorstellen? / Ich kann mir das gut vorstellen.\nSeparable: stellt ... vor. Introduce oneself: mich (Akk.); imagine: mir (Dat.)."
+    },
+    {
+      "id": "fc-abgleichen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "abgleichen"
+        ],
+        "topics": []
+      },
+      "de": "abgleichen",
+      "en": "to compare, to reconcile, to align/sync",
+      "notes": "Wir müssen die Daten abgleichen.\nSeparable, irregular: gleicht ... ab, glich ... ab, abgeglichen. etwas mit etwas (Dat.) abgleichen."
+    },
+    {
+      "id": "fc-sich-beschweren-ueber",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sich-beschweren-ueber"
+        ],
+        "topics": []
+      },
+      "de": "sich beschweren (über)",
+      "en": "to complain (about)",
+      "notes": "Er hat sich über die Bedingungen beschwert.\nüber + Akk.; bei jemandem = to someone. Partizip II beschwert (no ge-)."
+    },
+    {
+      "id": "fc-erwischen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erwischen"
+        ],
+        "topics": []
+      },
+      "de": "erwischen",
+      "en": "to catch; to catch someone in the act",
+      "notes": "Sie wurde beim Lügen erwischt.\nInformal. Also: den Zug noch erwischen = to just catch the train. Partizip II erwischt."
+    },
+    {
+      "id": "fc-betrachten",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "betrachten"
+        ],
+        "topics": []
+      },
+      "de": "betrachten",
+      "en": "to look at; to consider, to regard (as)",
+      "notes": "Ich betrachte das als Erfolg.\netwas als etwas betrachten = to regard something as something. Partizip II betrachtet."
+    },
+    {
+      "id": "fc-verbinden",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "verbinden"
+        ],
+        "topics": []
+      },
+      "de": "verbinden",
+      "en": "to connect, to link, to combine",
+      "notes": "Was verbindet die beiden Konzepte?\nIrregular: verbindet, verband, verbunden. etwas mit etwas (Dat.) verbinden. On the phone: Ich verbinde Sie = I will put you through."
+    },
+    {
+      "id": "fc-untersagen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "untersagen"
+        ],
+        "topics": []
+      },
+      "de": "untersagen",
+      "en": "to prohibit, to forbid, to ban",
+      "notes": "Das Rauchen ist hier untersagt.\nFormal synonym of verbieten. Inseparable: untersagt. jemandem etwas untersagen."
+    },
+    {
+      "id": "fc-einsetzen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "einsetzen"
+        ],
+        "topics": []
+      },
+      "de": "einsetzen",
+      "en": "to deploy, to use, to employ, to apply",
+      "notes": "KI wird zunehmend eingesetzt.\nSeparable: setzt ... ein. sich für etwas einsetzen = to stand up for something."
+    },
+    {
+      "id": "fc-ablehnen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "ablehnen"
+        ],
+        "topics": []
+      },
+      "de": "ablehnen",
+      "en": "to reject, to decline, to turn down",
+      "notes": "Sie hat den Vorschlag abgelehnt.\nSeparable: lehnt ... ab. Noun: die Ablehnung."
+    },
+    {
+      "id": "fc-versaeumen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "versaeumen"
+        ],
+        "topics": []
+      },
+      "de": "versäumen",
+      "en": "to miss (a deadline, chance, opportunity); to neglect",
+      "notes": "Er hat die Frist versäumt.\nFormal; for deadlines and chances. To miss a train or event: verpassen."
+    },
+    {
+      "id": "fc-sich-abstimmen-mit",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sich-abstimmen-mit"
+        ],
+        "topics": []
+      },
+      "de": "sich abstimmen (mit)",
+      "en": "to coordinate with, to align with (each other)",
+      "notes": "Die Abteilungsleiter stimmen sich jeden Montag ab.\nSeparable: stimmt sich ... ab. Without sich, abstimmen = to vote (über + Akk.)."
+    },
+    {
+      "id": "fc-ueberzeugen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "ueberzeugen"
+        ],
+        "topics": []
+      },
+      "de": "überzeugen",
+      "en": "to convince, to persuade",
+      "notes": "Er hat mich überzeugt. / Ich bin davon überzeugt.\nInseparable: Partizip II überzeugt. jemanden von etwas (Dat.) überzeugen."
+    },
+    {
+      "id": "fc-solche-solcher-solches",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "solche-solcher-solches"
+        ],
+        "topics": []
+      },
+      "de": "solche / solcher / solches",
+      "en": "such, such a",
+      "notes": "Solche Fehler sollte man vermeiden.\nDeclines like dieser (solcher Stress, solches Wetter); after ein it takes adjective endings: ein solcher Fall."
+    },
+    {
+      "id": "fc-bestimmt",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "bestimmt"
+        ],
+        "topics": []
+      },
+      "de": "bestimmt",
+      "en": "definite; certain, specific",
+      "notes": "Der bestimmte Artikel: der/die/das.\nAs an adverb it also means surely: Er kommt bestimmt."
+    },
+    {
+      "id": "fc-unbestimmt",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "unbestimmt"
+        ],
+        "topics": []
+      },
+      "de": "unbestimmt",
+      "en": "indefinite; uncertain",
+      "notes": "Der unbestimmte Artikel: ein/eine.\nAlso uncertain, not fixed: auf unbestimmte Zeit (indefinitely)."
+    },
+    {
+      "id": "fc-spannend",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "spannend"
+        ],
+        "topics": []
+      },
+      "de": "spannend",
+      "en": "exciting, thrilling, interesting",
+      "notes": "Das Buch ist wirklich spannend.\nAt work often just 'very interesting': ein spannendes Projekt."
+    },
+    {
+      "id": "fc-aehnlich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "aehnlich"
+        ],
+        "topics": []
+      },
+      "de": "ähnlich",
+      "en": "similar, alike",
+      "notes": "Die zwei Methoden sind sehr ähnlich.\nähnlich + Dativ: Er ist seinem Bruder ähnlich. ähnlich wie = similar to."
+    },
+    {
+      "id": "fc-abteilungsuebergreifend",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "abteilungsuebergreifend"
+        ],
+        "topics": []
+      },
+      "de": "abteilungsübergreifend",
+      "en": "cross-departmental, interdepartmental",
+      "notes": "Ein abteilungsübergreifendes Projekt erfordert gute Kommunikation.\nLiterally 'reaching across departments' (die Abteilung + übergreifen)."
+    },
+    {
+      "id": "fc-eher",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "eher"
+        ],
+        "topics": []
+      },
+      "de": "eher",
+      "en": "rather, more of a (degree); sooner, earlier (time)",
+      "notes": "Er ist eher ruhig. / Ich komme eher als erwartet.\neher ... als = rather ... than: Er ist eher ein Denker als ein Macher."
+    },
+    {
+      "id": "fc-verantwortlich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "verantwortlich"
+        ],
+        "topics": []
+      },
+      "de": "verantwortlich",
+      "en": "responsible, accountable",
+      "notes": "Sie ist verantwortlich für das Projekt.\nverantwortlich für + Akkusativ; Wer ist dafür verantwortlich?"
+    },
+    {
+      "id": "fc-fachlich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "fachlich"
+        ],
+        "topics": []
+      },
+      "de": "fachlich",
+      "en": "professional, technical, subject-specific",
+      "notes": "Sie hat fachliche Kompetenz.\nRefers to expertise in a subject (as opposed to personal or social skills)."
+    },
+    {
+      "id": "fc-noetig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "noetig"
+        ],
+        "topics": []
+      },
+      "de": "nötig",
+      "en": "necessary, needed",
+      "notes": "Das ist nicht nötig.\nEveryday word; notwendig and erforderlich are more formal. die nötigen Schritte unternehmen."
+    },
+    {
+      "id": "fc-ausfuehrlich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "ausfuehrlich"
+        ],
+        "topics": []
+      },
+      "de": "ausführlich",
+      "en": "detailed, thorough, comprehensive",
+      "notes": "Er hat das Thema ausführlich erklärt.\nAlso as an adjective: eine ausführliche Antwort."
+    },
+    {
+      "id": "fc-gewesen",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "gewesen"
+        ],
+        "topics": []
+      },
+      "de": "gewesen",
+      "en": "been (Partizip II of sein)",
+      "notes": "Ich bin dort gewesen.\nsein forms its Perfekt with sein: Er ist krank gewesen. Das wäre nicht nötig gewesen."
+    },
+    {
+      "id": "fc-jeweilig-jeweils",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "jeweilig-jeweils"
+        ],
+        "topics": []
+      },
+      "de": "jeweilig / jeweils",
+      "en": "respective; respectively, in each case, each time",
+      "notes": "Die jeweiligen Abteilungen. / jeweils am Montag.\njeweilig is an adjective and is declined; jeweils is an adverb and never changes."
+    },
+    {
+      "id": "fc-vorab-im-voraus",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "vorab-im-voraus"
+        ],
+        "topics": []
+      },
+      "de": "vorab / im Voraus",
+      "en": "beforehand, in advance",
+      "notes": "Bitte melden Sie sich vorab an. / Vielen Dank im Voraus.\nvorab is common in business writing; im Voraus appears in set phrases like Danke im Voraus."
+    },
+    {
+      "id": "fc-zufaellig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "zufaellig"
+        ],
+        "topics": []
+      },
+      "de": "zufällig",
+      "en": "coincidental, random, by chance",
+      "notes": "Ich habe ihn zufällig getroffen.\nAdjective: ein zufälliger Fehler (random); adverb: zufällig (by chance)."
+    },
+    {
+      "id": "fc-bezueglich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "bezueglich"
+        ],
+        "topics": []
+      },
+      "de": "bezüglich",
+      "en": "regarding, with regard to, concerning (+ Genitiv)",
+      "notes": "Bezüglich Ihrer Anfrage möchten wir Ihnen mitteilen, dass ...\nFormal (letters, emails); takes the genitive. Less formal: wegen, zu."
+    },
+    {
+      "id": "fc-entsprechend",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "entsprechend"
+        ],
+        "topics": []
+      },
+      "de": "entsprechend",
+      "en": "corresponding, accordingly, appropriate, in accordance with",
+      "notes": "Bitte handeln Sie entsprechend. / die entsprechenden Unterlagen.\nAs a preposition + Dativ: entsprechend den Regeln (in accordance with the rules)."
+    },
+    {
+      "id": "fc-nachhaltig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "nachhaltig"
+        ],
+        "topics": []
+      },
+      "de": "nachhaltig",
+      "en": "sustainable, lasting, effective long-term",
+      "notes": "eine nachhaltige Lösung finden / nachhaltig wirken.\nBoth 'sustainable' (environment) and 'lasting' (effect)."
+    },
+    {
+      "id": "fc-notwendig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "notwendig"
+        ],
+        "topics": []
+      },
+      "de": "notwendig",
+      "en": "necessary, essential (more formal than nötig)",
+      "notes": "Es ist notwendig, dass wir handeln.\nMore formal than nötig: die notwendigen Massnahmen."
+    },
+    {
+      "id": "fc-steuerbar",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "steuerbar"
+        ],
+        "topics": []
+      },
+      "de": "steuerbar",
+      "en": "controllable, manageable, adjustable",
+      "notes": "Das Risiko ist steuerbar.\nFrom steuern (to steer, control) + -bar (-able): ein steuerbarer Prozess."
+    },
+    {
+      "id": "fc-auffaellig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "auffaellig"
+        ],
+        "topics": []
+      },
+      "de": "auffällig",
+      "en": "noticeable, conspicuous, striking",
+      "notes": "Sein Verhalten war sehr auffällig.\nFrom auffallen (to stand out, be noticed)."
+    },
+    {
+      "id": "fc-seltsam",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "seltsam"
+        ],
+        "topics": []
+      },
+      "de": "seltsam",
+      "en": "strange, odd, peculiar",
+      "notes": "Das ist eine seltsame Situation.\nSynonyms: merkwürdig, komisch."
+    },
+    {
+      "id": "fc-staendig",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "staendig"
+        ],
+        "topics": []
+      },
+      "de": "ständig",
+      "en": "constant, permanent, always",
+      "notes": "Er kommt ständig zu spät.\nOften slightly negative as an adverb (constantly, all the time); adjective: ein ständiger Wohnsitz (permanent residence)."
+    },
+    {
+      "id": "fc-erforderlich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "erforderlich"
+        ],
+        "topics": []
+      },
+      "de": "erforderlich",
+      "en": "required, necessary (formal/official)",
+      "notes": "Eine Bewilligung ist erforderlich.\nFrom erfordern (to require); typical in official texts and job ads."
+    },
+    {
+      "id": "fc-disziplinarisch",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "disziplinarisch"
+        ],
+        "topics": []
+      },
+      "de": "disziplinarisch",
+      "en": "disciplinary",
+      "notes": "disziplinarische Massnahmen ergreifen.\nder disziplinarische Vorgesetzte = the line manager (responsible for HR matters)."
+    },
+    {
+      "id": "fc-verlaesslich",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "verlaesslich"
+        ],
+        "topics": []
+      },
+      "de": "verlässlich",
+      "en": "reliable, dependable, trustworthy",
+      "notes": "Sie ist eine sehr verlässliche Mitarbeiterin.\nSynonym: zuverlässig."
+    },
+    {
+      "id": "fc-irgendwelche",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "irgendwelche"
+        ],
+        "topics": []
+      },
+      "de": "irgendwelche",
+      "en": "any, some (unspecified); declines like an adjective",
+      "notes": "Haben Sie irgendwelche Fragen?\nPlural; ohne irgendwelche Probleme (without any problems)."
+    },
+    {
+      "id": "fc-gering",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "gering"
+        ],
+        "topics": []
+      },
+      "de": "gering",
+      "en": "low, small, slight, minor",
+      "notes": "Das Risiko ist gering.\nein geringer Unterschied; geringe Kenntnisse (little knowledge)."
+    },
+    {
+      "id": "fc-zunehmend",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "zunehmend"
+        ],
+        "topics": []
+      },
+      "de": "zunehmend",
+      "en": "increasingly, growing, progressively",
+      "notes": "KI wird zunehmend eingesetzt.\nPartizip I of zunehmen (to increase): eine zunehmende Bedeutung."
+    },
+    {
+      "id": "fc-ueberzeugt",
+      "type": "translation",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "ueberzeugt"
+        ],
+        "topics": []
+      },
+      "de": "überzeugt",
+      "en": "convinced, certain; confident (P.II of überzeugen)",
+      "notes": "Ich bin überzeugt, dass es funktioniert.\nvon etwas überzeugt sein (+ Dativ): Ich bin davon überzeugt."
+    },
+    {
+      "id": "fc-auf-dem-bild",
+      "type": "translation",
+      "categories": [
+        "vocab-useful-phrases"
+      ],
+      "refs": {
+        "words": [
+          "auf-dem-bild"
+        ],
+        "topics": []
+      },
+      "de": "auf dem Bild",
+      "en": "in the picture / in the image",
+      "notes": "Auf dem Bild sieht man eine Stadt.\nGerman uses auf + Dativ for pictures, not in."
+    },
+    {
+      "id": "fc-g-ohne-modal-verbs",
+      "type": "usage",
+      "categories": [
+        "grammar-ohne-dass-ohne-zu"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "ohne-dass-ohne-zu"
+        ]
+      },
+      "front": "Why is ohne dass often used with a modal verb, even when the subject is the same?",
+      "back": "ohne ... zu + modal verb sounds awkward, so ohne dass + conjugated modal at the end is preferred.\nEr machte es, ohne dass er musste."
+    },
+    {
+      "id": "fc-g-ohne-fill-dass",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-ohne-dass-ohne-zu"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "ohne-dass-ohne-zu"
+        ]
+      },
+      "front": "Er verliess das Büro, ohne dass ihn jemand ___. (sehen, Präteritum)",
+      "back": "sah\nDifferent subjects (er / jemand) → ohne dass, conjugated verb at the end."
+    },
+    {
+      "id": "fc-g-ohne-separable-zu",
+      "type": "usage",
+      "categories": [
+        "grammar-ohne-dass-ohne-zu"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "ohne-dass-ohne-zu"
+        ]
+      },
+      "front": "ohne ... zu with a separable verb: where does zu go?",
+      "back": "Between the prefix and the stem, written as one word:\nohne anzurufen, ohne aufzuräumen, ohne mitzukommen",
+      "notes": "Sie ging, ohne sich abzumelden."
+    },
+    {
+      "id": "fc-g-wegen-how-to-choose",
+      "type": "usage",
+      "categories": [
+        "grammar-wegen-weil"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wegen-weil"
+        ]
+      },
+      "front": "wegen or weil: how do you choose?",
+      "back": "wegen + noun (Genitiv): wegen des Regens\nweil + full clause, verb at the end: weil es regnet",
+      "notes": "In speech you often hear wegen dem Regen (Dativ); in writing use the Genitiv."
+    },
+    {
+      "id": "fc-g-wegen-fill-wegen",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-wegen-weil"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wegen-weil"
+        ]
+      },
+      "front": "Der Zug hat Verspätung, ___ eines technischen Problems. (weil / wegen)",
+      "back": "wegen\nOnly a noun phrase follows (no verb), so wegen + Genitiv."
+    },
+    {
+      "id": "fc-g-wegen-rewrite",
+      "type": "usage",
+      "categories": [
+        "grammar-wegen-weil"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wegen-weil"
+        ]
+      },
+      "front": "Rewrite with wegen: Wir bleiben drinnen, weil das Wetter schlecht ist.",
+      "back": "Wir bleiben wegen des schlechten Wetters drinnen.\nThe verb disappears; the adjective moves before the noun and takes the Genitiv ending -en; Wetter takes -s."
+    },
+    {
+      "id": "fc-g-obwohl-quick-test",
+      "type": "usage",
+      "categories": [
+        "grammar-weil-obwohl-gegenueberstellung-der-verwendung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "weil-obwohl-gegenueberstellung-der-verwendung"
+        ]
+      },
+      "front": "weil or obwohl: the quick test",
+      "back": "Does the subclause explain or justify the main clause? → weil (because)\nShould it prevent the main clause, but does not? → obwohl (even though)"
+    },
+    {
+      "id": "fc-g-obwohl-fill-fieber",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-weil-obwohl-gegenueberstellung-der-verwendung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "weil-obwohl-gegenueberstellung-der-verwendung"
+        ]
+      },
+      "front": "Er geht zur Arbeit, ___ er Fieber hat. (weil / obwohl)",
+      "back": "obwohl\nA fever should stop him from going, but it does not: a contradiction."
+    },
+    {
+      "id": "fc-g-obwohl-trotzdem",
+      "type": "usage",
+      "categories": [
+        "grammar-weil-obwohl-gegenueberstellung-der-verwendung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "weil-obwohl-gegenueberstellung-der-verwendung"
+        ]
+      },
+      "front": "obwohl vs. trotzdem: what is the word-order difference?",
+      "back": "obwohl = conjunction, verb at the end: Obwohl es regnet, gehen wir spazieren.\ntrotzdem = adverb, verb in second position: Es regnet, trotzdem gehen wir spazieren."
+    },
+    {
+      "id": "fc-g-satz-verb-position",
+      "type": "usage",
+      "categories": [
+        "grammar-nebensatz-hauptsatz"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "nebensatz-hauptsatz"
+        ]
+      },
+      "front": "Hauptsatz vs. Nebensatz: where does the conjugated verb go?",
+      "back": "Hauptsatz: in position 2 (Heute arbeite ich zu Hause.)\nNebensatz: at the end (..., weil ich heute zu Hause arbeite.)"
+    },
+    {
+      "id": "fc-g-satz-nebensatz-first",
+      "type": "usage",
+      "categories": [
+        "grammar-nebensatz-hauptsatz"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "nebensatz-hauptsatz"
+        ]
+      },
+      "front": "What happens to the main clause when the Nebensatz comes first?",
+      "back": "The whole Nebensatz is position 1, so the main-clause verb follows right after the comma (verb, verb):\nWeil ich krank bin, bleibe ich zu Hause."
+    },
+    {
+      "id": "fc-g-satz-denn-weil",
+      "type": "usage",
+      "categories": [
+        "grammar-nebensatz-hauptsatz"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "nebensatz-hauptsatz"
+        ]
+      },
+      "front": "denn vs. weil: what is the word-order difference?",
+      "back": "denn does not change the word order (verb in position 2): ..., denn ich bin krank.\nweil sends the verb to the end: ..., weil ich krank bin.",
+      "notes": "und, aber, oder, sondern, denn stand in position 0 and do not affect word order."
+    },
+    {
+      "id": "fc-g-satz-verb-cluster",
+      "type": "word-forms",
+      "categories": [
+        "grammar-nebensatz-hauptsatz"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "nebensatz-hauptsatz"
+        ]
+      },
+      "front": "Build the Nebensatz: dass / er / heute / anrufen / müssen",
+      "back": "dass er heute anrufen muss\nThe conjugated verb goes last. Without the modal, the separable verb joins up at the end: dass er heute anruft."
+    },
+    {
+      "id": "fc-g-wort-compound-gender",
+      "type": "usage",
+      "categories": [
+        "grammar-wortbildung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wortbildung"
+        ]
+      },
+      "front": "Compound nouns: which part decides the gender?",
+      "back": "The last part: die Sitzung + das Zimmer → das Sitzungszimmer\ndas Haus + die Tür → die Haustür",
+      "notes": "Note the linking -s- (Fugen-s) in Sitzungszimmer; it is common after -ung, -heit, -keit, -ion."
+    },
+    {
+      "id": "fc-g-wort-feminine-suffixes",
+      "type": "usage",
+      "categories": [
+        "grammar-wortbildung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wortbildung"
+        ]
+      },
+      "front": "Which gender do nouns ending in -ung, -heit, -keit, -schaft, -ion have?",
+      "back": "Always feminine (die): die Lösung, die Freiheit, die Möglichkeit, die Mannschaft, die Situation"
+    },
+    {
+      "id": "fc-g-wort-adjective-suffixes",
+      "type": "usage",
+      "categories": [
+        "grammar-wortbildung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wortbildung"
+        ]
+      },
+      "front": "What do the adjective suffixes -bar, -los and -lich mean?",
+      "back": "-bar = can be done (machbar = feasible)\n-los = without (erfolglos = unsuccessful)\n-lich = turns a noun or verb into an adjective (verständlich = understandable)"
+    },
+    {
+      "id": "fc-g-wort-ung-nouns",
+      "type": "word-forms",
+      "categories": [
+        "grammar-wortbildung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "wortbildung"
+        ]
+      },
+      "front": "Make nouns from: lösen, planen, entscheiden, leiten",
+      "back": "die Lösung, die Planung, die Entscheidung, die Leitung\nVerb stem + -ung, always feminine."
+    },
+    {
+      "id": "fc-g-es-es-disappears",
+      "type": "usage",
+      "categories": [
+        "grammar-es-als-korrelat-infinitivsatz-mit-es"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "es-als-korrelat-infinitivsatz-mit-es"
+        ]
+      },
+      "front": "When does the placeholder es disappear?",
+      "back": "When the infinitive clause moves to the front:\nIch finde es wichtig, pünktlich zu sein. → Pünktlich zu sein finde ich wichtig."
+    },
+    {
+      "id": "fc-g-es-fill-finden",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-es-als-korrelat-infinitivsatz-mit-es"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "es-als-korrelat-infinitivsatz-mit-es"
+        ]
+      },
+      "front": "Ich finde ___ schwierig, alles zu verstehen.",
+      "back": "es\nfinden + adjective needs es as a placeholder for the infinitive clause after the comma."
+    },
+    {
+      "id": "fc-g-es-patterns",
+      "type": "usage",
+      "categories": [
+        "grammar-es-als-korrelat-infinitivsatz-mit-es"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "es-als-korrelat-infinitivsatz-mit-es"
+        ]
+      },
+      "front": "Common patterns with es + zu-Infinitiv",
+      "back": "Es ist wichtig, ... zu ...\nIch finde es gut, ... zu ...\nEs macht Spass, ... zu ...\nEs lohnt sich, ... zu ...",
+      "notes": "Es lohnt sich, früh zu buchen."
+    },
+    {
+      "id": "fc-g-werden-partizip-mixed",
+      "type": "word-forms",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "werden-vollverb-futur-passiv-konjunktiv-ii"
+        ]
+      },
+      "front": "Partizip II of: besprechen, beachten, informieren, öffnen",
+      "back": "besprochen (be- is inseparable: no ge-)\nbeachtet (inseparable; stem ends in -t → -et)\ninformiert (-ieren: never ge-)\ngeöffnet (stem öffn- → -et)"
+    },
+    {
+      "id": "fc-g-werden-partizip-separable",
+      "type": "word-forms",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "werden-vollverb-futur-passiv-konjunktiv-ii"
+        ]
+      },
+      "front": "Partizip II of: einladen, anrufen, vorbereiten, mitteilen",
+      "back": "eingeladen, angerufen, vorbereitet, mitgeteilt\nSeparable: prefix + ge + stem + ending. vorbereiten has be- after vor-, so no ge-."
+    },
+    {
+      "id": "fc-g-werden-three-forms",
+      "type": "usage",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "werden-vollverb-futur-passiv-konjunktiv-ii"
+        ]
+      },
+      "front": "werde / wurde / würde: which is which?",
+      "back": "werde + Infinitiv = Futur I (will)\nwurde + Partizip II = Passiv (was ...ed)\nwürde + Infinitiv = Konjunktiv II (would)"
+    },
+    {
+      "id": "fc-g-werden-geworden-worden",
+      "type": "usage",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "werden-vollverb-futur-passiv-konjunktiv-ii"
+        ]
+      },
+      "front": "geworden or worden?",
+      "back": "geworden: werden as a full verb (Er ist Teamleiter geworden.)\nworden: in the Perfekt passive (Er ist befördert worden.)"
+    },
+    {
+      "id": "fc-g-werden-fill-unterschrieben",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-werden-vollverb-futur-passiv-konjunktiv-ii"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "werden-vollverb-futur-passiv-konjunktiv-ii"
+        ]
+      },
+      "front": "Ich habe gehört, dass der Vertrag gestern ___ wurde. (unterschreiben)",
+      "back": "unterschrieben\nunter- is inseparable here (no ge-); wurde goes last in the Nebensatz."
+    },
+    {
+      "id": "fc-g-kasus-wo-wohin",
+      "type": "usage",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "front": "Two-way prepositions: Wo? or Wohin?",
+      "back": "Wohin? (movement to a place) → Akkusativ: Ich lege das Handy auf den Tisch.\nWo? (location) → Dativ: Das Handy liegt auf dem Tisch."
+    },
+    {
+      "id": "fc-g-kasus-legen-liegen",
+      "type": "usage",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "front": "legen/liegen, stellen/stehen, hängen: which case?",
+      "back": "legen, stellen, setzen, hängen (putting something somewhere) → Akkusativ\nliegen, stehen, sitzen, hängen (being somewhere) → Dativ",
+      "notes": "Ich hänge das Bild an die Wand. / Das Bild hängt an der Wand."
+    },
+    {
+      "id": "fc-g-kasus-fill-sitzungszimmer",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "front": "Die Besprechung findet in ___ Sitzungszimmer statt. (das)",
+      "back": "dem (contracted: im)\nWo? → location → Dativ."
+    },
+    {
+      "id": "fc-g-kasus-contractions",
+      "type": "usage",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "front": "Contractions with two-way prepositions",
+      "back": "in dem → im, in das → ins, an dem → am, an das → ans\nIch bin im Büro. (Wo?) / Ich gehe ins Büro. (Wohin?)"
+    },
+    {
+      "id": "fc-g-kasus-dativ-plural",
+      "type": "word-forms",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "front": "Dativ plural: what happens to the noun?",
+      "back": "It adds -n, unless the plural already ends in -n or -s:\nmit den Kindern, mit den Kollegen, in den Büros"
+    },
+    {
+      "id": "fc-g-praet-sein-haben",
+      "type": "word-forms",
+      "categories": [
+        "grammar-praeteritum-simple-past-of-key-verbs"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "praeteritum-simple-past-of-key-verbs"
+        ]
+      },
+      "front": "Präteritum of sein and haben (ich, du, er, wir, ihr, sie)",
+      "back": "sein: war, warst, war, waren, wart, waren\nhaben: hatte, hattest, hatte, hatten, hattet, hatten"
+    },
+    {
+      "id": "fc-g-praet-modals",
+      "type": "word-forms",
+      "categories": [
+        "grammar-praeteritum-simple-past-of-key-verbs"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "praeteritum-simple-past-of-key-verbs"
+        ]
+      },
+      "front": "Präteritum (er/sie/es) of dürfen, können, müssen, sollen, wollen",
+      "back": "durfte, konnte, musste, sollte, wollte\nThe umlaut drops: dürfen → durfte, können → konnte, müssen → musste."
+    },
+    {
+      "id": "fc-g-praet-musste-muesste",
+      "type": "usage",
+      "categories": [
+        "grammar-praeteritum-simple-past-of-key-verbs"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "praeteritum-simple-past-of-key-verbs"
+        ]
+      },
+      "front": "musste vs. müsste",
+      "back": "musste = Präteritum: had to (Er musste länger arbeiten.)\nmüsste = Konjunktiv II: would have to (Er müsste länger arbeiten.)",
+      "notes": "Same pair with konnte / könnte and durfte / dürfte."
+    },
+    {
+      "id": "fc-g-praet-fill-nebensatz",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-praeteritum-simple-past-of-key-verbs"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "praeteritum-simple-past-of-key-verbs"
+        ]
+      },
+      "front": "Ich weiss, dass er gestern nicht kommen ___. (können, Präteritum)",
+      "back": "konnte\nIn a Nebensatz the modal goes to the very end."
+    },
+    {
+      "id": "fc-g-adj-when-e",
+      "type": "usage",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "Adjective after a definite article: when is the ending -e?",
+      "back": "Only in five cells: Nominativ m./f./n. and Akkusativ f./n.\nEverything else (all Dativ, all Genitiv, Akkusativ m., all plural) is -en."
+    },
+    {
+      "id": "fc-g-adj-three-steps",
+      "type": "usage",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "The three steps for article + adjective + noun",
+      "back": "1. Article from the case\n2. Adjective: Nominativ or Akkusativ f./n. → -e, otherwise -en\n3. Noun: m./n. Genitiv adds -s/-es; weak nouns add -n"
+    },
+    {
+      "id": "fc-g-adj-fill-kurzen",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "trotz der ___ Vorbereitung (kurz)",
+      "back": "kurzen\ntrotz → Genitiv; after a definite article the Genitiv ending is always -en."
+    },
+    {
+      "id": "fc-g-adj-fill-weak-noun",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "Ich antworte dem neuen ___. (der Kunde)",
+      "back": "Kunden\nKunde is a weak noun: it adds -n in every case except the Nominativ singular."
+    },
+    {
+      "id": "fc-g-adj-dativ-table",
+      "type": "word-forms",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "Put into the Dativ: der neue Kollege, die neue Kollegin, das neue Team, die neuen Kollegen",
+      "back": "dem neuen Kollegen, der neuen Kollegin, dem neuen Team, den neuen Kollegen\nDativ after a definite article: always -en."
+    },
+    {
+      "id": "fc-g-adj-der-vs-ein",
+      "type": "usage",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "front": "der neue Kollege but ein neuer Kollege: why?",
+      "back": "der already shows the gender, so the adjective only needs -e.\nein shows no gender ending, so the adjective takes it: ein neuer Kollege, ein neues Team.",
+      "notes": "In the Dativ and Genitiv it is -en after both: mit dem neuen / mit einem neuen Laptop."
     }
   ]
 }

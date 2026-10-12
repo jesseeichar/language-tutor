@@ -96,6 +96,19 @@ keyed on it), one or more `categories`, and `refs` naming the vocabulary words a
 exercises. Strength scores aggregate over `refs`, so set them carefully. Run `bun run validate` after
 editing.
 
+**Spelling.** English is American everywhere: questions, explanations, UI text and docs (recognized,
+favor, canceled, labeled, program). German uses Swiss Standard spelling: `ss`, never `ß`. Typed answers
+match exactly, so a mixed convention would mark correct answers wrong.
+
+**Coverage.** Every vocabulary word has a translation flashcard (`fc-<wordId>`) and one quiz question of
+each type (`quiz-mc-<wordId>`, `quiz-translate-<wordId>`, `quiz-blank-<wordId>`). Every grammar topic has
+at least 3 flashcards, 6 fill-in-the-blank and 2 translation quiz questions. The workflow for keeping
+this true is in [Adding vocabulary and grammar](#adding-vocabulary-and-grammar).
+
+**Near-synonyms in typed translations.** When two words share an English meaning (jedoch/allerdings,
+ferner/des Weiteren, dagegen/hingegen), give each a distinct English cue and say which cue maps to
+which word in `explanation`. In fill-in hints, add a register note or a letter count.
+
 **Question types.** A question file may declare `types` at the top, e.g. translation or fill in the
 blank. When it does, every question must set `type` to one of them, and the learner can filter by type
 on the setup screen. The flashcard file declares `translation`, `fill-in-the-blank`, `usage` and
@@ -108,24 +121,114 @@ on the setup screen. The flashcard file declares `translation`, `fill-in-the-bla
 - `front` + `back` is a fixed card for anything else: fill in the blank, usage, word forms. It is
   always shown front first, whatever direction was chosen.
 
-Rules from the learner for quizzes:
+## The learner's rules
+
+These rules come from the learner and apply to every agent, whether it works in this repository or in
+the Obsidian vault (the vault's `CLAUDE.md` points here). The goal: practice the words and grammar the
+learner is weak at while keeping older vocabulary and rules in memory.
 
 The implemented quiz types and JSON examples are in [docs/quizzes.md](docs/quizzes.md). Quiz questions
 live in `data/questions/quiz.json`; `type` selects multiple choice, fill in the blank, or translation.
 Version 1 typed answers must match literally, including case, punctuation, accents, and all spaces.
 Do not add normalization, synonyms, or AI grading without an explicit change to this requirement.
 
-- A default quiz is 25 multiple-choice vocabulary questions and 5 grammar questions.
+- A default quiz is 25 multiple-choice vocabulary questions and 5 grammar questions, unless the learner
+  asks for something else.
 - Vocabulary questions mix German to English and English to German. Each shows a full sentence using
-  the word; the options are full translated sentences.
-- The correct option's position must be evenly spread over the positions across a question file.
+  the word; the options are full translated sentences (German sentence with English options, and the
+  reverse).
+- The correct option's position must be evenly spread over the positions across a question file
+  (roughly equal counts of 0, 1, 2 and 3).
 - Vocabulary quizzes should be directional (implement `isDirectional` on the mode), so the learner's
   direction choice applies to them as it does to flashcards.
-- Grammar questions may use any format, not only multiple choice.
-- Most questions in a session are fresh. Weak words and topics come back more often. The server's
-  selection handles this.
+- Grammar questions are not restricted to multiple choice; use a variety of formats.
+- Each quiz takes a random selection of vocabulary and grammar questions. Most questions in a session
+  are fresh (not recently asked). Words and topics the learner struggles with come back slightly more
+  often. The server's selection handles this from the progress data.
 - Strength runs from -10 (very poor) through 0 (untested or guessing) to 10 (very strong). Only graded
-  modes change it.
+  modes change it. The app tracks it per word and per topic in `data/progress.json`.
+- When the learner asks for new words, add them to `Deutsch_Vokabular.md` in the vault with their
+  translations, then import and write their questions (next section).
+- When the learner asks for a new grammar theme or topic, add it to `Deutsch_Grammatik.md` with a short
+  description, then import and write its questions (next section).
+
+## Adding vocabulary and grammar
+
+The notes are the source of truth, so new words and topics start in the vault, never in `data/`.
+Adding a word or a grammar principle is not finished until it has questions in every quiz type and a
+flashcard; a word without questions can never be practiced or gain strength.
+
+### 1. Add to the notes
+
+**Vocabulary** (`Deutsch_Vokabular.md`): add a row to the table of the right section (`## 2. Beruf &
+Arbeit / Job & Workplace`) or subsection (`### 1.3 Gegensatz / Contrast`). The importer reads every
+table whose first header cell is `Deutsch`; the columns are German, English, part of speech, example:
+
+```markdown
+| *die Frist / die Fristen* | deadline | Nomen f. | Wir müssen die Frist einhalten. |
+```
+
+- German in italics as in the surrounding rows; nouns with article and plural; verbs in the infinitive.
+  Swiss spelling (`ss`). A `/` separates alternative spellings or the plural.
+- English in American spelling. Separate senses with commas; note register in parentheses.
+- Start a new section with `## <n>. <Deutsch> / <English>` (or `###` for a subsection) followed by a
+  table with the same header row. The category id is `vocab-<slug of the English half>`.
+- Update the `Wörter gesamt` count and the date near the top of the file.
+
+**Grammar** (`Deutsch_Grammatik.md`): add a row to the `Inhaltsverzeichnis` table with the next
+number, the title and a status (`**In Arbeit**` or `**Ausstehend**`), and a matching section
+`## <n>. <title>`. The first paragraph under that heading becomes the topic description; write a short
+one. A section whose first line starts with `Noch nicht begonnen` imports with an empty description.
+Keep the title identical in the table and the heading; the topic id is derived from it.
+
+### 2. Import
+
+```bash
+bun run import:notes
+bun run validate
+```
+
+The import matches existing words on their German text and topics on their title, so ids and progress
+survive re-imports. It reports `(<n> new)` for added words and topics and warns about entries that
+have disappeared from the notes (they are kept, never deleted). Commit the regenerated
+`vocabulary.json`, `grammar-topics.json` and `categories.json` together with the questions.
+
+### 3. Write the questions
+
+For each **new word** (`<wordId>` is the `id` in `data/vocabulary.json`, e.g. `die-frist-die-fristen`):
+
+| File | Item | `id` | `type` |
+| --- | --- | --- | --- |
+| `data/questions/flashcards.json` | translation card (`de` + `en`, optional `notes` with an example) | `fc-<wordId>` | `translation` |
+| `data/questions/quiz.json` | full-sentence multiple choice, both sides | `quiz-mc-<wordId>` | `multiple-choice` |
+| `data/questions/quiz.json` | typed translation of a short sentence | `quiz-translate-<wordId>` | `translation` |
+| `data/questions/quiz.json` | fill in the blank with an English hint in parentheses | `quiz-blank-<wordId>` | `fill-in-the-blank` |
+
+Set `categories` to the word's categories and `refs` to `{ "words": ["<wordId>"], "topics": [] }`.
+Use a different sentence in each item so each type is a separate exercise. Distractors in multiple
+choice are the same sentence with the target word swapped for another word of the same kind, ideally
+one from the learner's list. Pick the correct option's position so the bank stays balanced.
+
+For each **new grammar topic** (`<topicId>` from `data/grammar-topics.json`), write at least 3
+flashcards (`front` + `back`; type `usage`, `fill-in-the-blank` or `word-forms`), 6 fill-in-the-blank
+quiz questions and 2 translation quiz questions that exercise the rule. Ids are `fc-g-<topic>-<desc>`,
+`quiz-blank-g-<topic>-<desc>` and `quiz-translate-g-<topic>-<desc>`; `categories` is
+`["grammar-<topicId>"]` and `refs` is `{ "words": [], "topics": ["<topicId>"] }`. Give fill-ins a hint
+that leaves one defensible answer and an `explanation` naming the rule. Read the learner's notes and
+"Eigene Notizen" for the topic first; topics marked as a weak spot get more items than the minimum.
+
+Follow the spelling, exact-match and near-synonym rules above. For typed translations choose sentences
+with one obvious rendering in each direction: no "you", no contractions, Präteritum ↔ simple past.
+
+### 4. Check and save
+
+```bash
+bun run validate      # shapes, ids, references, four distinct options, one blank marker
+bun run check         # if any code changed
+```
+
+Then try the new questions in the app (`bun run dev`), in both directions for bilingual items, and
+commit on a branch or use **Back up changes**. Never reuse an id that belonged to a different question.
 
 ## Progress data
 
