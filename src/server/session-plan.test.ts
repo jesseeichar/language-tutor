@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { QuestionBaseSchema, type Category, type QuestionBase } from "../shared";
-import { assignDirections, countByCategory, filterPool } from "./session-plan";
+import { assignDirections, countByCategory, defaultTypes, filterPool } from "./session-plan";
 
 const cats: Category[] = [
   { id: "conn", label: "Connectors", group: "V" },
@@ -12,6 +12,12 @@ const q = (id: string, category: string, type?: string): QuestionBase =>
 
 const pool = [q("a", "time", "translation"), q("b", "time", "fill"), q("c", "work", "translation"), q("d", "conn")];
 const ids = (qs: QuestionBase[]) => qs.map((x) => x.id);
+
+test("default types use available preferences and fall back to all if none remain", () => {
+  expect(defaultTypes(["missing", "fill"], pool)).toEqual(["fill"]);
+  expect(defaultTypes(["multiple-choice"], pool)).toBeUndefined();
+  expect(defaultTypes(undefined, pool)).toBeUndefined();
+});
 
 describe("filterPool", () => {
   test("a parent category includes its children", () => {

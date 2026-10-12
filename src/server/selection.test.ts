@@ -78,3 +78,30 @@ describe("shuffle", () => {
     expect(shuffle([1, 2, 3, 4], seeded(9)).sort()).toEqual([1, 2, 3, 4]);
   });
 });
+
+describe("session quotas", () => {
+  const vocabulary = Array.from({ length: 40 }, (_, i) => q(`v${i}`, ["w"]));
+  const grammar = Array.from({ length: 10 }, (_, i) => ({ ...q(`g${i}`), refs: { words: [], topics: ["t"] } }));
+  const quota = { share: 1 / 6, matches: (q: QuestionBase) => q.refs.topics.length > 0 };
+  const choose = (questions: QuestionBase[], count = 30) => selectQuestions({ questions, count, quota, history: new Map(), strengths: new Map(), random: seeded(10) });
+  test("reserves five of thirty for grammar and still samples without replacement", () => {
+    const selected = choose([...vocabulary, ...grammar]);
+    expect(selected.filter(quota.matches)).toHaveLength(5);
+    expect(selected.filter(q => !quota.matches(q))).toHaveLength(25);
+    expect(new Set(selected.map(q => q.id)).size).toBe(30);
+  });
+  test("shortages fill from the other pool, and single-type filters stay usable", () => {
+    expect(choose([...vocabulary, ...grammar.slice(0, 2)]).filter(quota.matches)).toHaveLength(2);
+    expect(choose([...vocabulary.slice(0, 2), ...grammar])).toHaveLength(12);
+    expect(choose(vocabulary)).toHaveLength(30);
+    expect(choose(grammar)).toHaveLength(10);
+    expect(choose([], 30)).toEqual([]);
+    expect(choose([...vocabulary, ...grammar], 6).filter(quota.matches)).toHaveLength(1);
+  });
+  test("freshness remains a majority within each quota when available", () => {
+    const pool = [...vocabulary, ...grammar];
+    const history = seen([...vocabulary.slice(0, 20), ...grammar.slice(0, 5)].map(q => q.id));
+    const selected = selectQuestions({ questions: pool, count: 30, quota, history, strengths: new Map(), random: seeded(8) });
+    expect(selected.filter(q => !history.has(q.id))).toHaveLength(18);
+  });
+});

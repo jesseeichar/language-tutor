@@ -5,7 +5,7 @@ test("home lists the flashcard study tool", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Study" })).toBeVisible();
   await expect(page.getByRole("button", { name: /Flashcards/ })).toContainText("5 questions");
-  await expect(page.getByText(/No quizzes yet/)).toBeVisible();
+  await expect(page.getByRole("button", { name: /^Quiz / })).toContainText("7 questions");
 });
 
 test("Start needs at least one category", async ({ page }) => {

@@ -1,0 +1,1087 @@
+{
+  "types": [
+    {
+      "id": "multiple-choice",
+      "label": "Multiple choice",
+      "description": "Choose a full-sentence translation. Supports both directions."
+    },
+    {
+      "id": "fill-in-the-blank",
+      "label": "Fill in the blank",
+      "description": "Type the missing word or phrase exactly."
+    },
+    {
+      "id": "translation",
+      "label": "Translation",
+      "description": "Type the whole translation. Exact matching, including case, punctuation, accents, and spaces."
+    }
+  ],
+  "questions": [
+    {
+      "id": "quiz-mc-zuerst",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Zuerst lesen wir den Bericht.",
+        "options": [
+          "First, we read the report.",
+          "After that, we read the report.",
+          "Later, we read the report.",
+          "Finally, we read the report."
+        ]
+      },
+      "en": {
+        "prompt": "First, we read the report.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Danach lesen wir den Bericht.",
+          "Später lesen wir den Bericht.",
+          "Schliesslich lesen wir den Bericht."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-danach",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "danach"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Danach lesen wir den Bericht.",
+        "options": [
+          "First, we read the report.",
+          "After that, we read the report.",
+          "Later, we read the report.",
+          "Finally, we read the report."
+        ]
+      },
+      "en": {
+        "prompt": "After that, we read the report.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Danach lesen wir den Bericht.",
+          "Später lesen wir den Bericht.",
+          "Schliesslich lesen wir den Bericht."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-spaeter",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "spaeter"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Später lesen wir den Bericht.",
+        "options": [
+          "First, we read the report.",
+          "After that, we read the report.",
+          "Later, we read the report.",
+          "Finally, we read the report."
+        ]
+      },
+      "en": {
+        "prompt": "Later, we read the report.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Danach lesen wir den Bericht.",
+          "Später lesen wir den Bericht.",
+          "Schliesslich lesen wir den Bericht."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-schliesslich",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "schliesslich"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Schliesslich lesen wir den Bericht.",
+        "options": [
+          "First, we read the report.",
+          "After that, we read the report.",
+          "Later, we read the report.",
+          "Finally, we read the report."
+        ]
+      },
+      "en": {
+        "prompt": "Finally, we read the report.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Danach lesen wir den Bericht.",
+          "Später lesen wir den Bericht.",
+          "Schliesslich lesen wir den Bericht."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-aber",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "aber"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Lösung ist teuer, aber sie funktioniert.",
+        "options": [
+          "The solution is expensive, but it works.",
+          "The solution is expensive; moreover, it is slow.",
+          "The solution is expensive; therefore, we are looking for an alternative.",
+          "We use the solution even though it is expensive."
+        ]
+      },
+      "en": {
+        "prompt": "The solution is expensive, but it works.",
+        "options": [
+          "Die Lösung ist teuer, aber sie funktioniert.",
+          "Die Lösung ist teuer, zudem ist sie langsam.",
+          "Die Lösung ist teuer, deshalb suchen wir eine Alternative.",
+          "Wir verwenden die Lösung, obwohl sie teuer ist."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-zudem",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adding-information"
+      ],
+      "refs": {
+        "words": [
+          "zudem"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Lösung ist teuer, zudem ist sie langsam.",
+        "options": [
+          "The solution is expensive, but it works.",
+          "The solution is expensive; moreover, it is slow.",
+          "The solution is expensive; therefore, we are looking for an alternative.",
+          "We use the solution even though it is expensive."
+        ]
+      },
+      "en": {
+        "prompt": "The solution is expensive; moreover, it is slow.",
+        "options": [
+          "Die Lösung ist teuer, aber sie funktioniert.",
+          "Die Lösung ist teuer, zudem ist sie langsam.",
+          "Die Lösung ist teuer, deshalb suchen wir eine Alternative.",
+          "Wir verwenden die Lösung, obwohl sie teuer ist."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-deshalb",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-cause-consequence"
+      ],
+      "refs": {
+        "words": [
+          "deshalb"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Lösung ist teuer, deshalb suchen wir eine Alternative.",
+        "options": [
+          "The solution is expensive, but it works.",
+          "The solution is expensive; moreover, it is slow.",
+          "The solution is expensive; therefore, we are looking for an alternative.",
+          "We use the solution even though it is expensive."
+        ]
+      },
+      "en": {
+        "prompt": "The solution is expensive; therefore, we are looking for an alternative.",
+        "options": [
+          "Die Lösung ist teuer, aber sie funktioniert.",
+          "Die Lösung ist teuer, zudem ist sie langsam.",
+          "Die Lösung ist teuer, deshalb suchen wir eine Alternative.",
+          "Wir verwenden die Lösung, obwohl sie teuer ist."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-obwohl",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "obwohl"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir verwenden die Lösung, obwohl sie teuer ist.",
+        "options": [
+          "The solution is expensive, but it works.",
+          "The solution is expensive; moreover, it is slow.",
+          "The solution is expensive; therefore, we are looking for an alternative.",
+          "We use the solution even though it is expensive."
+        ]
+      },
+      "en": {
+        "prompt": "We use the solution even though it is expensive.",
+        "options": [
+          "Die Lösung ist teuer, aber sie funktioniert.",
+          "Die Lösung ist teuer, zudem ist sie langsam.",
+          "Die Lösung ist teuer, deshalb suchen wir eine Alternative.",
+          "Wir verwenden die Lösung, obwohl sie teuer ist."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-der-bericht-die-berichte",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-bericht-die-berichte"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Der Bericht ist wichtig.",
+        "options": [
+          "The report is important.",
+          "The suggestion is important.",
+          "The deadline is important.",
+          "The permit is important."
+        ]
+      },
+      "en": {
+        "prompt": "The report is important.",
+        "options": [
+          "Der Bericht ist wichtig.",
+          "Der Vorschlag ist wichtig.",
+          "Die Frist ist wichtig.",
+          "Die Bewilligung ist wichtig."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-der-vorschlag-die-vorschlaege",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "der-vorschlag-die-vorschlaege"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Der Vorschlag ist wichtig.",
+        "options": [
+          "The report is important.",
+          "The suggestion is important.",
+          "The deadline is important.",
+          "The permit is important."
+        ]
+      },
+      "en": {
+        "prompt": "The suggestion is important.",
+        "options": [
+          "Der Bericht ist wichtig.",
+          "Der Vorschlag ist wichtig.",
+          "Die Frist ist wichtig.",
+          "Die Bewilligung ist wichtig."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-die-frist-die-fristen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-frist-die-fristen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Frist ist wichtig.",
+        "options": [
+          "The report is important.",
+          "The suggestion is important.",
+          "The deadline is important.",
+          "The permit is important."
+        ]
+      },
+      "en": {
+        "prompt": "The deadline is important.",
+        "options": [
+          "Der Bericht ist wichtig.",
+          "Der Vorschlag ist wichtig.",
+          "Die Frist ist wichtig.",
+          "Die Bewilligung ist wichtig."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-die-bewilligung",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-job-workplace"
+      ],
+      "refs": {
+        "words": [
+          "die-bewilligung"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Bewilligung ist wichtig.",
+        "options": [
+          "The report is important.",
+          "The suggestion is important.",
+          "The deadline is important.",
+          "The permit is important."
+        ]
+      },
+      "en": {
+        "prompt": "The permit is important.",
+        "options": [
+          "Der Bericht ist wichtig.",
+          "Der Vorschlag ist wichtig.",
+          "Die Frist ist wichtig.",
+          "Die Bewilligung ist wichtig."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-erstellen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erstellen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir erstellen den Bericht.",
+        "options": [
+          "We create the report.",
+          "We distribute the report.",
+          "We reject the report.",
+          "We mention the report."
+        ]
+      },
+      "en": {
+        "prompt": "We create the report.",
+        "options": [
+          "Wir erstellen den Bericht.",
+          "Wir verteilen den Bericht.",
+          "Wir lehnen den Bericht ab.",
+          "Wir erwähnen den Bericht."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-verteilen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "verteilen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir verteilen den Bericht.",
+        "options": [
+          "We create the report.",
+          "We distribute the report.",
+          "We reject the report.",
+          "We mention the report."
+        ]
+      },
+      "en": {
+        "prompt": "We distribute the report.",
+        "options": [
+          "Wir erstellen den Bericht.",
+          "Wir verteilen den Bericht.",
+          "Wir lehnen den Bericht ab.",
+          "Wir erwähnen den Bericht."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-ablehnen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "ablehnen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir lehnen den Bericht ab.",
+        "options": [
+          "We create the report.",
+          "We distribute the report.",
+          "We reject the report.",
+          "We mention the report."
+        ]
+      },
+      "en": {
+        "prompt": "We reject the report.",
+        "options": [
+          "Wir erstellen den Bericht.",
+          "Wir verteilen den Bericht.",
+          "Wir lehnen den Bericht ab.",
+          "Wir erwähnen den Bericht."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-erwaehnen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erwaehnen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir erwähnen den Bericht.",
+        "options": [
+          "We create the report.",
+          "We distribute the report.",
+          "We reject the report.",
+          "We mention the report."
+        ]
+      },
+      "en": {
+        "prompt": "We mention the report.",
+        "options": [
+          "Wir erstellen den Bericht.",
+          "Wir verteilen den Bericht.",
+          "Wir lehnen den Bericht ab.",
+          "Wir erwähnen den Bericht."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-absagen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "absagen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir sagen die Sitzung ab.",
+        "options": [
+          "We cancel the meeting.",
+          "We cancel the booking.",
+          "We adjust the plan.",
+          "We ensure participation."
+        ]
+      },
+      "en": {
+        "prompt": "We cancel the meeting.",
+        "options": [
+          "Wir sagen die Sitzung ab.",
+          "Wir stornieren die Buchung.",
+          "Wir passen den Plan an.",
+          "Wir stellen die Teilnahme sicher."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-stornieren",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "stornieren"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir stornieren die Buchung.",
+        "options": [
+          "We cancel the meeting.",
+          "We cancel the booking.",
+          "We adjust the plan.",
+          "We ensure participation."
+        ]
+      },
+      "en": {
+        "prompt": "We cancel the booking.",
+        "options": [
+          "Wir sagen die Sitzung ab.",
+          "Wir stornieren die Buchung.",
+          "Wir passen den Plan an.",
+          "Wir stellen die Teilnahme sicher."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-anpassen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "anpassen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir passen den Plan an.",
+        "options": [
+          "We cancel the meeting.",
+          "We cancel the booking.",
+          "We adjust the plan.",
+          "We ensure participation."
+        ]
+      },
+      "en": {
+        "prompt": "We adjust the plan.",
+        "options": [
+          "Wir sagen die Sitzung ab.",
+          "Wir stornieren die Buchung.",
+          "Wir passen den Plan an.",
+          "Wir stellen die Teilnahme sicher."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-sicherstellen",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "sicherstellen"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Wir stellen die Teilnahme sicher.",
+        "options": [
+          "We cancel the meeting.",
+          "We cancel the booking.",
+          "We adjust the plan.",
+          "We ensure participation."
+        ]
+      },
+      "en": {
+        "prompt": "We ensure participation.",
+        "options": [
+          "Wir sagen die Sitzung ab.",
+          "Wir stornieren die Buchung.",
+          "Wir passen den Plan an.",
+          "Wir stellen die Teilnahme sicher."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-noetig",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "noetig"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Änderung ist nötig.",
+        "options": [
+          "The change is necessary.",
+          "He has a pronounced talent for languages.",
+          "The costs are low.",
+          "The task is becoming increasingly difficult."
+        ]
+      },
+      "en": {
+        "prompt": "The change is necessary.",
+        "options": [
+          "Die Änderung ist nötig.",
+          "Er hat ein ausgeprägtes Talent für Sprachen.",
+          "Die Kosten sind gering.",
+          "Die Aufgabe wird zunehmend schwierig."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-ausgepraegt",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "ausgepraegt"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Er hat ein ausgeprägtes Talent für Sprachen.",
+        "options": [
+          "The change is necessary.",
+          "He has a pronounced talent for languages.",
+          "The costs are low.",
+          "The task is becoming increasingly difficult."
+        ]
+      },
+      "en": {
+        "prompt": "He has a pronounced talent for languages.",
+        "options": [
+          "Die Änderung ist nötig.",
+          "Er hat ein ausgeprägtes Talent für Sprachen.",
+          "Die Kosten sind gering.",
+          "Die Aufgabe wird zunehmend schwierig."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-gering",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "gering"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Kosten sind gering.",
+        "options": [
+          "The change is necessary.",
+          "He has a pronounced talent for languages.",
+          "The costs are low.",
+          "The task is becoming increasingly difficult."
+        ]
+      },
+      "en": {
+        "prompt": "The costs are low.",
+        "options": [
+          "Die Änderung ist nötig.",
+          "Er hat ein ausgeprägtes Talent für Sprachen.",
+          "Die Kosten sind gering.",
+          "Die Aufgabe wird zunehmend schwierig."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-zunehmend",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "zunehmend"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Aufgabe wird zunehmend schwierig.",
+        "options": [
+          "The change is necessary.",
+          "He has a pronounced talent for languages.",
+          "The costs are low.",
+          "The task is becoming increasingly difficult."
+        ]
+      },
+      "en": {
+        "prompt": "The task is becoming increasingly difficult.",
+        "options": [
+          "Die Änderung ist nötig.",
+          "Er hat ein ausgeprägtes Talent für Sprachen.",
+          "Die Kosten sind gering.",
+          "Die Aufgabe wird zunehmend schwierig."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-mc-verantwortlich",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "verantwortlich"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Sie ist für das Projekt verantwortlich.",
+        "options": [
+          "She is responsible for the project.",
+          "The report is detailed.",
+          "The employee is reliable.",
+          "The task is exciting."
+        ]
+      },
+      "en": {
+        "prompt": "She is responsible for the project.",
+        "options": [
+          "Sie ist für das Projekt verantwortlich.",
+          "Der Bericht ist ausführlich.",
+          "Die Mitarbeiterin ist verlässlich.",
+          "Die Aufgabe ist spannend."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-ausfuehrlich",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "ausfuehrlich"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Der Bericht ist ausführlich.",
+        "options": [
+          "She is responsible for the project.",
+          "The report is detailed.",
+          "The employee is reliable.",
+          "The task is exciting."
+        ]
+      },
+      "en": {
+        "prompt": "The report is detailed.",
+        "options": [
+          "Sie ist für das Projekt verantwortlich.",
+          "Der Bericht ist ausführlich.",
+          "Die Mitarbeiterin ist verlässlich.",
+          "Die Aufgabe ist spannend."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-verlaesslich",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "verlaesslich"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Mitarbeiterin ist verlässlich.",
+        "options": [
+          "She is responsible for the project.",
+          "The report is detailed.",
+          "The employee is reliable.",
+          "The task is exciting."
+        ]
+      },
+      "en": {
+        "prompt": "The employee is reliable.",
+        "options": [
+          "Sie ist für das Projekt verantwortlich.",
+          "Der Bericht ist ausführlich.",
+          "Die Mitarbeiterin ist verlässlich.",
+          "Die Aufgabe ist spannend."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-spannend",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-adjectives-determiners"
+      ],
+      "refs": {
+        "words": [
+          "spannend"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Die Aufgabe ist spannend.",
+        "options": [
+          "She is responsible for the project.",
+          "The report is detailed.",
+          "The employee is reliable.",
+          "The task is exciting."
+        ]
+      },
+      "en": {
+        "prompt": "The task is exciting.",
+        "options": [
+          "Sie ist für das Projekt verantwortlich.",
+          "Der Bericht ist ausführlich.",
+          "Die Mitarbeiterin ist verlässlich.",
+          "Die Aufgabe ist spannend."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-blank-adjective-genitive",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "prompt": "Wegen des ___ Regens bleiben wir zu Hause. (stark)",
+      "answer": "starken",
+      "explanation": "After a definite article, the adjective has -en in the genitive."
+    },
+    {
+      "id": "quiz-blank-adjective-dative",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-adjektivdeklination-adjective-endings"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "adjektivdeklination-adjective-endings"
+        ]
+      },
+      "prompt": "Ich spreche mit dem ___ Kollegen. (neu)",
+      "answer": "neuen",
+      "explanation": "After the definite article dem, the adjective has -en in the dative."
+    },
+    {
+      "id": "quiz-blank-ohne-zu",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-ohne-dass-ohne-zu"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "ohne-dass-ohne-zu"
+        ]
+      },
+      "prompt": "Er ging weg, ohne sich ___ verabschieden.",
+      "answer": "zu",
+      "explanation": "With the same subject in both clauses, use ohne … zu + infinitive."
+    },
+    {
+      "id": "quiz-blank-direction-accusative",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-kasus-nominativ-akkusativ-dativ-genitiv"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus-nominativ-akkusativ-dativ-genitiv"
+        ]
+      },
+      "prompt": "Ich lege das Buch auf ___ Tisch. (der)",
+      "answer": "den",
+      "explanation": "The destination answers wohin; auf takes the accusative here."
+    },
+    {
+      "id": "quiz-blank-weil-word-order",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-weil-obwohl-gegenueberstellung-der-verwendung"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "weil-obwohl-gegenueberstellung-der-verwendung"
+        ]
+      },
+      "prompt": "Ich bleibe zu Hause, weil ich krank ___. (sein)",
+      "answer": "bin",
+      "explanation": "Weil introduces a subordinate clause, with the conjugated verb at the end."
+    },
+    {
+      "id": "quiz-translate-zuerst",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": "Zuerst lesen wir den Bericht.",
+      "en": "First, we read the report."
+    },
+    {
+      "id": "quiz-translate-danach",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "danach"
+        ],
+        "topics": []
+      },
+      "de": "Danach lesen wir den Bericht.",
+      "en": "After that, we read the report."
+    },
+    {
+      "id": "quiz-translate-spaeter",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "spaeter"
+        ],
+        "topics": []
+      },
+      "de": "Später lesen wir den Bericht.",
+      "en": "Later, we read the report."
+    },
+    {
+      "id": "quiz-translate-schliesslich",
+      "type": "translation",
+      "categories": [
+        "vocab-sequence-time-order"
+      ],
+      "refs": {
+        "words": [
+          "schliesslich"
+        ],
+        "topics": []
+      },
+      "de": "Schliesslich lesen wir den Bericht.",
+      "en": "Finally, we read the report."
+    },
+    {
+      "id": "quiz-translate-erstellen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "erstellen"
+        ],
+        "topics": []
+      },
+      "de": "Wir erstellen den Bericht.",
+      "en": "We create the report."
+    },
+    {
+      "id": "quiz-translate-verteilen",
+      "type": "translation",
+      "categories": [
+        "vocab-key-verbs"
+      ],
+      "refs": {
+        "words": [
+          "verteilen"
+        ],
+        "topics": []
+      },
+      "de": "Wir verteilen den Bericht.",
+      "en": "We distribute the report."
+    }
+  ]
+}

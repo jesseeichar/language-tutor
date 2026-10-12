@@ -6,7 +6,7 @@ interface Props {
   onChange: (value: DirectionChoice) => void;
 }
 
-/** Which language translation cards show first. */
+/** Which language bilingual questions show first. */
 export function DirectionPicker({ value, onChange }: Props) {
   return (
     <fieldset className="category-group">
@@ -17,7 +17,7 @@ export function DirectionPicker({ value, onChange }: Props) {
           <span>{DIRECTION_LABELS[choice]}</span>
         </label>
       ))}
-      <p className="muted small">Applies to translation cards. Other cards are always shown the same way.</p>
+      <p className="muted small">Applies to bilingual questions. Fixed prompts are always shown the same way.</p>
     </fieldset>
   );
 }

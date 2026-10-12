@@ -29,6 +29,13 @@ describe("summarize", () => {
   test("graded sessions report the correct count", () => {
     expect(summarize({ ...session, graded: true }, { ...totals, correct: 1 }, content).correct).toBe(1);
   });
+  test("a point snapshot includes deleted and unanswered questions", () => {
+    const planned = { ...session, graded: true, questionPoints: { "fc-zuerst": 2, "fc-deleted": 3 } };
+    expect(summarize(planned, { ...totals, correct: 1, pointsAwarded: 2 }, content).pointsPossible).toBe(5);
+  });
+  test("legacy fully answered sessions use recorded totals after content deletion", () => {
+    expect(summarize({ ...session, graded: true }, { answered: 2, correct: 1, pointsAwarded: 1, pointsPossible: 2 }, content).pointsPossible).toBe(2);
+  });
 });
 
 describe("logEntry", () => {

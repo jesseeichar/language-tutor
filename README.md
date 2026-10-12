@@ -1,6 +1,6 @@
 # Language Tutor
 
-A local web app for practising German with flashcards and, soon, quizzes built from my own vocabulary
+A local web app for practising German with flashcards and graded quizzes built from my own vocabulary
 and grammar notes.
 
 ## Quick start
@@ -20,6 +20,18 @@ Open http://localhost:5173.
 - [AGENTS.md](AGENTS.md): shared Codex/Claude commands, coding rules, and guidance for modes and questions.
 - [CLAUDE.md](CLAUDE.md): Claude entry point pointing to the shared instructions.
 - [docs/architecture.md](docs/architecture.md): modules, interfaces and the rules the architecture tests enforce.
+- [docs/quizzes.md](docs/quizzes.md): quiz types, exact matching, scoring, and how to add questions with JSON examples.
+
+## Quizzes
+
+Open **Quiz** to practise **Multiple choice**, **Fill in the blank**, or **Translation**, individually
+or together. Bilingual questions support both language directions. Typed answers use exact matching
+in version 1, including case, accents, punctuation, and spaces. Each answer shows feedback and updates
+progress and strength scores. The default bank supports 25 vocabulary multiple-choice questions and
+5 grammar blanks per session; select Translation to include typed translations.
+
+Add questions in `data/questions/quiz.json`, following the [question authoring guide](docs/quizzes.md),
+then run `bun run validate` and try them in the app.
 
 ## Saving and restoring progress
 

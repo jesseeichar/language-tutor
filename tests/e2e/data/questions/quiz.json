@@ -1,0 +1,195 @@
+{
+  "types": [
+    {
+      "id": "multiple-choice",
+      "label": "Multiple choice",
+      "description": "Choose a full-sentence translation. Supports both directions."
+    },
+    {
+      "id": "fill-in-the-blank",
+      "label": "Fill in the blank",
+      "description": "Type the missing word or phrase exactly."
+    },
+    {
+      "id": "translation",
+      "label": "Translation",
+      "description": "Type the whole translation. Exact matching, including case, punctuation, accents, and spaces."
+    }
+  ],
+  "questions": [
+    {
+      "id": "quiz-mc-zuerst-report",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-time"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Zuerst lesen wir den Bericht.",
+        "options": [
+          "First, we read the report.",
+          "First, we drink coffee.",
+          "However, that is expensive.",
+          "However, the house is small."
+        ]
+      },
+      "en": {
+        "prompt": "First, we read the report.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Zuerst trinken wir Kaffee.",
+          "Das ist jedoch teuer.",
+          "Das Haus ist jedoch klein."
+        ]
+      },
+      "correctIndex": 0
+    },
+    {
+      "id": "quiz-mc-zuerst-coffee",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-time"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Zuerst trinken wir Kaffee.",
+        "options": [
+          "First, we read the report.",
+          "First, we drink coffee.",
+          "However, that is expensive.",
+          "However, the house is small."
+        ]
+      },
+      "en": {
+        "prompt": "First, we drink coffee.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Zuerst trinken wir Kaffee.",
+          "Das ist jedoch teuer.",
+          "Das Haus ist jedoch klein."
+        ]
+      },
+      "correctIndex": 1
+    },
+    {
+      "id": "quiz-mc-jedoch-expensive",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "jedoch"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Das ist jedoch teuer.",
+        "options": [
+          "First, we read the report.",
+          "First, we drink coffee.",
+          "However, that is expensive.",
+          "However, the house is small."
+        ]
+      },
+      "en": {
+        "prompt": "However, that is expensive.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Zuerst trinken wir Kaffee.",
+          "Das ist jedoch teuer.",
+          "Das Haus ist jedoch klein."
+        ]
+      },
+      "correctIndex": 2
+    },
+    {
+      "id": "quiz-mc-jedoch-small",
+      "type": "multiple-choice",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "jedoch"
+        ],
+        "topics": []
+      },
+      "de": {
+        "prompt": "Das Haus ist jedoch klein.",
+        "options": [
+          "First, we read the report.",
+          "First, we drink coffee.",
+          "However, that is expensive.",
+          "However, the house is small."
+        ]
+      },
+      "en": {
+        "prompt": "However, the house is small.",
+        "options": [
+          "Zuerst lesen wir den Bericht.",
+          "Zuerst trinken wir Kaffee.",
+          "Das ist jedoch teuer.",
+          "Das Haus ist jedoch klein."
+        ]
+      },
+      "correctIndex": 3
+    },
+    {
+      "id": "quiz-blank-case",
+      "type": "fill-in-the-blank",
+      "categories": [
+        "grammar-cases"
+      ],
+      "refs": {
+        "words": [],
+        "topics": [
+          "kasus"
+        ]
+      },
+      "prompt": "Ich lege das Buch auf ___ Tisch.",
+      "answer": "den",
+      "explanation": "Wohin? Use the accusative."
+    },
+    {
+      "id": "quiz-translate-zuerst-report",
+      "type": "translation",
+      "categories": [
+        "vocab-time"
+      ],
+      "refs": {
+        "words": [
+          "zuerst"
+        ],
+        "topics": []
+      },
+      "de": "Zuerst lesen wir den Bericht.",
+      "en": "First, we read the report."
+    },
+    {
+      "id": "quiz-translate-jedoch-expensive",
+      "type": "translation",
+      "categories": [
+        "vocab-contrast"
+      ],
+      "refs": {
+        "words": [
+          "jedoch"
+        ],
+        "topics": []
+      },
+      "de": "Das ist jedoch teuer.",
+      "en": "However, that is expensive."
+    }
+  ]
+}

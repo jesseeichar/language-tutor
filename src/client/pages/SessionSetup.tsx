@@ -43,7 +43,9 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
   // The type filter only makes sense when there is more than one type to choose from.
   const showTypes = mode.questionTypes.length > 1;
   const [categories, setCategories] = useCheckedSet(() => new Set(saved.categoryIds));
-  const [types, setTypes] = useCheckedSet(() => new Set(saved.questionTypes ?? mode.questionTypes.map((t) => t.id)));
+  const [types, setTypes] = useCheckedSet(() => new Set(showTypes
+    ? saved.questionTypes ?? mode.defaultQuestionTypes ?? mode.questionTypes.map((t) => t.id)
+    : mode.questionTypes.map((t) => t.id)));
   const [direction, setDirection] = useState<DirectionChoice>(saved.direction);
   // Kept as text so the field can be cleared while typing; clamped when the session starts.
   const [countText, setCountText] = useState(String(Math.min(mode.defaultSessionSize, mode.questionCount)));
@@ -58,7 +60,7 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
     setStarting(true);
     setError(null);
     try {
-      saveSetup(mode.id, { categoryIds: [...categories], questionTypes: showTypes ? [...types] : null, direction });
+      saveSetup(mode.id, { categoryIds: [...categories], questionTypes: mode.questionTypes.length ? [...types] : null, direction });
       const count = clampCount(Number(countText), mode.questionCount);
       setCountText(String(count));
       onStarted(
@@ -66,7 +68,7 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
           modeId: mode.id,
           categoryIds: [...categories],
           count,
-          questionTypes: showTypes ? [...types] : undefined,
+          questionTypes: mode.questionTypes.length ? [...types] : undefined,
           direction: mode.directional ? direction : undefined,
         }),
       );

@@ -1,5 +1,5 @@
 import { describe, expect, mock, test } from "bun:test";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { flashcardMode, mockApi, sessionResponse, summary } from "../../../tests/support/mock-api";
 import { SessionRunner } from "./SessionRunner";
@@ -48,5 +48,36 @@ describe("SessionRunner", () => {
     const data = { ...sessionResponse, session: { ...sessionResponse.session, modeId: "unknown" } };
     render(<SessionRunner mode={flashcardMode} data={data} onFinished={() => {}} />);
     expect(screen.getByRole("alert").textContent).toContain('No view registered for mode "unknown"');
+  });
+
+  test("End session is blocked while a quiz answer is being saved", async () => {
+    let release!: (response: Response) => void;
+    const saving = new Promise<Response>(resolve => { release = resolve; });
+    const calls = mock(() => saving);
+    globalThis.fetch = calls as unknown as typeof fetch;
+    const data = { ...sessionResponse, session: { ...sessionResponse.session, modeId: "quiz", graded: true },
+      questions: [{ id: "q", type: "fill-in-the-blank", categories: ["c"], refs: { words: [], topics: [] }, prompt: "Das ist ___ Tür.", answer: "die" }] };
+    render(<SessionRunner mode={{ ...flashcardMode, id: "quiz", graded: true }} data={data} onFinished={() => {}} />);
+    await userEvent.type(screen.getByLabelText("Your answer"), "die");
+    await userEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    const end = screen.getByRole("button", { name: "End session" });
+    expect(end.hasAttribute("disabled")).toBe(true);
+    fireEvent.click(end);
+    expect(calls).toHaveBeenCalledTimes(1);
+    release(new Response(JSON.stringify({ grade: { correct: true, score: 1 }, pointsAwarded: 1, pointsPossible: 1 })));
+    await screen.findByRole("status");
+    expect(end.hasAttribute("disabled")).toBe(false);
+  });
+
+  test("a quick flashcard Next waits for the reveal save instead of dropping navigation", async () => {
+    let release!: (response: Response) => void;
+    const saving = new Promise<Response>(resolve => { release = resolve; });
+    globalThis.fetch = mock(() => saving) as unknown as typeof fetch;
+    render(<SessionRunner mode={flashcardMode} data={sessionResponse} onFinished={() => {}} />);
+    fireEvent.keyDown(window, { key: " " });
+    fireEvent.keyDown(window, { key: "ArrowRight" });
+    expect(screen.getByText("1 / 2")).toBeTruthy();
+    release(new Response(JSON.stringify({ grade: null, pointsAwarded: 0, pointsPossible: 0 })));
+    expect(await screen.findByText("2 / 2")).toBeTruthy();
   });
 });

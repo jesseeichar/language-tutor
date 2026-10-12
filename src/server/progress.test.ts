@@ -90,6 +90,15 @@ describe("ProgressStore", () => {
     expect(store.getStrength("word", "w")).toBe(1);
   });
 
+  test("a finished session cannot gain a late answer or strength update", () => {
+    const s = newSession();
+    store.finishSession(s.id);
+    const saved = fs.readFileSync(path, "utf8");
+    expect(() => attempt(s.id, "q1", true)).toThrow("Session is already finished");
+    expect(fs.readFileSync(path, "utf8")).toBe(saved);
+    expect(store.getStrength("word", "w")).toBe(0);
+  });
+
   test("history counts attempts across sessions", () => {
     attempt(newSession().id, "q1", true);
     attempt(newSession().id, "q1", false);

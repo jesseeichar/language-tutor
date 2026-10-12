@@ -30,12 +30,16 @@ describe("progress schema", () => {
     ["self repeat", (d) => { d.sessions[0]!.repeatOf = "s"; }],
     ["duplicate question", (d) => d.sessions[0]!.questionIds.push("deleted-question")],
     ["foreign direction", (d) => { d.sessions[0]!.directions.other = "en-de"; }],
+    ["foreign point snapshot", (d) => { d.sessions[0]!.questionPoints = { other: 1 }; }],
+    ["missing point snapshot entry", (d) => { d.sessions[0]!.questionPoints = {}; }],
     ["missing session", (d) => { d.attempts[0]!.sessionId = "missing"; }],
     ["foreign question", (d) => { d.attempts[0]!.questionId = "other"; }],
     ["wrong mode", (d) => { d.attempts[0]!.modeId = "other"; }],
     ["duplicate answer", (d) => d.attempts.push(d.attempts[0]!)],
     ["wrong direction", (d) => { d.attempts[0]!.direction = "en-de"; }],
     ["wrong grading", (d) => { d.attempts[0]!.correct = null; }],
+    ["wrong saved grade", (d) => { d.attempts[0]!.grade = { correct: false, score: 1 }; }],
+    ["wrong saved fraction", (d) => { d.attempts[0]!.grade = { correct: true, score: 0.5 }; }],
     ["excess points", (d) => { d.attempts[0]!.pointsAwarded = 2; }],
     ["invalid timestamp", (d) => { d.attempts[0]!.answeredAt = "yesterday"; }],
     ["duplicate strength", (d) => d.strengths.push(d.strengths[0]!)],
@@ -46,6 +50,14 @@ describe("progress schema", () => {
     const data = log();
     change(data);
     expect(() => parseProgress(data)).toThrow();
+  });
+
+  test("optional quiz metadata extends version 1 without requiring existing logs to migrate", () => {
+    const data = log();
+    data.sessions[0]!.questionPoints = { "deleted-question": 1 };
+    data.attempts[0]!.grade = { correct: true, score: 1, feedback: "Expected answer: ä" };
+    expect(parseProgress(data)).toEqual(data);
+    expect(parseProgress(log())).toEqual(log());
   });
 
   test("rejects unsupported versions, missing response and unexpected fields", () => {

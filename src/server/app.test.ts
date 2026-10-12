@@ -146,16 +146,17 @@ describe("sessions", () => {
     expect(summary.body).toMatchObject({ answered: 1, totalQuestions: 1, correct: null, pointsAwarded: 0, pointsPossible: 0 });
 
     const late = await call(`/api/sessions/${sid}/answers`, { questionId: "fc-lohn", response: { revealed: true } });
-    expect(late.status).toBe(409);
+    expect(late.status).toBe(200);
+    expect(late.body).toEqual(answer.body);
   });
 
-  test("rejects answering twice, foreign questions and bad responses", async () => {
+  test("retries identical answers and rejects foreign questions and bad responses", async () => {
     const { body } = await startFlashcards(["vocab-work"]);
     const path = `/api/sessions/${body.session.id}/answers`;
     expect((await call(path, { questionId: "fc-zuerst", response: { revealed: true } })).status).toBe(400);
     expect((await call(path, { questionId: "fc-lohn", response: { revealed: "yes" } })).status).toBe(400);
     expect((await call(path, { questionId: "fc-lohn", response: { revealed: true } })).status).toBe(200);
-    expect((await call(path, { questionId: "fc-lohn", response: { revealed: true } })).status).toBe(409);
+    expect((await call(path, { questionId: "fc-lohn", response: { revealed: true } })).status).toBe(200);
   });
 
   test("validation errors", async () => {

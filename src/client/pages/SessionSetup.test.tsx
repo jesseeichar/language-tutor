@@ -108,4 +108,28 @@ describe("SessionSetup", () => {
     expect((await screen.findByRole("alert")).textContent).toContain("No questions match");
     expect(screen.getByRole("button", { name: "Start" }).hasAttribute("disabled")).toBe(false);
   });
+
+  test("a mode's default types are used until the learner saves a choice", async () => {
+    const mode = { ...flashcardMode, id: "quiz", defaultQuestionTypes: ["fill-in-the-blank"] };
+    const first = render(<SessionSetup mode={mode} onBack={() => {}} onStarted={() => {}} />);
+    expect((screen.getByLabelText(/^Translation/) as HTMLInputElement).checked).toBe(false);
+    expect((screen.getByLabelText(/^Fill in the blank/) as HTMLInputElement).checked).toBe(true);
+    await userEvent.click(screen.getByLabelText(/^Translation/));
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    first.unmount();
+    render(<SessionSetup mode={mode} onBack={() => {}} onStarted={() => {}} />);
+    expect((screen.getByLabelText(/^Translation/) as HTMLInputElement).checked).toBe(true);
+  });
+
+  test("a sole type is sent explicitly even when mode defaults name other types", async () => {
+    const mode = { ...flashcardMode, id: "quiz", questionTypes: [flashcardMode.questionTypes[0]!], defaultQuestionTypes: ["multiple-choice", "fill-in-the-blank"] };
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+    render(<SessionSetup mode={mode} onBack={() => {}} onStarted={() => {}} />);
+    expect(screen.queryByText("Question types")).toBeNull();
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((calls[0]!.body as { questionTypes: string[] }).questionTypes).toEqual(["translation"]);
+  });
 });

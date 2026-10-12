@@ -6,7 +6,6 @@ import type { Server } from "bun";
 import {
   CreateSessionRequestSchema,
   ContentEditSchema,
-  SubmitAnswerRequestSchema,
   getMode,
   isDirectionalQuestion,
   modes,
@@ -17,16 +16,16 @@ import {
   type QuestionBase,
   type SessionLogEntry,
   type SessionSummary,
-  type SubmitAnswerResponse,
 } from "../shared";
 import { ContentError, loadContent } from "./content";
 import { ProgressStore, type StoredSession } from "./progress";
 import { logEntry, summarize, toSessionInfo } from "./history";
 import { selectQuestions } from "./selection";
-import { assignDirections, countByCategory, filterPool } from "./session-plan";
+import { assignDirections, countByCategory, defaultTypes, filterPool } from "./session-plan";
 import { projectRoot } from "./config";
 import { ProgressBackup, ProgressBackupError } from "./progress-backup";
 import { ContentEditor, ContentEditError } from "./content-editor";
+import { AnswerError, recordAnswer } from "./answers";
 
 export interface AppOptions {
   dataDir: string;
@@ -54,6 +53,7 @@ function handle(fn: (req: Request & { params: Record<string, string> }) => Promi
       return json(await fn(req));
     } catch (e) {
       if (e instanceof HttpError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
+      if (e instanceof AnswerError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
       if (e instanceof ProgressBackupError) return json({ error: e.message } satisfies ApiError, e.status);
       if (e instanceof ContentEditError) return json({ error: e.message } satisfies ApiError, e.status);
       if (e instanceof ContentError) {
@@ -87,7 +87,9 @@ export function startServer(options: AppOptions): Server<undefined> {
 
   /** Stores a new session and returns what the client needs to run it. */
   function begin(plan: Omit<StoredSession, "id" | "startedAt" | "finishedAt">, questions: QuestionBase[]): CreateSessionResponse {
-    const session = store.createSession(plan);
+    const mode = getMode(plan.modeId)!;
+    const questionPoints = Object.fromEntries(questions.map((q) => [q.id, pointsFor(mode, q)]));
+    const session = store.createSession({ ...plan, questionPoints });
     return { session: toSessionInfo(session), questions, directions: session.directions };
   }
 
@@ -134,6 +136,7 @@ export function startServer(options: AppOptions): Server<undefined> {
               description: mode.description,
               graded: mode.graded,
               defaultSessionSize: mode.defaultSessionSize,
+              defaultQuestionTypes: defaultTypes(mode.defaultQuestionTypes, questions),
               questionCount: questions.length,
               categories,
               questionTypes,
@@ -151,11 +154,11 @@ export function startServer(options: AppOptions): Server<undefined> {
         POST: handle(async (req): Promise<CreateSessionResponse> => {
           const parsed = CreateSessionRequestSchema.safeParse(await readBody(req));
           if (!parsed.success) throw new HttpError(400, "Invalid request", parsed.error.issues.map((i) => i.message));
-          const { modeId, categoryIds, questionTypes, direction = "random" } = parsed.data;
+          const { modeId, categoryIds, direction = "random" } = parsed.data;
           const mode = getMode(modeId);
           if (!mode) throw new HttpError(404, `Unknown mode ${modeId}`);
-
           const c = await content();
+          const questionTypes = parsed.data.questionTypes ?? defaultTypes(mode.defaultQuestionTypes, c.questions.get(mode.id) ?? []);
           const pool = filterPool(c.questions.get(mode.id) ?? [], c.categories, { categoryIds, questionTypes });
           if (pool.length === 0) throw new HttpError(400, "No questions match the selected categories and question types");
 
@@ -164,6 +167,7 @@ export function startServer(options: AppOptions): Server<undefined> {
             count: parsed.data.count ?? mode.defaultSessionSize,
             history: store.questionHistory(mode.id),
             strengths: store.allStrengths(),
+            quota: mode.sessionQuota,
           });
           const directions = assignDirections(questions, (q) => isDirectionalQuestion(mode, q), direction);
           return begin(
@@ -183,41 +187,7 @@ export function startServer(options: AppOptions): Server<undefined> {
       },
 
       "/api/sessions/:id/answers": {
-        POST: handle(async (req): Promise<SubmitAnswerResponse> => {
-          const session = requireSession(req.params.id!);
-          if (session.finishedAt) throw new HttpError(409, "Session is already finished");
-
-          const parsed = SubmitAnswerRequestSchema.safeParse(await readBody(req));
-          if (!parsed.success) throw new HttpError(400, "Invalid request", parsed.error.issues.map((i) => i.message));
-          const { questionId } = parsed.data;
-          if (!session.questionIds.includes(questionId)) throw new HttpError(400, `Question ${questionId} is not part of this session`);
-          if (store.hasAttempt(session.id, questionId)) throw new HttpError(409, `Question ${questionId} was already answered`);
-
-          const mode = getMode(session.modeId);
-          if (!mode) throw new HttpError(500, `Mode ${session.modeId} is no longer registered`);
-          const question = (await content()).questions.get(mode.id)?.find((q) => q.id === questionId);
-          if (!question) throw new HttpError(409, `Question ${questionId} no longer exists in data/questions/${mode.id}.json`);
-
-          const response = mode.responseSchema.safeParse(parsed.data.response);
-          if (!response.success) throw new HttpError(400, "Invalid response for this mode", response.error.issues.map((i) => i.message));
-
-          const pointsPossible = pointsFor(mode, question);
-          const grade = mode.graded ? mode.grade(question, response.data) : null;
-          const pointsAwarded = grade ? grade.score * pointsPossible : 0;
-
-          store.recordAttempt({
-            sessionId: session.id,
-            modeId: mode.id,
-            questionId,
-            response: response.data,
-            correct: grade ? grade.correct : null,
-            pointsAwarded,
-            pointsPossible,
-            direction: session.directions[questionId] ?? null,
-            refs: question.refs,
-          });
-          return { grade, pointsAwarded, pointsPossible };
-        }),
+        POST: handle(async (req) => recordAnswer(store, req.params.id!, await readBody(req), content)),
       },
 
       "/api/sessions/:id/finish": {

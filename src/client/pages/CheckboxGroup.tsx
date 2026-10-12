@@ -34,7 +34,7 @@ interface Props {
 export function CheckboxGroup({ legend, items, checked, onChange }: Props) {
   const ids = items.map((i) => i.id);
   return (
-    <fieldset className="category-group">
+    <fieldset className="category-group" aria-label={legend}>
       <legend>
         {legend}
         <button type="button" className="link small" onClick={() => onChange(ids, true)}>
