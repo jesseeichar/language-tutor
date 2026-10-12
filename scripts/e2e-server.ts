@@ -15,6 +15,10 @@ if (import.meta.main) {
   const copy = copyTestData(config.dataDir);
   // Deterministic fake grading for browser tests; never spend a real API key loaded from .env.
   const server = startServer({ ...config, dataDir: copy.dir, gradingServices: {
+    async exercise(input) {
+      const correct = input.answer !== "Wrong answer.";
+      return { correct, score: correct ? 1 : 0, feedback: correct ? "Task requirements and grammar accepted." : "Check the task requirements and meaning." };
+    },
     async translation(input) {
       const correct = input.answer !== "This sentence has the opposite meaning.";
       return { correct, score: correct ? 1 : 0,

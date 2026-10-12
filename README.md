@@ -54,7 +54,12 @@ Fill-in-the-blank answers still match exactly, including case, accents, punctuat
 progress and strength scores. The default bank supports 25 vocabulary multiple-choice questions and
 5 grammar blanks per session; select Translation to include typed translations.
 
-To enable translation grading, get an API key from [TypeSafe AI](https://console.typesafe.ai/) and add it
+The **Zeitlicher Ablauf & Verbindungswörter** worksheet starts directly from its home-screen card,
+with all ten exercises in the original order and no setup. It includes the original matching, blanks,
+choices, sentence writing, stories, and personal word/sentence pairs. See the
+[worksheet guide](docs/worksheet.md) for grading and source details.
+
+To enable translation and worksheet writing assessment, get an API key from [TypeSafe AI](https://console.typesafe.ai/) and add it
 to the server's ignored `.env` file:
 
 ```dotenv
@@ -66,7 +71,7 @@ Restart `bun run dev` after changing these values. The model setting is optional
 sends the source sentence, reference translation, and your answer to TypeSafe's official API; the key
 stays on the server. Jev returns meaning/grammar judgments; the app shows fixed feedback and a reference
 translation. API failures leave answers ungraded and available to retry, without a strength penalty or
-an exact-match fallback. Other question types work without an API key.
+an exact-match fallback. Fixed-answer exercises and personal completion checks work without an API key.
 
 Add questions in `data/questions/quiz.json`, following the [question authoring guide](docs/quizzes.md),
 then run `bun run validate` and try them in the app.

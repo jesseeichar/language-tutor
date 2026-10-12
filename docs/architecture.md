@@ -156,7 +156,7 @@ blanks for a full default session. Translation can be selected alone or alongsid
 `src/server/jev.ts` calls TypeSafe's official `/v1/systemone` endpoint using Bun fetch, with a
 server-only `TYPESAFE_API_KEY`, optional `TYPESAFE_MODEL` (default `jev-latest`), and a 15-second timeout.
 The shared grading contract accepts injected services and may return a Promise; only the quiz mode
-knows which question type delegates to translation grading. The server supplies that service, while
+knows which question type delegates to translation grading. The server supplies translation and worksheet exercise services, while
 the session framework continues to treat modes generically. Public module budgets remain unchanged.
 
 One request asks independent Noul questions about meaning and grammar. Both probabilities must exceed
@@ -247,6 +247,23 @@ The editor handles categories and assignments, not question text or canonical vo
 
 Editor browser tests use copies made by `scripts/e2e-server.ts`; checked-in fixtures remain untouched.
 Shared project instructions live in `AGENTS.md`, with `CLAUDE.md` referring to the same rules.
+
+## Fixed worksheets
+
+Modes may declare `fixedSession: true`, exposed in the mode summary. Selecting one starts a session
+immediately; the server uses all questions in authored order, ignoring filters and count, with no
+direction. Other modes keep the existing setup and selection behavior. Repeats retain their usual
+stored-order behavior.
+
+The `worksheet` mode treats each section as one question containing individually scored items.
+Choices and constrained blanks grade locally; writing items delegate to the injected Jev exercise
+service, and personal choices use completion checks. Section points equal item counts in the supplied
+bank, and score is the proportion correct. Full section grades/feedback use existing progress storage;
+no migration is needed. Empty refs keep worksheet practice separate from vocabulary strength.
+
+The client worksheet module has the same one-export budget as other mode views. The shared module
+keeps its 40-name budget: the thin `isDirectionalQuestion` export was removed in favor of direct use
+of the existing optional mode capability, making room for the worksheet question type.
 
 ## Built app and Tailscale lifecycle
 

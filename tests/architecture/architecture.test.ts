@@ -35,6 +35,7 @@ const INTERFACE_BUDGET: Record<string, number> = {
   "src/client/modes": 2,
   "src/client/modes/flashcards": 1,
   "src/client/modes/quiz": 1,
+  "src/client/modes/worksheet": 1,
   "scripts/lib": 8,
 };
 

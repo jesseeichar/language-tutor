@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { CreateSessionResponse, ModeSummary, SessionSummary } from "../shared";
 import { api } from "./api";
 import { Home } from "./pages/Home";
@@ -6,6 +6,7 @@ import { HistoryPage } from "./pages/HistoryPage";
 import { SessionRunner } from "./pages/SessionRunner";
 import { SessionSetup } from "./pages/SessionSetup";
 import { SummaryPage } from "./pages/SummaryPage";
+import { ErrorBox } from "./pages/ErrorBox";
 import { ContentEditorPage } from "./pages/ContentEditorPage";
 
 /** The whole app is a handful of screens; plain state is enough, no router needed. */
@@ -19,12 +20,27 @@ type View =
 
 export function App() {
   const [view, setView] = useState<View>({ name: "home" });
+  const [startError, setStartError] = useState<unknown>(null);
+  const [starting, setStarting] = useState(false);
+  const startPending = useRef(false);
   const [editorDirty, setEditorDirty] = useState(false);
   const navigate = (next: View) => {
     if (editorDirty && !window.confirm("Discard unsaved edits?")) return;
-    setEditorDirty(false); setView(next);
+    setStartError(null); setEditorDirty(false); setView(next);
   };
   const home = () => navigate({ name: "home" });
+
+  const pick = async (mode: ModeSummary) => {
+    if (startPending.current) return;
+    setStartError(null);
+    if (!mode.fixedSession) { setView({ name: "setup", mode }); return; }
+    startPending.current = true; setStarting(true);
+    try {
+      const data = await api.createSession({ modeId: mode.id, categoryIds: mode.categories.map(c => c.id) });
+      setView({ name: "session", mode, data });
+    } catch (error) { setStartError(error); }
+    finally { startPending.current = false; setStarting(false); }
+  };
 
   /** Replays a past session exactly. Rejects so the calling page can show the error. */
   const repeat = async (sessionId: string) => {
@@ -37,16 +53,18 @@ export function App() {
   return (
     <div className="app">
       <header className="topbar">
-        <button type="button" className="brand" onClick={home}>
+        <button type="button" className="brand" onClick={home} disabled={starting}>
           Language Tutor
         </button>
-        <button type="button" className="link" onClick={() => { if (view.name !== "editor") navigate({ name: "editor" }); }}>Manage content</button>
-        <button type="button" className="link" onClick={() => navigate({ name: "history" })}>
+        <button type="button" className="link" disabled={starting} onClick={() => { if (view.name !== "editor") navigate({ name: "editor" }); }}>Manage content</button>
+        <button type="button" className="link" disabled={starting} onClick={() => navigate({ name: "history" })}>
           History
         </button>
       </header>
       <main>
-        {view.name === "home" && <Home onPick={(mode) => setView({ name: "setup", mode })} />}
+        <ErrorBox error={startError} />
+        {starting && <p role="status">Starting worksheet…</p>}
+        {view.name === "home" && <Home onPick={(mode) => { void pick(mode); }} disabled={starting} />}
         {view.name === "history" && <HistoryPage onRepeat={repeat} />}
         {view.name === "editor" && <ContentEditorPage onDirtyChange={setEditorDirty} />}
         {view.name === "setup" && (
@@ -68,7 +86,7 @@ export function App() {
           <SummaryPage
             mode={view.mode}
             summary={view.summary}
-            onAgain={() => setView({ name: "setup", mode: view.mode })}
+            onAgain={() => { void pick(view.mode); }}
             onRepeat={repeat}
             onHome={home}
           />

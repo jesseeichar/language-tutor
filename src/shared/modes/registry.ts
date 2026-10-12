@@ -7,8 +7,9 @@
 import type { AnyModeDefinition } from "../mode";
 import { flashcardsMode } from "./flashcards";
 import { quizMode } from "./quiz";
+import { worksheetMode } from "./worksheet";
 
-export const modes: readonly AnyModeDefinition[] = [flashcardsMode, quizMode];
+export const modes: readonly AnyModeDefinition[] = [flashcardsMode, quizMode, worksheetMode];
 
 export function getMode(id: string): AnyModeDefinition | undefined {
   return modes.find((m) => m.id === id);

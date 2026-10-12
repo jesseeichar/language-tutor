@@ -1,23 +1,12 @@
 import { describe, expect, test } from "bun:test";
 import { z } from "zod";
 import { QuestionBaseSchema } from "./content";
-import { DirectionChoiceSchema, isDirectionalQuestion, pointsFor, type GradedMode, type UngradedMode } from "./mode";
+import { DirectionChoiceSchema, pointsFor, type GradedMode, type UngradedMode } from "./mode";
 
 const base = { questionSchema: QuestionBaseSchema, responseSchema: z.unknown(), description: "", defaultSessionSize: 5 };
 const ungraded: UngradedMode = { ...base, id: "u", title: "U", graded: false };
 const graded: GradedMode = { ...base, id: "g", title: "G", graded: true, defaultPoints: 2, grade: () => ({ correct: true, score: 1 }) };
 const q = QuestionBaseSchema.parse({ id: "q", categories: ["c"] });
-
-describe("isDirectionalQuestion", () => {
-  test("is false for modes that do not support directions", () => {
-    expect(isDirectionalQuestion(ungraded, q)).toBe(false);
-  });
-  test("asks the mode for each question", () => {
-    const directional: UngradedMode = { ...ungraded, isDirectional: (x) => x.id === "q" };
-    expect(isDirectionalQuestion(directional, q)).toBe(true);
-    expect(isDirectionalQuestion(directional, { ...q, id: "other" })).toBe(false);
-  });
-});
 
 describe("DirectionChoiceSchema", () => {
   test("accepts the three choices only", () => {
