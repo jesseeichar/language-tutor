@@ -159,8 +159,9 @@ strength changes a single update. A failed save leaves the previous state in pla
 start empty; invalid files fail at startup without being overwritten. External changes detected
 before a save block writes until restart. Simultaneous writers are unsupported.
 
-The History page's **Back up progress** button calls `POST /api/progress/backup`. The server validates
-the saved file and Git state, commits only that file, then pushes an explicit branch refspec to the
+The History and Manage content pages' **Back up changes** button calls `POST /api/progress/backup`. The server validates
+saved progress, content, and Git state, commits only progress, category definitions, and registered
+question files, then pushes an explicit branch refspec to the
 configured upstream (or the same branch on `origin`). Unrelated staged and unstaged changes are preserved;
 earlier unpushed commits on the branch are included in the push. Concurrent backups are rejected.
 Git commands have a timeout and cannot prompt in the terminal. Failed pushes retain the local commit
@@ -183,3 +184,22 @@ are left untouched and are not imported.
 
 Client and server unit tests run in separate processes because happy-dom replaces `fetch` and
 `Response`, which the server tests need.
+
+## Content editing
+
+`GET /api/content/editor` returns categories, reference counts, mode-provided question previews, and
+a revision of the content files. `POST /api/content/editor` accepts one category operation or one
+question's category assignments with that revision. Saves are serialized, validate current content,
+reject stale revisions, and atomically replace only the affected file. Unknown question metadata is
+preserved. The endpoint requires the editor's custom header to prevent cross-origin form submissions.
+
+Categories form an acyclic tree. Deletion is allowed only when no questions, words, topics, or children
+reference the category. IDs stay stable through renaming and reparenting. `questionPreview` is an
+optional mode capability; the editor falls back to the question id for modes without it.
+
+The notes importer owns vocabulary and grammar topic text, but preserves existing category definitions
+and adds only new ones. Categories are not removed during import because questions may still use them.
+The editor handles categories and assignments, not question text or canonical vocabulary/topic edits.
+
+Editor browser tests use copies made by `scripts/e2e-server.ts`; checked-in fixtures remain untouched.
+Shared project instructions live in `AGENTS.md`, with `CLAUDE.md` referring to the same rules.

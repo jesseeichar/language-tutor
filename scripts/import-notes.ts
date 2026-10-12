@@ -9,7 +9,7 @@
  *  - existing ids are kept (matched on the German text / topic title), so progress stays attached
  *  - text, part of speech, example and categories are refreshed from the notes
  *  - entries no longer in the notes are kept and reported, never deleted
- *  - categories with ids starting "vocab-" or "grammar-" are managed here; any others are left alone
+ *  - existing category definitions are preserved; newly discovered categories are added
  */
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";

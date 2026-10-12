@@ -57,6 +57,7 @@ export const flashcardsMode: UngradedMode<FlashcardQuestion, FlashcardResponse> 
   description: "Study tool. Read the front, flip to check the back. Not graded.",
   graded: false,
   questionSchema: FlashcardQuestionSchema,
+  questionPreview: (card) => card.de !== undefined ? `${card.de} — ${card.en}` : `${card.front} — ${card.back}`,
   responseSchema: FlashcardResponseSchema,
   defaultSessionSize: 20,
   isDirectional: (card) => card.de !== undefined,

@@ -1,6 +1,8 @@
 import type {
   ApiError,
   BackupProgressResponse,
+  ContentEdit,
+  EditorSnapshot,
   CreateSessionRequest,
   CreateSessionResponse,
   ModeSummary,
@@ -32,6 +34,10 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export const api = {
+  editor: () => request<EditorSnapshot>("/api/content/editor"),
+  editContent: (body: ContentEdit) => request<EditorSnapshot>("/api/content/editor", {
+    method: "POST", body: JSON.stringify(body), headers: { "X-Language-Tutor-Edit": "1" },
+  }),
   backupProgress: () => request<BackupProgressResponse>("/api/progress/backup", {
     method: "POST", headers: { "X-Language-Tutor-Backup": "1" },
   }),

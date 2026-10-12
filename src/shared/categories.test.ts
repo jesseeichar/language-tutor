@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { expandCategories, matchesCategories } from "./categories";
+import { categoryProblems, expandCategories, matchesCategories } from "./categories";
 import type { Category } from "./content";
 
 const cats: Category[] = [
@@ -8,6 +8,13 @@ const cats: Category[] = [
   { id: "a1x", label: "A1x", group: "g", parent: "a1" },
   { id: "b", label: "B", group: "g" },
 ];
+
+test("category trees reject duplicates, missing parents and cycles", () => {
+  expect(categoryProblems(cats)).toEqual([]);
+  expect(categoryProblems([...cats, cats[0]!]).join(" ")).toContain("unique");
+  expect(categoryProblems([{ id: "a", label: "A", group: "g", parent: "missing" }]).join(" ")).toContain("unknown parent");
+  expect(categoryProblems(cats.map((c) => c.id === "a" ? { ...c, parent: "a1x" } : c)).join(" ")).toContain("cycle");
+});
 
 describe("expandCategories", () => {
   test("includes all descendants of a selected parent", () => {

@@ -49,7 +49,7 @@ export function Home({ onPick }: { onPick: (mode: ModeSummary) => void }) {
       </section>
       <section>
         <h2>Quizzes</h2>
-        {quizzes.length > 0 ? list(quizzes) : <p className="muted">No quizzes yet. See CLAUDE.md, "Adding a new mode".</p>}
+        {quizzes.length > 0 ? list(quizzes) : <p className="muted">No quizzes yet. See AGENTS.md, "Adding a new mode".</p>}
       </section>
     </>
   );

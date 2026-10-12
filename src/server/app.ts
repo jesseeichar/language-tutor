@@ -5,6 +5,7 @@
 import type { Server } from "bun";
 import {
   CreateSessionRequestSchema,
+  ContentEditSchema,
   SubmitAnswerRequestSchema,
   getMode,
   isDirectionalQuestion,
@@ -25,6 +26,7 @@ import { selectQuestions } from "./selection";
 import { assignDirections, countByCategory, filterPool } from "./session-plan";
 import { projectRoot } from "./config";
 import { ProgressBackup, ProgressBackupError } from "./progress-backup";
+import { ContentEditor, ContentEditError } from "./content-editor";
 
 export interface AppOptions {
   dataDir: string;
@@ -53,6 +55,7 @@ function handle(fn: (req: Request & { params: Record<string, string> }) => Promi
     } catch (e) {
       if (e instanceof HttpError) return json({ error: e.message, details: e.details } satisfies ApiError, e.status);
       if (e instanceof ProgressBackupError) return json({ error: e.message } satisfies ApiError, e.status);
+      if (e instanceof ContentEditError) return json({ error: e.message } satisfies ApiError, e.status);
       if (e instanceof ContentError) {
         return json({ error: "The question data is invalid. Run `bun run validate`.", details: e.problems } satisfies ApiError, 500);
       }
@@ -72,7 +75,8 @@ async function readBody(req: Request): Promise<unknown> {
 
 export function startServer(options: AppOptions): Server<undefined> {
   const store = new ProgressStore(options.progressPath);
-  const backup = new ProgressBackup(projectRoot, options.progressPath);
+  const backup = new ProgressBackup(projectRoot, options.progressPath, options.progressPath === null ? undefined : options.dataDir);
+  const editor = new ContentEditor(options.dataDir);
   const content = () => loadContent(options.dataDir);
 
   function requireSession(id: string): StoredSession {
@@ -93,10 +97,20 @@ export function startServer(options: AppOptions): Server<undefined> {
     routes: {
       "/api/health": { GET: () => json({ ok: true }) },
 
+      "/api/content/editor": {
+        GET: handle(async () => editor.read()),
+        POST: handle(async (req) => {
+          if (req.headers.get("X-Language-Tutor-Edit") !== "1") throw new HttpError(403, "Use the app's content editor.");
+          const parsed = ContentEditSchema.safeParse(await readBody(req));
+          if (!parsed.success) throw new HttpError(400, "Invalid content edit", parsed.error.issues.map((i) => i.message));
+          return editor.edit(parsed.data);
+        }),
+      },
+
       "/api/progress/backup": {
         POST: handle(async (req) => {
           // Cross-origin forms cannot send this header; cross-origin fetch requires a CORS preflight.
-          if (req.headers.get("X-Language-Tutor-Backup") !== "1") throw new HttpError(403, "Use the app's Back up progress button.");
+          if (req.headers.get("X-Language-Tutor-Backup") !== "1") throw new HttpError(403, "Use the app's Back up changes button.");
           return backup.backup();
         }),
       },

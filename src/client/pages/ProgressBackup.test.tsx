@@ -10,8 +10,8 @@ describe("ProgressBackup", () => {
       body: { commit: "abc", remote: "origin", branch: "main", createdCommit: true },
     }) });
     render(<ProgressBackup />);
-    await userEvent.click(screen.getByRole("button", { name: "Back up progress" }));
-    expect((await screen.findByRole("status")).textContent).toBe("Progress backed up to origin/main.");
+    await userEvent.click(screen.getByRole("button", { name: "Back up changes" }));
+    expect((await screen.findByRole("status")).textContent).toBe("Changes backed up to origin/main.");
     expect(calls).toHaveLength(1);
     expect(calls[0]!.method).toBe("POST");
   });
@@ -21,25 +21,25 @@ describe("ProgressBackup", () => {
     let calls = 0;
     globalThis.fetch = (() => { calls++; return new Promise<Response>((resolve) => { finish = resolve; }); }) as unknown as typeof fetch;
     render(<ProgressBackup />);
-    await userEvent.click(screen.getByRole("button", { name: "Back up progress" }));
+    await userEvent.click(screen.getByRole("button", { name: "Back up changes" }));
     const busy = screen.getByRole("button", { name: "Backing up…" });
     expect(busy.hasAttribute("disabled")).toBe(true);
     await userEvent.click(busy);
     expect(calls).toBe(1);
     await act(async () => finish(Response.json({ remote: "origin", branch: "main", createdCommit: false, commit: "abc" })));
-    expect(screen.getByRole("button", { name: "Back up progress" }).hasAttribute("disabled")).toBe(false);
+    expect(screen.getByRole("button", { name: "Back up changes" }).hasAttribute("disabled")).toBe(false);
   });
 
   test("shows failure and permits retry", async () => {
     let attempts = 0;
     mockApi({ "POST /api/progress/backup": () => ++attempts === 1
-      ? { status: 502, body: { error: "Progress is committed locally, but pushing failed." } }
+      ? { status: 502, body: { error: "Changes are committed locally, but pushing failed." } }
       : { body: { remote: "origin", branch: "main", commit: "abc", createdCommit: false } },
     });
     render(<ProgressBackup />);
-    await userEvent.click(screen.getByRole("button", { name: "Back up progress" }));
+    await userEvent.click(screen.getByRole("button", { name: "Back up changes" }));
     expect((await screen.findByRole("alert")).textContent).toContain("pushing failed");
-    await userEvent.click(screen.getByRole("button", { name: "Back up progress" }));
+    await userEvent.click(screen.getByRole("button", { name: "Back up changes" }));
     expect(await screen.findByRole("status")).toBeTruthy();
     expect(screen.queryByRole("alert")).toBeNull();
   });

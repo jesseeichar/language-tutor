@@ -1,5 +1,5 @@
-import { closeSync, fsyncSync, mkdirSync, openSync, readFileSync, renameSync, unlinkSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
+import { readFileSync } from "node:fs";
+import { replaceFile } from "./atomic-file";
 import { emptyProgress, parseProgress, type ProgressData } from "./progress-schema";
 
 function read(path: string): string | null {
@@ -40,25 +40,7 @@ export class ProgressFile {
     if (this.path === null) return;
     this.checkUnchanged();
     const text = `${JSON.stringify(data, null, 2)}\n`;
-    mkdirSync(dirname(this.path), { recursive: true });
-    const temporary = `${this.path}.${crypto.randomUUID()}.tmp`;
-    const fd = openSync(temporary, "wx", 0o600);
-    let closed = false;
-    try {
-      writeFileSync(fd, text, "utf8");
-      fsyncSync(fd);
-      closeSync(fd);
-      closed = true;
-      this.checkUnchanged();
-      renameSync(temporary, this.path);
-      this.previous = text;
-    } finally {
-      if (!closed) closeSync(fd);
-      try {
-        unlinkSync(temporary);
-      } catch (error) {
-        if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
-      }
-    }
+    replaceFile(this.path, text, () => this.checkUnchanged());
+    this.previous = text;
   }
 }

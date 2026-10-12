@@ -1,9 +1,11 @@
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { ProgressBackup } from "./progress-backup";
 import { emptyProgress } from "./progress-schema";
+import { FIXTURE_DATA_DIR } from "../../tests/support/fixtures";
+import { ContentEditor } from "./content-editor";
 
 let dir: string;
 let repo: string;
@@ -42,6 +44,26 @@ beforeEach(() => {
 afterEach(() => rmSync(dir, { recursive: true, force: true }));
 
 describe("progress Git backup", () => {
+  test("backs up edited categories and questions before any study progress exists", async () => {
+    const dataDir = join(repo, "data");
+    rmSync(progress);
+    cpSync(FIXTURE_DATA_DIR, dataDir, { recursive: true });
+    git(repo, "add", "data");
+    git(repo, "commit", "-m", "Question content");
+    const editor = new ContentEditor(dataDir);
+    let data = await editor.read();
+    data = await editor.edit({ revision: data.revision, change: { kind: "create-category", category: { label: "Review", group: "Custom" } } });
+    const category = data.categories.at(-1)!;
+    await editor.edit({ revision: data.revision, change: { kind: "assign-categories", modeId: "flashcards", questionId: "fc-zuerst", categoryIds: [category.id] } });
+    writeFileSync(join(repo, "code.txt"), "unrelated staged work\n");
+    git(repo, "add", "code.txt");
+    const result = await new ProgressBackup(repo, progress, dataDir).backup();
+    expect(git(repo, "diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD").split("\n")).toEqual(["data/categories.json", "data/questions/flashcards.json"]);
+    expect(git(remote, "show", "main:data/categories.json")).toContain(category.id);
+    expect(git(remote, "show", "main:data/questions/flashcards.json")).toContain(category.id);
+    expect(git(repo, "show", ":code.txt")).toBe("unrelated staged work");
+    expect(result.createdCommit).toBe(true);
+  });
   test("commits and pushes only progress while preserving staged and unstaged work", async () => {
     writeFileSync(join(repo, "code.txt"), "staged code\n");
     git(repo, "add", "code.txt");
@@ -72,7 +94,7 @@ describe("progress Git backup", () => {
   test("keeps a local commit after push rejection and retries without another commit", async () => {
     const hook = join(remote, "hooks", "pre-receive");
     writeFileSync(hook, "#!/bin/sh\nexit 1\n", { mode: 0o755 });
-    await expect(backup.backup()).rejects.toThrow("Progress is committed locally, but pushing failed");
+    await expect(backup.backup()).rejects.toThrow("Changes are committed locally, but pushing failed");
     const commit = git(repo, "rev-parse", "HEAD");
     rmSync(hook);
     const result = await backup.backup();

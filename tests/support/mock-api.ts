@@ -1,5 +1,5 @@
 /** Replaces fetch with canned API responses for client tests. */
-import type { CategoryCount, CreateSessionResponse, FlashcardQuestion, ModeSummary, SessionSummary } from "../../src/shared";
+import type { CategoryCount, CreateSessionResponse, EditorSnapshot, FlashcardQuestion, ModeSummary, SessionSummary } from "../../src/shared";
 
 export interface Call {
   method: string;
@@ -73,3 +73,10 @@ export const summary = (answered: number): SessionSummary => ({
   pointsAwarded: 0,
   pointsPossible: 0,
 });
+
+export const editorSnapshot: EditorSnapshot = {
+  revision: "revision-1",
+  categories: [{ id: "time", label: "Time", group: "Vocabulary" }, { id: "review", label: "Review", group: "Custom" }],
+  questions: [{ id: "q1", modeId: "flashcards", modeTitle: "Flashcards", preview: "zuerst — first", categories: ["time"] }],
+  usage: { time: { questions: 1, words: 1, topics: 0, children: 0 }, review: { questions: 0, words: 0, topics: 0, children: 0 } },
+};

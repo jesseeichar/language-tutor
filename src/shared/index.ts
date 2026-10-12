@@ -22,7 +22,8 @@ export {
   type Direction,
   type DirectionChoice,
 } from "./mode";
-export { expandCategories, matchesCategories } from "./categories";
+export { expandCategories, matchesCategories, categoryProblems } from "./categories";
+export { ContentEditSchema, type ContentEdit, type EditorSnapshot } from "./editor";
 export { getMode, modes } from "./modes/registry";
 export { cardSides, type FlashcardQuestion, type FlashcardResponse } from "./modes/flashcards";
 export {
