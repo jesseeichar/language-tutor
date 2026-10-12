@@ -6,9 +6,8 @@ import type { Server } from "bun";
 import {
   CreateSessionRequestSchema,
   SubmitAnswerRequestSchema,
-  expandCategories,
   getMode,
-  matchesCategories,
+  isDirectionalQuestion,
   modes,
   pointsFor,
   type ApiError,
@@ -20,6 +19,7 @@ import {
 import { ContentError, loadContent } from "./content";
 import { openDatabase, ProgressStore, type StoredSession } from "./db";
 import { selectQuestions } from "./selection";
+import { assignDirections, countByCategory, filterPool } from "./session-plan";
 
 export interface AppOptions {
   dataDir: string;
@@ -88,12 +88,14 @@ export function startServer(options: AppOptions): Server<undefined> {
           const c = await content();
           return modes.map((mode) => {
             const questions = c.questions.get(mode.id) ?? [];
+            const counts = countByCategory(questions, c.categories);
             const categories = c.categories
-              .map((cat) => {
-                const expanded = expandCategories([cat.id], c.categories);
-                return { ...cat, count: questions.filter((q) => matchesCategories(q.categories, expanded)).length };
-              })
+              .map((cat) => ({ ...cat, count: counts.get(cat.id) ?? 0 }))
               .filter((cat) => cat.count > 0);
+            const questionTypes = (c.questionTypes.get(mode.id) ?? []).map((t) => ({
+              ...t,
+              count: questions.filter((q) => q.type === t.id).length,
+            }));
             return {
               id: mode.id,
               title: mode.title,
@@ -102,6 +104,8 @@ export function startServer(options: AppOptions): Server<undefined> {
               defaultSessionSize: mode.defaultSessionSize,
               questionCount: questions.length,
               categories,
+              questionTypes,
+              directional: questions.some((q) => isDirectionalQuestion(mode, q)),
             };
           });
         }),
@@ -111,14 +115,13 @@ export function startServer(options: AppOptions): Server<undefined> {
         POST: handle(async (req): Promise<CreateSessionResponse> => {
           const parsed = CreateSessionRequestSchema.safeParse(await readBody(req));
           if (!parsed.success) throw new HttpError(400, "Invalid request", parsed.error.issues.map((i) => i.message));
-          const { modeId, categoryIds } = parsed.data;
+          const { modeId, categoryIds, questionTypes, direction = "random" } = parsed.data;
           const mode = getMode(modeId);
           if (!mode) throw new HttpError(404, `Unknown mode ${modeId}`);
 
           const c = await content();
-          const expanded = expandCategories(categoryIds, c.categories);
-          const pool = (c.questions.get(mode.id) ?? []).filter((q) => matchesCategories(q.categories, expanded));
-          if (pool.length === 0) throw new HttpError(400, "No questions match the selected categories");
+          const pool = filterPool(c.questions.get(mode.id) ?? [], c.categories, { categoryIds, questionTypes });
+          if (pool.length === 0) throw new HttpError(400, "No questions match the selected categories and question types");
 
           const questions = selectQuestions({
             questions: pool,
@@ -126,13 +129,15 @@ export function startServer(options: AppOptions): Server<undefined> {
             history: store.questionHistory(mode.id),
             strengths: store.allStrengths(),
           });
+          const directions = assignDirections(questions, (q) => isDirectionalQuestion(mode, q), direction);
           const session = store.createSession({
             modeId: mode.id,
             graded: mode.graded,
             categoryIds,
             questionIds: questions.map((q) => q.id),
+            directions,
           });
-          return { session: sessionInfo(session), questions };
+          return { session: sessionInfo(session), questions, directions };
         }),
       },
 
@@ -167,6 +172,7 @@ export function startServer(options: AppOptions): Server<undefined> {
             correct: grade ? grade.correct : null,
             pointsAwarded,
             pointsPossible,
+            direction: session.directions[questionId] ?? null,
             refs: question.refs,
           });
           return { grade, pointsAwarded, pointsPossible };

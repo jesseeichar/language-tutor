@@ -52,10 +52,23 @@ export const RefsSchema = z.object({
 });
 export type Refs = z.infer<typeof RefsSchema>;
 
+/**
+ * A kind of question within a mode, e.g. "translation" or "fill-in-the-blank".
+ * Declared in the mode's question file; the learner can filter sessions by it.
+ */
+export const QuestionTypeSchema = z.object({
+  id: IdSchema,
+  label: z.string().min(1),
+  description: z.string().optional(),
+});
+export type QuestionType = z.infer<typeof QuestionTypeSchema>;
+
 /** Fields every question has, whatever its mode. Mode schemas extend this. */
 export const QuestionBaseSchema = z.object({
   id: IdSchema,
   categories: z.array(IdSchema).min(1),
+  /** One of the types declared in the question file. Required when the file declares types. */
+  type: IdSchema.optional(),
   refs: RefsSchema.default({ words: [], topics: [] }),
   /** Overrides the mode's default points. Must be 0 (or absent) in ungraded modes. */
   points: z.number().min(0).optional(),
@@ -64,5 +77,7 @@ export type QuestionBase = z.infer<typeof QuestionBaseSchema>;
 
 /** A data/questions/<modeId>.json file. Questions are validated by the mode's own schema. */
 export const QuestionFileSchema = z.object({
+  /** Optional. When present, every question must name one of these in its `type`. */
+  types: z.array(QuestionTypeSchema).default([]),
   questions: z.array(z.unknown()),
 });

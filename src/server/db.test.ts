@@ -1,5 +1,9 @@
 import { beforeEach, describe, expect, test } from "bun:test";
-import { openDatabase, ProgressStore } from "./db";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { Database } from "bun:sqlite";
+import { MIGRATIONS, openDatabase, ProgressStore } from "./db";
 
 let store: ProgressStore;
 beforeEach(() => {
@@ -7,12 +11,12 @@ beforeEach(() => {
 });
 
 const newSession = (graded = true) =>
-  store.createSession({ modeId: "m", graded, categoryIds: ["c"], questionIds: ["q1", "q2"] });
+  store.createSession({ modeId: "m", graded, categoryIds: ["c"], questionIds: ["q1", "q2"], directions: { q1: "en-de" } });
 
 const attempt = (sessionId: string, questionId: string, correct: boolean | null, words: string[] = ["w"]) =>
   store.recordAttempt({
     sessionId, modeId: "m", questionId, response: { a: 1 }, correct,
-    pointsAwarded: correct ? 1 : 0, pointsPossible: correct === null ? 0 : 1, refs: { words, topics: [] },
+    pointsAwarded: correct ? 1 : 0, pointsPossible: correct === null ? 0 : 1, direction: null, refs: { words, topics: [] },
   });
 
 describe("ProgressStore", () => {
@@ -20,6 +24,38 @@ describe("ProgressStore", () => {
     const s = newSession();
     expect(store.getSession(s.id)).toEqual(s);
     expect(store.getSession("missing")).toBeNull();
+  });
+
+  test("stores the direction of each directional question", () => {
+    expect(store.getSession(newSession().id)!.directions).toEqual({ q1: "en-de" });
+  });
+
+  test("records the direction an attempt was asked in", () => {
+    const db = openDatabase(":memory:");
+    const s = new ProgressStore(db);
+    const session = s.createSession({ modeId: "m", graded: false, categoryIds: ["c"], questionIds: ["q1"], directions: { q1: "de-en" } });
+    s.recordAttempt({
+      sessionId: session.id, modeId: "m", questionId: "q1", response: {}, correct: null,
+      pointsAwarded: 0, pointsPossible: 0, direction: "de-en", refs: { words: [], topics: [] },
+    });
+    expect(db.query("SELECT direction FROM attempts").get()).toEqual({ direction: "de-en" });
+  });
+
+  test("upgrades a database created before directions existed", () => {
+    const dir = mkdtempSync(join(tmpdir(), "lt-db-"));
+    const path = join(dir, "old.sqlite");
+    const old = new Database(path);
+    old.run(MIGRATIONS[0]!);
+    old.run("PRAGMA user_version = 1");
+    old.run(`INSERT INTO sessions (id, mode_id, graded, category_ids, question_ids, started_at)
+             VALUES ('old', 'm', 0, '["c"]', '["q1"]', '2026-10-01T00:00:00Z')`);
+    old.close();
+    try {
+      const upgraded = new ProgressStore(openDatabase(path));
+      expect(upgraded.getSession("old")!.directions).toEqual({});
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
   });
 
   test("finishing sets finishedAt once", () => {

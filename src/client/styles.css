@@ -63,6 +63,7 @@ kbd { font-size: 0.75rem; opacity: 0.7; margin-left: 6px; }
 
 .category-group { border: 1px solid var(--border); border-radius: var(--radius); margin: 0 0 12px; padding: 8px 12px; }
 .category-group legend { font-weight: 600; padding: 0 4px; }
+.category-group > p { margin: 6px 0 2px; }
 .category { display: flex; gap: 8px; align-items: center; padding: 3px 0; }
 .category .count { margin-left: auto; color: var(--muted); font-size: 0.85rem; }
 .count-input { display: flex; gap: 12px; align-items: center; margin-top: 16px; }
@@ -80,6 +81,11 @@ progress { width: 100%; height: 6px; margin-bottom: 24px; accent-color: var(--ac
 .flashcard hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
 .flashcard-side-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 8px; }
 .flashcard-front { font-size: 1.3rem; }
+.flashcard-direction { text-transform: none; letter-spacing: normal; }
+.question-type {
+  display: inline-block; font-size: 0.8rem; color: var(--muted); border: 1px solid var(--border);
+  border-radius: 999px; padding: 2px 10px; margin-bottom: 10px;
+}
 .flashcard-back { font-size: 1.15rem; }
 .flashcard-notes { margin-top: 12px; color: var(--muted); }
 

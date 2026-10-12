@@ -1,10 +1,15 @@
 /** Request and response shapes for the HTTP API, shared by server and client. */
 import { z } from "zod";
-import type { Category, QuestionBase } from "./content";
-import type { GradeResult } from "./mode";
+import type { Category, QuestionBase, QuestionType } from "./content";
+import { DirectionChoiceSchema, type Direction, type GradeResult } from "./mode";
 
 export interface CategoryCount extends Category {
   /** Questions in this mode tagged with this category or one of its children. */
+  count: number;
+}
+
+export interface QuestionTypeCount extends QuestionType {
+  /** Questions of this type in the mode, across all categories. */
   count: number;
 }
 
@@ -17,12 +22,20 @@ export interface ModeSummary {
   questionCount: number;
   /** Only categories that have at least one question in this mode. */
   categories: CategoryCount[];
+  /** Types declared in the mode's question file. Empty when the file declares none. */
+  questionTypes: QuestionTypeCount[];
+  /** True when at least one question can be shown in either language first. */
+  directional: boolean;
 }
 
 export const CreateSessionRequestSchema = z.object({
   modeId: z.string().min(1),
   categoryIds: z.array(z.string().min(1)).min(1, "select at least one category"),
   count: z.number().int().min(1).max(500).optional(),
+  /** Restrict to these question types. Omit for all types. */
+  questionTypes: z.array(z.string().min(1)).min(1, "select at least one question type").optional(),
+  /** Applies to directional questions only. Defaults to random. */
+  direction: DirectionChoiceSchema.optional(),
 });
 export type CreateSessionRequest = z.infer<typeof CreateSessionRequestSchema>;
 
@@ -37,6 +50,8 @@ export interface SessionInfo {
 export interface CreateSessionResponse {
   session: SessionInfo;
   questions: QuestionBase[];
+  /** The direction chosen for each directional question, keyed by question id. */
+  directions: Record<string, Direction>;
 }
 
 export const SubmitAnswerRequestSchema = z.object({

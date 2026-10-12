@@ -25,6 +25,17 @@ describe("SessionRunner", () => {
     expect(onFinished).toHaveBeenCalledWith(summary(2));
   });
 
+  test("passes each card its direction and shows the question type", async () => {
+    mockApi({ "POST /api/sessions/s1/answers": ok });
+    render(<SessionRunner mode={flashcardMode} data={sessionResponse} onFinished={() => {}} />);
+    expect(screen.getByText("Translation")).toBeTruthy();
+    expect(screen.getByText("first")).toBeTruthy(); // c1 is asked English first
+    expect(screen.getByText(/English → German/)).toBeTruthy();
+    await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+    await userEvent.click(screen.getByRole("button", { name: /Next/ }));
+    expect(screen.getByText("Fill in the blank")).toBeTruthy();
+  });
+
   test("End session finishes early", async () => {
     mockApi({ "POST /api/sessions/s1/finish": () => ({ body: summary(0) }) });
     const onFinished = mock();

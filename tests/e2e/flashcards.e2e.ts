@@ -34,9 +34,9 @@ test("study a session across several categories", async ({ page }) => {
   await page.getByLabel("Cases").check();
   await page.getByRole("button", { name: "Start" }).click();
 
-  await expect(page.getByText("Question", { exact: true })).toBeVisible();
+  await expect(page.locator(".flashcard-side-label")).toHaveText(/^Question/);
   await page.getByRole("button", { name: /Flip/ }).click();
-  await expect(page.getByText("Answer", { exact: true })).toBeVisible();
+  await expect(page.locator(".flashcard-side-label")).toHaveText(/^Answer/);
   await page.getByRole("button", { name: /Next/ }).click();
   await page.getByRole("button", { name: /Flip/ }).click();
   await page.getByRole("button", { name: /Finish/ }).click();
@@ -56,6 +56,7 @@ test("a parent category includes its children", async ({ page }) => {
 test("keyboard: Space flips, arrow moves on", async ({ page }) => {
   await openFlashcards(page);
   await page.getByLabel("Contrast").check();
+  await page.getByLabel("German → English").check();
   await page.getByRole("button", { name: "Start" }).click();
   await expect(page.getByText("jedoch")).toBeVisible();
   await page.keyboard.press("Space");
@@ -101,4 +102,42 @@ test("progress is stored: a card already studied gives way to a fresh one", asyn
   await page.reload();
   const second = await studyOneFreshCard();
   expect(new Set([first, second])).toEqual(new Set(["Fresh card A", "Fresh card B"]));
+});
+
+test("question types: only the selected types are studied", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Connectors").check();
+  await page.getByLabel("Cases").check();
+  await page.getByLabel(/^Translation/).uncheck();
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.getByText("1 / 1")).toBeVisible();
+  await expect(page.getByText("Fill in the blank", { exact: true })).toBeVisible();
+  await expect(page.getByText("Ich lege das Buch auf ___ Tisch.")).toBeVisible();
+});
+
+test("unchecking every question type blocks Start", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Time").check();
+  await page.getByLabel(/^Translation/).uncheck();
+  await page.getByLabel(/^Fill in the blank/).uncheck();
+  await expect(page.getByText("Select at least one question type.")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Start" })).toBeDisabled();
+});
+
+test("English → German shows the English side first", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Contrast").check();
+  await page.getByLabel("English → German").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.locator(".flashcard-front")).toHaveText("however");
+  await page.getByRole("button", { name: /Flip/ }).click();
+  await expect(page.locator(".flashcard-back")).toHaveText("jedoch");
+});
+
+test("fixed cards look the same whatever the direction", async ({ page }) => {
+  await openFlashcards(page);
+  await page.getByLabel("Cases").check();
+  await page.getByLabel("English → German").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.locator(".flashcard-front")).toHaveText("Ich lege das Buch auf ___ Tisch.");
 });

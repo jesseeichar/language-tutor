@@ -1,8 +1,10 @@
 import type { ComponentType } from "react";
-import type { QuestionBase, SubmitAnswerResponse } from "../../shared";
+import type { Direction, QuestionBase, SubmitAnswerResponse } from "../../shared";
 
 export interface QuestionViewProps<Q extends QuestionBase = QuestionBase, R = unknown> {
   question: Q;
+  /** Which language to show first, for directional questions. null for all others. */
+  direction: Direction | null;
   /** Records the learner's response on the server. Call at most once per question. */
   submit: (response: R) => Promise<SubmitAnswerResponse>;
   /** Moves on to the next question, or to the summary after the last one. */

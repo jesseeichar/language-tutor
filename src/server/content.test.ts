@@ -29,6 +29,7 @@ describe("loadContent", () => {
     expect(c.categories).toHaveLength(6);
     expect(c.words.map((w) => w.id)).toContain("zuerst");
     expect(c.questions.get("flashcards")).toHaveLength(4);
+    expect(c.questionTypes.get("flashcards")!.map((t) => t.id)).toEqual(["translation", "fill-in-the-blank"]);
   });
 
   test("reports a missing file", async () => {
@@ -61,7 +62,28 @@ describe("loadContent", () => {
   test("reports schema errors with the question id", async () => {
     const dir = brokenCopy();
     writeJson(dir, "questions/flashcards.json", { questions: [{ id: "x", categories: ["vocab-time"], front: "f" }] });
-    expect((await problemsFor(dir)).some((p) => p.startsWith("questions/flashcards.json [x]: back"))).toBe(true);
+    expect((await problemsFor(dir)).some((p) => p.startsWith("questions/flashcards.json [x]:") && p.includes("de + en"))).toBe(true);
+  });
+
+  test("questions must use a declared type", async () => {
+    const dir = brokenCopy();
+    writeJson(dir, "questions/flashcards.json", {
+      types: [{ id: "translation", label: "T" }, { id: "translation", label: "T again" }],
+      questions: [
+        { id: "untyped", categories: ["vocab-time"], de: "a", en: "b" },
+        { id: "odd", type: "riddle", categories: ["vocab-time"], de: "a", en: "b" },
+      ],
+    });
+    const problems = await problemsFor(dir);
+    expect(problems).toContain('questions/flashcards.json: duplicate question type "translation"');
+    expect(problems).toContain('questions/flashcards.json: "untyped" needs a type (one of: translation)');
+    expect(problems).toContain('questions/flashcards.json: "odd" has unknown type "riddle"');
+  });
+
+  test("question types are optional for a mode", async () => {
+    const dir = brokenCopy();
+    writeJson(dir, "questions/flashcards.json", { questions: [{ id: "x", categories: ["vocab-time"], de: "a", en: "b" }] });
+    expect((await loadContent(dir)).questionTypes.get("flashcards")).toEqual([]);
   });
 
   test("rejects points in an ungraded mode", async () => {

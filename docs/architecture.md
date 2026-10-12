@@ -54,7 +54,7 @@ Interface budgets:
 
 | Module | Budget | Reason |
 | --- | --- | --- |
-| `src/shared` | 40 | The contract between client and server; it is wide by nature. |
+| `src/shared` | 40 | The contract between client and server; it is wide by nature. Export only what other modules use. |
 | `src/server` | 8 | Start the server, load config, load content. |
 | `src/client/modes` | 2 | Look up a view; list views. |
 | `src/client/modes/<mode>` | 1 | The client mode object. |
@@ -80,7 +80,8 @@ question is worth 0 points and strength scores do not change.
   selecting a parent includes all its descendants.
 - `vocabulary.json`, `grammar-topics.json`: canonical words and topics with stable ids. Generated from
   the notes by `bun run import:notes`.
-- `questions/<modeId>.json`: one file per mode, `{ "questions": [...] }`.
+- `questions/<modeId>.json`: one file per mode, `{ "types": [...], "questions": [...] }`. `types` is
+  optional. When present, each question names one of them in `type`, and sessions can be filtered by type.
 
 The server re-reads `data/` on every request that needs it, so edits apply immediately. Every load is
 validated: schemas, unique ids, and references to categories, words and topics. Errors are collected
@@ -89,8 +90,9 @@ and reported together, by the API and by `bun run validate`.
 ## Session lifecycle
 
 1. `GET /api/modes` lists modes, with question counts per category.
-2. `POST /api/sessions` with a mode, one or more categories and a count. The server filters questions by
-   category, picks a selection, stores the session and returns the questions.
+2. `POST /api/sessions` with a mode, one or more categories, a count, and optionally question types and
+   a direction. The server filters questions by category and type, picks a selection, fixes a direction
+   for each directional question, stores the session and returns the questions with their directions.
 3. `POST /api/sessions/:id/answers` once per question. The server validates the response with the mode's
    schema, grades it if the mode is graded, records the attempt and updates strengths.
 4. `POST /api/sessions/:id/finish` closes the session and returns a summary.
@@ -98,6 +100,17 @@ and reported together, by the API and by `bun run validate`.
 Questions are sent to the browser with their answers. This is a single-user local app, so hiding
 answers is not worth the complexity. Grading still happens on the server so that scores come from one
 place.
+
+## Directions
+
+A mode can implement `isDirectional(question)` to say that a question can be asked German first or
+English first. For flashcards, cards with `de` + `en` are directional and cards with `front` + `back`
+are not. The learner picks German to English, English to German, or random.
+
+The server resolves the choice when the session starts, one direction per directional question, in
+`src/server/session-plan.ts`. Directions are stored with the session and with every answer, so a
+session can be replayed exactly and future quizzes can track strength per direction. Views receive
+the direction as a prop and never decide it themselves.
 
 ## Selection
 
@@ -116,8 +129,8 @@ one subtracts 2, so a lucky guess counts for less than a real miss. Every word a
 
 ## Storage
 
-`bun:sqlite` at `storage/progress.sqlite`. Tables: `sessions`, `attempts` (one row per answered
-question), `strengths`. Schema changes are append-only migrations in `src/server/db.ts`, tracked with
+`bun:sqlite` at `storage/progress.sqlite`. Tables: `sessions` (including the direction of each
+directional question), `attempts` (one row per answered question, with its direction), `strengths`. Schema changes are append-only migrations in `src/server/db.ts`, tracked with
 `PRAGMA user_version`.
 
 ## Testing layers

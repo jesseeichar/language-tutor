@@ -1,8 +1,12 @@
 {
+  "types": [
+    { "id": "translation", "label": "Translation" },
+    { "id": "fill-in-the-blank", "label": "Fill in the blank" }
+  ],
   "questions": [
-    { "id": "fc-zuerst", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "front": "zuerst", "back": "first" },
-    { "id": "fc-jedoch", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "front": "jedoch", "back": "however", "notes": "Inversion follows." },
-    { "id": "fc-lohn", "categories": ["vocab-work"], "refs": { "words": ["lohn"] }, "front": "der Lohn", "back": "wage" },
-    { "id": "fc-kasus", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "an + ? (movement)", "back": "Akkusativ" }
+    { "id": "fc-zuerst", "type": "translation", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "de": "zuerst", "en": "first" },
+    { "id": "fc-jedoch", "type": "translation", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "de": "jedoch", "en": "however", "notes": "Inversion follows." },
+    { "id": "fc-lohn", "type": "translation", "categories": ["vocab-work"], "refs": { "words": ["lohn"] }, "de": "der Lohn", "en": "wage" },
+    { "id": "fc-kasus", "type": "fill-in-the-blank", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "Ich lege das Buch auf ___ Tisch.", "back": "den (Akkusativ: movement)" }
   ]
 }

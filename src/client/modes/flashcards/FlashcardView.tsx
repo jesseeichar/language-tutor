@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { FlashcardQuestion, FlashcardResponse } from "../../../shared";
+import { cardSides, type FlashcardQuestion, type FlashcardResponse } from "../../../shared";
+import { DIRECTION_LABELS } from "../../directions";
 import type { QuestionViewProps } from "../types";
 
 /** Front first; click, Space or Enter flips. After flipping, Enter or → moves on. */
-export function FlashcardView({ question, submit, next, isLast }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
+export function FlashcardView({ question, direction, submit, next, isLast }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
+  const sides = cardSides(question, direction);
   const [flipped, setFlipped] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const submitted = useRef(false);
@@ -39,12 +41,15 @@ export function FlashcardView({ question, submit, next, isLast }: QuestionViewPr
         onClick={flip}
         aria-label={flipped ? "Card answer" : "Show answer"}
       >
-        <div className="flashcard-side-label">{flipped ? "Answer" : "Question"}</div>
-        <div className="flashcard-front">{question.front}</div>
+        <div className="flashcard-side-label">
+          {flipped ? "Answer" : "Question"}
+          {sides.direction && <span className="flashcard-direction"> · {DIRECTION_LABELS[sides.direction]}</span>}
+        </div>
+        <div className="flashcard-front">{sides.front}</div>
         {flipped && (
           <>
             <hr />
-            <div className="flashcard-back">{question.back}</div>
+            <div className="flashcard-back">{sides.back}</div>
             {question.notes && <div className="flashcard-notes">{question.notes}</div>}
           </>
         )}

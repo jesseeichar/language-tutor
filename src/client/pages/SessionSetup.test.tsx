@@ -25,7 +25,13 @@ describe("SessionSetup", () => {
     await userEvent.clear(count);
     await userEvent.type(count, "2");
     await userEvent.click(screen.getByRole("button", { name: "Start" }));
-    expect(calls[0]!.body).toEqual({ modeId: "flashcards", categoryIds: ["vocab-time", "grammar-cases"], count: 2 });
+    expect(calls[0]!.body).toEqual({
+      modeId: "flashcards",
+      categoryIds: ["vocab-time", "grammar-cases"],
+      count: 2,
+      questionTypes: ["translation", "fill-in-the-blank"],
+      direction: "random",
+    });
     expect(onStarted).toHaveBeenCalledWith(sessionResponse);
   });
 
@@ -59,6 +65,39 @@ describe("SessionSetup", () => {
     first.unmount();
     setup();
     expect((screen.getByLabelText(/Label grammar-cases/) as HTMLInputElement).checked).toBe(true);
+  });
+
+  test("question types: all selected by default, narrowable, at least one required", async () => {
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+    setup();
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    expect((screen.getByLabelText(/^Translation/) as HTMLInputElement).checked).toBe(true);
+    await userEvent.click(screen.getByLabelText(/^Translation/));
+    await userEvent.click(screen.getByLabelText(/^Fill in the blank/));
+    expect(screen.getByText("Select at least one question type.")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Start" }).hasAttribute("disabled")).toBe(true);
+    await userEvent.click(screen.getByLabelText(/^Fill in the blank/));
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((calls[0]!.body as { questionTypes: string[] }).questionTypes).toEqual(["fill-in-the-blank"]);
+  });
+
+  test("sends the chosen direction and remembers it", async () => {
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }) });
+    const first = setup();
+    await userEvent.click(screen.getByLabelText(/Label vocab-time/));
+    await userEvent.click(screen.getByLabelText("English → German"));
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((calls[0]!.body as { direction: string }).direction).toBe("en-de");
+    first.unmount();
+    setup();
+    expect((screen.getByLabelText("English → German") as HTMLInputElement).checked).toBe(true);
+  });
+
+  test("hides the type filter and direction when a mode has no use for them", () => {
+    const plain = { ...flashcardMode, questionTypes: [flashcardMode.questionTypes[0]!], directional: false };
+    render(<SessionSetup mode={plain} onBack={() => {}} onStarted={() => {}} />);
+    expect(screen.queryByText("Question types")).toBeNull();
+    expect(screen.queryByText("Direction")).toBeNull();
   });
 
   test("shows server errors and lets the learner retry", async () => {
