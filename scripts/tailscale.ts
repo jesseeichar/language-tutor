@@ -27,6 +27,15 @@ function hasPort(config: unknown, port: string): boolean {
   return Object.values(node).some(value => typeof value === "object" && hasPort(value, port));
 }
 
+async function stopChildren(children: Iterable<Child>) {
+  const active = [...children];
+  for (const child of active) child.kill("SIGINT");
+  await Promise.all(active.map(async child => {
+    const timer = setTimeout(() => child.kill("SIGKILL"), 3000);
+    try { await child.exited; } finally { clearTimeout(timer); }
+  }));
+}
+
 /** Foreground Serve owns an ephemeral registration; stopping that child removes only this app. */
 export async function shareApp(config: ServerConfig, signal: AbortSignal, port = 443, deps: Runtime = runtime) {
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("LT_TAILSCALE_PORT must be a port from 1 to 65535.");
@@ -67,11 +76,7 @@ export async function shareApp(config: ServerConfig, signal: AbortSignal, port =
   } finally {
     signal.removeEventListener("abort", onAbort);
     // Stop publishing before stopping the server. Do not reset other Serve routes or log out the device.
-    for (const child of children) child.kill("SIGINT");
-    await Promise.all([...children].map(async child => {
-      const timer = setTimeout(() => child.kill("SIGKILL"), 3000);
-      try { await child.exited; } finally { clearTimeout(timer); }
-    }));
+    await stopChildren(children);
     server?.stop(true);
   }
 }
