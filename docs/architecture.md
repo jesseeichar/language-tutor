@@ -72,6 +72,11 @@ A mode is defined in two halves with the same `id`:
 Study tools are ungraded modes. Their answers are recorded, so selection knows what was seen, but every
 question is worth 0 points and strength scores do not change.
 
+Client modes can opt into backward navigation with `allowBack`. The runner supplies `previous`
+when a previous question exists and caches successful submissions for revisits. Flashcards use this
+to restore revealed answers without recording another attempt. Navigation waits for pending saves;
+failed saves leave the learner on the current card with a retry. Graded modes remain forward-only.
+
 The `quiz` mode supports multiple-choice, fill-in-the-blank, and translation questions through a
 discriminated `type` schema. Its client sub-module has the same one-name interface budget as
 flashcards; no existing architecture limits are relaxed. Fill-in-the-blank answers use literal string equality; translations use the injected Jev grading service.

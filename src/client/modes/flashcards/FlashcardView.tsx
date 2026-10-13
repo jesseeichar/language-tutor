@@ -3,25 +3,35 @@ import { cardSides, type FlashcardQuestion, type FlashcardResponse } from "../..
 import { DIRECTION_LABELS } from "../../directions";
 import type { QuestionViewProps } from "../types";
 
-/** Front first; click, Space or Enter flips. After flipping, Enter or → moves on. */
-export function FlashcardView({ question, direction, submit, next, isLast }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
+/** Front first; reveal once, then review studied cards with the arrow keys. */
+export function FlashcardView({ question, direction, submit, next, previous, submission, isLast }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
   const sides = cardSides(question, direction);
-  const [flipped, setFlipped] = useState(false);
+  const [flipped, setFlipped] = useState(!!submission);
   const [error, setError] = useState<string | null>(null);
-  const submitted = useRef(false);
+  const submitted = useRef(!!submission);
 
   const flip = useCallback(() => {
     if (submitted.current) return;
     submitted.current = true;
+    setError(null);
     setFlipped(true);
     // Ungraded: this only records that the card was studied.
-    submit({ revealed: true }).catch((e: Error) => setError(e.message));
+    submit({ revealed: true }).catch((e: Error) => {
+      submitted.current = false;
+      setFlipped(false);
+      setError(e.message);
+    });
   }, [submit]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      if (!flipped && (e.key === " " || e.key === "Enter")) {
+      // Let focused buttons handle their own activation, including Previous and End session.
+      if (e.target instanceof Element && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        previous?.();
+      } else if (!flipped && (e.key === " " || e.key === "Enter")) {
         e.preventDefault();
         flip();
       } else if (flipped && (e.key === "Enter" || e.key === "ArrowRight")) {
@@ -31,7 +41,7 @@ export function FlashcardView({ question, direction, submit, next, isLast }: Que
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [flipped, flip, next]);
+  }, [flipped, flip, next, previous]);
 
   return (
     <div className="flashcard-wrap">
@@ -58,6 +68,9 @@ export function FlashcardView({ question, direction, submit, next, isLast }: Que
       {error && <p className="error">Could not record this card: {error}</p>}
 
       <div className="actions">
+        <button type="button" onClick={previous} disabled={!previous}>
+          Previous <kbd>←</kbd>
+        </button>
         {!flipped ? (
           <button type="button" className="primary" onClick={flip}>
             Flip <kbd>Space</kbd>

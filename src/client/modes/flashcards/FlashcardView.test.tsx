@@ -73,3 +73,14 @@ describe("FlashcardView", () => {
     expect(await screen.findByText(/Could not record this card: offline/)).toBeTruthy();
   });
 });
+
+test("a failed save can be retried by flipping again", async () => {
+  const submit = mock().mockRejectedValueOnce(new Error("offline")).mockResolvedValueOnce({ grade: null, pointsAwarded: 0, pointsPossible: 0 });
+  show(translation, "de-en", { submit });
+  await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+  await screen.findByText(/Could not record/);
+  await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+  expect(screen.queryByText(/Could not record/)).toBeNull();
+  expect(screen.getByRole("button", { name: "Card answer" })).toBeTruthy();
+  expect(submit).toHaveBeenCalledTimes(2);
+});

@@ -15,6 +15,10 @@ bun run dev
 
 Open http://localhost:5173.
 
+In flashcards, use **Flip** (Space) to reveal an answer, **Next** (Right Arrow) to
+advance, and **Previous** (Left Arrow) to revisit earlier cards. Studied cards keep
+their answers visible when revisited and are recorded only once per session.
+
 ## Share on Tailscale
 
 With Bun dependencies installed and this machine logged into Tailscale, run:

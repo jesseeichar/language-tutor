@@ -81,3 +81,43 @@ describe("SessionRunner", () => {
     expect(await screen.findByText("2 / 2")).toBeTruthy();
   });
 });
+
+test("flashcards go backward before revealing and restore studied cards without duplicate saves", async () => {
+  const calls = mockApi({ "POST /api/sessions/s1/answers": ok, "POST /api/sessions/s1/finish": () => ({ body: summary(2) }) });
+  render(<SessionRunner mode={flashcardMode} data={sessionResponse} onFinished={() => {}} />);
+  expect(screen.getByRole("button", { name: /Previous/ }).hasAttribute("disabled")).toBe(true);
+  await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+  await userEvent.click(screen.getByRole("button", { name: /Next/ }));
+  fireEvent.keyDown(window, { key: "ArrowLeft" });
+  await screen.findByText("1 / 2");
+  expect(screen.getByRole("button", { name: "Card answer" })).toBeTruthy();
+  await userEvent.click(screen.getByRole("button", { name: /Next/ }));
+  expect(screen.getByRole("button", { name: "Show answer" })).toBeTruthy();
+  await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+  const previous = screen.getByRole("button", { name: /Previous/ });
+  previous.focus();
+  await userEvent.keyboard("{Enter}");
+  await screen.findByText("1 / 2");
+  await userEvent.click(screen.getByRole("button", { name: /Next/ }));
+  expect(screen.getByRole("button", { name: "Card answer" })).toBeTruthy();
+  await userEvent.click(screen.getByRole("button", { name: /Finish/ }));
+  expect(calls.filter(c => c.path.endsWith("/answers"))).toHaveLength(2);
+});
+
+test("backward navigation waits for saving and ignores competing navigation", async () => {
+  let release!: (response: Response) => void;
+  const saving = new Promise<Response>(resolve => { release = resolve; });
+  const fetchMock = mock(() => Promise.resolve(Response.json(ok().body)));
+  globalThis.fetch = fetchMock as unknown as typeof fetch;
+  render(<SessionRunner mode={flashcardMode} data={sessionResponse} onFinished={() => {}} />);
+  await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+  await userEvent.click(screen.getByRole("button", { name: /Next/ }));
+  fetchMock.mockImplementation(() => saving);
+  fireEvent.keyDown(window, { key: " " });
+  fireEvent.keyDown(window, { key: "ArrowLeft" });
+  fireEvent.keyDown(window, { key: "ArrowRight" });
+  expect(screen.getByText("2 / 2")).toBeTruthy();
+  release(Response.json(ok().body));
+  await screen.findByText("1 / 2");
+  expect(fetchMock).toHaveBeenCalledTimes(2);
+});
