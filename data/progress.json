@@ -177,8 +177,4531 @@
       "repeatOf": null,
       "startedAt": "2026-10-12T09:29:10.380Z",
       "finishedAt": null
+    },
+    {
+      "id": "ee779d3e-f393-48ed-87dd-327be8be1dcf",
+      "modeId": "worksheet",
+      "graded": true,
+      "categoryIds": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "questionIds": [
+        "ablauf-01",
+        "ablauf-02",
+        "ablauf-03",
+        "ablauf-04",
+        "ablauf-05",
+        "ablauf-06",
+        "ablauf-07",
+        "ablauf-08",
+        "ablauf-09",
+        "ablauf-10"
+      ],
+      "questionPoints": {
+        "ablauf-01": 16,
+        "ablauf-02": 8,
+        "ablauf-03": 6,
+        "ablauf-04": 6,
+        "ablauf-05": 6,
+        "ablauf-06": 5,
+        "ablauf-07": 5,
+        "ablauf-08": 1,
+        "ablauf-09": 1,
+        "ablauf-10": 8
+      },
+      "directions": {},
+      "questionTypes": null,
+      "direction": null,
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:02:31.572Z",
+      "finishedAt": "2026-10-12T14:13:30.476Z"
+    },
+    {
+      "id": "9e3707ea-ef9e-43c9-9cd3-3a54cebbe75a",
+      "modeId": "worksheet",
+      "graded": true,
+      "categoryIds": [
+        "worksheet-zeitlicher-ablauf"
+      ],
+      "questionIds": [
+        "ablauf-01",
+        "ablauf-02",
+        "ablauf-03",
+        "ablauf-04",
+        "ablauf-05",
+        "ablauf-06",
+        "ablauf-07",
+        "ablauf-08",
+        "ablauf-09",
+        "ablauf-10"
+      ],
+      "questionPoints": {
+        "ablauf-01": 16,
+        "ablauf-02": 8,
+        "ablauf-03": 6,
+        "ablauf-04": 6,
+        "ablauf-05": 6,
+        "ablauf-06": 5,
+        "ablauf-07": 5,
+        "ablauf-08": 1,
+        "ablauf-09": 1,
+        "ablauf-10": 8
+      },
+      "directions": {},
+      "questionTypes": null,
+      "direction": null,
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:13:33.785Z",
+      "finishedAt": "2026-10-12T14:18:08.188Z"
+    },
+    {
+      "id": "ceefb180-99c2-4a87-b027-3842eed247f3",
+      "modeId": "quiz",
+      "graded": true,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "quiz-mc-gegebenenfalls-ggf",
+        "quiz-mc-jedoch",
+        "quiz-mc-am-anfang",
+        "quiz-mc-zuletzt",
+        "quiz-mc-zurzeit",
+        "quiz-mc-schliesslich",
+        "quiz-mc-daher",
+        "quiz-mc-wegen",
+        "quiz-mc-waehrenddessen",
+        "quiz-mc-am-ende",
+        "quiz-mc-dafuer",
+        "quiz-mc-im-anschluss-an-akk",
+        "quiz-mc-das-liegt-nur-daran",
+        "quiz-mc-somit",
+        "quiz-mc-zu-beginn",
+        "quiz-mc-gemaess",
+        "quiz-mc-deswegen",
+        "quiz-mc-sogar",
+        "quiz-mc-ebenfalls",
+        "quiz-mc-aber",
+        "quiz-mc-vermutlich",
+        "quiz-mc-dadurch",
+        "quiz-mc-obwohl",
+        "quiz-mc-ferner",
+        "quiz-mc-innerhalb",
+        "quiz-mc-weiterhin",
+        "quiz-mc-auch",
+        "quiz-mc-deshalb",
+        "quiz-mc-danach",
+        "quiz-mc-aus-diesem-grund"
+      ],
+      "questionPoints": {
+        "quiz-mc-gegebenenfalls-ggf": 1,
+        "quiz-mc-jedoch": 1,
+        "quiz-mc-am-anfang": 1,
+        "quiz-mc-zuletzt": 1,
+        "quiz-mc-zurzeit": 1,
+        "quiz-mc-schliesslich": 1,
+        "quiz-mc-daher": 1,
+        "quiz-mc-wegen": 1,
+        "quiz-mc-waehrenddessen": 1,
+        "quiz-mc-am-ende": 1,
+        "quiz-mc-dafuer": 1,
+        "quiz-mc-im-anschluss-an-akk": 1,
+        "quiz-mc-das-liegt-nur-daran": 1,
+        "quiz-mc-somit": 1,
+        "quiz-mc-zu-beginn": 1,
+        "quiz-mc-gemaess": 1,
+        "quiz-mc-deswegen": 1,
+        "quiz-mc-sogar": 1,
+        "quiz-mc-ebenfalls": 1,
+        "quiz-mc-aber": 1,
+        "quiz-mc-vermutlich": 1,
+        "quiz-mc-dadurch": 1,
+        "quiz-mc-obwohl": 1,
+        "quiz-mc-ferner": 1,
+        "quiz-mc-innerhalb": 1,
+        "quiz-mc-weiterhin": 1,
+        "quiz-mc-auch": 1,
+        "quiz-mc-deshalb": 1,
+        "quiz-mc-danach": 1,
+        "quiz-mc-aus-diesem-grund": 1
+      },
+      "directions": {
+        "quiz-mc-gegebenenfalls-ggf": "de-en",
+        "quiz-mc-jedoch": "de-en",
+        "quiz-mc-am-anfang": "en-de",
+        "quiz-mc-zuletzt": "en-de",
+        "quiz-mc-zurzeit": "en-de",
+        "quiz-mc-schliesslich": "en-de",
+        "quiz-mc-daher": "en-de",
+        "quiz-mc-wegen": "de-en",
+        "quiz-mc-waehrenddessen": "de-en",
+        "quiz-mc-am-ende": "de-en",
+        "quiz-mc-dafuer": "de-en",
+        "quiz-mc-im-anschluss-an-akk": "en-de",
+        "quiz-mc-das-liegt-nur-daran": "de-en",
+        "quiz-mc-somit": "de-en",
+        "quiz-mc-zu-beginn": "en-de",
+        "quiz-mc-gemaess": "de-en",
+        "quiz-mc-deswegen": "en-de",
+        "quiz-mc-sogar": "de-en",
+        "quiz-mc-ebenfalls": "en-de",
+        "quiz-mc-aber": "en-de",
+        "quiz-mc-vermutlich": "en-de",
+        "quiz-mc-dadurch": "de-en",
+        "quiz-mc-obwohl": "en-de",
+        "quiz-mc-ferner": "en-de",
+        "quiz-mc-innerhalb": "de-en",
+        "quiz-mc-weiterhin": "de-en",
+        "quiz-mc-auch": "de-en",
+        "quiz-mc-deshalb": "en-de",
+        "quiz-mc-danach": "en-de",
+        "quiz-mc-aus-diesem-grund": "de-en"
+      },
+      "questionTypes": [
+        "multiple-choice"
+      ],
+      "direction": "random",
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:18:39.881Z",
+      "finishedAt": "2026-10-12T14:18:55.046Z"
+    },
+    {
+      "id": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "graded": true,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "quiz-mc-waehrenddessen",
+        "quiz-mc-hingegen",
+        "quiz-mc-vermutlich",
+        "quiz-mc-des-weiteren",
+        "quiz-mc-schliesslich",
+        "quiz-mc-wegen",
+        "quiz-mc-auch",
+        "quiz-mc-dann",
+        "quiz-mc-ausschliesslich",
+        "quiz-mc-ausserdem",
+        "quiz-mc-daher",
+        "quiz-mc-gegebenenfalls-ggf",
+        "quiz-mc-als-naechstes",
+        "quiz-mc-am-ende",
+        "quiz-mc-zurzeit",
+        "quiz-mc-allerdings",
+        "quiz-mc-weil",
+        "quiz-mc-darueber-hinaus",
+        "quiz-mc-innerhalb",
+        "quiz-mc-deshalb",
+        "quiz-mc-dafuer",
+        "quiz-mc-anfangs",
+        "quiz-mc-jedoch",
+        "quiz-mc-zunaechst",
+        "quiz-mc-zuletzt",
+        "quiz-mc-folglich",
+        "quiz-mc-am-schluss",
+        "quiz-mc-gemaess",
+        "quiz-mc-im-gegensatz-dazu",
+        "quiz-mc-im-anschluss-an-akk",
+        "quiz-mc-somit",
+        "quiz-mc-weiterhin",
+        "quiz-mc-und",
+        "quiz-mc-aber",
+        "quiz-mc-anschliessend",
+        "quiz-mc-zudem",
+        "quiz-mc-sogar",
+        "quiz-mc-ferner",
+        "quiz-mc-das-liegt-nur-daran",
+        "quiz-mc-dadurch",
+        "quiz-mc-zuerst",
+        "quiz-mc-danach",
+        "quiz-mc-deswegen",
+        "quiz-mc-ebenfalls",
+        "quiz-mc-spaeter",
+        "quiz-mc-zu-beginn",
+        "quiz-mc-nachher",
+        "quiz-mc-daraufhin",
+        "quiz-mc-aus-diesem-grund",
+        "quiz-mc-dagegen",
+        "quiz-mc-obwohl",
+        "quiz-mc-am-anfang"
+      ],
+      "questionPoints": {
+        "quiz-mc-waehrenddessen": 1,
+        "quiz-mc-hingegen": 1,
+        "quiz-mc-vermutlich": 1,
+        "quiz-mc-des-weiteren": 1,
+        "quiz-mc-schliesslich": 1,
+        "quiz-mc-wegen": 1,
+        "quiz-mc-auch": 1,
+        "quiz-mc-dann": 1,
+        "quiz-mc-ausschliesslich": 1,
+        "quiz-mc-ausserdem": 1,
+        "quiz-mc-daher": 1,
+        "quiz-mc-gegebenenfalls-ggf": 1,
+        "quiz-mc-als-naechstes": 1,
+        "quiz-mc-am-ende": 1,
+        "quiz-mc-zurzeit": 1,
+        "quiz-mc-allerdings": 1,
+        "quiz-mc-weil": 1,
+        "quiz-mc-darueber-hinaus": 1,
+        "quiz-mc-innerhalb": 1,
+        "quiz-mc-deshalb": 1,
+        "quiz-mc-dafuer": 1,
+        "quiz-mc-anfangs": 1,
+        "quiz-mc-jedoch": 1,
+        "quiz-mc-zunaechst": 1,
+        "quiz-mc-zuletzt": 1,
+        "quiz-mc-folglich": 1,
+        "quiz-mc-am-schluss": 1,
+        "quiz-mc-gemaess": 1,
+        "quiz-mc-im-gegensatz-dazu": 1,
+        "quiz-mc-im-anschluss-an-akk": 1,
+        "quiz-mc-somit": 1,
+        "quiz-mc-weiterhin": 1,
+        "quiz-mc-und": 1,
+        "quiz-mc-aber": 1,
+        "quiz-mc-anschliessend": 1,
+        "quiz-mc-zudem": 1,
+        "quiz-mc-sogar": 1,
+        "quiz-mc-ferner": 1,
+        "quiz-mc-das-liegt-nur-daran": 1,
+        "quiz-mc-dadurch": 1,
+        "quiz-mc-zuerst": 1,
+        "quiz-mc-danach": 1,
+        "quiz-mc-deswegen": 1,
+        "quiz-mc-ebenfalls": 1,
+        "quiz-mc-spaeter": 1,
+        "quiz-mc-zu-beginn": 1,
+        "quiz-mc-nachher": 1,
+        "quiz-mc-daraufhin": 1,
+        "quiz-mc-aus-diesem-grund": 1,
+        "quiz-mc-dagegen": 1,
+        "quiz-mc-obwohl": 1,
+        "quiz-mc-am-anfang": 1
+      },
+      "directions": {
+        "quiz-mc-waehrenddessen": "en-de",
+        "quiz-mc-hingegen": "en-de",
+        "quiz-mc-vermutlich": "en-de",
+        "quiz-mc-des-weiteren": "en-de",
+        "quiz-mc-schliesslich": "de-en",
+        "quiz-mc-wegen": "de-en",
+        "quiz-mc-auch": "de-en",
+        "quiz-mc-dann": "de-en",
+        "quiz-mc-ausschliesslich": "en-de",
+        "quiz-mc-ausserdem": "de-en",
+        "quiz-mc-daher": "de-en",
+        "quiz-mc-gegebenenfalls-ggf": "de-en",
+        "quiz-mc-als-naechstes": "en-de",
+        "quiz-mc-am-ende": "en-de",
+        "quiz-mc-zurzeit": "de-en",
+        "quiz-mc-allerdings": "en-de",
+        "quiz-mc-weil": "en-de",
+        "quiz-mc-darueber-hinaus": "en-de",
+        "quiz-mc-innerhalb": "en-de",
+        "quiz-mc-deshalb": "en-de",
+        "quiz-mc-dafuer": "en-de",
+        "quiz-mc-anfangs": "en-de",
+        "quiz-mc-jedoch": "en-de",
+        "quiz-mc-zunaechst": "en-de",
+        "quiz-mc-zuletzt": "de-en",
+        "quiz-mc-folglich": "en-de",
+        "quiz-mc-am-schluss": "de-en",
+        "quiz-mc-gemaess": "en-de",
+        "quiz-mc-im-gegensatz-dazu": "de-en",
+        "quiz-mc-im-anschluss-an-akk": "de-en",
+        "quiz-mc-somit": "en-de",
+        "quiz-mc-weiterhin": "en-de",
+        "quiz-mc-und": "de-en",
+        "quiz-mc-aber": "de-en",
+        "quiz-mc-anschliessend": "de-en",
+        "quiz-mc-zudem": "en-de",
+        "quiz-mc-sogar": "de-en",
+        "quiz-mc-ferner": "en-de",
+        "quiz-mc-das-liegt-nur-daran": "de-en",
+        "quiz-mc-dadurch": "de-en",
+        "quiz-mc-zuerst": "de-en",
+        "quiz-mc-danach": "de-en",
+        "quiz-mc-deswegen": "de-en",
+        "quiz-mc-ebenfalls": "de-en",
+        "quiz-mc-spaeter": "de-en",
+        "quiz-mc-zu-beginn": "de-en",
+        "quiz-mc-nachher": "en-de",
+        "quiz-mc-daraufhin": "en-de",
+        "quiz-mc-aus-diesem-grund": "en-de",
+        "quiz-mc-dagegen": "de-en",
+        "quiz-mc-obwohl": "en-de",
+        "quiz-mc-am-anfang": "de-en"
+      },
+      "questionTypes": [
+        "multiple-choice"
+      ],
+      "direction": "random",
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:19:16.513Z",
+      "finishedAt": "2026-10-12T14:34:49.858Z"
+    },
+    {
+      "id": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-zu-beginn",
+        "fc-das-liegt-nur-daran",
+        "fc-nachher",
+        "fc-allerdings",
+        "fc-deswegen",
+        "fc-zurzeit",
+        "fc-jedoch",
+        "fc-darueber-hinaus",
+        "fc-am-ende",
+        "fc-schliesslich",
+        "fc-vermutlich",
+        "fc-im-anschluss-an-akk",
+        "fc-ausserdem",
+        "fc-ausschliesslich",
+        "fc-zunaechst",
+        "fc-gemaess",
+        "fc-deshalb",
+        "fc-weiterhin",
+        "fc-ferner",
+        "fc-dagegen",
+        "fc-als-naechstes",
+        "fc-aber",
+        "fc-aus-diesem-grund",
+        "fc-daraufhin",
+        "fc-obwohl",
+        "fc-folglich",
+        "fc-zudem",
+        "fc-im-gegensatz-dazu",
+        "fc-spaeter",
+        "fc-hingegen",
+        "fc-anschliessend",
+        "fc-des-weiteren",
+        "fc-dafuer",
+        "fc-zuletzt",
+        "fc-dadurch",
+        "fc-am-schluss",
+        "fc-sogar",
+        "fc-gegebenenfalls-ggf",
+        "fc-daher",
+        "fc-weil",
+        "fc-am-anfang",
+        "fc-waehrenddessen",
+        "fc-danach",
+        "fc-somit",
+        "fc-zuerst",
+        "fc-und",
+        "fc-dann",
+        "fc-wegen",
+        "fc-auch",
+        "fc-ebenfalls",
+        "fc-anfangs",
+        "fc-innerhalb"
+      ],
+      "questionPoints": {
+        "fc-zu-beginn": 0,
+        "fc-das-liegt-nur-daran": 0,
+        "fc-nachher": 0,
+        "fc-allerdings": 0,
+        "fc-deswegen": 0,
+        "fc-zurzeit": 0,
+        "fc-jedoch": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-am-ende": 0,
+        "fc-schliesslich": 0,
+        "fc-vermutlich": 0,
+        "fc-im-anschluss-an-akk": 0,
+        "fc-ausserdem": 0,
+        "fc-ausschliesslich": 0,
+        "fc-zunaechst": 0,
+        "fc-gemaess": 0,
+        "fc-deshalb": 0,
+        "fc-weiterhin": 0,
+        "fc-ferner": 0,
+        "fc-dagegen": 0,
+        "fc-als-naechstes": 0,
+        "fc-aber": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-daraufhin": 0,
+        "fc-obwohl": 0,
+        "fc-folglich": 0,
+        "fc-zudem": 0,
+        "fc-im-gegensatz-dazu": 0,
+        "fc-spaeter": 0,
+        "fc-hingegen": 0,
+        "fc-anschliessend": 0,
+        "fc-des-weiteren": 0,
+        "fc-dafuer": 0,
+        "fc-zuletzt": 0,
+        "fc-dadurch": 0,
+        "fc-am-schluss": 0,
+        "fc-sogar": 0,
+        "fc-gegebenenfalls-ggf": 0,
+        "fc-daher": 0,
+        "fc-weil": 0,
+        "fc-am-anfang": 0,
+        "fc-waehrenddessen": 0,
+        "fc-danach": 0,
+        "fc-somit": 0,
+        "fc-zuerst": 0,
+        "fc-und": 0,
+        "fc-dann": 0,
+        "fc-wegen": 0,
+        "fc-auch": 0,
+        "fc-ebenfalls": 0,
+        "fc-anfangs": 0,
+        "fc-innerhalb": 0
+      },
+      "directions": {
+        "fc-zu-beginn": "de-en",
+        "fc-das-liegt-nur-daran": "de-en",
+        "fc-nachher": "de-en",
+        "fc-allerdings": "de-en",
+        "fc-deswegen": "de-en",
+        "fc-zurzeit": "de-en",
+        "fc-jedoch": "de-en",
+        "fc-darueber-hinaus": "de-en",
+        "fc-am-ende": "de-en",
+        "fc-schliesslich": "de-en",
+        "fc-vermutlich": "de-en",
+        "fc-im-anschluss-an-akk": "de-en",
+        "fc-ausserdem": "de-en",
+        "fc-ausschliesslich": "de-en",
+        "fc-zunaechst": "de-en",
+        "fc-gemaess": "de-en",
+        "fc-deshalb": "de-en",
+        "fc-weiterhin": "de-en",
+        "fc-ferner": "de-en",
+        "fc-dagegen": "de-en",
+        "fc-als-naechstes": "de-en",
+        "fc-aber": "de-en",
+        "fc-aus-diesem-grund": "de-en",
+        "fc-daraufhin": "de-en",
+        "fc-obwohl": "de-en",
+        "fc-folglich": "de-en",
+        "fc-zudem": "de-en",
+        "fc-im-gegensatz-dazu": "de-en",
+        "fc-spaeter": "de-en",
+        "fc-hingegen": "de-en",
+        "fc-anschliessend": "de-en",
+        "fc-des-weiteren": "de-en",
+        "fc-dafuer": "de-en",
+        "fc-zuletzt": "de-en",
+        "fc-dadurch": "de-en",
+        "fc-am-schluss": "de-en",
+        "fc-sogar": "de-en",
+        "fc-gegebenenfalls-ggf": "de-en",
+        "fc-daher": "de-en",
+        "fc-weil": "de-en",
+        "fc-am-anfang": "de-en",
+        "fc-waehrenddessen": "de-en",
+        "fc-danach": "de-en",
+        "fc-somit": "de-en",
+        "fc-zuerst": "de-en",
+        "fc-und": "de-en",
+        "fc-dann": "de-en",
+        "fc-wegen": "de-en",
+        "fc-auch": "de-en",
+        "fc-ebenfalls": "de-en",
+        "fc-anfangs": "de-en",
+        "fc-innerhalb": "de-en"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "de-en",
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:35:06.426Z",
+      "finishedAt": "2026-10-12T14:46:28.848Z"
+    },
+    {
+      "id": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-zu-beginn",
+        "fc-das-liegt-nur-daran",
+        "fc-nachher",
+        "fc-allerdings",
+        "fc-deswegen",
+        "fc-zurzeit",
+        "fc-jedoch",
+        "fc-darueber-hinaus",
+        "fc-am-ende",
+        "fc-schliesslich",
+        "fc-vermutlich",
+        "fc-im-anschluss-an-akk",
+        "fc-ausserdem",
+        "fc-ausschliesslich",
+        "fc-zunaechst",
+        "fc-gemaess",
+        "fc-deshalb",
+        "fc-weiterhin",
+        "fc-ferner",
+        "fc-dagegen",
+        "fc-als-naechstes",
+        "fc-aber",
+        "fc-aus-diesem-grund",
+        "fc-daraufhin",
+        "fc-obwohl",
+        "fc-folglich",
+        "fc-zudem",
+        "fc-im-gegensatz-dazu",
+        "fc-spaeter",
+        "fc-hingegen",
+        "fc-anschliessend",
+        "fc-des-weiteren",
+        "fc-dafuer",
+        "fc-zuletzt",
+        "fc-dadurch",
+        "fc-am-schluss",
+        "fc-sogar",
+        "fc-gegebenenfalls-ggf",
+        "fc-daher",
+        "fc-weil",
+        "fc-am-anfang",
+        "fc-waehrenddessen",
+        "fc-danach",
+        "fc-somit",
+        "fc-zuerst",
+        "fc-und",
+        "fc-dann",
+        "fc-wegen",
+        "fc-auch",
+        "fc-ebenfalls",
+        "fc-anfangs",
+        "fc-innerhalb"
+      ],
+      "questionPoints": {
+        "fc-zu-beginn": 0,
+        "fc-das-liegt-nur-daran": 0,
+        "fc-nachher": 0,
+        "fc-allerdings": 0,
+        "fc-deswegen": 0,
+        "fc-zurzeit": 0,
+        "fc-jedoch": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-am-ende": 0,
+        "fc-schliesslich": 0,
+        "fc-vermutlich": 0,
+        "fc-im-anschluss-an-akk": 0,
+        "fc-ausserdem": 0,
+        "fc-ausschliesslich": 0,
+        "fc-zunaechst": 0,
+        "fc-gemaess": 0,
+        "fc-deshalb": 0,
+        "fc-weiterhin": 0,
+        "fc-ferner": 0,
+        "fc-dagegen": 0,
+        "fc-als-naechstes": 0,
+        "fc-aber": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-daraufhin": 0,
+        "fc-obwohl": 0,
+        "fc-folglich": 0,
+        "fc-zudem": 0,
+        "fc-im-gegensatz-dazu": 0,
+        "fc-spaeter": 0,
+        "fc-hingegen": 0,
+        "fc-anschliessend": 0,
+        "fc-des-weiteren": 0,
+        "fc-dafuer": 0,
+        "fc-zuletzt": 0,
+        "fc-dadurch": 0,
+        "fc-am-schluss": 0,
+        "fc-sogar": 0,
+        "fc-gegebenenfalls-ggf": 0,
+        "fc-daher": 0,
+        "fc-weil": 0,
+        "fc-am-anfang": 0,
+        "fc-waehrenddessen": 0,
+        "fc-danach": 0,
+        "fc-somit": 0,
+        "fc-zuerst": 0,
+        "fc-und": 0,
+        "fc-dann": 0,
+        "fc-wegen": 0,
+        "fc-auch": 0,
+        "fc-ebenfalls": 0,
+        "fc-anfangs": 0,
+        "fc-innerhalb": 0
+      },
+      "directions": {
+        "fc-zu-beginn": "de-en",
+        "fc-das-liegt-nur-daran": "de-en",
+        "fc-nachher": "de-en",
+        "fc-allerdings": "de-en",
+        "fc-deswegen": "de-en",
+        "fc-zurzeit": "de-en",
+        "fc-jedoch": "de-en",
+        "fc-darueber-hinaus": "de-en",
+        "fc-am-ende": "de-en",
+        "fc-schliesslich": "de-en",
+        "fc-vermutlich": "de-en",
+        "fc-im-anschluss-an-akk": "de-en",
+        "fc-ausserdem": "de-en",
+        "fc-ausschliesslich": "de-en",
+        "fc-zunaechst": "de-en",
+        "fc-gemaess": "de-en",
+        "fc-deshalb": "de-en",
+        "fc-weiterhin": "de-en",
+        "fc-ferner": "de-en",
+        "fc-dagegen": "de-en",
+        "fc-als-naechstes": "de-en",
+        "fc-aber": "de-en",
+        "fc-aus-diesem-grund": "de-en",
+        "fc-daraufhin": "de-en",
+        "fc-obwohl": "de-en",
+        "fc-folglich": "de-en",
+        "fc-zudem": "de-en",
+        "fc-im-gegensatz-dazu": "de-en",
+        "fc-spaeter": "de-en",
+        "fc-hingegen": "de-en",
+        "fc-anschliessend": "de-en",
+        "fc-des-weiteren": "de-en",
+        "fc-dafuer": "de-en",
+        "fc-zuletzt": "de-en",
+        "fc-dadurch": "de-en",
+        "fc-am-schluss": "de-en",
+        "fc-sogar": "de-en",
+        "fc-gegebenenfalls-ggf": "de-en",
+        "fc-daher": "de-en",
+        "fc-weil": "de-en",
+        "fc-am-anfang": "de-en",
+        "fc-waehrenddessen": "de-en",
+        "fc-danach": "de-en",
+        "fc-somit": "de-en",
+        "fc-zuerst": "de-en",
+        "fc-und": "de-en",
+        "fc-dann": "de-en",
+        "fc-wegen": "de-en",
+        "fc-auch": "de-en",
+        "fc-ebenfalls": "de-en",
+        "fc-anfangs": "de-en",
+        "fc-innerhalb": "de-en"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "de-en",
+      "repeatOf": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "startedAt": "2026-10-12T14:46:35.794Z",
+      "finishedAt": "2026-10-12T14:57:15.342Z"
+    },
+    {
+      "id": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-im-gegensatz-dazu",
+        "fc-allerdings",
+        "fc-folglich",
+        "fc-dafuer",
+        "fc-am-ende",
+        "fc-darueber-hinaus",
+        "fc-gemaess",
+        "fc-zu-beginn",
+        "fc-innerhalb",
+        "fc-am-schluss",
+        "fc-deswegen",
+        "fc-ausserdem",
+        "fc-wegen",
+        "fc-zurzeit",
+        "fc-ebenfalls",
+        "fc-spaeter",
+        "fc-anschliessend",
+        "fc-auch",
+        "fc-waehrenddessen",
+        "fc-aus-diesem-grund",
+        "fc-dann",
+        "fc-zudem",
+        "fc-weil",
+        "fc-und",
+        "fc-ferner",
+        "fc-anfangs",
+        "fc-des-weiteren",
+        "fc-daraufhin",
+        "fc-obwohl",
+        "fc-schliesslich",
+        "fc-aber",
+        "fc-im-anschluss-an-akk",
+        "fc-somit",
+        "fc-nachher",
+        "fc-das-liegt-nur-daran",
+        "fc-gegebenenfalls-ggf",
+        "fc-zunaechst",
+        "fc-ausschliesslich",
+        "fc-danach",
+        "fc-jedoch",
+        "fc-zuletzt",
+        "fc-weiterhin",
+        "fc-deshalb",
+        "fc-am-anfang",
+        "fc-sogar",
+        "fc-als-naechstes",
+        "fc-daher",
+        "fc-zuerst",
+        "fc-hingegen",
+        "fc-dagegen",
+        "fc-dadurch",
+        "fc-vermutlich"
+      ],
+      "questionPoints": {
+        "fc-im-gegensatz-dazu": 0,
+        "fc-allerdings": 0,
+        "fc-folglich": 0,
+        "fc-dafuer": 0,
+        "fc-am-ende": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-gemaess": 0,
+        "fc-zu-beginn": 0,
+        "fc-innerhalb": 0,
+        "fc-am-schluss": 0,
+        "fc-deswegen": 0,
+        "fc-ausserdem": 0,
+        "fc-wegen": 0,
+        "fc-zurzeit": 0,
+        "fc-ebenfalls": 0,
+        "fc-spaeter": 0,
+        "fc-anschliessend": 0,
+        "fc-auch": 0,
+        "fc-waehrenddessen": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-dann": 0,
+        "fc-zudem": 0,
+        "fc-weil": 0,
+        "fc-und": 0,
+        "fc-ferner": 0,
+        "fc-anfangs": 0,
+        "fc-des-weiteren": 0,
+        "fc-daraufhin": 0,
+        "fc-obwohl": 0,
+        "fc-schliesslich": 0,
+        "fc-aber": 0,
+        "fc-im-anschluss-an-akk": 0,
+        "fc-somit": 0,
+        "fc-nachher": 0,
+        "fc-das-liegt-nur-daran": 0,
+        "fc-gegebenenfalls-ggf": 0,
+        "fc-zunaechst": 0,
+        "fc-ausschliesslich": 0,
+        "fc-danach": 0,
+        "fc-jedoch": 0,
+        "fc-zuletzt": 0,
+        "fc-weiterhin": 0,
+        "fc-deshalb": 0,
+        "fc-am-anfang": 0,
+        "fc-sogar": 0,
+        "fc-als-naechstes": 0,
+        "fc-daher": 0,
+        "fc-zuerst": 0,
+        "fc-hingegen": 0,
+        "fc-dagegen": 0,
+        "fc-dadurch": 0,
+        "fc-vermutlich": 0
+      },
+      "directions": {
+        "fc-im-gegensatz-dazu": "en-de",
+        "fc-allerdings": "en-de",
+        "fc-folglich": "en-de",
+        "fc-dafuer": "en-de",
+        "fc-am-ende": "en-de",
+        "fc-darueber-hinaus": "en-de",
+        "fc-gemaess": "en-de",
+        "fc-zu-beginn": "en-de",
+        "fc-innerhalb": "en-de",
+        "fc-am-schluss": "en-de",
+        "fc-deswegen": "en-de",
+        "fc-ausserdem": "en-de",
+        "fc-wegen": "en-de",
+        "fc-zurzeit": "en-de",
+        "fc-ebenfalls": "en-de",
+        "fc-spaeter": "en-de",
+        "fc-anschliessend": "en-de",
+        "fc-auch": "en-de",
+        "fc-waehrenddessen": "en-de",
+        "fc-aus-diesem-grund": "en-de",
+        "fc-dann": "en-de",
+        "fc-zudem": "en-de",
+        "fc-weil": "en-de",
+        "fc-und": "en-de",
+        "fc-ferner": "en-de",
+        "fc-anfangs": "en-de",
+        "fc-des-weiteren": "en-de",
+        "fc-daraufhin": "en-de",
+        "fc-obwohl": "en-de",
+        "fc-schliesslich": "en-de",
+        "fc-aber": "en-de",
+        "fc-im-anschluss-an-akk": "en-de",
+        "fc-somit": "en-de",
+        "fc-nachher": "en-de",
+        "fc-das-liegt-nur-daran": "en-de",
+        "fc-gegebenenfalls-ggf": "en-de",
+        "fc-zunaechst": "en-de",
+        "fc-ausschliesslich": "en-de",
+        "fc-danach": "en-de",
+        "fc-jedoch": "en-de",
+        "fc-zuletzt": "en-de",
+        "fc-weiterhin": "en-de",
+        "fc-deshalb": "en-de",
+        "fc-am-anfang": "en-de",
+        "fc-sogar": "en-de",
+        "fc-als-naechstes": "en-de",
+        "fc-daher": "en-de",
+        "fc-zuerst": "en-de",
+        "fc-hingegen": "en-de",
+        "fc-dagegen": "en-de",
+        "fc-dadurch": "en-de",
+        "fc-vermutlich": "en-de"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "en-de",
+      "repeatOf": null,
+      "startedAt": "2026-10-12T14:57:30.079Z",
+      "finishedAt": "2026-10-12T15:08:38.899Z"
+    },
+    {
+      "id": "900ac3a6-5796-455d-9e7d-3416edc09f2f",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-zu-beginn",
+        "fc-danach",
+        "fc-des-weiteren",
+        "fc-am-anfang",
+        "fc-dagegen",
+        "fc-sogar",
+        "fc-innerhalb",
+        "fc-gemaess",
+        "fc-auch",
+        "fc-daher",
+        "fc-somit",
+        "fc-deswegen",
+        "fc-nachher",
+        "fc-jedoch",
+        "fc-und",
+        "fc-weil",
+        "fc-hingegen",
+        "fc-gegebenenfalls-ggf",
+        "fc-ausserdem",
+        "fc-folglich",
+        "fc-zuletzt",
+        "fc-zurzeit",
+        "fc-anfangs",
+        "fc-darueber-hinaus",
+        "fc-wegen",
+        "fc-weiterhin",
+        "fc-ausschliesslich",
+        "fc-spaeter",
+        "fc-im-anschluss-an-akk",
+        "fc-allerdings",
+        "fc-vermutlich",
+        "fc-schliesslich",
+        "fc-anschliessend",
+        "fc-dafuer",
+        "fc-am-ende",
+        "fc-obwohl",
+        "fc-deshalb",
+        "fc-ebenfalls",
+        "fc-aus-diesem-grund",
+        "fc-zudem",
+        "fc-zuerst",
+        "fc-daraufhin",
+        "fc-am-schluss",
+        "fc-dann",
+        "fc-im-gegensatz-dazu",
+        "fc-als-naechstes",
+        "fc-dadurch",
+        "fc-das-liegt-nur-daran",
+        "fc-waehrenddessen",
+        "fc-aber",
+        "fc-ferner",
+        "fc-zunaechst"
+      ],
+      "questionPoints": {
+        "fc-zu-beginn": 0,
+        "fc-danach": 0,
+        "fc-des-weiteren": 0,
+        "fc-am-anfang": 0,
+        "fc-dagegen": 0,
+        "fc-sogar": 0,
+        "fc-innerhalb": 0,
+        "fc-gemaess": 0,
+        "fc-auch": 0,
+        "fc-daher": 0,
+        "fc-somit": 0,
+        "fc-deswegen": 0,
+        "fc-nachher": 0,
+        "fc-jedoch": 0,
+        "fc-und": 0,
+        "fc-weil": 0,
+        "fc-hingegen": 0,
+        "fc-gegebenenfalls-ggf": 0,
+        "fc-ausserdem": 0,
+        "fc-folglich": 0,
+        "fc-zuletzt": 0,
+        "fc-zurzeit": 0,
+        "fc-anfangs": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-wegen": 0,
+        "fc-weiterhin": 0,
+        "fc-ausschliesslich": 0,
+        "fc-spaeter": 0,
+        "fc-im-anschluss-an-akk": 0,
+        "fc-allerdings": 0,
+        "fc-vermutlich": 0,
+        "fc-schliesslich": 0,
+        "fc-anschliessend": 0,
+        "fc-dafuer": 0,
+        "fc-am-ende": 0,
+        "fc-obwohl": 0,
+        "fc-deshalb": 0,
+        "fc-ebenfalls": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-zudem": 0,
+        "fc-zuerst": 0,
+        "fc-daraufhin": 0,
+        "fc-am-schluss": 0,
+        "fc-dann": 0,
+        "fc-im-gegensatz-dazu": 0,
+        "fc-als-naechstes": 0,
+        "fc-dadurch": 0,
+        "fc-das-liegt-nur-daran": 0,
+        "fc-waehrenddessen": 0,
+        "fc-aber": 0,
+        "fc-ferner": 0,
+        "fc-zunaechst": 0
+      },
+      "directions": {
+        "fc-zu-beginn": "de-en",
+        "fc-danach": "de-en",
+        "fc-des-weiteren": "de-en",
+        "fc-am-anfang": "de-en",
+        "fc-dagegen": "de-en",
+        "fc-sogar": "de-en",
+        "fc-innerhalb": "de-en",
+        "fc-gemaess": "de-en",
+        "fc-auch": "de-en",
+        "fc-daher": "de-en",
+        "fc-somit": "de-en",
+        "fc-deswegen": "de-en",
+        "fc-nachher": "de-en",
+        "fc-jedoch": "de-en",
+        "fc-und": "de-en",
+        "fc-weil": "de-en",
+        "fc-hingegen": "de-en",
+        "fc-gegebenenfalls-ggf": "de-en",
+        "fc-ausserdem": "de-en",
+        "fc-folglich": "de-en",
+        "fc-zuletzt": "de-en",
+        "fc-zurzeit": "de-en",
+        "fc-anfangs": "de-en",
+        "fc-darueber-hinaus": "de-en",
+        "fc-wegen": "de-en",
+        "fc-weiterhin": "de-en",
+        "fc-ausschliesslich": "de-en",
+        "fc-spaeter": "de-en",
+        "fc-im-anschluss-an-akk": "de-en",
+        "fc-allerdings": "de-en",
+        "fc-vermutlich": "de-en",
+        "fc-schliesslich": "de-en",
+        "fc-anschliessend": "de-en",
+        "fc-dafuer": "de-en",
+        "fc-am-ende": "de-en",
+        "fc-obwohl": "de-en",
+        "fc-deshalb": "de-en",
+        "fc-ebenfalls": "de-en",
+        "fc-aus-diesem-grund": "de-en",
+        "fc-zudem": "de-en",
+        "fc-zuerst": "de-en",
+        "fc-daraufhin": "de-en",
+        "fc-am-schluss": "de-en",
+        "fc-dann": "de-en",
+        "fc-im-gegensatz-dazu": "de-en",
+        "fc-als-naechstes": "de-en",
+        "fc-dadurch": "de-en",
+        "fc-das-liegt-nur-daran": "de-en",
+        "fc-waehrenddessen": "de-en",
+        "fc-aber": "de-en",
+        "fc-ferner": "de-en",
+        "fc-zunaechst": "de-en"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "de-en",
+      "repeatOf": null,
+      "startedAt": "2026-10-12T15:10:23.469Z",
+      "finishedAt": null
+    },
+    {
+      "id": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-deswegen",
+        "fc-weil",
+        "fc-anfangs",
+        "fc-gegebenenfalls-ggf",
+        "fc-auch",
+        "fc-und",
+        "fc-weiterhin",
+        "fc-nachher",
+        "fc-ausserdem",
+        "fc-wegen",
+        "fc-dann",
+        "fc-zurzeit",
+        "fc-ebenfalls",
+        "fc-zuerst",
+        "fc-allerdings",
+        "fc-hingegen",
+        "fc-innerhalb",
+        "fc-spaeter",
+        "fc-das-liegt-nur-daran",
+        "fc-daher",
+        "fc-dadurch",
+        "fc-vermutlich",
+        "fc-sogar",
+        "fc-als-naechstes",
+        "fc-danach",
+        "fc-dafuer",
+        "fc-daraufhin",
+        "fc-schliesslich",
+        "fc-aus-diesem-grund",
+        "fc-zu-beginn",
+        "fc-jedoch",
+        "fc-im-anschluss-an-akk",
+        "fc-am-ende",
+        "fc-somit",
+        "fc-anschliessend",
+        "fc-gemaess",
+        "fc-folglich",
+        "fc-am-schluss",
+        "fc-zuletzt",
+        "fc-am-anfang",
+        "fc-im-gegensatz-dazu",
+        "fc-aber",
+        "fc-ausschliesslich",
+        "fc-des-weiteren",
+        "fc-dagegen",
+        "fc-zunaechst",
+        "fc-obwohl",
+        "fc-ferner",
+        "fc-waehrenddessen",
+        "fc-zudem",
+        "fc-darueber-hinaus",
+        "fc-deshalb"
+      ],
+      "questionPoints": {
+        "fc-deswegen": 0,
+        "fc-weil": 0,
+        "fc-anfangs": 0,
+        "fc-gegebenenfalls-ggf": 0,
+        "fc-auch": 0,
+        "fc-und": 0,
+        "fc-weiterhin": 0,
+        "fc-nachher": 0,
+        "fc-ausserdem": 0,
+        "fc-wegen": 0,
+        "fc-dann": 0,
+        "fc-zurzeit": 0,
+        "fc-ebenfalls": 0,
+        "fc-zuerst": 0,
+        "fc-allerdings": 0,
+        "fc-hingegen": 0,
+        "fc-innerhalb": 0,
+        "fc-spaeter": 0,
+        "fc-das-liegt-nur-daran": 0,
+        "fc-daher": 0,
+        "fc-dadurch": 0,
+        "fc-vermutlich": 0,
+        "fc-sogar": 0,
+        "fc-als-naechstes": 0,
+        "fc-danach": 0,
+        "fc-dafuer": 0,
+        "fc-daraufhin": 0,
+        "fc-schliesslich": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-zu-beginn": 0,
+        "fc-jedoch": 0,
+        "fc-im-anschluss-an-akk": 0,
+        "fc-am-ende": 0,
+        "fc-somit": 0,
+        "fc-anschliessend": 0,
+        "fc-gemaess": 0,
+        "fc-folglich": 0,
+        "fc-am-schluss": 0,
+        "fc-zuletzt": 0,
+        "fc-am-anfang": 0,
+        "fc-im-gegensatz-dazu": 0,
+        "fc-aber": 0,
+        "fc-ausschliesslich": 0,
+        "fc-des-weiteren": 0,
+        "fc-dagegen": 0,
+        "fc-zunaechst": 0,
+        "fc-obwohl": 0,
+        "fc-ferner": 0,
+        "fc-waehrenddessen": 0,
+        "fc-zudem": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-deshalb": 0
+      },
+      "directions": {
+        "fc-deswegen": "de-en",
+        "fc-weil": "de-en",
+        "fc-anfangs": "de-en",
+        "fc-gegebenenfalls-ggf": "de-en",
+        "fc-auch": "de-en",
+        "fc-und": "de-en",
+        "fc-weiterhin": "de-en",
+        "fc-nachher": "de-en",
+        "fc-ausserdem": "de-en",
+        "fc-wegen": "de-en",
+        "fc-dann": "de-en",
+        "fc-zurzeit": "de-en",
+        "fc-ebenfalls": "de-en",
+        "fc-zuerst": "de-en",
+        "fc-allerdings": "de-en",
+        "fc-hingegen": "de-en",
+        "fc-innerhalb": "de-en",
+        "fc-spaeter": "de-en",
+        "fc-das-liegt-nur-daran": "de-en",
+        "fc-daher": "de-en",
+        "fc-dadurch": "de-en",
+        "fc-vermutlich": "de-en",
+        "fc-sogar": "de-en",
+        "fc-als-naechstes": "de-en",
+        "fc-danach": "de-en",
+        "fc-dafuer": "de-en",
+        "fc-daraufhin": "de-en",
+        "fc-schliesslich": "de-en",
+        "fc-aus-diesem-grund": "de-en",
+        "fc-zu-beginn": "de-en",
+        "fc-jedoch": "de-en",
+        "fc-im-anschluss-an-akk": "de-en",
+        "fc-am-ende": "de-en",
+        "fc-somit": "de-en",
+        "fc-anschliessend": "de-en",
+        "fc-gemaess": "de-en",
+        "fc-folglich": "de-en",
+        "fc-am-schluss": "de-en",
+        "fc-zuletzt": "de-en",
+        "fc-am-anfang": "de-en",
+        "fc-im-gegensatz-dazu": "de-en",
+        "fc-aber": "de-en",
+        "fc-ausschliesslich": "de-en",
+        "fc-des-weiteren": "de-en",
+        "fc-dagegen": "de-en",
+        "fc-zunaechst": "de-en",
+        "fc-obwohl": "de-en",
+        "fc-ferner": "de-en",
+        "fc-waehrenddessen": "de-en",
+        "fc-zudem": "de-en",
+        "fc-darueber-hinaus": "de-en",
+        "fc-deshalb": "de-en"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "de-en",
+      "repeatOf": null,
+      "startedAt": "2026-10-13T06:11:25.739Z",
+      "finishedAt": "2026-10-13T07:53:46.230Z"
     }
   ],
-  "attempts": [],
-  "strengths": []
+  "attempts": [
+    {
+      "sessionId": "ee779d3e-f393-48ed-87dd-327be8be1dcf",
+      "modeId": "worksheet",
+      "questionId": "ablauf-01",
+      "response": {
+        "answers": {
+          "item-2": "Zeitlicher Ablauf",
+          "item-1": "Grund / Folge",
+          "item-3": "Zusätzlich",
+          "item-5": "Zeitlicher Ablauf",
+          "item-4": "Gegensatz",
+          "item-6": "Grund / Folge",
+          "item-7": "Gegensatz",
+          "item-8": "Zeitlicher Ablauf",
+          "item-9": "Zusätzlich",
+          "item-10": "Grund / Folge",
+          "item-11": "Zeitlicher Ablauf",
+          "item-12": "Gegensatz",
+          "item-13": "Grund / Folge",
+          "item-14": "Zusätzlich",
+          "item-15": "Zeitlicher Ablauf",
+          "item-16": "Gegensatz"
+        }
+      },
+      "correct": true,
+      "pointsAwarded": 16,
+      "pointsPossible": 16,
+      "direction": null,
+      "answeredAt": "2026-10-12T14:10:40.945Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "1. Correct — Answer: Grund / Folge\n\n2. Correct — Answer: Zeitlicher Ablauf\n\n3. Correct — Answer: Zusätzlich\n\n4. Correct — Answer: Gegensatz\n\n5. Correct — Answer: Zeitlicher Ablauf\n\n6. Correct — Answer: Grund / Folge\n\n7. Correct — Answer: Gegensatz\n\n8. Correct — Answer: Zeitlicher Ablauf\n\n9. Correct — Answer: Zusätzlich\n\n10. Correct — Answer: Grund / Folge\n\n11. Correct — Answer: Zeitlicher Ablauf\n\n12. Correct — Answer: Gegensatz\n\n13. Correct — Answer: Grund / Folge\n\n14. Correct — Answer: Zusätzlich\n\n15. Correct — Answer: Zeitlicher Ablauf\n\n16. Correct — Answer: Gegensatz"
+      }
+    },
+    {
+      "sessionId": "ee779d3e-f393-48ed-87dd-327be8be1dcf",
+      "modeId": "worksheet",
+      "questionId": "ablauf-02",
+      "response": {
+        "answers": {
+          "item-1": "danach",
+          "item-2": "ausserdem",
+          "item-3": "deshalb",
+          "item-4": "hingegen",
+          "item-5": "zunächst",
+          "item-6": "weil",
+          "item-7": "jedoch",
+          "item-8": "schliesslich"
+        }
+      },
+      "correct": true,
+      "pointsAwarded": 8,
+      "pointsPossible": 8,
+      "direction": null,
+      "answeredAt": "2026-10-12T14:13:21.564Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "1. Correct — Answer: danach\n\n2. Correct — Answer: ausserdem\n\n3. Correct — Answer: deshalb\n\n4. Correct — Answer: hingegen\n\n5. Correct — Answer: zunächst\n\n6. Correct — Answer: weil\n\n7. Correct — Answer: jedoch\n\n8. Correct — Answer: schliesslich"
+      }
+    },
+    {
+      "sessionId": "9e3707ea-ef9e-43c9-9cd3-3a54cebbe75a",
+      "modeId": "worksheet",
+      "questionId": "ablauf-01",
+      "response": {
+        "answers": {
+          "item-1": "Grund / Folge",
+          "item-2": "Zeitlicher Ablauf",
+          "item-3": "Zusätzlich",
+          "item-4": "Gegensatz",
+          "item-5": "Zeitlicher Ablauf",
+          "item-6": "Grund / Folge",
+          "item-7": "Gegensatz",
+          "item-8": "Zeitlicher Ablauf",
+          "item-9": "Zusätzlich",
+          "item-10": "Grund / Folge",
+          "item-11": "Zeitlicher Ablauf",
+          "item-12": "Gegensatz",
+          "item-13": "Grund / Folge",
+          "item-14": "Zusätzlich",
+          "item-15": "Zeitlicher Ablauf",
+          "item-16": "Gegensatz"
+        }
+      },
+      "correct": true,
+      "pointsAwarded": 16,
+      "pointsPossible": 16,
+      "direction": null,
+      "answeredAt": "2026-10-12T14:15:42.994Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "1. Correct — Answer: Grund / Folge\n\n2. Correct — Answer: Zeitlicher Ablauf\n\n3. Correct — Answer: Zusätzlich\n\n4. Correct — Answer: Gegensatz\n\n5. Correct — Answer: Zeitlicher Ablauf\n\n6. Correct — Answer: Grund / Folge\n\n7. Correct — Answer: Gegensatz\n\n8. Correct — Answer: Zeitlicher Ablauf\n\n9. Correct — Answer: Zusätzlich\n\n10. Correct — Answer: Grund / Folge\n\n11. Correct — Answer: Zeitlicher Ablauf\n\n12. Correct — Answer: Gegensatz\n\n13. Correct — Answer: Grund / Folge\n\n14. Correct — Answer: Zusätzlich\n\n15. Correct — Answer: Zeitlicher Ablauf\n\n16. Correct — Answer: Gegensatz"
+      }
+    },
+    {
+      "sessionId": "9e3707ea-ef9e-43c9-9cd3-3a54cebbe75a",
+      "modeId": "worksheet",
+      "questionId": "ablauf-02",
+      "response": {
+        "answers": {
+          "item-1": "danach",
+          "item-2": "ausserdem",
+          "item-3": "deshalb",
+          "item-4": "hingegen",
+          "item-5": "zunächst",
+          "item-6": "weil",
+          "item-7": "jedoch",
+          "item-8": "schliesslich"
+        }
+      },
+      "correct": true,
+      "pointsAwarded": 8,
+      "pointsPossible": 8,
+      "direction": null,
+      "answeredAt": "2026-10-12T14:18:01.302Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "1. Correct — Answer: danach\n\n2. Correct — Answer: ausserdem\n\n3. Correct — Answer: deshalb\n\n4. Correct — Answer: hingegen\n\n5. Correct — Answer: zunächst\n\n6. Correct — Answer: weil\n\n7. Correct — Answer: jedoch\n\n8. Correct — Answer: schliesslich"
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-waehrenddessen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:19:50.487Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Ich koche, währenddessen deckt er den Tisch."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-hingegen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:20:30.561Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Der alte Server ist langsam, hingegen ist der neue schnell."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-vermutlich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:21:50.603Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Er ist vermutlich krank."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-des-weiteren",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:22:32.564Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Des Weiteren möchte ich auf die Kosten hinweisen.\nhinweisen auf + accusative: auf die Kosten hinweisen."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-schliesslich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:23:05.795Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Finally, we read the report."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-wegen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:23:25.079Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Because of the traffic jam, he is late.\nwegen + genitive: wegen des Staus."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-auch",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:23:37.077Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We also need a laptop."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dann",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:24:34.379Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: I read the emails, then I call the customer."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-ausschliesslich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:25:35.850Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Der Raum ist ausschliesslich für Mitarbeitende."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-ausserdem",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:25:49.785Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The hotel is cheap; moreover, it is centrally located."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-daher",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:32:14.122Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The data is missing; therefore, we are postponing the meeting."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-gegebenenfalls-ggf",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:32:39.134Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We adjust the plan if necessary."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-als-naechstes",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:32:48.377Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Als Nächstes testen wir die neue Version."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-am-ende",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:33:03.030Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Am Ende des Monats schreiben wir die Rechnungen."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zurzeit",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:33:45.779Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: She is currently working on a new project."
+      }
+    },
+    {
+      "sessionId": "1735af78-70d2-4ed8-a52a-020c57f8e85f",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-allerdings",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:34:38.528Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Die Wohnung ist schön, allerdings ist sie klein."
+      }
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zu-beginn",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:35:08.658Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-das-liegt-nur-daran",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:35:18.960Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-nachher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:37:01.780Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-allerdings",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:37:14.081Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-deswegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:37:30.878Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zurzeit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:37:44.579Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-jedoch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:37:52.711Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-darueber-hinaus",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:38:14.367Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-am-ende",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:38:22.027Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-schliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:38:26.843Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-vermutlich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:38:58.064Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-im-anschluss-an-akk",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:05.927Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-ausserdem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:16.768Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-ausschliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:28.753Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zunaechst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:35.374Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-gemaess",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:39.223Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-deshalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:44.999Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-weiterhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:39:54.360Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-ferner",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:07.931Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-dagegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:21.527Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-als-naechstes",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:31.325Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-aber",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:38.442Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-aus-diesem-grund",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:46.841Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-daraufhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:40:52.708Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-obwohl",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:04.593Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-folglich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:10.459Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zudem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:17.660Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-im-gegensatz-dazu",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:24.760Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-spaeter",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:32.718Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-hingegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:37.991Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-anschliessend",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:45.698Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-des-weiteren",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:41:57.968Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-dafuer",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:42:03.984Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zuletzt",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:42:24.352Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-dadurch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:42:35.227Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-am-schluss",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:42:44.324Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-sogar",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:42:56.558Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-gegebenenfalls-ggf",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:43:04.506Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-daher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:43:10.730Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-weil",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:44:12.515Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-am-anfang",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:44:20.280Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-waehrenddessen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:44:26.942Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-danach",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:44:42.798Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-somit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:00.024Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-zuerst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:15.592Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-und",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:21.242Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-dann",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:24.574Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-wegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:27.208Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-auch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:35.009Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-ebenfalls",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:39.407Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-anfangs",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:45:45.509Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c05ddf2f-7514-4d57-8cfc-8aef19f7cd40",
+      "modeId": "flashcards",
+      "questionId": "fc-innerhalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:46:06.210Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zu-beginn",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:46:40.043Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-das-liegt-nur-daran",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:46:54.654Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-nachher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:47:10.210Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-allerdings",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:47:19.741Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-deswegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:47:30.759Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zurzeit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:47:51.526Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-jedoch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:48:08.615Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-darueber-hinaus",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:48:28.578Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-am-ende",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:12.059Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-schliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:14.679Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-vermutlich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:17.922Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-im-anschluss-an-akk",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:24.744Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-ausserdem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:28.722Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-ausschliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:33.526Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zunaechst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:50:58.326Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-gemaess",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:51:03.647Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-deshalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:51:08.777Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-weiterhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:51:33.393Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-ferner",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:51:50.508Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-dagegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:51:57.162Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-als-naechstes",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:52:05.994Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-aber",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:52:10.511Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-aus-diesem-grund",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:52:27.006Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-daraufhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:52:37.293Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-obwohl",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:52:53.495Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-folglich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:02.544Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zudem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:12.158Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-im-gegensatz-dazu",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:32.696Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-spaeter",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:41.529Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-hingegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:46.057Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-anschliessend",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:53:55.577Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-des-weiteren",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:54:11.863Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-dafuer",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:54:18.541Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zuletzt",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:54:49.807Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-dadurch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:54:56.781Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-am-schluss",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:03.177Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-sogar",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:21.493Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-gegebenenfalls-ggf",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:34.940Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-daher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:48.062Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-weil",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:52.440Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-am-anfang",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:55:57.425Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-waehrenddessen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:04.873Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-danach",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:27.439Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-somit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:34.321Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-zuerst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:43.896Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-und",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:46.145Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-dann",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:47.939Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-wegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:50.819Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-auch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:56:59.159Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-ebenfalls",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:57:07.196Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-anfangs",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:57:09.890Z",
+      "grade": null
+    },
+    {
+      "sessionId": "7c2779cb-fa02-4cfd-b897-32b1cf32c5fe",
+      "modeId": "flashcards",
+      "questionId": "fc-innerhalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-12T14:57:14.177Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-im-gegensatz-dazu",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:57:40.626Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-allerdings",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:58:40.173Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-folglich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:58:47.812Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-dafuer",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:58:53.308Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-am-ende",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:58:56.658Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-darueber-hinaus",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T14:59:00.706Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-gemaess",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:08.980Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-zu-beginn",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:16.352Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-innerhalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:22.042Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-am-schluss",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:29.997Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-deswegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:40.017Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-ausserdem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:47.542Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-wegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:03:55.015Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-zurzeit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:00.491Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-ebenfalls",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:15.189Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-spaeter",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:20.266Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-anschliessend",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:30.225Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-auch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:42.876Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-waehrenddessen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:04:47.056Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-aus-diesem-grund",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:05.132Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-dann",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:13.060Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-zudem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:17.722Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-weil",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:26.733Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-und",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:28.487Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-ferner",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:38.906Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-anfangs",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:48.439Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-des-weiteren",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:05:58.239Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-daraufhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:06:21.663Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-obwohl",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:06:41.561Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-schliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:06:48.610Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-aber",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:06:50.762Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-im-anschluss-an-akk",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:06:59.745Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-somit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:07:26.461Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-nachher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:07:36.006Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-das-liegt-nur-daran",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:07:44.992Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-gegebenenfalls-ggf",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:08:00.661Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-zunaechst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:08:10.523Z",
+      "grade": null
+    },
+    {
+      "sessionId": "a45f7ef8-f5f5-43c4-aae3-625d58fac48c",
+      "modeId": "flashcards",
+      "questionId": "fc-ausschliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "en-de",
+      "answeredAt": "2026-10-12T15:08:20.434Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-deswegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:11:35.557Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-weil",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:11:48.205Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-anfangs",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:11:58.222Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-gegebenenfalls-ggf",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:07.676Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-auch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:12.335Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-und",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:14.451Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-weiterhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:21.379Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-nachher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:33.309Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-ausserdem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:12:45.855Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-wegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:10.238Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-dann",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:21.683Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zurzeit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:29.108Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-ebenfalls",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:35.218Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zuerst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:40.590Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-allerdings",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T06:13:59.138Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-hingegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:10:52.810Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-innerhalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:11:17.879Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-spaeter",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:11:20.306Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-das-liegt-nur-daran",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:15:27.555Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-daher",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:15:46.403Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-dadurch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:41:26.192Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-vermutlich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:42:34.648Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-sogar",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:42:50.769Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-als-naechstes",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:43:08.961Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-danach",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:43:17.976Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-dafuer",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:43:29.890Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-daraufhin",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:44:15.210Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-schliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:47:39.135Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-aus-diesem-grund",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:47:43.308Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zu-beginn",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:47:46.585Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-jedoch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:47:56.476Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-im-anschluss-an-akk",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:48:29.334Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-am-ende",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:48:43.975Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-somit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:49:04.013Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-anschliessend",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:49:21.414Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-gemaess",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:50:11.974Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-folglich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:50:31.138Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-am-schluss",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:50:51.246Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zuletzt",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:50:59.576Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-am-anfang",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:51:06.867Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-im-gegensatz-dazu",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:51:25.869Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-aber",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:51:42.099Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-ausschliesslich",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:51:48.069Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-des-weiteren",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:01.919Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-dagegen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:20.911Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zunaechst",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:31.685Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-obwohl",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:43.401Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-ferner",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:47.319Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-waehrenddessen",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:52:56.677Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-zudem",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:53:09.057Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-darueber-hinaus",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:53:32.872Z",
+      "grade": null
+    },
+    {
+      "sessionId": "68990d99-bf32-4723-80eb-630ad1a4e21c",
+      "modeId": "flashcards",
+      "questionId": "fc-deshalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:53:38.225Z",
+      "grade": null
+    }
+  ],
+  "strengths": [
+    {
+      "itemType": "word",
+      "itemId": "waehrenddessen",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:19:50.487Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "hingegen",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:20:30.561Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "vermutlich",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:21:50.603Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "des-weiteren",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:22:32.564Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "schliesslich",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:23:05.795Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "wegen",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:23:25.079Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "auch",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:23:37.077Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "dann",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:24:34.379Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "ausschliesslich",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:25:35.850Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "ausserdem",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:25:49.785Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "daher",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:32:14.122Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "gegebenenfalls-ggf",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:32:39.134Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "als-naechstes",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:32:48.377Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "am-ende",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:33:03.030Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "zurzeit",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:33:45.779Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "allerdings",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-12T14:34:38.528Z"
+    }
+  ]
 }
