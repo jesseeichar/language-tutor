@@ -36,29 +36,21 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
     } finally { finishing.current = false; setEnding(false); }
   }, [session.id, onFinished]);
 
-  const next = useCallback(async () => {
-    if (finishing.current || navigating.current) return;
+  const move = useCallback(async (step: -1 | 1) => {
+    if (finishing.current || navigating.current || index + step < 0) return;
     navigating.current = true;
     setError(null);
     try {
-      // Flashcards can request Next immediately after Flip. Preserve that intent until saving completes.
+      // Preserve a navigation request made immediately after Flip until saving completes.
       await pendingAnswer.current;
-      if (index + 1 >= questions.length) void finish();
-      else setIndex(index + 1);
+      if (index + step >= questions.length) await finish();
+      else setIndex(index + step);
     } catch (e) { setError(e); }
     finally { navigating.current = false; }
   }, [index, questions.length, finish]);
 
-  const previous = useCallback(async () => {
-    if (finishing.current || navigating.current || index === 0) return;
-    navigating.current = true;
-    setError(null);
-    try {
-      await pendingAnswer.current;
-      setIndex(index - 1);
-    } catch (e) { setError(e); }
-    finally { navigating.current = false; }
-  }, [index]);
+  const next = useCallback(() => { void move(1); }, [move]);
+  const previous = useCallback(() => { void move(-1); }, [move]);
 
   const submit = useCallback(
     async (response: unknown) => {
