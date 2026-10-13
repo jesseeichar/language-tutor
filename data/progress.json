@@ -1426,6 +1426,441 @@
       "repeatOf": null,
       "startedAt": "2026-10-13T06:11:25.739Z",
       "finishedAt": "2026-10-13T07:53:46.230Z"
+    },
+    {
+      "id": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "modeId": "quiz",
+      "graded": true,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "quiz-mc-zuerst",
+        "quiz-mc-am-anfang",
+        "quiz-mc-dadurch",
+        "quiz-mc-zudem",
+        "quiz-mc-daraufhin",
+        "quiz-mc-ausschliesslich",
+        "quiz-mc-dagegen",
+        "quiz-mc-im-anschluss-an-akk",
+        "quiz-mc-wegen",
+        "quiz-mc-weil",
+        "quiz-mc-sogar",
+        "quiz-mc-zunaechst",
+        "quiz-mc-gegebenenfalls-ggf",
+        "quiz-mc-des-weiteren",
+        "quiz-mc-im-gegensatz-dazu",
+        "quiz-mc-auch",
+        "quiz-mc-obwohl",
+        "quiz-mc-aber",
+        "quiz-mc-vermutlich",
+        "quiz-mc-darueber-hinaus",
+        "quiz-mc-hingegen",
+        "quiz-mc-gemaess",
+        "quiz-mc-dann",
+        "quiz-mc-am-ende",
+        "quiz-mc-weiterhin",
+        "quiz-mc-und",
+        "quiz-mc-daher",
+        "quiz-mc-anschliessend",
+        "quiz-mc-ebenfalls",
+        "quiz-mc-deshalb",
+        "quiz-mc-nachher",
+        "quiz-mc-dafuer",
+        "quiz-mc-schliesslich",
+        "quiz-mc-innerhalb",
+        "quiz-mc-jedoch",
+        "quiz-mc-ferner",
+        "quiz-mc-am-schluss",
+        "quiz-mc-danach",
+        "quiz-mc-somit",
+        "quiz-mc-zuletzt",
+        "quiz-mc-zurzeit",
+        "quiz-mc-spaeter",
+        "quiz-mc-folglich",
+        "quiz-mc-allerdings",
+        "quiz-mc-aus-diesem-grund",
+        "quiz-mc-deswegen",
+        "quiz-mc-ausserdem",
+        "quiz-mc-zu-beginn",
+        "quiz-mc-das-liegt-nur-daran",
+        "quiz-mc-als-naechstes",
+        "quiz-mc-waehrenddessen",
+        "quiz-mc-anfangs"
+      ],
+      "questionPoints": {
+        "quiz-mc-zuerst": 1,
+        "quiz-mc-am-anfang": 1,
+        "quiz-mc-dadurch": 1,
+        "quiz-mc-zudem": 1,
+        "quiz-mc-daraufhin": 1,
+        "quiz-mc-ausschliesslich": 1,
+        "quiz-mc-dagegen": 1,
+        "quiz-mc-im-anschluss-an-akk": 1,
+        "quiz-mc-wegen": 1,
+        "quiz-mc-weil": 1,
+        "quiz-mc-sogar": 1,
+        "quiz-mc-zunaechst": 1,
+        "quiz-mc-gegebenenfalls-ggf": 1,
+        "quiz-mc-des-weiteren": 1,
+        "quiz-mc-im-gegensatz-dazu": 1,
+        "quiz-mc-auch": 1,
+        "quiz-mc-obwohl": 1,
+        "quiz-mc-aber": 1,
+        "quiz-mc-vermutlich": 1,
+        "quiz-mc-darueber-hinaus": 1,
+        "quiz-mc-hingegen": 1,
+        "quiz-mc-gemaess": 1,
+        "quiz-mc-dann": 1,
+        "quiz-mc-am-ende": 1,
+        "quiz-mc-weiterhin": 1,
+        "quiz-mc-und": 1,
+        "quiz-mc-daher": 1,
+        "quiz-mc-anschliessend": 1,
+        "quiz-mc-ebenfalls": 1,
+        "quiz-mc-deshalb": 1,
+        "quiz-mc-nachher": 1,
+        "quiz-mc-dafuer": 1,
+        "quiz-mc-schliesslich": 1,
+        "quiz-mc-innerhalb": 1,
+        "quiz-mc-jedoch": 1,
+        "quiz-mc-ferner": 1,
+        "quiz-mc-am-schluss": 1,
+        "quiz-mc-danach": 1,
+        "quiz-mc-somit": 1,
+        "quiz-mc-zuletzt": 1,
+        "quiz-mc-zurzeit": 1,
+        "quiz-mc-spaeter": 1,
+        "quiz-mc-folglich": 1,
+        "quiz-mc-allerdings": 1,
+        "quiz-mc-aus-diesem-grund": 1,
+        "quiz-mc-deswegen": 1,
+        "quiz-mc-ausserdem": 1,
+        "quiz-mc-zu-beginn": 1,
+        "quiz-mc-das-liegt-nur-daran": 1,
+        "quiz-mc-als-naechstes": 1,
+        "quiz-mc-waehrenddessen": 1,
+        "quiz-mc-anfangs": 1
+      },
+      "directions": {
+        "quiz-mc-zuerst": "de-en",
+        "quiz-mc-am-anfang": "de-en",
+        "quiz-mc-dadurch": "de-en",
+        "quiz-mc-zudem": "de-en",
+        "quiz-mc-daraufhin": "de-en",
+        "quiz-mc-ausschliesslich": "de-en",
+        "quiz-mc-dagegen": "de-en",
+        "quiz-mc-im-anschluss-an-akk": "de-en",
+        "quiz-mc-wegen": "de-en",
+        "quiz-mc-weil": "de-en",
+        "quiz-mc-sogar": "de-en",
+        "quiz-mc-zunaechst": "de-en",
+        "quiz-mc-gegebenenfalls-ggf": "de-en",
+        "quiz-mc-des-weiteren": "de-en",
+        "quiz-mc-im-gegensatz-dazu": "de-en",
+        "quiz-mc-auch": "de-en",
+        "quiz-mc-obwohl": "de-en",
+        "quiz-mc-aber": "de-en",
+        "quiz-mc-vermutlich": "de-en",
+        "quiz-mc-darueber-hinaus": "de-en",
+        "quiz-mc-hingegen": "de-en",
+        "quiz-mc-gemaess": "de-en",
+        "quiz-mc-dann": "de-en",
+        "quiz-mc-am-ende": "de-en",
+        "quiz-mc-weiterhin": "de-en",
+        "quiz-mc-und": "de-en",
+        "quiz-mc-daher": "de-en",
+        "quiz-mc-anschliessend": "de-en",
+        "quiz-mc-ebenfalls": "de-en",
+        "quiz-mc-deshalb": "de-en",
+        "quiz-mc-nachher": "de-en",
+        "quiz-mc-dafuer": "de-en",
+        "quiz-mc-schliesslich": "de-en",
+        "quiz-mc-innerhalb": "de-en",
+        "quiz-mc-jedoch": "de-en",
+        "quiz-mc-ferner": "de-en",
+        "quiz-mc-am-schluss": "de-en",
+        "quiz-mc-danach": "de-en",
+        "quiz-mc-somit": "de-en",
+        "quiz-mc-zuletzt": "de-en",
+        "quiz-mc-zurzeit": "de-en",
+        "quiz-mc-spaeter": "de-en",
+        "quiz-mc-folglich": "de-en",
+        "quiz-mc-allerdings": "de-en",
+        "quiz-mc-aus-diesem-grund": "de-en",
+        "quiz-mc-deswegen": "de-en",
+        "quiz-mc-ausserdem": "de-en",
+        "quiz-mc-zu-beginn": "de-en",
+        "quiz-mc-das-liegt-nur-daran": "de-en",
+        "quiz-mc-als-naechstes": "de-en",
+        "quiz-mc-waehrenddessen": "de-en",
+        "quiz-mc-anfangs": "de-en"
+      },
+      "questionTypes": [
+        "multiple-choice"
+      ],
+      "direction": "de-en",
+      "repeatOf": null,
+      "startedAt": "2026-10-13T07:56:11.439Z",
+      "finishedAt": "2026-10-13T10:48:37.124Z"
+    },
+    {
+      "id": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "graded": true,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "quiz-mc-zuerst",
+        "quiz-mc-am-anfang",
+        "quiz-mc-dadurch",
+        "quiz-mc-zudem",
+        "quiz-mc-daraufhin",
+        "quiz-mc-ausschliesslich",
+        "quiz-mc-dagegen",
+        "quiz-mc-im-anschluss-an-akk",
+        "quiz-mc-wegen",
+        "quiz-mc-weil",
+        "quiz-mc-sogar",
+        "quiz-mc-zunaechst",
+        "quiz-mc-gegebenenfalls-ggf",
+        "quiz-mc-des-weiteren",
+        "quiz-mc-im-gegensatz-dazu",
+        "quiz-mc-auch",
+        "quiz-mc-obwohl",
+        "quiz-mc-aber",
+        "quiz-mc-vermutlich",
+        "quiz-mc-darueber-hinaus",
+        "quiz-mc-hingegen",
+        "quiz-mc-gemaess",
+        "quiz-mc-dann",
+        "quiz-mc-am-ende",
+        "quiz-mc-weiterhin",
+        "quiz-mc-und",
+        "quiz-mc-daher",
+        "quiz-mc-anschliessend",
+        "quiz-mc-ebenfalls",
+        "quiz-mc-deshalb",
+        "quiz-mc-nachher",
+        "quiz-mc-dafuer",
+        "quiz-mc-schliesslich",
+        "quiz-mc-innerhalb",
+        "quiz-mc-jedoch",
+        "quiz-mc-ferner",
+        "quiz-mc-am-schluss",
+        "quiz-mc-danach",
+        "quiz-mc-somit",
+        "quiz-mc-zuletzt",
+        "quiz-mc-zurzeit",
+        "quiz-mc-spaeter",
+        "quiz-mc-folglich",
+        "quiz-mc-allerdings",
+        "quiz-mc-aus-diesem-grund",
+        "quiz-mc-deswegen",
+        "quiz-mc-ausserdem",
+        "quiz-mc-zu-beginn",
+        "quiz-mc-das-liegt-nur-daran",
+        "quiz-mc-als-naechstes",
+        "quiz-mc-waehrenddessen",
+        "quiz-mc-anfangs"
+      ],
+      "questionPoints": {
+        "quiz-mc-zuerst": 1,
+        "quiz-mc-am-anfang": 1,
+        "quiz-mc-dadurch": 1,
+        "quiz-mc-zudem": 1,
+        "quiz-mc-daraufhin": 1,
+        "quiz-mc-ausschliesslich": 1,
+        "quiz-mc-dagegen": 1,
+        "quiz-mc-im-anschluss-an-akk": 1,
+        "quiz-mc-wegen": 1,
+        "quiz-mc-weil": 1,
+        "quiz-mc-sogar": 1,
+        "quiz-mc-zunaechst": 1,
+        "quiz-mc-gegebenenfalls-ggf": 1,
+        "quiz-mc-des-weiteren": 1,
+        "quiz-mc-im-gegensatz-dazu": 1,
+        "quiz-mc-auch": 1,
+        "quiz-mc-obwohl": 1,
+        "quiz-mc-aber": 1,
+        "quiz-mc-vermutlich": 1,
+        "quiz-mc-darueber-hinaus": 1,
+        "quiz-mc-hingegen": 1,
+        "quiz-mc-gemaess": 1,
+        "quiz-mc-dann": 1,
+        "quiz-mc-am-ende": 1,
+        "quiz-mc-weiterhin": 1,
+        "quiz-mc-und": 1,
+        "quiz-mc-daher": 1,
+        "quiz-mc-anschliessend": 1,
+        "quiz-mc-ebenfalls": 1,
+        "quiz-mc-deshalb": 1,
+        "quiz-mc-nachher": 1,
+        "quiz-mc-dafuer": 1,
+        "quiz-mc-schliesslich": 1,
+        "quiz-mc-innerhalb": 1,
+        "quiz-mc-jedoch": 1,
+        "quiz-mc-ferner": 1,
+        "quiz-mc-am-schluss": 1,
+        "quiz-mc-danach": 1,
+        "quiz-mc-somit": 1,
+        "quiz-mc-zuletzt": 1,
+        "quiz-mc-zurzeit": 1,
+        "quiz-mc-spaeter": 1,
+        "quiz-mc-folglich": 1,
+        "quiz-mc-allerdings": 1,
+        "quiz-mc-aus-diesem-grund": 1,
+        "quiz-mc-deswegen": 1,
+        "quiz-mc-ausserdem": 1,
+        "quiz-mc-zu-beginn": 1,
+        "quiz-mc-das-liegt-nur-daran": 1,
+        "quiz-mc-als-naechstes": 1,
+        "quiz-mc-waehrenddessen": 1,
+        "quiz-mc-anfangs": 1
+      },
+      "directions": {
+        "quiz-mc-zuerst": "de-en",
+        "quiz-mc-am-anfang": "de-en",
+        "quiz-mc-dadurch": "de-en",
+        "quiz-mc-zudem": "de-en",
+        "quiz-mc-daraufhin": "de-en",
+        "quiz-mc-ausschliesslich": "de-en",
+        "quiz-mc-dagegen": "de-en",
+        "quiz-mc-im-anschluss-an-akk": "de-en",
+        "quiz-mc-wegen": "de-en",
+        "quiz-mc-weil": "de-en",
+        "quiz-mc-sogar": "de-en",
+        "quiz-mc-zunaechst": "de-en",
+        "quiz-mc-gegebenenfalls-ggf": "de-en",
+        "quiz-mc-des-weiteren": "de-en",
+        "quiz-mc-im-gegensatz-dazu": "de-en",
+        "quiz-mc-auch": "de-en",
+        "quiz-mc-obwohl": "de-en",
+        "quiz-mc-aber": "de-en",
+        "quiz-mc-vermutlich": "de-en",
+        "quiz-mc-darueber-hinaus": "de-en",
+        "quiz-mc-hingegen": "de-en",
+        "quiz-mc-gemaess": "de-en",
+        "quiz-mc-dann": "de-en",
+        "quiz-mc-am-ende": "de-en",
+        "quiz-mc-weiterhin": "de-en",
+        "quiz-mc-und": "de-en",
+        "quiz-mc-daher": "de-en",
+        "quiz-mc-anschliessend": "de-en",
+        "quiz-mc-ebenfalls": "de-en",
+        "quiz-mc-deshalb": "de-en",
+        "quiz-mc-nachher": "de-en",
+        "quiz-mc-dafuer": "de-en",
+        "quiz-mc-schliesslich": "de-en",
+        "quiz-mc-innerhalb": "de-en",
+        "quiz-mc-jedoch": "de-en",
+        "quiz-mc-ferner": "de-en",
+        "quiz-mc-am-schluss": "de-en",
+        "quiz-mc-danach": "de-en",
+        "quiz-mc-somit": "de-en",
+        "quiz-mc-zuletzt": "de-en",
+        "quiz-mc-zurzeit": "de-en",
+        "quiz-mc-spaeter": "de-en",
+        "quiz-mc-folglich": "de-en",
+        "quiz-mc-allerdings": "de-en",
+        "quiz-mc-aus-diesem-grund": "de-en",
+        "quiz-mc-deswegen": "de-en",
+        "quiz-mc-ausserdem": "de-en",
+        "quiz-mc-zu-beginn": "de-en",
+        "quiz-mc-das-liegt-nur-daran": "de-en",
+        "quiz-mc-als-naechstes": "de-en",
+        "quiz-mc-waehrenddessen": "de-en",
+        "quiz-mc-anfangs": "de-en"
+      },
+      "questionTypes": [
+        "multiple-choice"
+      ],
+      "direction": "de-en",
+      "repeatOf": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "startedAt": "2026-10-13T07:59:50.882Z",
+      "finishedAt": null
+    },
+    {
+      "id": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "graded": false,
+      "categoryIds": [
+        "vocab-connectors-linking-words"
+      ],
+      "questionIds": [
+        "fc-des-weiteren",
+        "fc-weil",
+        "fc-aus-diesem-grund",
+        "fc-dadurch",
+        "fc-zurzeit",
+        "fc-anfangs",
+        "fc-anschliessend",
+        "fc-deshalb",
+        "fc-am-ende",
+        "fc-als-naechstes",
+        "fc-schliesslich",
+        "fc-allerdings",
+        "fc-jedoch",
+        "fc-und",
+        "fc-auch",
+        "fc-ausschliesslich",
+        "fc-weiterhin",
+        "fc-zuerst",
+        "fc-darueber-hinaus",
+        "fc-dann"
+      ],
+      "questionPoints": {
+        "fc-des-weiteren": 0,
+        "fc-weil": 0,
+        "fc-aus-diesem-grund": 0,
+        "fc-dadurch": 0,
+        "fc-zurzeit": 0,
+        "fc-anfangs": 0,
+        "fc-anschliessend": 0,
+        "fc-deshalb": 0,
+        "fc-am-ende": 0,
+        "fc-als-naechstes": 0,
+        "fc-schliesslich": 0,
+        "fc-allerdings": 0,
+        "fc-jedoch": 0,
+        "fc-und": 0,
+        "fc-auch": 0,
+        "fc-ausschliesslich": 0,
+        "fc-weiterhin": 0,
+        "fc-zuerst": 0,
+        "fc-darueber-hinaus": 0,
+        "fc-dann": 0
+      },
+      "directions": {
+        "fc-des-weiteren": "de-en",
+        "fc-weil": "de-en",
+        "fc-aus-diesem-grund": "de-en",
+        "fc-dadurch": "de-en",
+        "fc-zurzeit": "de-en",
+        "fc-anfangs": "de-en",
+        "fc-anschliessend": "de-en",
+        "fc-deshalb": "de-en",
+        "fc-am-ende": "de-en",
+        "fc-als-naechstes": "de-en",
+        "fc-schliesslich": "de-en",
+        "fc-allerdings": "de-en",
+        "fc-jedoch": "de-en",
+        "fc-und": "de-en",
+        "fc-auch": "de-en",
+        "fc-ausschliesslich": "de-en",
+        "fc-weiterhin": "de-en",
+        "fc-zuerst": "de-en",
+        "fc-darueber-hinaus": "de-en",
+        "fc-dann": "de-en"
+      },
+      "questionTypes": [
+        "translation"
+      ],
+      "direction": "de-en",
+      "repeatOf": null,
+      "startedAt": "2026-10-13T10:55:30.038Z",
+      "finishedAt": null
     }
   ],
   "attempts": [
@@ -4572,6 +5007,1063 @@
       "direction": "de-en",
       "answeredAt": "2026-10-13T07:53:38.225Z",
       "grade": null
+    },
+    {
+      "sessionId": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zuerst",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:56:22.058Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: First, we read the report."
+      }
+    },
+    {
+      "sessionId": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-am-anfang",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:56:41.538Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: At the beginning of the week, we have many meetings."
+      }
+    },
+    {
+      "sessionId": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dadurch",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:57:02.683Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We use a new tool; as a result, we save time."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zuerst",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T07:59:56.855Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: First, we read the report."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-am-anfang",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:00:07.031Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: At the beginning of the week, we have many meetings."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dadurch",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:03:20.463Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We use a new tool; as a result, we save time."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zudem",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:03:42.696Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The solution is expensive; moreover, it is slow."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-daraufhin",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:08:56.663Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The customer complained; in response, we changed the process.\ndaraufhin marks a reaction: the second action happens because of the first."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-ausschliesslich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:09:14.136Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The room is exclusively for employees."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dagegen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:09:38.801Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The boss is for the plan; the team is against it."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-im-anschluss-an-akk",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:10:15.247Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Following the talk, there is a discussion.\nim Anschluss an + accusative: an den Vortrag."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-wegen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:13:52.961Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Because of the traffic jam, he is late.\nwegen + genitive: wegen des Staus."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-weil",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:14:18.366Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We are working from home today because the office is closed."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-sogar",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:14:29.030Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: She even works on Sunday."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zunaechst",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": false,
+      "pointsAwarded": 0,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:17:33.675Z",
+      "grade": {
+        "correct": false,
+        "score": 0,
+        "feedback": "Expected answer: To begin with, we check the requirements."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-gegebenenfalls-ggf",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:35:39.585Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We adjust the plan if necessary."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-des-weiteren",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:36:13.785Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Furthermore, I would like to point out the costs.\nhinweisen auf + accusative: auf die Kosten hinweisen."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-im-gegensatz-dazu",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:36:29.972Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: In contrast to that, the new version is stable."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-auch",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T08:36:42.430Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We also need a laptop."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-obwohl",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:10:49.093Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We use the solution even though it is expensive."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-aber",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:10:58.125Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The solution is expensive, but it works."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-vermutlich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:11:08.603Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: He is probably sick."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-darueber-hinaus",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:11:27.876Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Furthermore, we offer training courses."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-hingegen",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:11:43.882Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The old server is slow; by contrast, the new one is fast."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-gemaess",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:12:05.285Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: According to the contract, we pay monthly.\ngemäss + dative: gemäss dem Vertrag."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dann",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:16:02.489Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: I read the emails, then I call the customer."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-am-ende",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:16:17.267Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: At the end of the month, we write the invoices."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-weiterhin",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:16:40.076Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: She continues to work from home."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-und",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:16:51.008Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: I am working today and tomorrow."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-daher",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:32:25.584Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The data is missing; therefore, we are postponing the meeting."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-anschliessend",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:32:48.911Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Afterwards, there is a Q&A session."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-ebenfalls",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:35:37.922Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: My colleague is sick as well."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-deshalb",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:36:31.736Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The solution is expensive; therefore, we are looking for an alternative."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-nachher",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T09:36:44.527Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: I will call you later.\nanrufen is separable: Ich rufe dich nachher an."
+      }
+    },
+    {
+      "sessionId": "ed7fe6ac-9b72-455d-8e86-048364596add",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zudem",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:48:27.786Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The solution is expensive; moreover, it is slow."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-dafuer",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:49:34.061Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The majority is in favor of it."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-schliesslich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 3
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:49:49.121Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Finally, we read the report."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-innerhalb",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:49:58.284Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: We deliver within a week."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-jedoch",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:50:19.112Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The offer is good; however, it is too late."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-ferner",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:50:49.355Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Furthermore, we recommend a training course."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-am-schluss",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:51:03.659Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: At the end of the presentation, there were many questions."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-danach",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:51:16.663Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: After that, we read the report."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-somit",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 1
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:51:43.247Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Everyone agreed; thus, the plan is decided."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zuletzt",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:51:58.646Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Lastly, we save the file."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-zurzeit",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:52:18.993Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: She is currently working on a new project."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-spaeter",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:52:26.836Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Later, we read the report."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-folglich",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:52:36.901Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: Costs are rising; consequently, we are raising the prices."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-allerdings",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 2
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:53:00.691Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: The apartment is nice; however, it is small."
+      }
+    },
+    {
+      "sessionId": "e7a1fe14-9a4c-4ebb-a485-8d7e5a8a3195",
+      "modeId": "quiz",
+      "questionId": "quiz-mc-aus-diesem-grund",
+      "response": {
+        "type": "multiple-choice",
+        "optionIndex": 0
+      },
+      "correct": true,
+      "pointsAwarded": 1,
+      "pointsPossible": 1,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:53:08.509Z",
+      "grade": {
+        "correct": true,
+        "score": 1,
+        "feedback": "Expected answer: For this reason, the meeting is canceled."
+      }
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-des-weiteren",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:55:39.493Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-weil",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:55:46.353Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-aus-diesem-grund",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:55:48.234Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-dadurch",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:55:51.179Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-zurzeit",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:55:56.989Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-anfangs",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:56:03.149Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-anschliessend",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:56:08.636Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-deshalb",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:56:20.208Z",
+      "grade": null
+    },
+    {
+      "sessionId": "c63ea0ad-9162-4fde-98da-f38852a6b446",
+      "modeId": "flashcards",
+      "questionId": "fc-am-ende",
+      "response": {
+        "revealed": true
+      },
+      "correct": null,
+      "pointsAwarded": 0,
+      "pointsPossible": 0,
+      "direction": "de-en",
+      "answeredAt": "2026-10-13T10:56:29.021Z",
+      "grade": null
     }
   ],
   "strengths": [
@@ -4586,66 +6078,66 @@
     {
       "itemType": "word",
       "itemId": "hingegen",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:20:30.561Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T09:11:43.882Z"
     },
     {
       "itemType": "word",
       "itemId": "vermutlich",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:21:50.603Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T09:11:08.603Z"
     },
     {
       "itemType": "word",
       "itemId": "des-weiteren",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:22:32.564Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:36:13.785Z"
     },
     {
       "itemType": "word",
       "itemId": "schliesslich",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:23:05.795Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T10:49:49.121Z"
     },
     {
       "itemType": "word",
       "itemId": "wegen",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:23:25.079Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:13:52.961Z"
     },
     {
       "itemType": "word",
       "itemId": "auch",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:23:37.077Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:36:42.430Z"
     },
     {
       "itemType": "word",
       "itemId": "dann",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:24:34.379Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T09:16:02.489Z"
     },
     {
       "itemType": "word",
       "itemId": "ausschliesslich",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:25:35.850Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:09:14.136Z"
     },
     {
       "itemType": "word",
@@ -4658,18 +6150,18 @@
     {
       "itemType": "word",
       "itemId": "daher",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:32:14.122Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T09:32:25.584Z"
     },
     {
       "itemType": "word",
       "itemId": "gegebenenfalls-ggf",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:32:39.134Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:35:39.585Z"
     },
     {
       "itemType": "word",
@@ -4682,26 +6174,282 @@
     {
       "itemType": "word",
       "itemId": "am-ende",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:33:03.030Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T09:16:17.267Z"
     },
     {
       "itemType": "word",
       "itemId": "zurzeit",
-      "score": 1,
-      "attempts": 1,
-      "correct": 1,
-      "updatedAt": "2026-10-12T14:33:45.779Z"
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T10:52:18.993Z"
     },
     {
       "itemType": "word",
       "itemId": "allerdings",
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T10:53:00.691Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "zuerst",
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T07:59:56.855Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "am-anfang",
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:00:07.031Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "dadurch",
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T08:03:20.463Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "zudem",
+      "score": 2,
+      "attempts": 2,
+      "correct": 2,
+      "updatedAt": "2026-10-13T10:48:27.786Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "daraufhin",
       "score": 1,
       "attempts": 1,
       "correct": 1,
-      "updatedAt": "2026-10-12T14:34:38.528Z"
+      "updatedAt": "2026-10-13T08:08:56.663Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "dagegen",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T08:09:38.801Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "im-anschluss-an-akk",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T08:10:15.247Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "weil",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T08:14:18.366Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "sogar",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T08:14:29.030Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "zunaechst",
+      "score": -2,
+      "attempts": 1,
+      "correct": 0,
+      "updatedAt": "2026-10-13T08:17:33.675Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "im-gegensatz-dazu",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T08:36:29.972Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "obwohl",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:10:49.093Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "aber",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:10:58.125Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "darueber-hinaus",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:11:27.876Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "gemaess",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:12:05.285Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "weiterhin",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:16:40.076Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "und",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:16:51.008Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "anschliessend",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:32:48.911Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "ebenfalls",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:35:37.922Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "deshalb",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:36:31.736Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "nachher",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T09:36:44.527Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "dafuer",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:49:34.061Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "innerhalb",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:49:58.284Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "jedoch",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:50:19.112Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "ferner",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:50:49.355Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "am-schluss",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:51:03.659Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "danach",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:51:16.663Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "somit",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:51:43.247Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "zuletzt",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:51:58.646Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "spaeter",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:52:26.836Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "folglich",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:52:36.901Z"
+    },
+    {
+      "itemType": "word",
+      "itemId": "aus-diesem-grund",
+      "score": 1,
+      "attempts": 1,
+      "correct": 1,
+      "updatedAt": "2026-10-13T10:53:08.509Z"
     }
   ]
 }
