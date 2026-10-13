@@ -10,6 +10,12 @@ export class AnswerError extends Error {
   constructor(message: string, public readonly status: number, public readonly details?: string[]) { super(message); }
 }
 
+function requireActiveSession(store: ProgressStore, sessionId: string) {
+  const session = store.getSession(sessionId);
+  if (!session) throw new AnswerError("This session is no longer in the retained history. Start a new session.", 404);
+  if (session.finishedAt) throw new AnswerError("Session is already finished", 409);
+}
+
 /** Identical retries read the committed result; a changed answer must never rewrite a grade. */
 function previousResult(store: ProgressStore, sessionId: string, questionId: string, response: unknown): SubmitAnswerResponse | undefined {
   const attempt = store.getAttempt(sessionId, questionId);
@@ -46,7 +52,7 @@ export async function recordAnswer(store: ProgressStore, sessionId: string, body
   }
   const evaluate = async (): Promise<SubmitAnswerResponse> => {
     const question = (await content()).questions.get(mode.id)?.find((q) => q.id === questionId);
-    if (store.getSession(sessionId)!.finishedAt) throw new AnswerError("Session is already finished", 409);
+    requireActiveSession(store, sessionId);
     if (!question) throw new AnswerError(`Question ${questionId} no longer exists in data/questions/${mode.id}.json`, 409);
     const pointsPossible = session.questionPoints?.[questionId] ?? pointsFor(mode, question);
     const grade = mode.graded ? await mode.grade(question, response.data, session.directions[questionId] ?? null, services) : null;
@@ -54,7 +60,7 @@ export async function recordAnswer(store: ProgressStore, sessionId: string, body
     // Network grading yields too: recheck immediately before the synchronous atomic update.
     const concurrent = previousResult(store, sessionId, questionId, response.data);
     if (concurrent) return concurrent;
-    if (store.getSession(sessionId)!.finishedAt) throw new AnswerError("Session is already finished", 409);
+    requireActiveSession(store, sessionId);
     const pointsAwarded = grade ? grade.score * pointsPossible : 0;
     store.recordAttempt({ sessionId, modeId: mode.id, questionId, response: response.data,
       correct: grade ? grade.correct : null, pointsAwarded, pointsPossible, grade,

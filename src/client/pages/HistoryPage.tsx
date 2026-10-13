@@ -11,7 +11,7 @@ interface Props {
   onRepeat: (sessionId: string) => Promise<void>;
 }
 
-/** Every session ever started, newest first, each one repeatable. */
+/** The most recent sessions, newest first, each one repeatable. */
 export function HistoryPage({ onRepeat }: Props) {
   const [log, setLog] = useState<SessionLogEntry[] | null>(null);
   const [error, setError] = useState<unknown>(null);
@@ -37,6 +37,7 @@ export function HistoryPage({ onRepeat }: Props) {
   return (
     <div className="history">
       <h2>History</h2>
+      <p className="muted">The last 50 sessions are kept, including unfinished sessions. Learning scores are preserved.</p>
       <ProgressBackup />
       <ErrorBox error={error} />
       {log.length === 0 && <p className="muted">No sessions yet.</p>}

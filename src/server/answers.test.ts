@@ -114,3 +114,15 @@ test("failed grading leaves no attempt or penalty and releases the pending slot 
   expect(retry.pointsAwarded).toBe(2);
   expect(store.sessionTotals(session.id).answered).toBe(1);
 });
+
+test("pruning a session during AI grading returns a clear error without recording a late answer", async () => {
+  const { store, session } = setup();
+  const grader = deferredGrader();
+  const answer = recordAnswer(store, session.id, body, async () => content, grader.grading);
+  await grader.started;
+  for (let i = 0; i < 50; i++) store.createSession({ ...session, repeatOf: null });
+  grader.resolve({ correct: true, score: 1, feedback: "Accepted" });
+  await expect(answer).rejects.toMatchObject({ status: 404 });
+  expect(store.getSession(session.id)).toBeNull();
+  expect(store.getStrength("word", "zuerst")).toBe(0);
+});

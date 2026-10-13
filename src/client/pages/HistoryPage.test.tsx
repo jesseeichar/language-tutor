@@ -28,6 +28,7 @@ describe("HistoryPage", () => {
     render(<HistoryPage onRepeat={mock(() => Promise.resolve())} />);
     const items = await screen.findAllByRole("listitem");
     expect(items).toHaveLength(2);
+    expect(screen.getByText(/The last 50 sessions are kept/)).toBeTruthy();
     const latest = within(items[0]!);
     expect(latest.getByText("Repeated session")).toBeTruthy();
     expect(latest.getByText(/Translation · English → German/)).toBeTruthy();

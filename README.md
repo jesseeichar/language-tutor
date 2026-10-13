@@ -83,6 +83,12 @@ then run `bun run validate` and try them in the app.
 ## Saving and restoring progress
 
 Live progress is saved automatically in `data/progress.json`: sessions, answers, and strength scores.
+The last **50 sessions** are kept, including unfinished sessions, ordered by creation. Older sessions,
+answers, and feedback are removed on startup and when a new session exceeds the limit. Learning
+scores and compact per-question practice counts/dates are preserved. Retained sessions can still be
+repeated after their original session is removed. This limits live history; earlier Git commits still
+contain previously backed-up history.
+
 The file is created when you first study. Open **History** or **Manage content** and click **Back up changes** to commit saved progress,
 question files, and category definitions and push them to Git. The button shows when the backup completes and lets you retry failures. Git must be
 installed on the server, with a configured author and working credentials for the remote.

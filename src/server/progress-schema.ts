@@ -51,9 +51,19 @@ const ProgressSchema = z.strictObject({
   sessions: z.array(SessionSchema),
   attempts: z.array(AttemptSchema),
   strengths: z.array(StrengthSchema),
+  /** Compact learning history from pruned sessions, without responses or feedback. */
+  archivedQuestionHistory: z.array(z.strictObject({
+    modeId: id, questionId: id, timesSeen: z.number().int().positive(), lastSeen: timestamp,
+  })).optional(),
 }).superRefine((data, ctx) => {
   const problem = (message: string) => ctx.addIssue({ code: "custom", message });
   const sessions = new Map<string, StoredSession>();
+  const archived = new Set<string>();
+  for (const entry of data.archivedQuestionHistory ?? []) {
+    const key = JSON.stringify([entry.modeId, entry.questionId]);
+    if (archived.has(key)) problem(`duplicate archived question ${key}`);
+    archived.add(key);
+  }
   for (const session of data.sessions) {
     if (sessions.has(session.id)) problem(`duplicate session ${session.id}`);
     // Repeats point backward in creation order, which also prevents cycles.
