@@ -237,6 +237,7 @@ export function startServer(options: AppOptions): Server<undefined> {
           if (!mode) throw new HttpError(409, `Mode ${original.modeId} is no longer registered`);
           // Same questions in the same order, asked the same way round. Questions deleted since are skipped.
           const byId = new Map(((await content()).questions.get(mode.id) ?? []).map((q) => [q.id, q]));
+          requireSession(original.id); // Another session may have pruned the source while content loaded.
           const questions = original.questionIds.flatMap((id) => byId.get(id) ?? []);
           if (questions.length === 0) throw new HttpError(409, "None of this session's questions exist any more");
           const directions = Object.fromEntries(

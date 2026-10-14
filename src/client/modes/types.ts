@@ -9,6 +9,10 @@ export interface QuestionViewProps<Q extends QuestionBase = QuestionBase, R = un
   submit: (response: R) => Promise<SubmitAnswerResponse>;
   /** Moves on to the next question, or to the summary after the last one. */
   next: () => void;
+  /** Available when this mode permits review and a previous question exists. */
+  previous?: () => void;
+  /** A successful submission from an earlier visit in this session. */
+  submission?: SubmitAnswerResponse;
   isLast: boolean;
 }
 
@@ -16,6 +20,7 @@ export interface QuestionViewProps<Q extends QuestionBase = QuestionBase, R = un
 export interface ClientMode<Q extends QuestionBase = QuestionBase, R = unknown> {
   /** Must match the shared mode id. */
   id: string;
+  allowBack?: boolean;
   QuestionView: ComponentType<QuestionViewProps<Q, R>>;
 }
 

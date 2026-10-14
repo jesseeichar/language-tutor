@@ -72,6 +72,11 @@ A mode is defined in two halves with the same `id`:
 Study tools are ungraded modes. Their answers are recorded, so selection knows what was seen, but every
 question is worth 0 points and strength scores do not change.
 
+Client modes can opt into backward navigation with `allowBack`. The runner supplies `previous`
+when a previous question exists and caches successful submissions for revisits. Flashcards use this
+to restore revealed answers without recording another attempt. Navigation waits for pending saves;
+failed saves leave the learner on the current card with a retry. Graded modes remain forward-only.
+
 The `quiz` mode supports multiple-choice, fill-in-the-blank, and translation questions through a
 discriminated `type` schema. Its client sub-module has the same one-name interface budget as
 flashcards; no existing architecture limits are relaxed. Fill-in-the-blank answers use literal string equality; translations use the injected Jev grading service.
@@ -108,7 +113,7 @@ and reported together, by the API and by `bun run validate`.
 
 Two more endpoints make up the session log:
 
-- `GET /api/sessions` lists every session ever started, newest first, finished or not. Each entry has
+- `GET /api/sessions` lists up to 50 retained sessions, newest first, finished or not. Each entry has
   the learner's choices (categories, question types, direction), the result, and the session it
   repeats, if any. Labels come from the current data; anything deleted since shows as its id.
 - `POST /api/sessions/:id/repeat` starts a new session with exactly the same questions, in the same
@@ -278,3 +283,18 @@ resets Serve globally, enables Funnel, or logs the machine out of Tailscale. Occ
 are rejected before building; an occupied local port fails before publishing. Existing local JSON
 and environment configuration are reused. Unit tests inject subprocesses; static-serving tests use
 temporary directories and isolated progress.
+
+## History retention
+
+`ProgressStore` retains the last 50 created sessions, including unfinished sessions, on load and after
+updates. `progress-retention.ts` removes older sessions and their attempts after validating the input,
+then the store validates and atomically saves the result. Invalid files are never repaired by pruning.
+Failed writes leave existing stored state intact. Repeat links to pruned sessions become null; retained
+question/direction snapshots still allow exact repetition. Late AI responses for pruned sessions return
+404 without updating scores.
+
+Lifetime strength scores and counters remain unchanged. Optional version-1 `archivedQuestionHistory`
+keeps only a count and last-seen date per mode/question for removed attempts; selection combines these
+with retained attempts. This avoids treating previously studied questions as new and grows with the
+question bank rather than session count. Legacy files without the field remain readable. Old responses
+may still exist in Git history; retention does not rewrite commits or impose a byte-size limit.

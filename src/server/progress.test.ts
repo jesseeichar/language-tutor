@@ -210,3 +210,52 @@ describe("persistence and recovery", () => {
     expect(store.getSession(session.id)).toEqual(new ProgressStore(path).getSession(session.id));
   });
 });
+
+describe("50-session retention", () => {
+  test("creating session 51 prunes its source but returns a valid repeat and preserves learning", () => {
+    const original = newSession();
+    attempt(original.id, "q1", true);
+    for (let i = 1; i < 50; i++) newSession();
+    const repeat = store.createSession(plan({ repeatOf: original.id }));
+    expect(repeat.repeatOf).toBeNull();
+    expect(repeat.questionIds).toEqual(original.questionIds);
+    expect(store.getSession(original.id)).toBeNull();
+    expect(store.hasAttempt(original.id, "q1")).toBe(false);
+    expect(store.listSessions()).toHaveLength(50);
+    expect(store.getStrength("word", "w")).toBe(1);
+    expect(store.questionHistory("m").get("q1")!.timesSeen).toBe(1);
+    attempt(repeat.id, "q1", false);
+    const restored = new ProgressStore(path);
+    expect(restored.listSessions()).toEqual(store.listSessions());
+    expect(restored.questionHistory("m").get("q1")!.timesSeen).toBe(2);
+    expect(restored.getStrength("word", "w")).toBe(-1);
+  });
+
+  test("existing oversized files are compacted on load and compaction is not counted twice", () => {
+    const original = newSession();
+    attempt(original.id, "q1", true);
+    const data = parseProgress(JSON.parse(fs.readFileSync(path, "utf8")));
+    for (let i = 1; i < 60; i++) data.sessions.push({ ...original, id: `legacy-${i}`, repeatOf: original.id });
+    fs.writeFileSync(path, JSON.stringify(data));
+    const restored = new ProgressStore(path);
+    const saved = parseProgress(JSON.parse(fs.readFileSync(path, "utf8")));
+    expect(saved.sessions).toHaveLength(50);
+    expect(saved.attempts).toHaveLength(0);
+    expect(saved.strengths).toEqual(data.strengths);
+    expect(saved.sessions.every(s => s.repeatOf === null)).toBe(true);
+    expect(restored.questionHistory("m").get("q1")!.timesSeen).toBe(1);
+    expect(new ProgressStore(path).questionHistory("m")).toEqual(restored.questionHistory("m"));
+  });
+
+  test("a failed pruning save leaves both the old history and learning data intact", () => {
+    for (let i = 0; i < 50; i++) newSession();
+    const before = store.listSessions();
+    const saved = fs.readFileSync(path, "utf8");
+    const failure = spyOn(fs, "renameSync").mockImplementation(() => { throw new Error("disk failure"); });
+    try {
+      expect(() => newSession()).toThrow("disk failure");
+      expect(store.listSessions()).toEqual(before);
+      expect(fs.readFileSync(path, "utf8")).toBe(saved);
+    } finally { failure.mockRestore(); }
+  });
+});

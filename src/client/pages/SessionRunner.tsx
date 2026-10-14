@@ -19,6 +19,8 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
   const [ending, setEnding] = useState(false);
   const pendingAnswer = useRef<Promise<SubmitAnswerResponse> | null>(null);
   const finishing = useRef(false);
+  const navigating = useRef(false);
+  const submissions = useRef(new Map<string, SubmitAnswerResponse>());
   const clientMode = getClientMode(session.modeId);
   const question = questions[index];
   const typeLabel = mode.questionTypes.find((t) => t.id === question?.type)?.label;
@@ -34,23 +36,35 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
     } finally { finishing.current = false; setEnding(false); }
   }, [session.id, onFinished]);
 
-  const next = useCallback(async () => {
-    if (finishing.current) return;
+  const move = useCallback(async (step: -1 | 1) => {
+    if (finishing.current || navigating.current || index + step < 0) return;
+    navigating.current = true;
+    setError(null);
     try {
-      // Flashcards can request Next immediately after Flip. Preserve that intent until saving completes.
+      // Preserve a navigation request made immediately after Flip until saving completes.
       await pendingAnswer.current;
-      if (index + 1 >= questions.length) void finish();
-      else setIndex(index + 1);
+      if (index + step >= questions.length) await finish();
+      else setIndex(index + step);
     } catch (e) { setError(e); }
+    finally { navigating.current = false; }
   }, [index, questions.length, finish]);
+
+  const next = useCallback(() => { void move(1); }, [move]);
+  const previous = useCallback(() => { void move(-1); }, [move]);
 
   const submit = useCallback(
     async (response: unknown) => {
+      const saved = submissions.current.get(question!.id);
+      if (saved) return saved;
       if (pendingAnswer.current || finishing.current) throw new Error("Wait for the current request to finish.");
       setSubmitting(true);
       const request = api.submitAnswer(session.id, question!.id, response);
       pendingAnswer.current = request;
-      try { return await request; }
+      try {
+        const result = await request;
+        submissions.current.set(question!.id, result);
+        return result;
+      }
       finally { pendingAnswer.current = null; setSubmitting(false); }
     },
     [session.id, question],
@@ -80,6 +94,8 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
         direction={data.directions[question.id] ?? null}
         submit={submit}
         next={next}
+        previous={clientMode.allowBack && index > 0 ? previous : undefined}
+        submission={submissions.current.get(question.id)}
         isLast={index + 1 === questions.length}
       />
     </div>

@@ -139,3 +139,32 @@ test("fixed cards look the same whatever the direction", async ({ page }) => {
   await page.getByRole("button", { name: "Start" }).click();
   await expect(page.locator(".flashcard-front")).toHaveText("Ich lege das Buch auf ___ Tisch.");
 });
+
+test("flashcards can be reviewed backward and forward without recording duplicate answers", async ({ page }) => {
+  const answerRequests: string[] = [];
+  page.on("request", request => {
+    if (request.method() === "POST" && request.url().endsWith("/answers")) answerRequests.push(request.url());
+  });
+  await openFlashcards(page);
+  await page.getByLabel("Connectors").check();
+  await page.getByRole("button", { name: "Start" }).click();
+  await expect(page.getByRole("button", { name: /Previous/ })).toBeDisabled();
+  await page.getByRole("button", { name: /Flip/ }).click();
+  const first = await page.locator(".flashcard-front").textContent();
+  const answer = await page.locator(".flashcard-back").textContent();
+  await page.getByRole("button", { name: /Next/ }).click();
+  await expect(page.getByRole("button", { name: "Show answer" })).toBeVisible();
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.locator(".runner-head")).toContainText("1 / 2");
+  await expect(page.locator(".flashcard-front")).toHaveText(first!);
+  await expect(page.locator(".flashcard-back")).toHaveText(answer!);
+  await page.keyboard.press("ArrowRight");
+  await page.getByRole("button", { name: /Flip/ }).click();
+  await page.getByRole("button", { name: /Previous/ }).focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".runner-head")).toContainText("1 / 2");
+  await page.getByRole("button", { name: /Next/ }).click();
+  await page.getByRole("button", { name: /Finish/ }).click();
+  await expect(page.getByText("Studied 2 of 2 cards")).toBeVisible();
+  expect(answerRequests).toHaveLength(2);
+});

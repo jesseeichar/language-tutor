@@ -3,6 +3,7 @@ import type { Direction, SubmitAnswerResponse } from "../shared";
 import type { QuestionHistory } from "./selection";
 import { nextStrength } from "./scoring";
 import { ProgressFile } from "./progress-file";
+import { retainRecentSessions } from "./progress-retention";
 import { parseProgress, type ProgressData, type StoredSession } from "./progress-schema";
 
 export type { StoredSession } from "./progress-schema";
@@ -29,12 +30,14 @@ export class ProgressStore {
   constructor(path: string | null) {
     this.file = new ProgressFile(path);
     this.data = this.file.load();
+    if (retainRecentSessions(this.data)) this.file.save(parseProgress(this.data));
   }
 
   private update(change: (next: ProgressData) => void): void {
     const next = structuredClone(this.data);
     change(next);
     const validated = parseProgress(next);
+    if (retainRecentSessions(validated)) parseProgress(validated);
     this.file.save(validated);
     this.data = validated;
   }
@@ -42,7 +45,7 @@ export class ProgressStore {
   createSession(s: Omit<StoredSession, "id" | "startedAt" | "finishedAt">): StoredSession {
     const session: StoredSession = { ...s, id: crypto.randomUUID(), startedAt: new Date().toISOString(), finishedAt: null };
     this.update((next) => next.sessions.push(session));
-    return structuredClone(session);
+    return this.getSession(session.id)!;
   }
 
   getSession(id: string): StoredSession | null {
@@ -104,6 +107,9 @@ export class ProgressStore {
 
   questionHistory(modeId: string): Map<string, QuestionHistory> {
     const history = new Map<string, QuestionHistory>();
+    for (const entry of this.data.archivedQuestionHistory ?? []) {
+      if (entry.modeId === modeId) history.set(entry.questionId, { timesSeen: entry.timesSeen, lastSeen: entry.lastSeen });
+    }
     for (const a of this.data.attempts) {
       if (a.modeId !== modeId) continue;
       const previous = history.get(a.questionId);

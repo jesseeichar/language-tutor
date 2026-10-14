@@ -68,3 +68,10 @@ describe("progress schema", () => {
     expect(() => parseProgress({ ...data, attempts: [attempt] })).toThrow();
   });
 });
+
+test("compact question history is optional and rejects duplicate or invalid aggregates", () => {
+  const entry = { modeId: "m", questionId: "q", timesSeen: 1, lastSeen: "2026-10-12T12:00:00.000Z" };
+  expect(parseProgress({ ...log(), archivedQuestionHistory: [entry] }).archivedQuestionHistory).toEqual([entry]);
+  expect(() => parseProgress({ ...log(), archivedQuestionHistory: [entry, entry] })).toThrow("duplicate archived question");
+  expect(() => parseProgress({ ...log(), archivedQuestionHistory: [{ ...entry, timesSeen: 0 }] })).toThrow();
+});

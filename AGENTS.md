@@ -251,7 +251,11 @@ then pushes the current branch to its upstream
 are pushed too. The app never pulls or force-pushes. Git backup tests use temporary local remotes;
 never test the backup by pushing the development checkout.
 
-The History page lists every session. Repeat replays one exactly: same questions, order and directions.
+The History page and live progress retain the last 50 created sessions, including unfinished ones.
+Older sessions and answers are pruned on startup and as new sessions are saved. Keep lifetime strength
+scores and compact per-question seen counts/last-seen dates; pruning must not reset learning. Clear
+repeatOf links to removed sessions while preserving each retained session's question/direction snapshot.
+Repeat replays a retained session exactly: same questions, order and directions.
 Because repeats depend on question ids, never reuse a deleted question's id for a different question.
 
 The JSON format is versioned and validated in `src/server/progress-schema.ts`. Unsupported versions
