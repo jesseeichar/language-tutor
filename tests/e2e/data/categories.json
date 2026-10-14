@@ -5,6 +5,9 @@
     { "id": "vocab-contrast", "label": "Contrast", "group": "Vokabular", "parent": "vocab-connectors" },
     { "id": "grammar-cases", "label": "Cases", "group": "Grammatik" },
     { "id": "fresh-check", "label": "Freshness check", "group": "Test" },
-    { "id": "worksheet-zeitlicher-ablauf", "label": "Zeitlicher Ablauf & Verbindungswörter", "group": "Arbeitsblätter" }
+    { "id": "worksheet-zeitlicher-ablauf", "label": "Zeitlicher Ablauf & Verbindungswörter", "group": "Arbeitsblätter" },
+    { "id": "needs-work", "label": "Needs work", "group": "Lists", "isList": true },
+    { "id": "tricky", "label": "Tricky words", "group": "Lists", "isList": true },
+    { "id": "tricky-grammar", "label": "Tricky grammar", "group": "Lists", "parent": "tricky" }
   ]
 }

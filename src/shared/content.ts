@@ -19,6 +19,8 @@ export const CategorySchema = z.object({
   /** Optional parent category id. Selecting a parent also selects questions tagged with its children. */
   parent: IdSchema.optional(),
   description: z.string().optional(),
+  /** Offer this category as a reusable flashcard list (quick-add during study, Lists screen). Absent = false. */
+  isList: z.boolean().optional(),
 });
 export type Category = z.infer<typeof CategorySchema>;
 

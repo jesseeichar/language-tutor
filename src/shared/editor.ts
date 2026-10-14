@@ -13,6 +13,8 @@ export const ContentEditSchema = z.strictObject({
     z.strictObject({ kind: z.literal("delete-category"), id: IdSchema }),
     z.strictObject({ kind: z.literal("assign-categories"), modeId: IdSchema, questionId: IdSchema,
       categoryIds: z.array(IdSchema).min(1).refine((ids) => new Set(ids).size === ids.length, "Select each category once") }),
+    /** Adds or removes one question's direct assignment to a list category, leaving its other categories alone. */
+    z.strictObject({ kind: z.literal("set-list-membership"), modeId: IdSchema, questionId: IdSchema, categoryId: IdSchema, member: z.boolean() }),
   ]),
 });
 export type ContentEdit = z.infer<typeof ContentEditSchema>;

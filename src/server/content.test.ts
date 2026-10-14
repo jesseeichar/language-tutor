@@ -26,7 +26,7 @@ function brokenCopy() {
 describe("loadContent", () => {
   test("loads the fixture data", async () => {
     const c = await loadContent(FIXTURE_DATA_DIR);
-    expect(c.categories).toHaveLength(7);
+    expect(c.categories).toHaveLength(8);
     expect(c.questions.get("worksheet")).toHaveLength(10);
     expect(c.words.map((w) => w.id)).toContain("zuerst");
     expect(c.questions.get("flashcards")).toHaveLength(4);

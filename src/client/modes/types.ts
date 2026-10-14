@@ -1,4 +1,4 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import type { Direction, QuestionBase, SubmitAnswerResponse } from "../../shared";
 
 export interface QuestionViewProps<Q extends QuestionBase = QuestionBase, R = unknown> {
@@ -14,6 +14,8 @@ export interface QuestionViewProps<Q extends QuestionBase = QuestionBase, R = un
   /** A successful submission from an earlier visit in this session. */
   submission?: SubmitAnswerResponse;
   isLast: boolean;
+  /** Extra controls the runner supplies for modes with `allowLists`; rendered outside the answer area. */
+  tools?: ReactNode;
 }
 
 /** The browser half of a mode. The shared half lives in src/shared/modes. */
@@ -21,6 +23,8 @@ export interface ClientMode<Q extends QuestionBase = QuestionBase, R = unknown> 
   /** Must match the shared mode id. */
   id: string;
   allowBack?: boolean;
+  /** Questions of this mode can be added to flashcard lists while studying and browsed on the Lists screen. */
+  allowLists?: boolean;
   QuestionView: ComponentType<QuestionViewProps<Q, R>>;
 }
 

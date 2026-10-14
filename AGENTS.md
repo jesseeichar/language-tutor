@@ -267,6 +267,11 @@ are rejected; future format changes must explicitly handle compatibility. SQLite
 categories. Stable category and question ids must not change. A category cannot be deleted while
 questions, vocabulary, topics, or children reference it. Parent cycles are rejected.
 
+Categories with `isList` are **flashcard lists**: the learner adds and removes cards from the
+flashcard view and the **Lists** screen through the `set-list-membership` edit, which changes only that
+one assignment. `data/categories.json` keeps an empty **Needs work** list by default. Membership changes
+never record study or change strength.
+
 Editor writes must validate the whole current content set, check the client's revision to prevent
 lost updates, and replace one file atomically. Preserve unknown file metadata and all question fields
 other than the edited category assignments. Content changes apply immediately; unsaved form edits

@@ -14,6 +14,7 @@ export function CategoryForm({ category, data, busy, onDirty, onSave }: Props) {
   const [group, setGroup] = useState(category?.group ?? "Custom");
   const [parent, setParent] = useState(category?.parent ?? "");
   const [description, setDescription] = useState(category?.description ?? "");
+  const [isList, setIsList] = useState(category?.isList === true);
   const excluded = category ? expandCategories([category.id], data.categories) : new Set<string>();
   const usage = category ? data.usage[category.id] : undefined;
   const used = usage && Object.values(usage).some((n) => n > 0);
@@ -21,7 +22,10 @@ export function CategoryForm({ category, data, busy, onDirty, onSave }: Props) {
   return (
     <form className="editor-form" onChange={onDirty} onSubmit={(e) => {
       e.preventDefault();
-      const fields = { label: label.trim(), group: group.trim(), ...(parent ? { parent } : {}), ...(description.trim() ? { description: description.trim() } : {}) };
+      const fields = {
+        label: label.trim(), group: group.trim(), ...(parent ? { parent } : {}),
+        ...(description.trim() ? { description: description.trim() } : {}), ...(isList ? { isList: true } : {}),
+      };
       onSave(category ? { kind: "update-category", id: category.id, category: fields } : { kind: "create-category", category: fields });
     }}>
       <h3>{category ? `Edit ${category.label}` : "New category"}</h3>
@@ -34,6 +38,7 @@ export function CategoryForm({ category, data, busy, onDirty, onSave }: Props) {
           {data.categories.filter((c) => !excluded.has(c.id)).map((c) => <option key={c.id} value={c.id}>{c.group} / {c.label}</option>)}
         </select></label>
         <label>Description<textarea rows={3} value={description} onChange={(e) => setDescription(e.target.value)} /></label>
+        <label className="category"><input type="checkbox" checked={isList} onChange={(e) => setIsList(e.target.checked)} />Show in flashcard lists</label>
         <div className="actions">
           <button className="primary" disabled={!label.trim() || !group.trim()}>{busy ? "Saving…" : "Save category"}</button>
           {category && <button type="button" disabled={!!used} onClick={() => {

@@ -109,6 +109,12 @@
       "id": "worksheet-zeitlicher-ablauf",
       "label": "Zeitlicher Ablauf & Verbindungswörter",
       "group": "Arbeitsblätter"
+    },
+    {
+      "id": "needs-work",
+      "label": "Needs work",
+      "group": "Lists",
+      "isList": true
     }
   ]
 }

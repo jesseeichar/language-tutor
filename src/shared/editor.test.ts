@@ -11,3 +11,12 @@ test("content edits require a revision, stable references, and nonempty unique a
   expect(ContentEditSchema.safeParse({ revision: "a", change: { kind: "create-category", category: { label: "  ", group: "g" } } }).success).toBe(false);
   expect(ContentEditSchema.safeParse({ revision: "a", change: { kind: "update-category", id: "a", category: { id: "renamed", label: "A", group: "G" } } }).success).toBe(false);
 });
+
+test("list membership edits name one question, one list and an explicit add or remove", () => {
+  const change = { kind: "set-list-membership", modeId: "flashcards", questionId: "q", categoryId: "needs-work", member: true };
+  expect(ContentEditSchema.safeParse({ revision: "a", change }).success).toBe(true);
+  expect(ContentEditSchema.safeParse({ revision: "a", change: { ...change, member: "yes" } }).success).toBe(false);
+  expect(ContentEditSchema.safeParse({ revision: "a", change: { ...change, member: undefined } }).success).toBe(false);
+  expect(ContentEditSchema.safeParse({ revision: "a", change: { kind: "create-category", category: { label: "L", group: "G", isList: true } } }).success).toBe(true);
+  expect(ContentEditSchema.safeParse({ revision: "a", change: { kind: "create-category", category: { label: "L", group: "G", isList: "true" } } }).success).toBe(false);
+});

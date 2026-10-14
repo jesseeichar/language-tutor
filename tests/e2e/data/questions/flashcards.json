@@ -6,7 +6,7 @@
   "questions": [
     { "id": "fc-zuerst", "type": "translation", "categories": ["vocab-time"], "refs": { "words": ["zuerst"] }, "de": "zuerst", "en": "first, first of all" },
     { "id": "fc-jedoch", "type": "translation", "categories": ["vocab-contrast"], "refs": { "words": ["jedoch"] }, "de": "jedoch", "en": "however", "notes": "Verb comes next: Jedoch ist es teuer." },
-    { "id": "fc-kasus", "type": "fill-in-the-blank", "categories": ["grammar-cases"], "refs": { "topics": ["kasus"] }, "front": "Ich lege das Buch auf ___ Tisch.", "back": "den (Akkusativ: movement)" },
+    { "id": "fc-kasus", "type": "fill-in-the-blank", "categories": ["grammar-cases", "tricky-grammar"], "refs": { "topics": ["kasus"] }, "front": "Ich lege das Buch auf ___ Tisch.", "back": "den (Akkusativ: movement)" },
     { "id": "fc-fresh-a", "type": "fill-in-the-blank", "categories": ["fresh-check"], "front": "Fresh card A", "back": "A" },
     { "id": "fc-fresh-b", "type": "fill-in-the-blank", "categories": ["fresh-check"], "front": "Fresh card B", "back": "B" }
   ]

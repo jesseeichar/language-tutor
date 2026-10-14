@@ -47,6 +47,10 @@ should be restructured, not the rule loosened.
 | No production file over 300 lines. | Long files are a sign a module needs splitting. |
 | Every production file has a co-located unit test, apart from a short exempt list. | Every component is tested. |
 
+A client mode can also declare `allowLists`. The runner then loads the editor snapshot once per
+session and passes list controls to the view through the optional `tools` prop, which the view
+renders outside its answer area. The runner stays generic: it knows only the capability, not the mode.
+
 `tests/architecture/modes-contract.test.ts` checks that every mode is complete: a shared definition, a client
 view and a question file. Graded modes must define `grade` and points. Ungraded modes award nothing.
 
@@ -88,7 +92,8 @@ See [quizzes.md](quizzes.md) for the data format and authoring workflow.
 
 - `progress.json`: live session history, answers, and strength scores (created on first study).
 - `categories.json`: selectable categories. `group` controls UI grouping. `parent` nests categories;
-  selecting a parent includes all its descendants.
+  selecting a parent includes all its descendants. `isList` (optional, default false) offers the
+  category as a flashcard list; files without it load unchanged.
 - `vocabulary.json`, `grammar-topics.json`: canonical words and topics with stable ids. Generated from
   the notes by `bun run import:notes`.
 - `questions/<modeId>.json`: one file per mode, `{ "types": [...], "questions": [...] }`. `types` is
@@ -246,12 +251,32 @@ Categories form an acyclic tree. Deletion is allowed only when no questions, wor
 reference the category. IDs stay stable through renaming and reparenting. `questionPreview` is an
 optional mode capability; the editor falls back to the question id for modes without it.
 
+The `set-list-membership` operation adds or removes one question's direct assignment to one
+category flagged `isList`, keeping its other categories, question fields and file metadata. It
+rejects categories that are not enabled lists and refuses to remove a question's last category. An
+unchanged membership is a successful no-op that writes nothing and keeps the revision. Updating a
+category replaces its optional fields, so leaving `isList` out of an update turns the list off
+without touching assignments.
+
 The notes importer owns vocabulary and grammar topic text, but preserves existing category definitions
 and adds only new ones. Categories are not removed during import because questions may still use them.
 The editor handles categories and assignments, not question text or canonical vocabulary/topic edits.
 
 Editor browser tests use copies made by `scripts/e2e-server.ts`; checked-in fixtures remain untouched.
 Shared project instructions live in `AGENTS.md`, with `CLAUDE.md` referring to the same rules.
+
+## Flashcard lists
+
+Lists are categories with `isList`; memberships are ordinary category assignments. The client
+derives everything from the editor snapshot: `src/client/pages/lists.ts` decides which lists are
+enabled, whether a card is a direct member, inherited through a descendant category, or absent, and
+which list the learner last picked (browser-local, defaulting to `needs-work`, then the first list).
+`useListMembership` loads the snapshot, serializes saves, and on a stale revision reloads and
+reapplies the same explicit add or remove; other failures keep the saved state and offer a retry.
+`ListControls` renders the dropdown and add/checkmark button under a card; `ListsPage` lists the
+members of each list for list-capable modes, removes direct members, and opens `SessionSetup` with a
+preset (the list, every question type, all matching questions). Browsing creates no sessions and
+membership changes record no attempts. No module budget changed: the helpers live beside the pages.
 
 ## Fixed worksheets
 
