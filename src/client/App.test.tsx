@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { flashcardMode, mockApi, sessionResponse, summary } from "../../tests/support/mock-api";
+import { flashcardMode, listSnapshot, mockApi, sessionResponse, summary } from "../../tests/support/mock-api";
 import { App } from "./App";
 
 describe("App", () => {
@@ -66,6 +66,24 @@ describe("App", () => {
     await userEvent.click(screen.getByRole("button", { name: "History" }));
     await userEvent.click(await screen.findByRole("button", { name: "Repeat" }));
     expect((await screen.findByRole("alert")).textContent).toContain("no longer available");
+  });
+
+  test("Lists → Study opens the setup with the list preselected", async () => {
+    const calls = mockApi({
+      "GET /api/modes": () => ({ body: [{ ...flashcardMode, categories: [...flashcardMode.categories, { id: "tricky", label: "Tricky", group: "Lists", count: 1, isList: true }] }] }),
+      "GET /api/content/editor": () => ({ body: listSnapshot }),
+      "GET /api/modes/flashcards/pool": () => ({ body: { count: 1 } }),
+      "POST /api/sessions": () => ({ body: sessionResponse }),
+    });
+    render(<App />);
+    await userEvent.click(screen.getByRole("button", { name: "Lists" }));
+    await userEvent.click(await screen.findByRole("button", { name: /^Tricky 1/ }));
+    await userEvent.click(screen.getByRole("button", { name: "Study Tricky" }));
+    expect(await screen.findByRole("heading", { name: "Flashcards" })).toBeTruthy();
+    expect((screen.getByLabelText(/^Tricky/) as HTMLInputElement).checked).toBe(true);
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect((calls.find((c) => c.path === "/api/sessions")!.body as { categoryIds: string[] }).categoryIds).toEqual(["tricky"]);
+    expect(await screen.findByText("1 / 2")).toBeTruthy();
   });
 
   test("the brand button returns home from setup", async () => {

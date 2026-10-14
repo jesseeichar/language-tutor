@@ -3,6 +3,8 @@ import type { CreateSessionResponse, ModeSummary, SessionSummary, SubmitAnswerRe
 import { api } from "../api";
 import { getClientMode } from "../modes";
 import { ErrorBox } from "./ErrorBox";
+import { ListControls } from "./ListControls";
+import { useListMembership } from "./useListMembership";
 
 interface Props {
   mode: ModeSummary;
@@ -22,6 +24,8 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
   const navigating = useRef(false);
   const submissions = useRef(new Map<string, SubmitAnswerResponse>());
   const clientMode = getClientMode(session.modeId);
+  // Membership is read from saved content, so revisiting a card shows what was stored, not what was clicked.
+  const lists = useListMembership(clientMode?.allowLists === true);
   const question = questions[index];
   const typeLabel = mode.questionTypes.find((t) => t.id === question?.type)?.label;
 
@@ -97,6 +101,7 @@ export function SessionRunner({ mode, data, onFinished }: Props) {
         previous={clientMode.allowBack && index > 0 ? previous : undefined}
         submission={submissions.current.get(question.id)}
         isLast={index + 1 === questions.length}
+        tools={clientMode.allowLists ? <ListControls modeId={session.modeId} questionId={question.id} lists={lists} /> : undefined}
       />
     </div>
   );

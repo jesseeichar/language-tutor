@@ -4,7 +4,7 @@ import { DIRECTION_LABELS } from "../../directions";
 import type { QuestionViewProps } from "../types";
 
 /** Front first; reveal once, then review studied cards with the arrow keys. */
-export function FlashcardView({ question, direction, submit, next, previous, submission, isLast }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
+export function FlashcardView({ question, direction, submit, next, previous, submission, isLast, tools }: QuestionViewProps<FlashcardQuestion, FlashcardResponse>) {
   const sides = cardSides(question, direction);
   const [flipped, setFlipped] = useState(!!submission);
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +25,8 @@ export function FlashcardView({ question, direction, submit, next, previous, sub
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      // Form controls (including the list dropdown) keep their own arrow and Enter handling.
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
       // Let focused buttons handle their own activation, including Previous and End session.
       if (e.target instanceof Element && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
       if (e.key === "ArrowLeft") {
@@ -65,6 +66,7 @@ export function FlashcardView({ question, direction, submit, next, previous, sub
         )}
       </button>
 
+      {tools}
       {error && <p className="error">Could not record this card: {error}</p>}
 
       <div className="actions">

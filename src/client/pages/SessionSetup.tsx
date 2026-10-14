@@ -22,13 +22,19 @@ function grouped(categories: CategoryCount[]): [string, CheckboxItem[]][] {
   return [...byGroup.entries()];
 }
 
+/** Opens the setup with these categories, every question type and all matching questions selected. */
+export interface SetupPreset {
+  categoryIds: string[];
+}
+
 interface Props {
   mode: ModeSummary;
+  preset?: SetupPreset;
   onBack: () => void;
   onStarted: (data: CreateSessionResponse) => void;
 }
 
-export function SessionSetup({ mode, onBack, onStarted }: Props) {
+export function SessionSetup({ mode, preset, onBack, onStarted }: Props) {
   const saved = useMemo(
     () =>
       loadSetup(mode.id, {
@@ -39,12 +45,12 @@ export function SessionSetup({ mode, onBack, onStarted }: Props) {
   );
   // The type filter only makes sense when there is more than one type to choose from.
   const showTypes = mode.questionTypes.length > 1;
-  const [categories, setCategories] = useCheckedSet(() => new Set(saved.categoryIds));
-  const [types, setTypes] = useCheckedSet(() => new Set(showTypes
+  const [categories, setCategories] = useCheckedSet(() => new Set(preset?.categoryIds ?? saved.categoryIds));
+  const [types, setTypes] = useCheckedSet(() => new Set(showTypes && !preset
     ? saved.questionTypes ?? mode.defaultQuestionTypes ?? mode.questionTypes.map((t) => t.id)
     : mode.questionTypes.map((t) => t.id)));
   const [direction, setDirection] = useState<DirectionChoice>(saved.direction);
-  const [size, setSize] = useState<SessionSize>({ kind: "preset", count: mode.defaultSessionSize });
+  const [size, setSize] = useState<SessionSize>(preset ? { kind: "all" } : { kind: "preset", count: mode.defaultSessionSize });
   const [poolSize, setPoolSize] = useState<number | null>(null);
   const [error, setError] = useState<unknown>(null);
   const [starting, setStarting] = useState(false);

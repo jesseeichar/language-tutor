@@ -19,6 +19,21 @@ In flashcards, use **Flip** (Space) to reveal an answer, **Next** (Right Arrow) 
 advance, and **Previous** (Left Arrow) to revisit earlier cards. Studied cards keep
 their answers visible when revisited and are recorded only once per session.
 
+## Flashcard lists
+
+A list is an ordinary category with **Show in flashcard lists** turned on. Every data set starts
+with an empty **Needs work** list. Under each flashcard, **+** adds the card to the list named next
+to it; the icon becomes **✓** and removes the card again. The **▾** next to it opens a menu of every
+list: picking one adds the card there (or removes it when already in it) and makes that list the
+one **+** targets from then on. The choice is remembered in the browser. Cards can be in several lists, and a list that is the parent of other categories
+also includes their cards (shown as inherited; only the direct assignment can be toggled). Adding or
+removing a card changes nothing else about it and records no study.
+
+Open **Lists** in the top bar to browse a list's cards, search them, remove direct members, and press
+**Study** to open the flashcard setup with that list, all question types and all its cards selected.
+To make a list, turn the toggle on for any category in **Manage content**; turning it off hides the
+list again without deleting the category or its assignments.
+
 ## Share on Tailscale
 
 With Bun dependencies installed and this machine logged into Tailscale, run:
@@ -128,7 +143,7 @@ Open **Manage content** from the top bar. Search questions, filter by category (
 and select a question to change its category assignments. Every question needs at least one category.
 
 Use **New category** to create a category, or select one on the **Categories** tab to edit its name,
-group, parent, and description. Only unused categories can be deleted. Changes are saved to the
+group, parent, description, and whether it is shown in flashcard lists. Only unused categories can be deleted. Changes are saved to the
 existing JSON files and apply immediately; stable ids preserve study history. This editor manages
 categories and assignments; question text and answers are still edited in the question files.
 

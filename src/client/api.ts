@@ -15,6 +15,8 @@ export class ApiRequestError extends Error {
   constructor(
     message: string,
     public readonly details: string[] = [],
+    /** HTTP status, so callers can tell a stale-revision conflict (409) from other failures. */
+    public readonly status = 0,
   ) {
     super(message);
   }
@@ -28,7 +30,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const body = await res.json().catch(() => null);
   if (!res.ok) {
     const err = body as ApiError | null;
-    throw new ApiRequestError(err?.error ?? `Request failed (${res.status})`, err?.details);
+    throw new ApiRequestError(err?.error ?? `Request failed (${res.status})`, err?.details, res.status);
   }
   return body as T;
 }

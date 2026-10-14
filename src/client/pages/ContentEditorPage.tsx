@@ -88,7 +88,7 @@ export function ContentEditorPage({ onDirtyChange }: { onDirtyChange: (dirty: bo
               <span>{q.preview}</span><small>{q.modeTitle} · {q.categories.map((id) => data.categories.find((c) => c.id === id)?.label ?? id).join(", ")}</small>
             </button></li>) : categories.map((c) => <li key={c.id}><button disabled={busy} className="editor-item"
               aria-pressed={selectedCategory === c} onClick={() => choose({ kind: "category", id: c.id })}>
-              <span>{c.label}</span><small>{c.group}{c.parent && ` / ${data.categories.find((p) => p.id === c.parent)?.label}`} · {data.usage[c.id]?.questions ?? 0} questions</small>
+              <span>{c.label}</span><small>{c.group}{c.parent && ` / ${data.categories.find((p) => p.id === c.parent)?.label}`} · {data.usage[c.id]?.questions ?? 0} questions{c.isList && " · list"}</small>
             </button></li>)}
           </ul>
           {(tab === "questions" ? questions : categories).length === 0 && <p className="muted">No matches.</p>}

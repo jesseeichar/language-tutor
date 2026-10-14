@@ -4,7 +4,8 @@ import { api } from "./api";
 import { Home } from "./pages/Home";
 import { HistoryPage } from "./pages/HistoryPage";
 import { SessionRunner } from "./pages/SessionRunner";
-import { SessionSetup } from "./pages/SessionSetup";
+import { SessionSetup, type SetupPreset } from "./pages/SessionSetup";
+import { ListsPage } from "./pages/ListsPage";
 import { SummaryPage } from "./pages/SummaryPage";
 import { ErrorBox } from "./pages/ErrorBox";
 import { ContentEditorPage } from "./pages/ContentEditorPage";
@@ -14,7 +15,8 @@ type View =
   | { name: "home" }
   | { name: "history" }
   | { name: "editor" }
-  | { name: "setup"; mode: ModeSummary }
+  | { name: "lists" }
+  | { name: "setup"; mode: ModeSummary; preset?: SetupPreset }
   | { name: "session"; mode: ModeSummary; data: CreateSessionResponse }
   | { name: "summary"; mode: ModeSummary; summary: SessionSummary };
 
@@ -56,6 +58,7 @@ export function App() {
         <button type="button" className="brand" onClick={home} disabled={starting}>
           Language Tutor
         </button>
+        <button type="button" className="link" disabled={starting} onClick={() => navigate({ name: "lists" })}>Lists</button>
         <button type="button" className="link" disabled={starting} onClick={() => { if (view.name !== "editor") navigate({ name: "editor" }); }}>Manage content</button>
         <button type="button" className="link" disabled={starting} onClick={() => navigate({ name: "history" })}>
           History
@@ -67,9 +70,13 @@ export function App() {
         {view.name === "home" && <Home onPick={(mode) => { void pick(mode); }} disabled={starting} />}
         {view.name === "history" && <HistoryPage onRepeat={repeat} />}
         {view.name === "editor" && <ContentEditorPage onDirtyChange={setEditorDirty} />}
+        {view.name === "lists" && (
+          <ListsPage onStudy={(mode, listId) => navigate({ name: "setup", mode, preset: { categoryIds: [listId] } })} onManage={() => navigate({ name: "editor" })} />
+        )}
         {view.name === "setup" && (
           <SessionSetup
             mode={view.mode}
+            preset={view.preset}
             onBack={home}
             onStarted={(data) => setView({ name: "session", mode: view.mode, data })}
           />

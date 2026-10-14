@@ -36,6 +36,61 @@ test("reassigns questions, retaining mode-specific fields and file metadata", as
   expect((await loadContent(copy.dir)).questions.get("flashcards")!.find((q) => q.id === id)!.categories).toEqual(["vocab-work", "grammar-cases"]);
 });
 
+test("list membership changes one assignment at a time and is idempotent", async () => {
+  const path = join(copy.dir, "questions/flashcards.json");
+  const raw = JSON.parse(fs.readFileSync(path, "utf8"));
+  raw.editorNote = "retain this";
+  raw.questions[0].extraMetadata = "retain this too";
+  fs.writeFileSync(path, JSON.stringify(raw));
+  const id = raw.questions[0].id;
+  const categoriesOf = (snapshot: Awaited<ReturnType<typeof save>>) => snapshot.questions.find((q) => q.id === id)!.categories;
+  const member = (categoryId: string, on: boolean) => save({ kind: "set-list-membership", modeId: "flashcards", questionId: id, categoryId, member: on });
+
+  let snapshot = await member("needs-work", true);
+  expect(categoriesOf(snapshot)).toEqual(["vocab-time", "needs-work"]);
+  const repeated = await member("needs-work", true);
+  expect(repeated.revision).toBe(snapshot.revision);
+  expect(categoriesOf(repeated)).toEqual(["vocab-time", "needs-work"]);
+
+  snapshot = await save({ kind: "create-category", category: { label: "Weekend", group: "Lists", isList: true } });
+  const weekend = snapshot.categories.at(-1)!.id;
+  snapshot = await member(weekend, true);
+  expect(categoriesOf(snapshot)).toEqual(["vocab-time", "needs-work", weekend]);
+  snapshot = await member("needs-work", false);
+  expect(categoriesOf(snapshot)).toEqual(["vocab-time", weekend]);
+
+  const written = JSON.parse(fs.readFileSync(path, "utf8"));
+  expect(written.editorNote).toBe("retain this");
+  expect(written.questions[0]).toEqual({ ...raw.questions[0], categories: ["vocab-time", weekend] });
+  expect(written.questions.slice(1)).toEqual(raw.questions.slice(1));
+  expect((await loadContent(copy.dir)).questions.get("flashcards")!.find((q) => q.id === id)!.categories).toEqual(["vocab-time", weekend]);
+});
+
+test("list membership requires an enabled list, keeps a last category, and respects revisions", async () => {
+  const member = (questionId: string, categoryId: string, on: boolean) => save({ kind: "set-list-membership", modeId: "flashcards", questionId, categoryId, member: on });
+  await expect(member("fc-zuerst", "vocab-work", true)).rejects.toThrow("shown in flashcard lists");
+  await expect(member("fc-zuerst", "missing", true)).rejects.toThrow("shown in flashcard lists");
+  await expect(member("missing", "needs-work", true)).rejects.toThrow("no longer exists");
+  await save({ kind: "assign-categories", modeId: "flashcards", questionId: "fc-zuerst", categoryIds: ["needs-work"] });
+  await expect(member("fc-zuerst", "needs-work", false)).rejects.toThrow("at least one category");
+  const before = await editor.read();
+  await save({ kind: "create-category", category: { label: "Other", group: "Lists" } });
+  await expect(editor.edit({ revision: before.revision, change: { kind: "set-list-membership", modeId: "flashcards", questionId: "fc-zuerst", categoryId: "needs-work", member: false } })).rejects.toThrow("Reload the editor");
+  expect((await editor.read()).questions.find((q) => q.id === "fc-zuerst")!.categories).toEqual(["needs-work"]);
+});
+
+test("the list toggle persists, can be turned off, and legacy categories read as not lists", async () => {
+  expect((await editor.read()).categories.find((c) => c.id === "vocab-time")!.isList).toBeUndefined();
+  let snapshot = await save({ kind: "update-category", id: "vocab-time", category: { label: "Time", group: "Vokabular", parent: "vocab-connectors", isList: true } });
+  expect(snapshot.categories.find((c) => c.id === "vocab-time")!.isList).toBe(true);
+  expect(JSON.parse(fs.readFileSync(join(copy.dir, "categories.json"), "utf8")).categories.find((c: { id: string }) => c.id === "vocab-time").isList).toBe(true);
+  await save({ kind: "set-list-membership", modeId: "flashcards", questionId: "fc-jedoch", categoryId: "vocab-time", member: true });
+  snapshot = await save({ kind: "update-category", id: "vocab-time", category: { label: "Time", group: "Vokabular", parent: "vocab-connectors" } });
+  expect(snapshot.categories.find((c) => c.id === "vocab-time")!.isList).toBeUndefined();
+  // Disabling the list hides it from list controls but keeps the category and its assignments.
+  expect(snapshot.questions.find((q) => q.id === "fc-jedoch")!.categories).toContain("vocab-time");
+});
+
 test("rejects stale revisions without losing another edit", async () => {
   const original = await editor.read();
   await save({ kind: "create-category", category: { label: "First", group: "Custom" } });

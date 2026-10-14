@@ -9,9 +9,10 @@ const translation: FlashcardQuestion = { ...base, id: "t", de: "zuerst", en: "fi
 const fixed: FlashcardQuestion = { ...base, id: "f", front: "Wir essen, ___ gehen wir.", back: "danach" };
 const resolved = () => mock(() => Promise.resolve({ grade: null, pointsAwarded: 0, pointsPossible: 0 }));
 
-function show(card: FlashcardQuestion, direction: Direction | null, overrides: Partial<{ next: () => void; isLast: boolean; submit: ReturnType<typeof resolved> }> = {}) {
+function show(card: FlashcardQuestion, direction: Direction | null, overrides: Partial<{ next: () => void; previous: () => void; isLast: boolean; submit: ReturnType<typeof resolved>; tools: React.ReactNode }> = {}) {
   const submit = overrides.submit ?? resolved();
-  render(<FlashcardView question={card} direction={direction} submit={submit} next={overrides.next ?? (() => {})} isLast={overrides.isLast ?? false} />);
+  render(<FlashcardView question={card} direction={direction} submit={submit} next={overrides.next ?? (() => {})} previous={overrides.previous}
+    isLast={overrides.isLast ?? false} tools={overrides.tools} />);
   return submit;
 }
 
@@ -72,6 +73,20 @@ describe("FlashcardView", () => {
     await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
     expect(await screen.findByText(/Could not record this card: offline/)).toBeTruthy();
   });
+});
+
+test("tools render outside the card and their dropdown keeps the arrow keys", () => {
+  const previous = mock();
+  const next = mock();
+  show(translation, "de-en", { previous, next, tools: <select aria-label="List"><option>Needs work</option></select> });
+  const dropdown = screen.getByLabelText("List");
+  expect(screen.getByRole("button", { name: "Show answer" }).contains(dropdown)).toBe(false);
+  fireEvent.keyDown(dropdown, { key: "ArrowLeft" });
+  fireEvent.keyDown(dropdown, { key: " " });
+  fireEvent.keyDown(dropdown, { key: "Enter" });
+  expect(previous).not.toHaveBeenCalled();
+  expect(next).not.toHaveBeenCalled();
+  expect(screen.getByRole("button", { name: "Show answer" })).toBeTruthy();
 });
 
 test("a failed save can be retried by flipping again", async () => {

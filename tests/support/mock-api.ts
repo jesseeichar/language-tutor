@@ -74,6 +74,31 @@ export const summary = (answered: number): SessionSummary => ({
   pointsPossible: 0,
 });
 
+/** Content matching `sessionResponse`: c2 belongs to Tricky through its child category. */
+export const listSnapshot: EditorSnapshot = {
+  revision: "list-1",
+  categories: [
+    { id: "vocab-connectors", label: "Connectors", group: "Vokabular" },
+    { id: "vocab-time", label: "Time", group: "Vokabular", parent: "vocab-connectors" },
+    { id: "needs-work", label: "Needs work", group: "Lists", isList: true },
+    { id: "tricky", label: "Tricky", group: "Lists", isList: true },
+    { id: "tricky-child", label: "Tricky child", group: "Lists", parent: "tricky" },
+  ],
+  questions: [
+    { id: "c1", modeId: "flashcards", modeTitle: "Flashcards", preview: "zuerst — first", type: "translation", categories: ["vocab-time"] },
+    { id: "c2", modeId: "flashcards", modeTitle: "Flashcards", preview: "Wir essen, ___ gehen wir. — danach", type: "fill-in-the-blank", categories: ["vocab-time", "tricky-child"] },
+    { id: "q1", modeId: "quiz", modeTitle: "Quiz", preview: "quiz question", categories: ["needs-work"] },
+  ],
+  usage: {},
+};
+
+/** The snapshot after applying one membership change, as the server would return it. */
+export function withMembership(snapshot: EditorSnapshot, questionId: string, categoryId: string, member: boolean, revision = `${snapshot.revision}+`): EditorSnapshot {
+  return { ...snapshot, revision, questions: snapshot.questions.map((q) => q.id !== questionId ? q : {
+    ...q, categories: member ? [...q.categories.filter((c) => c !== categoryId), categoryId] : q.categories.filter((c) => c !== categoryId),
+  }) };
+}
+
 export const editorSnapshot: EditorSnapshot = {
   revision: "revision-1",
   categories: [{ id: "time", label: "Time", group: "Vocabulary" }, { id: "review", label: "Review", group: "Custom" }],

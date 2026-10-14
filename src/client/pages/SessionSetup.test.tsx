@@ -17,6 +17,20 @@ async function typeCount(count: string) {
 }
 
 describe("SessionSetup", () => {
+  test("a preset selects its categories, every question type and all matching questions", async () => {
+    localStorage.setItem("language-tutor:setup:flashcards", JSON.stringify({ categoryIds: ["grammar-cases"], questionTypes: ["translation"], direction: "en-de" }));
+    const calls = mockApi({ "POST /api/sessions": () => ({ body: sessionResponse }), ...pool(2) });
+    render(<SessionSetup mode={flashcardMode} preset={{ categoryIds: ["vocab-time"] }} onBack={() => {}} onStarted={mock()} />);
+    expect((screen.getByLabelText(/Label vocab-time/) as HTMLInputElement).checked).toBe(true);
+    expect((screen.getByLabelText(/Label grammar-cases/) as HTMLInputElement).checked).toBe(false);
+    expect((screen.getByLabelText(/^Fill in the blank/) as HTMLInputElement).checked).toBe(true);
+    expect((screen.getByLabelText("English → German") as HTMLInputElement).checked).toBe(true);
+    await screen.findByRole("option", { name: "All questions (2)" });
+    expect((screen.getByLabelText("Questions in this session") as HTMLSelectElement).value).toBe("all");
+    await userEvent.click(screen.getByRole("button", { name: "Start" }));
+    expect(startRequest(calls)).toEqual({ modeId: "flashcards", categoryIds: ["vocab-time"], count: 2, questionTypes: ["translation", "fill-in-the-blank"], direction: "en-de" });
+  });
+
   test("Start is disabled until a category is selected", async () => {
     setup();
     const start = screen.getByRole("button", { name: "Start" });

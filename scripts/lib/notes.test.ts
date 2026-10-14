@@ -90,12 +90,13 @@ describe("mergeNotes", () => {
   test("re-import preserves edited category definitions and categories referenced only by questions", () => {
     const first = mergeNotes(VOCAB, GRAMMAR, empty);
     const original = first.categories.find((c) => c.id === "vocab-sequence")!;
-    const edited = { ...original, label: "My sequence", group: "Review", description: "Edited in the app", parent: undefined };
+    const edited = { ...original, label: "My sequence", group: "Review", description: "Edited in the app", parent: undefined, isList: true };
     const categories = first.categories.map((c) => c.id === edited.id ? edited : c);
-    categories.push({ id: "vocab-question-only", label: "Question-only", group: "Custom" });
+    categories.push({ id: "vocab-question-only", label: "Question-only", group: "Custom" }, { id: "needs-work", label: "Needs work", group: "Lists", isList: true });
     const next = mergeNotes(VOCAB, GRAMMAR, { ...first, categories });
     expect(next.categories.find((c) => c.id === edited.id)).toEqual(edited);
     expect(next.categories.some((c) => c.id === "vocab-question-only")).toBe(true);
+    expect(next.categories.find((c) => c.id === "needs-work")).toEqual({ id: "needs-work", label: "Needs work", group: "Lists", isList: true });
   });
 
   test("re-import keeps existing ids, keeps orphans and custom categories", () => {
