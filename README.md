@@ -22,9 +22,10 @@ their answers visible when revisited and are recorded only once per session.
 ## Flashcard lists
 
 A list is an ordinary category with **Show in flashcard lists** turned on. Every data set starts
-with an empty **Needs work** list. Under each flashcard, pick a list in the dropdown and click **+**
-to add the card; the button becomes **✓** and removes the card again. The chosen list is remembered
-in the browser. Cards can be in several lists, and a list that is the parent of other categories
+with an empty **Needs work** list. Under each flashcard, **+** adds the card to the list named next
+to it; the icon becomes **✓** and removes the card again. The **▾** next to it opens a menu of every
+list: picking one adds the card there (or removes it when already in it) and makes that list the
+one **+** targets from then on. The choice is remembered in the browser. Cards can be in several lists, and a list that is the parent of other categories
 also includes their cards (shown as inherited; only the direct assignment can be toggled). Adding or
 removing a card changes nothing else about it and records no study.
 

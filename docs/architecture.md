@@ -273,7 +273,9 @@ enabled, whether a card is a direct member, inherited through a descendant categ
 which list the learner last picked (browser-local, defaulting to `needs-work`, then the first list).
 `useListMembership` loads the snapshot, serializes saves, and on a stale revision reloads and
 reapplies the same explicit add or remove; other failures keep the saved state and offer a retry.
-`ListControls` renders the dropdown and add/checkmark button under a card; `ListsPage` lists the
+`ListControls` renders a split control under a card (add/checkmark icon for the remembered list, a
+chevron opening a menu where picking a list adds or removes the card and remembers that list) and
+keeps key presses inside it away from the flashcard's window shortcuts; `ListsPage` lists the
 members of each list for list-capable modes, removes direct members, and opens `SessionSetup` with a
 preset (the list, every question type, all matching questions). Browsing creates no sessions and
 membership changes record no attempts. No module budget changed: the helpers live beside the pages.

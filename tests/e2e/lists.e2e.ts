@@ -23,26 +23,31 @@ test("create a list, add and remove cards while studying, browse members, and st
     createdId = (await read()).categories.find((c) => c.label === "Weekend list")!.id;
     expect((await read()).categories.find((c) => c.id === createdId)!.isList).toBe(true);
 
-    // Quick-add during study: the dropdown picks the destination, the button adds or removes.
+    // Quick-add during study: picking a list in the menu adds the card there; the icon then toggles it.
     await openFlashcards(page);
     await page.getByLabel("Contrast").check();
     await page.getByRole("button", { name: "Start" }).click();
     await expect(page.locator(".flashcard-front")).toBeVisible();
-    await page.getByLabel("List", { exact: true }).selectOption({ label: "Weekend list" });
-    await expect(page.getByText("Not in Weekend list")).toBeVisible();
-    await page.getByRole("button", { name: "Add to Weekend list" }).click();
+    await expect(page.getByRole("button", { name: "Add to Needs work" })).toBeVisible();
+    await page.getByRole("button", { name: "Choose list" }).click();
+    await page.getByRole("menuitemcheckbox", { name: "Weekend list" }).click();
     await expect(page.getByRole("button", { name: "Remove from Weekend list" })).toBeVisible();
-    await expect(page.getByText("In Weekend list")).toBeVisible();
     await page.getByRole("button", { name: "Remove from Weekend list" }).click();
     await expect(page.getByRole("button", { name: "Add to Weekend list" })).toBeVisible();
     await page.getByRole("button", { name: "Add to Weekend list" }).click();
     await expect(page.getByRole("button", { name: "Remove from Weekend list" })).toBeVisible();
-    // Using the dropdown with the keyboard must not move between cards.
-    await page.getByLabel("List", { exact: true }).focus();
-    await page.keyboard.press("ArrowLeft");
+    await page.getByRole("button", { name: "Choose list" }).click();
+    await expect(page.getByRole("menuitemcheckbox", { name: "Weekend list" })).toHaveAttribute("aria-checked", "true");
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("menu")).toHaveCount(0);
+    // Keys used inside the control must not drive the flashcard: → on a flipped last card would finish the session.
+    await page.getByRole("button", { name: /Flip/ }).click();
+    await page.getByRole("button", { name: "Choose list" }).focus();
+    await page.keyboard.press("ArrowRight");
     await expect(page.locator(".runner-head")).toContainText("1 / 1");
     expect((await read()).questions.find((q) => q.id === "fc-jedoch")!.categories).toEqual([...jedoch.categories, createdId]);
     await page.getByRole("button", { name: "End session" }).click();
+    await expect(page.getByText("Studied 1 of 1 cards")).toBeVisible();
 
     // Lists screen: direct members can be removed, inherited ones are labeled.
     await page.getByRole("button", { name: "Lists", exact: true }).click();
@@ -65,6 +70,7 @@ test("create a list, add and remove cards while studying, browse members, and st
     await expect(page.locator(".runner-head")).toContainText("1 / 1");
     await expect(page.locator(".flashcard-front")).toHaveText(/jedoch|however/);
     await page.getByRole("button", { name: "End session" }).click();
+    await expect(page.getByText("Studied 0 of 1 cards")).toBeVisible();
 
     await page.getByRole("button", { name: "Lists", exact: true }).click();
     await page.getByRole("button", { name: "Remove jedoch — however from Weekend list" }).click();
