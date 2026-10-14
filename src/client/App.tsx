@@ -75,7 +75,6 @@ export function App() {
         )}
         {view.name === "setup" && (
           <SessionSetup
-            key={JSON.stringify(view.preset)}
             mode={view.mode}
             preset={view.preset}
             onBack={home}
