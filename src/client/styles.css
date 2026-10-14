@@ -78,6 +78,7 @@ kbd { font-size: 0.75rem; opacity: 0.7; margin-left: 6px; }
 .runner-head .link { margin-left: auto; }
 progress { width: 100%; height: 6px; margin-bottom: 24px; accent-color: var(--accent); }
 
+.flashcard-wrap { position: relative; }
 .flashcard {
   display: block; width: 100%; min-height: 220px; text-align: left; white-space: pre-line;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;
@@ -92,7 +93,10 @@ progress { width: 100%; height: 6px; margin-bottom: 24px; accent-color: var(--ac
   border-radius: 999px; padding: 2px 10px; margin-bottom: 10px;
 }
 .flashcard-back { font-size: 1.15rem; }
-.list-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; }
+/* Sits over the card's top-right corner; it is a sibling of the card button, never nested in it. */
+.list-controls { position: absolute; top: 12px; right: 12px; display: flex; gap: 10px; align-items: center; }
+.list-controls .list-name { white-space: nowrap; }
+@media (max-width: 480px) { .list-controls .list-name { display: none; } }
 .list-split { position: relative; display: inline-flex; }
 .icon-button {
   display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0;
@@ -103,13 +107,12 @@ progress { width: 100%; height: 6px; margin-bottom: 24px; accent-color: var(--ac
 .icon-button:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); z-index: 1; }
 .icon-button.is-member { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
 .list-menu {
-  position: absolute; top: calc(100% + 4px); left: 0; z-index: 2; min-width: 180px; margin: 0; padding: 4px; list-style: none;
+  position: absolute; top: calc(100% + 4px); right: 0; z-index: 2; min-width: 180px; margin: 0; padding: 4px; list-style: none;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 .list-menu button { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 6px 8px; border: 0; background: none; border-radius: 6px; }
 .list-menu button:hover, .list-menu button:focus-visible { background: var(--bg); }
 .list-menu-mark { display: inline-flex; width: 14px; color: var(--accent); }
-.list-controls .error-box { width: 100%; margin: 0; }
 .error-box .retry { margin-left: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 4px 14px; color: var(--text); }
 .list-picker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .list-picker button { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; }
