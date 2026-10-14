@@ -46,9 +46,19 @@ Use Bun as the runtime and package manager, even when Node is installed. Run Vit
 
 These are mandatory. CI enforces most of them.
 
-1. **Work on a branch.** Every feature or fix gets its own branch off `main` (`feature/<name>`,
-   `fix/<name>`, `refactor/<name>`), merged by pull request once CI is green. Never commit features
-   directly to `main`.
+1. **Work on a branch, in a worktree.** Every feature or fix gets its own branch off `main`
+   (`feature/<name>`, `fix/<name>`, `refactor/<name>`), merged by pull request once CI is green. Never
+   commit features directly to `main`. The main checkout always stays on `main`: it runs the learner's
+   app and holds live progress, so never switch its branch. Do the work in a linked worktree instead:
+
+   ```bash
+   git worktree add ../language-tutor.worktrees/<branch> -b <branch> main
+   cd ../language-tutor.worktrees/<branch> && bun install --frozen-lockfile
+   ```
+
+   Run checks, commit, push and open the PR from the worktree. After the merge, remove it with
+   `git worktree remove ../language-tutor.worktrees/<branch>` and delete the branch. Run only one
+   Playwright suite at a time; every worktree uses the same test ports.
 2. **Unit test every component.** Each source file in `src/` and `scripts/lib/` has a co-located
    `*.test.ts` or `*.test.tsx`. The architecture tests fail when one is missing; the short exempt list
    (entry points, re-export indexes, pure type files) lives in `tests/architecture/architecture.test.ts`.

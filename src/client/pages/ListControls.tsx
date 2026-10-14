@@ -20,7 +20,7 @@ const CHECK = "M3 8.5l3 3 7-7";
 const CHEVRON = "M4 6l4 4 4-4";
 
 /**
- * A split control under a card: the first icon adds the card to the remembered list (a checkmark
+ * A split control in a card's top-right corner: the first icon adds the card to the remembered list (a checkmark
  * removes it again once the card is directly in that list); the chevron opens a menu of every
  * list, and picking one adds or removes the card there and makes it the remembered list.
  */
@@ -56,7 +56,8 @@ export function ListControls({ modeId, questionId, lists }: Props) {
   };
 
   return (
-    // Keys pressed inside the control belong to it, not to the flashcard shortcuts on window.
+    <>
+    {/* Keys pressed inside the control belong to it, not to the flashcard shortcuts on window. */}
     <div className="list-controls" ref={root} onKeyDown={(e) => { e.stopPropagation(); if (e.key === "Escape") setOpen(false); }}>
       <span className="list-split">
         <button
@@ -88,11 +89,13 @@ export function ListControls({ modeId, questionId, lists }: Props) {
           </ul>
         )}
       </span>
-      <span className="muted small" aria-live="polite">
+      <span className="list-name muted small" aria-live="polite">
         {list.label}
         {state.kind === "inherited" && ` · via ${state.via.join(", ")}`}
       </span>
-      <ErrorBox error={error} onRetry={retry ?? undefined} busy={pending} />
     </div>
+    {/* Outside the corner control so a failure reads as a message under the card, not over it. */}
+    <ErrorBox error={error} onRetry={retry ?? undefined} busy={pending} />
+    </>
   );
 }
