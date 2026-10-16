@@ -182,7 +182,9 @@ never call the live provider, even when a real key is configured locally.
 Strength per word or topic runs from -10 to 10, starting at 0. A correct graded answer adds 1; a wrong
 one subtracts 2, so a lucky guess counts for less than a real miss. Every word and topic in a question's
 `refs` is updated. Rules live in `src/server/scoring.ts`.
-References must be unique within each word/topic array to prevent counting an item twice.
+References must be unique within each word/topic array to prevent counting an item twice. The
+same rule applies to every `categories` array: a question, word or topic is in a category, and so
+in a list, at most once, and the schema rejects a repeated id.
 New sessions snapshot every question's point value; grading and history use this snapshot even if
 the question file changes later. Repeating a session captures the current point values.
 

@@ -24,13 +24,19 @@ export const CategorySchema = z.object({
 });
 export type Category = z.infer<typeof CategorySchema>;
 
+/** Ids listed once each; a category, word or topic cannot be assigned to the same item twice. */
+const uniqueIds = (what: string) => z.array(IdSchema).refine((ids) => new Set(ids).size === ids.length, `duplicate ${what}`);
+
+/** At least one category, each listed once, so an item is in any list (or category) at most once. */
+const CategoryIdsSchema = uniqueIds("categories").refine((ids) => ids.length > 0, "at least one category is required");
+
 export const VocabWordSchema = z.object({
   id: IdSchema,
   de: z.string().min(1),
   en: z.string().min(1),
   partOfSpeech: z.string().optional(),
   example: z.string().optional(),
-  categories: z.array(IdSchema).min(1),
+  categories: CategoryIdsSchema,
 });
 export type VocabWord = z.infer<typeof VocabWordSchema>;
 
@@ -39,7 +45,7 @@ export const GrammarTopicSchema = z.object({
   title: z.string().min(1),
   description: z.string(),
   status: z.string().optional(),
-  categories: z.array(IdSchema).min(1),
+  categories: CategoryIdsSchema,
 });
 export type GrammarTopic = z.infer<typeof GrammarTopicSchema>;
 
@@ -49,8 +55,8 @@ export const GrammarTopicsFileSchema = z.object({ topics: z.array(GrammarTopicSc
 
 /** Links from a question to the vocabulary words and grammar topics it exercises. Strength scores aggregate over these. */
 export const RefsSchema = z.object({
-  words: z.array(IdSchema).refine((ids) => new Set(ids).size === ids.length, "duplicate word references").default([]),
-  topics: z.array(IdSchema).refine((ids) => new Set(ids).size === ids.length, "duplicate topic references").default([]),
+  words: uniqueIds("word references").default([]),
+  topics: uniqueIds("topic references").default([]),
 });
 export type Refs = z.infer<typeof RefsSchema>;
 
@@ -68,7 +74,7 @@ export type QuestionType = z.infer<typeof QuestionTypeSchema>;
 /** Fields every question has, whatever its mode. Mode schemas extend this. */
 export const QuestionBaseSchema = z.object({
   id: IdSchema,
-  categories: z.array(IdSchema).min(1),
+  categories: CategoryIdsSchema,
   /** One of the types declared in the question file. Required when the file declares types. */
   type: IdSchema.optional(),
   refs: RefsSchema.default({ words: [], topics: [] }),
