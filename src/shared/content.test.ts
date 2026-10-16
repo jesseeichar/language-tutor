@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { IdSchema, QuestionBaseSchema, QuestionFileSchema } from "./content";
+import { GrammarTopicSchema, IdSchema, QuestionBaseSchema, QuestionFileSchema, VocabWordSchema } from "./content";
 
 describe("IdSchema", () => {
   test.each(["zuerst", "die-staerke", "a1"])("accepts %s", (id) => {
@@ -30,6 +30,12 @@ describe("QuestionBaseSchema", () => {
   });
   test("requires at least one category", () => {
     expect(QuestionBaseSchema.safeParse({ id: "q", categories: [] }).success).toBe(false);
+  });
+  test("a category, and so a list, can hold an item only once", () => {
+    expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["needs-work", "needs-work"] }).success).toBe(false);
+    expect(VocabWordSchema.safeParse({ id: "w", de: "a", en: "b", categories: ["c", "c"] }).success).toBe(false);
+    expect(GrammarTopicSchema.safeParse({ id: "t", title: "T", description: "", categories: ["c", "d", "c"] }).success).toBe(false);
+    expect(GrammarTopicSchema.safeParse({ id: "t", title: "T", description: "", categories: ["c", "d"] }).success).toBe(true);
   });
   test("rejects negative points", () => {
     expect(QuestionBaseSchema.safeParse({ id: "q", categories: ["c"], points: -1 }).success).toBe(false);

@@ -66,6 +66,15 @@ describe("loadContent", () => {
     expect((await problemsFor(dir)).some((p) => p.startsWith("questions/flashcards.json [x]:") && p.includes("de + en"))).toBe(true);
   });
 
+  test("a question, word or topic cannot be in the same category or list twice", async () => {
+    const dir = brokenCopy();
+    writeJson(dir, "questions/flashcards.json", { questions: [{ id: "x", categories: ["needs-work", "vocab-time", "needs-work"], front: "f", back: "b" }] });
+    writeJson(dir, "vocabulary.json", { words: [{ id: "w", de: "a", en: "b", categories: ["vocab-time", "vocab-time"] }] });
+    const problems = await problemsFor(dir);
+    expect(problems).toContain("questions/flashcards.json [x]: categories: duplicate categories");
+    expect(problems).toContain("vocabulary.json: words.0.categories: duplicate categories");
+  });
+
   test("questions must use a declared type", async () => {
     const dir = brokenCopy();
     writeJson(dir, "questions/flashcards.json", {

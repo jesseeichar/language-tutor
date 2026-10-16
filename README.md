@@ -26,7 +26,8 @@ with an empty **Needs work** list. In the top-right corner of each flashcard, **
 the list named next to it; the icon becomes **✓** and removes the card again. The **▾** next to it opens a menu of every
 list: picking one adds the card there (or removes it when already in it) and makes that list the
 one **+** targets from then on. The choice is remembered in the browser. Cards can be in several lists, and a list that is the parent of other categories
-also includes their cards (shown as inherited; only the direct assignment can be toggled). Adding or
+also includes their cards (shown as inherited; only the direct assignment can be toggled). A card is in a list at most
+once: adding it again changes nothing, and the data files reject a repeated category. Adding or
 removing a card changes nothing else about it and records no study.
 
 Open **Lists** in the top bar to browse a list's cards, search them, remove direct members, and press
