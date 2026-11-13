@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Category } from "../../shared";
 import { ErrorBox } from "./ErrorBox";
+import { Icon, ICONS } from "./Icon";
 import { chooseList, enabledLists, loadListChoice, membership, saveListChoice } from "./lists";
 import type { ListMembership } from "./useListMembership";
 
@@ -9,15 +10,6 @@ interface Props {
   questionId: string;
   lists: ListMembership;
 }
-
-const Icon = ({ d }: { d: string }) => (
-  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d={d} />
-  </svg>
-);
-const PLUS = "M8 3v10M3 8h10";
-const CHECK = "M3 8.5l3 3 7-7";
-const CHEVRON = "M4 6l4 4 4-4";
 
 /**
  * A split control in a card's top-right corner: the first icon adds the card to the remembered list (a checkmark
@@ -68,10 +60,10 @@ export function ListControls({ modeId, questionId, lists }: Props) {
           disabled={pending}
           onClick={() => toggle(list)}
         >
-          <Icon d={direct ? CHECK : PLUS} />
+          <Icon d={direct ? ICONS.check : ICONS.plus} />
         </button>
         <button type="button" className="icon-button" aria-label="Choose list" aria-haspopup="menu" aria-expanded={open} disabled={pending} onClick={() => setOpen(!open)}>
-          <Icon d={CHEVRON} />
+          <Icon d={ICONS.chevron} />
         </button>
         {open && (
           <ul className="list-menu" role="menu" aria-label="Add to list">
@@ -80,7 +72,7 @@ export function ListControls({ modeId, questionId, lists }: Props) {
               return (
                 <li key={l.id} role="none">
                   <button type="button" role="menuitemcheckbox" aria-checked={member} onClick={() => toggle(l)}>
-                    <span className="list-menu-mark">{member && <Icon d={CHECK} />}</span>
+                    <span className="list-menu-mark">{member && <Icon d={ICONS.check} />}</span>
                     {l.label}
                   </button>
                 </li>

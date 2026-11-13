@@ -1,20 +1,6 @@
-import { expect, test, type Page } from "@playwright/test";
-import type { CreateSessionResponse, QuizQuestion } from "../../src/shared";
-
-async function openQuiz(page: Page, type: string, category: string, direction = "German → English", count = "1") {
-  await page.goto("/");
-  await page.getByRole("button", { name: /^Quiz / }).click();
-  await page.getByLabel(category, { exact: false }).check();
-  for (const label of ["Multiple choice", "Fill in the blank", "Translation"]) {
-    await page.getByRole("group", { name: "Question types", exact: true }).getByLabel(new RegExp(`^${label}`)).setChecked(label === type);
-  }
-  await page.getByLabel(direction, { exact: true }).check();
-  await page.getByLabel("Questions in this session").selectOption("custom");
-  await page.getByLabel("Number of questions").fill(count);
-  const response = page.waitForResponse(r => r.url().endsWith("/api/sessions") && r.request().method() === "POST");
-  await page.getByRole("button", { name: "Start", exact: true }).click();
-  return await (await response).json() as CreateSessionResponse;
-}
+import { expect, test } from "@playwright/test";
+import type { QuizQuestion } from "../../src/shared";
+import { openQuiz } from "./support";
 
 for (const direction of ["German → English", "English → German"]) {
   test(`multiple choice ${direction}: correct and incorrect answers, summary and exact repeat`, async ({ page }, info) => {

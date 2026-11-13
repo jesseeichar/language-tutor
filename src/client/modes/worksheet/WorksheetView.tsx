@@ -1,8 +1,17 @@
 import { useRef, useState } from "react";
 import type { SubmitAnswerResponse, WorksheetQuestion } from "../../../shared";
+import { CopyButton } from "../../pages/CopyButton";
 import { ErrorBox } from "../../pages/ErrorBox";
 import type { QuestionViewProps } from "../types";
 import { WorksheetItem } from "./WorksheetItem";
+
+/** The exercise as plain text: what the learner sees, without their answers or the solutions. */
+function exerciseText(question: WorksheetQuestion) {
+  const items = question.items.map((item, index) =>
+    `${index + 1}. ${item.prompt}${item.kind === "choice" ? ` (${item.options.map(o => o.label).join(" / ")})` : ""}`);
+  const head = [question.title, question.instructions, question.wordBank?.join(" – "), question.example && `Beispiel: ${question.example}`];
+  return [...head.filter(line => line !== undefined), "", ...items].join("\n");
+}
 
 type Answers = Record<string, string | { word: string; sentence: string }>;
 export function WorksheetView({ question, submit, next, isLast }: QuestionViewProps<WorksheetQuestion, { answers: Answers }>) {
@@ -23,6 +32,7 @@ export function WorksheetView({ question, submit, next, isLast }: QuestionViewPr
     finally { sending.current = false; setBusy(false); }
   };
   return <form className="worksheet" onSubmit={e => { e.preventDefault(); void check(); }}>
+    <CopyButton className="card-copy" text={exerciseText(question)} label="Copy exercise" />
     <h2>{question.title}</h2>
     <p className="worksheet-instructions">{question.instructions}</p>
     {question.wordBank && <p className="worksheet-bank">{question.wordBank.join(" – ")}</p>}

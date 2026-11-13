@@ -282,6 +282,20 @@ members of each list for list-capable modes, removes direct members, and opens `
 preset (the list, every question type, all matching questions). Browsing creates no sessions and
 membership changes record no attempts. No module budget changed: the helpers live beside the pages.
 
+## Copying cards
+
+`CopyButton` (`src/client/pages`) writes fixed text to the clipboard and confirms or reports failure
+on the button itself; nothing is sent to the server and copying never records study. Each mode view
+decides what its card copies, because only the view knows what is on screen:
+
+- Flashcards have one button per side, and a third for the notes when the card has any. The back
+  and notes are offered only once the card is flipped. The
+  buttons sit beside the card element, which is itself a button and cannot contain others.
+- Quiz cards have one button. Multiple choice copies the question and the options shown for the
+  session's direction. Typed questions copy the question, plus the expected answer once graded.
+- Worksheet exercises copy the title, instructions, word bank, example and numbered items (choice
+  items with their options), never the solutions.
+
 ## Fixed worksheets
 
 Modes may declare `fixedSession: true`, exposed in the mode summary. Selecting one starts a session
