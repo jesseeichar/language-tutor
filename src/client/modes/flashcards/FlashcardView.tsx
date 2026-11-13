@@ -71,6 +71,7 @@ export function FlashcardView({ question, direction, submit, next, previous, sub
         <div className="flashcard-copy">
           <CopyButton text={sides.front} label="Copy front">Front</CopyButton>
           {flipped && <CopyButton text={sides.back} label="Copy back">Back</CopyButton>}
+          {flipped && question.notes && <CopyButton text={question.notes} label="Copy notes">Notes</CopyButton>}
         </div>
       </div>
 

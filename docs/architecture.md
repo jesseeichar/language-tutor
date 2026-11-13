@@ -288,7 +288,8 @@ membership changes record no attempts. No module budget changed: the helpers liv
 on the button itself; nothing is sent to the server and copying never records study. Each mode view
 decides what its card copies, because only the view knows what is on screen:
 
-- Flashcards have one button per side. The back is offered only once the card is flipped. The
+- Flashcards have one button per side, and a third for the notes when the card has any. The back
+  and notes are offered only once the card is flipped. The
   buttons sit beside the card element, which is itself a button and cannot contain others.
 - Quiz cards have one button. Multiple choice copies the question and the options shown for the
   session's direction. Typed questions copy the question, plus the expected answer once graded.

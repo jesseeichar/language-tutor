@@ -7,7 +7,7 @@ test.use({ permissions: ["clipboard-read", "clipboard-write"] });
 const clipboard = (page: Page) => page.evaluate(() => navigator.clipboard.readText());
 const sessionStart = (page: Page) => page.waitForResponse(r => r.url().endsWith("/api/sessions") && r.request().method() === "POST");
 
-test("a flashcard copies each side separately, the back only after flipping", async ({ page }) => {
+test("a flashcard copies each side and its notes separately, the back and notes only after flipping", async ({ page }) => {
   await startSession(page, ["Contrast", "German → English"]);
   await expect(page.getByRole("button", { name: "Copy back" })).toHaveCount(0);
   await page.getByRole("button", { name: "Copy front" }).click();
@@ -18,6 +18,8 @@ test("a flashcard copies each side separately, the back only after flipping", as
   await page.getByRole("button", { name: /Flip/ }).click();
   await page.getByRole("button", { name: "Copy back" }).click();
   expect(await clipboard(page)).toBe("however");
+  await page.getByRole("button", { name: "Copy notes" }).click();
+  expect(await clipboard(page)).toBe("Verb comes next: Jedoch ist es teuer.");
 });
 
 test("a multiple-choice quiz card copies the question and its options", async ({ page }) => {
