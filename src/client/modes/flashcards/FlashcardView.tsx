@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cardSides, type FlashcardQuestion, type FlashcardResponse } from "../../../shared";
 import { DIRECTION_LABELS } from "../../directions";
+import { CopyButton } from "../../pages/CopyButton";
 import type { QuestionViewProps } from "../types";
 
 /** Front first; reveal once, then review studied cards with the arrow keys. */
@@ -46,25 +47,32 @@ export function FlashcardView({ question, direction, submit, next, previous, sub
 
   return (
     <div className="flashcard-wrap">
-      <button
-        type="button"
-        className={`flashcard ${flipped ? "is-flipped" : ""}`}
-        onClick={flip}
-        aria-label={flipped ? "Card answer" : "Show answer"}
-      >
-        <div className="flashcard-side-label">
-          {flipped ? "Answer" : "Question"}
-          {sides.direction && <span className="flashcard-direction"> · {DIRECTION_LABELS[sides.direction]}</span>}
+      <div className="flashcard-frame">
+        <button
+          type="button"
+          className={`flashcard ${flipped ? "is-flipped" : ""}`}
+          onClick={flip}
+          aria-label={flipped ? "Card answer" : "Show answer"}
+        >
+          <div className="flashcard-side-label">
+            {flipped ? "Answer" : "Question"}
+            {sides.direction && <span className="flashcard-direction"> · {DIRECTION_LABELS[sides.direction]}</span>}
+          </div>
+          <div className="flashcard-front">{sides.front}</div>
+          {flipped && (
+            <>
+              <hr />
+              <div className="flashcard-back">{sides.back}</div>
+              {question.notes && <div className="flashcard-notes">{question.notes}</div>}
+            </>
+          )}
+        </button>
+        {/* Beside the card, not inside it: the card is a button and cannot contain other buttons. */}
+        <div className="flashcard-copy">
+          <CopyButton text={sides.front} label="Copy front">Front</CopyButton>
+          {flipped && <CopyButton text={sides.back} label="Copy back">Back</CopyButton>}
         </div>
-        <div className="flashcard-front">{sides.front}</div>
-        {flipped && (
-          <>
-            <hr />
-            <div className="flashcard-back">{sides.back}</div>
-            {question.notes && <div className="flashcard-notes">{question.notes}</div>}
-          </>
-        )}
-      </button>
+      </div>
 
       {tools}
       {error && <p className="error">Could not record this card: {error}</p>}

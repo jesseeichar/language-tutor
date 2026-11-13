@@ -2,6 +2,7 @@ import { describe, expect, mock, test } from "bun:test";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { Direction, FlashcardQuestion } from "../../../shared";
+import { stubClipboard } from "../../../../tests/support/clipboard";
 import { FlashcardView } from "./FlashcardView";
 
 const base = { categories: ["x"], refs: { words: [], topics: [] } };
@@ -17,6 +18,19 @@ function show(card: FlashcardQuestion, direction: Direction | null, overrides: P
 }
 
 describe("FlashcardView", () => {
+  test("each side has its own copy button; the back is offered only once revealed", async () => {
+    const writeText = stubClipboard();
+    const submit = show(translation, "en-de");
+    expect(screen.queryByRole("button", { name: "Copy back" })).toBeNull();
+    await userEvent.click(screen.getByRole("button", { name: "Copy front" }));
+    expect(writeText).toHaveBeenLastCalledWith("first");
+    // Copying is not studying: the card stays unrevealed.
+    expect(submit).not.toHaveBeenCalled();
+    await userEvent.click(screen.getByRole("button", { name: /Flip/ }));
+    await userEvent.click(screen.getByRole("button", { name: "Copy back" }));
+    expect(writeText).toHaveBeenLastCalledWith("zuerst");
+  });
+
   test("German first: shows German, then English after flipping", async () => {
     const submit = show(translation, "de-en");
     expect(screen.getByText("zuerst")).toBeTruthy();

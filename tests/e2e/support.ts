@@ -1,5 +1,6 @@
 /** Steps shared by the Playwright specs. */
 import { expect, type Page } from "@playwright/test";
+import type { CreateSessionResponse } from "../../src/shared";
 
 export async function openFlashcards(page: Page) {
   await page.goto("/");
@@ -26,4 +27,20 @@ export async function studyAndRecord(page: Page): Promise<string[]> {
   }
   await expect(page.getByText(/^Studied/)).toBeVisible();
   return fronts;
+}
+
+/** Starts a quiz of one question type and returns the session the server created. */
+export async function openQuiz(page: Page, type: string, category: string, direction = "German → English", count = "1") {
+  await page.goto("/");
+  await page.getByRole("button", { name: /^Quiz / }).click();
+  await page.getByLabel(category, { exact: false }).check();
+  for (const label of ["Multiple choice", "Fill in the blank", "Translation"]) {
+    await page.getByRole("group", { name: "Question types", exact: true }).getByLabel(new RegExp(`^${label}`)).setChecked(label === type);
+  }
+  await page.getByLabel(direction, { exact: true }).check();
+  await page.getByLabel("Questions in this session").selectOption("custom");
+  await page.getByLabel("Number of questions").fill(count);
+  const response = page.waitForResponse(r => r.url().endsWith("/api/sessions") && r.request().method() === "POST");
+  await page.getByRole("button", { name: "Start", exact: true }).click();
+  return await (await response).json() as CreateSessionResponse;
 }

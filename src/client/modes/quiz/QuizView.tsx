@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import type { QuizQuestion, QuizResponse, SubmitAnswerResponse } from "../../../shared";
 import { DIRECTION_LABELS } from "../../directions";
+import { CopyButton } from "../../pages/CopyButton";
 import { ErrorBox } from "../../pages/ErrorBox";
 import type { QuestionViewProps } from "../types";
 
@@ -15,6 +16,12 @@ export function QuizView({ question, direction, submit, next, isLast }: Question
   const choiceSide = question.type === "multiple-choice" ? (germanFirst ? question.de : question.en) : null;
   const prompt = question.type === "fill-in-the-blank" ? question.prompt
     : question.type === "translation" ? (germanFirst ? question.de : question.en) : choiceSide!.prompt;
+  const expected = question.type === "fill-in-the-blank" ? question.answer
+    : question.type === "translation" ? (germanFirst ? question.en : question.de) : null;
+  // Typed questions add the expected answer only once graded, so copying never leaks it early.
+  const copyText = choiceSide ? [prompt, ...choiceSide.options.map((option) => `- ${option}`)].join("\n")
+    : result && expected ? `${prompt}\n${expected}` : prompt;
+  const copyLabel = choiceSide ? "Copy question and options" : result ? "Copy question and answer" : "Copy question";
   const ready = question.type === "multiple-choice" ? optionIndex !== null : answer.trim().length > 0;
 
   const check = async () => {
@@ -31,6 +38,7 @@ export function QuizView({ question, direction, submit, next, isLast }: Question
 
   return (
     <form className="quiz-card" onSubmit={(e) => { e.preventDefault(); void check(); }}>
+      <CopyButton className="card-copy" text={copyText} label={copyLabel} />
       {question.type !== "fill-in-the-blank" && <p className="muted small">{DIRECTION_LABELS[direction ?? "de-en"]}</p>}
       <h2 className="quiz-prompt">{prompt}</h2>
       {choiceSide ? (

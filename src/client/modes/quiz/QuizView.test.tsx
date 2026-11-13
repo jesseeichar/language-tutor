@@ -2,6 +2,7 @@ import { expect, mock, test } from "bun:test";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import type { Direction, QuizQuestion, QuizResponse, SubmitAnswerResponse } from "../../../shared";
+import { stubClipboard } from "../../../../tests/support/clipboard";
 import { QuizView } from "./QuizView";
 
 const base = { id: "q", categories: ["c"], refs: { words: [], topics: [] } };
@@ -72,4 +73,26 @@ test("pending requests cannot be duplicated and failures leave the answer availa
   submit.mockImplementation(() => Promise.resolve(correct));
   await userEvent.click(screen.getByRole("button", { name: "Check answer" }));
   await waitFor(() => expect(screen.getByRole("status").textContent).toContain("Correct"));
+});
+
+test("multiple choice copies the question followed by the options shown", async () => {
+  const writeText = stubClipboard();
+  show(mc, "de-en");
+  await userEvent.click(screen.getByRole("button", { name: "Copy question and options" }));
+  expect(writeText).toHaveBeenCalledWith("Die Tür ist offen.\n- Cold.\n- Hot.\n- The door is open.\n- Closed.");
+});
+
+test.each([
+  [blank, null, "Das ist ___ Tür.", "die"],
+  [translation, "en-de", "The door is open.", "Die Tür ist offen."],
+  [translation, "de-en", "Die Tür ist offen.", "The door is open."],
+] as const)("typed questions copy only the question until checked, then add the expected answer", async (question, direction, prompt, expected) => {
+  const writeText = stubClipboard();
+  show(question, direction);
+  await userEvent.click(screen.getByRole("button", { name: "Copy question" }));
+  expect(writeText).toHaveBeenLastCalledWith(prompt);
+  fireEvent.change(screen.getByLabelText("Your answer"), { target: { value: "something else" } });
+  await userEvent.click(screen.getByRole("button", { name: "Check answer" }));
+  await userEvent.click(await screen.findByRole("button", { name: "Copy question and answer" }));
+  expect(writeText).toHaveBeenLastCalledWith(`${prompt}\n${expected}`);
 });
